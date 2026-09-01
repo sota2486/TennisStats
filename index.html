@@ -1,0 +1,3294 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baseline Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg: #eef1f4;
+    --bg-court: #e4e9ee;
+    --panel: #ffffff;
+    --panel-2: #f6f8fa;
+    --line: #d7dde3;
+    --line-strong: #b9c2cb;
+    --ink: #16232c;
+    --ink-2: #45545f;
+    --ink-3: #7c8993;
+    --accent: #1c6f8c;
+    --accent-ink: #0d4f66;
+    --accent-soft: #dcedf2;
+    --track: #e2e7eb;
+    --good: #13ae67;
+    --bad: #ea5514;
+    --shadow: 0 1px 2px rgba(20,30,40,.06), 0 8px 24px -12px rgba(20,30,40,.18);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #0d1418;
+      --bg-court: #0a1013;
+      --panel: #141d23;
+      --panel-2: #101820;
+      --line: #263038;
+      --line-strong: #35424b;
+      --ink: #e8eef1;
+      --ink-2: #aebac2;
+      --ink-3: #7c8993;
+      --accent: #58c4dd;
+      --accent-ink: #8fdaeb;
+      --accent-soft: #16333c;
+      --track: #1d2831;
+      --good: #35c983;
+      --bad: #ff8a5c;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #0d1418;
+    --bg-court: #0a1013;
+    --panel: #141d23;
+    --panel-2: #101820;
+    --line: #263038;
+    --line-strong: #35424b;
+    --ink: #e8eef1;
+    --ink-2: #aebac2;
+    --ink-3: #7c8993;
+    --accent: #58c4dd;
+    --accent-ink: #8fdaeb;
+    --accent-soft: #16333c;
+    --track: #1d2831;
+    --good: #35c983;
+    --bad: #ff8a5c;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', 'IBM Plex Sans JP', system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+  h1,h2,h3,.disp{ font-family:'Oswald','IBM Plex Sans JP',sans-serif; text-transform:uppercase; letter-spacing:.03em; text-wrap:balance; }
+  ::selection{ background: var(--accent-soft); }
+
+  /* ---------- shell ---------- */
+  .shell{ max-width:1360px; margin:0 auto; padding:20px 20px 60px; }
+
+  .topbar{
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding:14px 18px; margin-bottom:16px;
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+  }
+  .brand{ display:flex; align-items:baseline; gap:10px; margin-right:auto; }
+  .brand .mark{ font-family:'Oswald'; font-weight:700; font-size:20px; letter-spacing:.04em; }
+  .brand .sub{ font-size:11px; color:var(--ink-3); letter-spacing:.08em; text-transform:uppercase; }
+
+  .file-controls{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .file-btn{
+    display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+    border:1px dashed var(--line-strong); border-radius:10px; padding:8px 14px;
+    font-size:12.5px; color:var(--ink-2); background:var(--panel-2); transition:.15s border-color,.15s color;
+  }
+  .file-btn:hover{ border-color:var(--accent); color:var(--accent-ink); }
+  .file-btn input{ display:none; }
+  .file-btn-bulk{ border-style:solid; border-color:var(--accent); color:var(--accent-ink); font-weight:600; }
+  .file-status{ font-size:11.5px; color:var(--ink-3); }
+  .file-status b{ color:var(--good); font-weight:600; }
+  .file-status.missing b{ color: var(--bad); }
+  .file-status-list{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .file-status-item{ font-size:10.5px; color:var(--ink-3); letter-spacing:.02em; white-space:nowrap; }
+
+  .page-tabs{
+    display:flex; gap:6px; padding:5px; margin-bottom:14px;
+    background:var(--panel-2); border:1px solid var(--line); border-radius:calc(var(--radius) + 4px);
+  }
+  .page-tab{
+    flex:1 1 0; text-align:center; padding:10px 12px; border-radius:var(--radius);
+    font-family:'Oswald','IBM Plex Sans JP',sans-serif; text-transform:uppercase; letter-spacing:.06em;
+    font-size:13px; font-weight:600; color:var(--ink-2); cursor:pointer;
+  }
+  .page-tab:hover{ background:var(--panel); color:var(--ink); }
+  .page-tab.active{ background:var(--accent); color:#fff; }
+
+  .tabs{
+    display:flex; gap:4px; overflow-x:auto; padding:6px 6px;
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+    margin-bottom:18px; scrollbar-width:thin;
+  }
+  .tab{
+    flex:0 0 auto; padding:8px 16px; border-radius:9px; font-size:13px; font-weight:500;
+    color:var(--ink-2); cursor:pointer; white-space:nowrap; border:1px solid transparent;
+  }
+  .tab:hover{ background:var(--panel-2); }
+  .tab.active{ background:var(--accent); color:#fff; }
+  .tabs-empty{ padding:10px 14px; color:var(--ink-3); font-size:13px; }
+
+  .empty-state{
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    padding:80px 20px; text-align:center; color:var(--ink-2);
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+  }
+  .empty-state .big{ font-size:15px; font-weight:600; color:var(--ink); }
+  .empty-state .small{ font-size:12.5px; color:var(--ink-3); max-width:440px; line-height:1.6; }
+
+  /* ---------- main grid ---------- */
+  /* 3列の高さを揃える。.panelはflex縦積みで、どの列も余白追加用の要素は置いていないので、
+     余った高さは各パネルの一番下(最後の要素より下、枠線より上)に自然に集まる
+     (途中に不自然な空白ができない) */
+  .board{ display:grid; grid-template-columns: 300px 1fr 340px; gap:16px; align-items:stretch; }
+  @media (max-width: 980px){ .board{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:18px 18px 20px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .panel-title{
+    font-size:11px; font-weight:600; letter-spacing:.12em; color:var(--ink-3);
+    text-transform:uppercase; margin:0 0 14px;
+  }
+  .panel-title.mt{ margin-top:16px; }
+  /* 球種データとVS(球種別の強さ)の間だけ、他より広めに空ける */
+  .panel-title.mt-lg{ margin-top:34px; }
+
+  /* left: profile */
+  .avatar-wrap{ display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:6px; }
+  .avatar{
+    width:92px; height:92px; border-radius:12px; border:2px solid var(--accent);
+    background:var(--accent-soft); display:flex; align-items:center; justify-content:center;
+    color:var(--accent); flex:0 0 auto; overflow:hidden;
+  }
+  .avatar svg{ width:52px; height:52px; }
+  .avatar img{ width:100%; height:100%; object-fit:contain; }
+  .p-name{ font-size:19px; font-weight:600; text-align:center; }
+  .p-sub{ font-size:11px; color:var(--ink-3); text-align:center; letter-spacing:.04em; }
+
+  .stat-table{ width:100%; border-collapse:collapse; font-size:11.5px; margin-top:12px; }
+  .stat-table th{
+    text-align:right; font-weight:500; color:var(--ink-3); padding:4px 3px; font-size:10px;
+    text-transform:uppercase; letter-spacing:.04em; border-bottom:1px solid var(--line);
+  }
+  .stat-table th:first-child{ text-align:left; }
+  .stat-table td{ text-align:right; padding:5px 3px; border-bottom:1px solid var(--line); color:var(--ink-2); }
+  .stat-table td:first-child{ text-align:left; color:var(--ink); font-weight:500; }
+  .stat-table tr:last-child td{ border-bottom:none; }
+
+  .kv-line{ display:flex; justify-content:space-between; gap:8px; font-size:12px; padding:5px 0; border-bottom:1px solid var(--line); }
+  .kv-line:last-child{ border-bottom:none; }
+  .kv-line .k{ color:var(--ink-3); }
+  .kv-line .v{ color:var(--ink); font-weight:500; text-align:right; }
+
+  .rate-row{ display:flex; align-items:baseline; gap:8px; margin-top:4px; }
+  .rate-num{ font-family:'Oswald'; font-size:30px; font-weight:600; line-height:1; }
+  .rate-delta{ font-size:11px; font-weight:600; }
+  .rate-delta.up{ color:var(--good); }
+  .rate-delta.down{ color:var(--bad); }
+
+  .sparkline-wrap{ margin-top:8px; min-height:64px; }
+  .sparkline-wrap svg{ width:100%; height:64px; display:block; }
+  .spark-empty{
+    height:64px; display:flex; align-items:center; justify-content:center;
+    font-size:11px; color:var(--ink-3); text-align:center;
+  }
+
+  /* middle: sliders */
+  .meter-row{ display:grid; grid-template-columns: 72px 1fr 34px 64px; align-items:center; gap:8px; margin-bottom:11px; }
+  .meter-row.section-gap{ margin-top:18px; }
+  .meter-label{ font-size:12px; color:var(--ink-2); font-weight:500; text-align:right; cursor:help; }
+  .meter-label.strong{ color:var(--ink); font-weight:600; }
+  .meter-track{ position:relative; height:9px; border-radius:5px; background:var(--track); overflow:hidden; }
+  .meter-fill{ position:absolute; inset:0 auto 0 0; height:100%; border-radius:5px; transition: width .5s ease; }
+  .meter-badge{
+    width:34px; height:22px; border-radius:11px; display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:700; color:#fff; font-family:'IBM Plex Sans';
+  }
+  /* 100点満点のスコアのもとになった実際の指標(割合など)を、参考値として灰色で添える */
+  .meter-raw{ font-size:10px; color:var(--ink-3); text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .meter-note{ grid-column:1/-1; font-size:10px; color:var(--ink-3); margin:-6px 0 8px 80px; }
+
+  /* right: wheel + tables */
+  .wheel-wrap{ display:flex; justify-content:center; margin-bottom:0; }
+  .wheel-wrap svg{ width:100%; max-width:310px; height:auto; }
+  .wheel-num{ font-family:'Oswald'; font-weight:600; }
+  .wheel-label{ font-family:'IBM Plex Sans'; font-weight:500; }
+
+  .kind-table{ width:100%; table-layout:fixed; border-collapse:collapse; font-size:10.5px; margin-top:6px; }
+  .kind-table th:first-child, .kind-table td:first-child{ width:34px; }
+  .kind-table th{
+    font-weight:600; color:var(--ink-3); padding:3px 1px; text-align:center; font-size:7.5px;
+    text-transform:uppercase; letter-spacing:0; border-bottom:1px solid var(--line);
+    line-height:1.15; overflow-wrap:anywhere; white-space:normal;
+  }
+  .kind-table th:first-child{ text-align:left; }
+  .kind-table td{ text-align:center; padding:4px 2px; color:var(--ink-2); }
+  .kind-table td:first-child{ text-align:left; color:var(--ink-3); font-size:9.5px; }
+  .kind-table tr:nth-child(odd) td{ background:var(--panel-2); }
+
+  .chip{
+    display:inline-flex; align-items:center; justify-content:center; text-align:center;
+    /* "A LITTLE BAD"等の長いラベルが2行に折り返しても高さが変わらないよう、
+       2行分の高さを常に確保しておく(短いラベルの1行チップも同じ高さに揃う) */
+    width:100%; min-height:34px; padding:5px 4px; border-radius:6px; font-size:9px; font-weight:700; color:#fff;
+    line-height:1.25; white-space:normal;
+  }
+  .value-box{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:26px; height:20px; border-radius:4px; font-size:10.5px; font-weight:700; color:#fff;
+  }
+  /* 単一指標(miss%/whiff%等)を100点満点化せず割合のまま出す用。value-boxより幅広で角丸強め */
+  .rate-chip{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:38px; padding:2px 5px; min-height:18px; border-radius:9px; font-size:10px; font-weight:700; color:#fff;
+  }
+
+  .suit-sub{
+    font-size:10px; font-weight:600; letter-spacing:.08em; color:var(--ink-3);
+    text-transform:uppercase; margin:10px 0 4px;
+  }
+  .suit-table{ width:100%; table-layout:fixed; border-collapse:separate; border-spacing:4px 0; font-size:10px; }
+  .suit-table th{
+    font-weight:600; color:var(--ink-3); padding:0 0 4px; text-align:center; font-size:9.5px;
+    text-transform:uppercase; letter-spacing:.02em;
+  }
+  .suit-table td{ padding:0; vertical-align:top; }
+
+  .foot-note{ margin-top:20px; font-size:10.5px; color:var(--ink-3); line-height:1.7; border-top:1px solid var(--line); padding-top:12px; }
+
+  /* ---------- 選手ページ: 試合一覧(STATUSの下、常に3試合分ほど見える高さでスクロール) ---------- */
+  .match-history{ margin-top:14px; }
+  .match-history-scroll{
+    max-height:124px; overflow-y:auto; display:flex; flex-direction:column; gap:4px;
+    border-top:1px solid var(--line); padding-top:8px;
+  }
+  .mh-row{ display:flex; align-items:center; gap:8px; padding:5px 2px; font-size:11px; flex:0 0 auto; }
+  .mh-row:not(:last-child){ border-bottom:1px solid var(--line); }
+  .mh-date{ flex:0 0 auto; width:38px; color:var(--ink-3); font-variant-numeric:tabular-nums; }
+  .mh-badge{
+    flex:0 0 auto; font-size:9.5px; font-weight:700; padding:2px 6px; border-radius:6px;
+    background:var(--track); color:var(--ink-3);
+  }
+  .mh-badge.win{ background:var(--good); color:#fff; }
+  .mh-badge.lose{ background:var(--bad); color:#fff; }
+  .mh-opp{ flex:1 1 auto; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--ink-2); }
+  .mh-score{ flex:0 0 auto; font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600; }
+  .mh-empty{ padding:14px 0; font-size:11px; }
+
+  /* ---------- ランキング/試合結果/対戦成績ページ共通 ---------- */
+  .sub-tabs{ display:flex; gap:4px; margin-bottom:14px; flex-wrap:wrap; }
+  .sub-tab{
+    padding:7px 14px; border-radius:8px; font-size:12px; font-weight:600; color:var(--ink-2);
+    cursor:pointer; background:var(--panel-2); border:1px solid var(--line);
+  }
+  .sub-tab:hover{ color:var(--ink); }
+  .sub-tab.active{ background:var(--accent); border-color:var(--accent); color:#fff; }
+
+  /* ランキング/試合結果/対戦成績ページは選手ページの1360px制限を抜けて画面幅いっぱいに広がる */
+  .page-section{
+    width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;
+    padding:0 20px; box-sizing:border-box;
+  }
+  .rank-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px 18px 20px; overflow-x:auto; width:100%; box-sizing:border-box;
+  }
+  .rank-note{ font-size:11px; color:var(--ink-3); margin-bottom:10px; }
+  /* table-layout:fixedでwidth:100%を強制すると列数が多いときヘッダー文字が切れるため、
+     各列にmin-widthだけ与えて自然な幅で伸ばし、はみ出た分は.rank-panelの横スクロールに任せる */
+  .rank-table{ border-collapse:collapse; font-size:11.5px; white-space:nowrap; table-layout:fixed; }
+  .rank-table th:first-child, .rank-table td:first-child{ width:180px; min-width:180px; }
+  .rank-table th:not(:first-child), .rank-table td:not(:first-child){ width:78px; min-width:78px; }
+  /* 種類ごとのグループ(TOTAL/SINGLES/DOUBLES、Value/VSなど)の境目に少し余白を空ける */
+  .rank-table td.group-gap, .rank-table th.group-gap{ border-left:10px solid var(--bg); }
+  .rank-table th, .rank-table td{ padding:6px 9px; text-align:right; border-bottom:1px solid var(--line); }
+  .rank-table th:first-child, .rank-table td:first-child{ text-align:left; position:sticky; left:0; background:var(--panel); }
+  .rank-table thead th{
+    color:var(--ink-3); font-weight:600; font-size:9.5px; text-transform:uppercase; letter-spacing:.03em;
+    cursor:pointer; user-select:none; border-bottom:2px solid var(--line-strong); white-space:nowrap;
+  }
+  .rank-table thead th:hover{ color:var(--ink); }
+  /* 選択の有無で行の高さが変わらないよう、枠のスペースは常に確保して色だけ切り替える */
+  .rank-table thead th span{
+    display:inline-block; border:2px solid transparent; border-radius:4px; padding:2px 5px;
+  }
+  .rank-table thead th.sorted{ color:var(--bad); }
+  .rank-table thead th.sorted span{ border-color:var(--bad); }
+  /* ここも選択の有無で高さ/幅が変わらないよう、枠は常に透明な線として確保しておき色だけ切り替える */
+  .rank-table td.sorted-col, .rank-table th.sorted-col{ background:var(--accent-soft); }
+  .rank-table td{ border-left:1px solid transparent; border-right:1px solid transparent; }
+  .rank-table td.sorted-col{ border-left-color:var(--accent); border-right-color:var(--accent); }
+  .rank-table thead tr:last-child th{ border-top:1px solid transparent; }
+  .rank-table thead tr:last-child th.sorted-col{ border-top-color:var(--accent); }
+  .rank-table tbody tr:last-child td.sorted-col{ border-bottom-color:var(--accent); }
+  .rank-table thead tr.rank-group th{
+    text-align:center; font-size:10.5px; letter-spacing:.06em; color:var(--ink); cursor:default;
+    border-bottom:1px solid var(--line); padding-bottom:3px;
+  }
+  .rank-table tbody tr:hover td{ background:var(--panel-2); }
+  .rank-table td.rank-name{ font-weight:600; color:var(--ink); cursor:pointer; }
+  .rank-table td.rank-name:hover{ color:var(--accent-ink); text-decoration:underline; }
+  .rank-table td.rank-idx{ color:var(--ink-3); text-align:center; width:28px; }
+  .rank-avatar{
+    display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px;
+    border-radius:5px; background:var(--accent-soft); color:var(--accent); vertical-align:middle; margin-right:6px;
+    overflow:hidden;
+  }
+  .rank-avatar svg{ width:13px; height:13px; }
+  .rank-avatar img{ width:100%; height:100%; object-fit:contain; }
+  .rank-empty{ padding:30px; text-align:center; color:var(--ink-3); font-size:12.5px; }
+  .matchup-picker{ display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+  .matchup-select{
+    flex:1 1 240px; max-width:320px; padding:9px 12px; border-radius:9px; border:1px solid var(--line);
+    background:var(--panel-2); color:var(--ink); font-size:13px; font-family:inherit;
+  }
+  .matchup-vs{ font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-weight:700; color:var(--ink-3); font-size:13px; }
+
+  /* tournament bracket(再帰的なネストflexで、勝者側に枝が合流していくツリーを描く) */
+  .bracket-wrap{ overflow-x:auto; padding:8px 4px 20px; }
+  .bracket-tree{ display:inline-flex; align-items:center; min-width:max-content; gap:28px; }
+  .b-node{ display:flex; align-items:center; }
+  .b-children{ display:flex; flex-direction:column; justify-content:space-around; position:relative; }
+  .b-child{ position:relative; padding:14px 26px 14px 0; display:flex; align-items:center; }
+  .b-child::after{ content:""; position:absolute; top:50%; right:0; width:26px; height:0; border-top:2px solid var(--line-strong); }
+  /* 縦の連結線は.b-children全体(コンテナの上端〜下端)ではなく、上の子の中央〜下の子の中央
+     までだけに収める(枝の長さが不揃いだと、コンテナ全体に引くと上下にはみ出て突き抜けて見えるため) */
+  .b-child:first-child::before{ content:""; position:absolute; top:50%; bottom:0; right:0; border-right:2px solid var(--line-strong); }
+  .b-child:last-child::before{ content:""; position:absolute; top:0; bottom:50%; right:0; border-right:2px solid var(--line-strong); }
+  .b-match-wrap{ position:relative; margin-left:26px; }
+  .b-match-wrap::before{ content:""; position:absolute; top:50%; left:-26px; width:26px; height:0; border-top:2px solid var(--line-strong); }
+  .b-match{
+    width:172px; background:var(--panel-2); border:1px solid var(--line); border-radius:9px;
+    padding:8px 10px; font-size:11.5px; flex:0 0 auto;
+  }
+  .b-match.final{ border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
+  .b-round-label{ font-size:9.5px; letter-spacing:.08em; color:var(--ink-3); text-transform:uppercase; margin-bottom:5px; }
+  .b-row{ display:flex; align-items:center; justify-content:space-between; gap:6px; padding:2px 0; }
+  .b-row.win .b-name{ font-weight:700; color:var(--ink); }
+  .b-row.win .b-sets{ font-weight:700; color:var(--good); }
+  .b-row.lose .b-name{ color:var(--ink-3); }
+  .b-row.lose .b-sets{ color:var(--ink-3); }
+  .b-name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .b-sets{ font-variant-numeric:tabular-nums; flex:0 0 auto; }
+  .b-detail{ margin-top:4px; font-size:9.5px; color:var(--ink-3); white-space:nowrap; }
+  .b-tbd{ color:var(--ink-3); text-align:center; padding:8px 0; font-size:11px; }
+  .b-seed-note{ margin-top:4px; font-size:9.5px; color:var(--ink-3); }
+  .panel-title.small{ font-size:10px; }
+  .standings-box{
+    border:1px solid var(--line); border-radius:10px; padding:2px 4px; margin-bottom:4px;
+    background:var(--panel-2); max-width:440px; overflow:visible;
+  }
+  .standings-box .rank-table{ table-layout:auto; white-space:normal; }
+  .standings-box .rank-table td.rank-name{ position:static; background:none; }
+  /* 標準の.rank-tableは1列目=名前を想定した幅(180px)を割り当てるが、
+     スタンディングは1列目が順位バッジなので、幅の割り当てを列の中身に合わせて上書きする。
+     トーナメントの「第1回戦敗退」のような長いバッジ文字は折り返さず1行のまま収まるように、
+     バッジ(.rate-chip)自体はnowrapにし、高さも足りない分は自然に伸びる(min-height)ようにする */
+  .standings-box .rank-table th:first-child, .standings-box .rank-table td:first-child{ width:72px; min-width:72px; }
+  .standings-box .rank-table th:nth-child(2), .standings-box .rank-table td:nth-child(2){ width:auto; min-width:120px; }
+  .standings-box .rank-table th:nth-child(n+3), .standings-box .rank-table td:nth-child(n+3){ width:52px; min-width:52px; }
+  .standings-box .rank-table .rate-chip{ white-space:nowrap; }
+
+  [hidden]{ display:none !important; }
+  a{ color:var(--accent-ink); }
+
+  /* 公開用ビルド: 手動アップロード欄は使わない(自動読み込みのみ)ので隠す */
+  .file-controls{ display:none !important; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">Baseline Report</span>
+      <span class="sub">learning.yml &times; players.yml</span>
+    </div>
+    <div class="file-controls">
+      <label class="file-btn file-btn-bulk">
+        &#128193; ファイルをまとめて読み込む <span id="bulkStatus" class="file-status">yml / xlsx / 写真をまとめて選択</span>
+        <input type="file" id="bulkInput" accept=".yml,.yaml,.xlsx,image/*" multiple>
+      </label>
+      <div class="file-status-list">
+        <span class="file-status-item">learning.yml <span id="learningStatus" class="file-status">未読み込み</span></span>
+        <span class="file-status-item">players.yml <span id="playersStatus" class="file-status">未読み込み</span></span>
+        <span class="file-status-item">record.yml <span id="recordStatus" class="file-status">未読み込み</span></span>
+        <span class="file-status-item">tournament.xlsx <span id="tournamentStatus" class="file-status">未読み込み</span></span>
+        <span class="file-status-item">league.xlsx <span id="leagueStatus" class="file-status">未読み込み</span></span>
+        <span class="file-status-item">写真 <span id="avatarStatus" class="file-status">未読み込み</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-tabs" id="pageTabs">
+    <div class="page-tab active" data-page="player">PLAYER</div>
+    <div class="page-tab" data-page="ranking">RANKING</div>
+    <div class="page-tab" data-page="results">RESULTS</div>
+    <div class="page-tab" data-page="matchup">HEAD-TO-HEAD</div>
+  </div>
+
+  <div id="pagePlayer">
+    <div class="tabs" id="tabs">
+      <div class="tabs-empty">ファイルを読み込むと選手タブが表示されます</div>
+    </div>
+
+    <div id="emptyState" class="empty-state">
+      <div class="big">learning.yml と players.yml を読み込んでください</div>
+      <div class="small">サーバーの plugins/TennisPlugin/ フォルダにある2つのファイルを選択すると、選手ごとの能力レポートが表示されます。読み込んだ内容はこのブラウザだけに保存され、外部には送信されません。</div>
+    </div>
+
+    <div class="board" id="board" hidden></div>
+  </div>
+
+  <div id="pageRanking" class="page-section" hidden></div>
+
+  <div id="pageResults" class="page-section" hidden></div>
+
+  <div id="pageMatchup" class="page-section" hidden></div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+   * 定数(プラグイン側の分類としきい値を再現する)
+   * ============================================================ */
+  var SHOT_KINDS = ["STRAIGHT","SMASH","LOB","WEAK_LOB","DROP","SERVE"]; // enum宣言順(ordinal)
+  // RETURNABLE は shotIndex(サンプルログの球種idx)がこの並び順を前提にしているため、
+  // 表示上の並び替えでこの配列自体の順序を変えてはいけない(意味が変わってしまう)
+  var RETURNABLE = ["STRAIGHT","SMASH","LOB","WEAK_LOB","DROP"];
+  // 表示専用の並び順(サーブ→ストレート→スマッシュ→ドロップ→ロブ→弱ロブ)
+  var DISPLAY_ORDER = ["SERVE","STRAIGHT","SMASH","DROP","LOB","WEAK_LOB"];
+  var SPEED_LABELS = ["slow","mid","fast"];
+  var POSITION_LABELS = ["center","mid","end"];
+  var FAIL_TYPES = ["WHIFF","UNREACHABLE","NET","OUT","DOUBLE_FAULT"];
+  var KIND_LABEL = { SERVE:"サーブ", STRAIGHT:"ストレート", SMASH:"スマッシュ", LOB:"ロブ", WEAK_LOB:"弱ロブ", DROP:"ドロップ" };
+  var KIND_LABEL_EN = { SERVE:"Serve", STRAIGHT:"Straight", SMASH:"Smash", LOB:"Lob", WEAK_LOB:"WLob", DROP:"Drop" };
+
+  /* 0→100 の11段階カラースケール(指定色そのまま。1刻みで隣接2色を線形補間する) */
+  var COLOR_STOPS = [
+    [0,  "#172a88"], [10, "#036eb8"], [20, "#00a29a"], [30, "#13ae67"], [40, "#8fc31f"],
+    [50, "#dae000"], [60, "#f39800"], [70, "#ea5514"], [80, "#e83828"], [90, "#e4007f"],
+    [100, "#f00dcc"]
+  ];
+
+  /* ============================================================
+   * スコア変換(0-100の「見せ方スコア」)
+   * ・生の比率(rawLow=下手, rawMid=平均, rawHigh=上手)を 45 / 65 / 90 に写像する
+   * ・平均より下は傾きを緩く(下がりづらい)、平均より上は傾きを急に(上がりやすい)
+   * ・サンプル数が少ないうちは 50〜75 の範囲に丸めて、極端な値を見せない
+   * ============================================================ */
+  function mapScore(raw, rawLow, rawMid, rawHigh){
+    if (raw == null || isNaN(raw)) return null;
+    var s;
+    if (raw <= rawMid){
+      var t = rawMid === rawLow ? 0 : (raw - rawLow) / (rawMid - rawLow);
+      t = clamp(t, -1.5, 1); // 平均よりさらに下でも急落しすぎないように緩衝
+      s = 45 + (65 - 45) * t;
+    } else {
+      var t2 = rawHigh === rawMid ? 0 : (raw - rawMid) / (rawHigh - rawMid);
+      t2 = clamp(t2, 0, 1.6); // 平均より上は伸びやすい
+      s = 65 + (90 - 65) * t2;
+    }
+    return clamp(s, 0, 99);
+  }
+
+  /**
+   * サンプル数が少ないときは、65(平均)からの距離を圧縮する(例: サンプルが全く無ければ
+   * 45点は65点との距離20の半分=10縮まり55点になる)。サンプル数が fullConfidenceAt に
+   * 達するまでの間は、素の点数とこの圧縮後の点数を線形に混ぜる
+   */
+  function confidenceClamp(score, sampleCount, fullConfidenceAt){
+    if (score == null) return null;
+    fullConfidenceAt = fullConfidenceAt || 30;
+    var w = clamp(sampleCount / fullConfidenceAt, 0, 1);
+    // 信頼度(w)がそのまま65からの距離の残存率になる。w=0(サンプル無し)なら65そのもの、
+    // w=1(フル信頼)なら素点そのまま。以前は信頼度0でも半分は圧縮値が残る下限があったが、
+    // それだと極端に少ないサンプル(n=1等)でも素点寄りの値が残ってしまっていたため撤廃した
+    return compressToward65(score, w);
+  }
+  /** 65(平均)からの距離を割合 factor まで圧縮する(factor=0.5なら距離を半分にする) */
+  function compressToward65(score, factor){
+    if (score == null) return null;
+    return 65 + (score - 65) * factor;
+  }
+
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+  /** requestAnimationFrameが無い環境向けのフォールバック付きラッパー(読み込み時アニメーション用) */
+  function raf(cb){
+    if (typeof requestAnimationFrame === "function") requestAnimationFrame(cb);
+    else setTimeout(cb, 16);
+  }
+  function safeDiv(a, b){ return b > 0 ? a / b : null; }
+  function pct(v){ return v == null ? "―" : Math.round(v * 100) + "%"; }
+  function round1(v){ return v == null ? null : Math.round(v * 10) / 10; }
+
+  function colorForScore(v){
+    if (v == null) return "#8a97a1";
+    v = clamp(v, 0, 100);
+    for (var i = 0; i < COLOR_STOPS.length - 1; i++){
+      var a = COLOR_STOPS[i], b = COLOR_STOPS[i+1];
+      if (v >= a[0] && v <= b[0]){
+        var t = (v - a[0]) / (b[0] - a[0]);
+        return lerpHex(a[1], b[1], t);
+      }
+    }
+    return v <= 0 ? COLOR_STOPS[0][1] : COLOR_STOPS[COLOR_STOPS.length-1][1];
+  }
+  /**
+   * miss%/whiff%のような単一指標を、100点満点のスコアには変換せず割合(pct)のまま出しつつ、
+   * 色だけ付けるための<span>のHTML文字列。
+   * statusScoreを渡した場合は、色はその100点満点スコア(選手ページのSTATUSと同じ基準)をそのまま使う。
+   * 渡さない場合は割合の値そのものから色を作る(higherIsBetter=falseなら値が低いほど良い色になる)
+   */
+  function rateChipHtml(v, higherIsBetter, statusScore){
+    if (v == null) return "―";
+    var colorScore = statusScore != null ? clamp(statusScore, 0, 100)
+        : clamp((higherIsBetter === false ? 1 - v : v) * 100, 0, 100);
+    return '<span class="rate-chip" style="background:' + colorForScore(colorScore) + '">' + pct(v) + '</span>';
+  }
+  /** レート(2700〜3200)を0〜100点に線形換算する(2700=0点、3000=60点、3200=100点)。色付け専用で、表示上の数値には使わない */
+  function ratingScore(rating){
+    if (rating == null) return null;
+    return clamp((rating - 2700) / (3200 - 2700) * 100, 0, 100);
+  }
+  function ratingChipHtml(rating){
+    if (rating == null) return "―";
+    return '<span class="rate-chip" style="background:' + colorForScore(ratingScore(rating)) + '">' + Math.round(rating) + '</span>';
+  }
+  function lerpHex(h1, h2, t){
+    var c1 = hexToRgb(h1), c2 = hexToRgb(h2);
+    var r = Math.round(c1[0] + (c2[0]-c1[0])*t);
+    var g = Math.round(c1[1] + (c2[1]-c1[1])*t);
+    var b = Math.round(c1[2] + (c2[2]-c1[2])*t);
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
+  function hexToRgb(h){
+    h = h.replace("#","");
+    return [parseInt(h.substring(0,2),16), parseInt(h.substring(2,4),16), parseInt(h.substring(4,6),16)];
+  }
+
+  /* 偏差値(平均50 SD10)を7段階ラベルへ */
+  function hensachiLabel(z){
+    if (z == null) return { label:"―", tone:"flat" };
+    if (z < 35) return { label:"VERY BAD", tone:"bad2" };
+    if (z < 40) return { label:"BAD", tone:"bad1" };
+    if (z < 45) return { label:"A LITTLE BAD", tone:"bad0" };
+    if (z < 55) return { label:"NORMAL", tone:"flat" };
+    if (z < 60) return { label:"PRETTY GOOD", tone:"good0" };
+    if (z < 65) return { label:"GOOD", tone:"good1" };
+    return { label:"VERY GOOD", tone:"good2" };
+  }
+  var TONE_COLOR = {
+    bad2:"#ea5514", bad1:"#f39800", bad0:"#f8b62d", flat:"#8a97a1",
+    good0:"#8fc31f", good1:"#13ae67", good2:"#00a29a"
+  };
+  var TONE_ORDER = ["bad2","bad1","bad0","flat","good0","good1","good2"];
+  var LABEL_OF_TONE = {
+    bad2:"VERY BAD", bad1:"BAD", bad0:"A LITTLE BAD", flat:"NORMAL",
+    good0:"PRETTY GOOD", good1:"GOOD", good2:"VERY GOOD"
+  };
+  /** サンプル数が少ないときに、判定を BAD〜GOOD の範囲に丸め込む(VERY BAD/VERY GOOD を出さない) */
+  function clampHensachiRange(result, minTone, maxTone){
+    if (result.label === "―") return result;
+    var idx = TONE_ORDER.indexOf(result.tone);
+    var clamped = Math.max(TONE_ORDER.indexOf(minTone), Math.min(TONE_ORDER.indexOf(maxTone), idx));
+    if (clamped === idx) return result;
+    var tone = TONE_ORDER[clamped];
+    return { label: LABEL_OF_TONE[tone], tone: tone };
+  }
+
+  /* ============================================================
+   * バケツキーの解析
+   * ============================================================ */
+  /**
+   * 1球ごとのサンプルが持つ数値のバケツ番号を「来た球の種類・速さ・位置」に分解する。
+   * プラグイン側の bucketIndex() = (種類の並び順*3 + 速さ) *3 + 位置、と同じ計算式
+   */
+  function decodeBucketIndex(bucket){
+    var perKind = SPEED_LABELS.length * POSITION_LABELS.length;
+    var kindOrdinal = Math.floor(bucket / perKind);
+    var speedIdx = Math.floor(bucket / POSITION_LABELS.length) % SPEED_LABELS.length;
+    var positionIdx = bucket % POSITION_LABELS.length;
+    return { kind: SHOT_KINDS[kindOrdinal], speed: SPEED_LABELS[speedIdx], position: POSITION_LABELS[positionIdx] };
+  }
+
+  /* ============================================================
+   * サンプルログ("latest")のパース
+   * S: 時刻|S|バケツ|球種idx|ノーバウンド|角度|初速|上下回転|左右回転|ネット距離|回転確定|コート種類|得点したか|ダブルスか|来た球の横回転大|自滅の原因になったか
+   * F: 時刻|F|バケツ|失点の原因|コート種類|ダブルスか|来た球の横回転大
+   * V: 時刻|V|サーブのバケツ|角度|初速|上下回転|左右回転|コート種類|ダブルスか|(未使用)
+   * X / XX: 時刻|X(X)|コート種類|ダブルスか|(未使用)
+   * 最後から2番目の列はもともと「相手が人間か」だったが、人間とアンドロイド戦しか記録しなくなったため
+   * 「来た球(このショットで打ち返した/打ち返せなかった球)の横回転が大きかったか」に置き換わっている。
+   * 最後の列(Sのみ)は、このスイング自体がネット/オーバーによる自滅の直接原因だったか
+   * (DRIVE/BackSpin/CurveのMiss%集計用。旧データには無いので常にfalse扱い)。
+   * ============================================================ */
+  function parseSamples(rows){
+    var out = [];
+    if (!rows) return out;
+    for (var i = 0; i < rows.length; i++){
+      var p = String(rows[i]).split("|");
+      if (p.length < 2) continue;
+      var kind = p[1];
+      if (kind === "S" && p.length >= 10){
+        out.push({
+          kind:"S", bucket: parseInt(p[2],10), shotIndex: parseInt(p[3],10),
+          volley: p[4] === "1",
+          spinVert: parseFloat(p[7]), spinSide: parseFloat(p[8]),
+          netDistance: parseFloat(p[9]),
+          surface: p[11] || "HARD", winner: p.length > 12 && p[12] === "1",
+          doubles: p.length > 13 && p[13] === "1",
+          incomingHighSpin: p.length > 14 && p[14] === "1",
+          selfError: p.length > 15 && p[15] === "1"
+        });
+      } else if (kind === "F" && p.length >= 4){
+        out.push({
+          kind:"F", bucket: parseInt(p[2],10), failOrdinal: parseInt(p[3],10),
+          surface: p[4] || "HARD",
+          doubles: p.length > 5 && p[5] === "1",
+          incomingHighSpin: p.length > 6 && p[6] === "1"
+        });
+      } else if (kind === "V" && p.length >= 7){
+        out.push({ kind:"V", spinVert: parseFloat(p[5]), spinSide: parseFloat(p[6]), surface: p[7] || "HARD",
+                   doubles: p.length > 8 && p[8] === "1" });
+      } else if ((kind === "X" || kind === "XX")){
+        out.push({ kind: kind, surface: p[2] || "HARD", doubles: p.length > 3 && p[3] === "1" });
+      }
+    }
+    return out;
+  }
+
+  /* ============================================================
+   * "recent-matches"(直近50試合スパン)のパース
+   * 1行=1試合: 来た,振った,サーブ試行,フォルト,ダブルフォルト,エース,リターンエース,リターンエースされた
+   * ============================================================ */
+  function parseRecentMatches(rows){
+    var out = [];
+    if (!rows) return out;
+    for (var i = 0; i < rows.length; i++){
+      var p = String(rows[i]).split(",");
+      if (p.length < 2) continue;
+      out.push({
+        came: parseInt(p[0],10) || 0, swung: parseInt(p[1],10) || 0,
+        serveAttempts: p.length > 2 ? (parseInt(p[2],10) || 0) : 0,
+        faults: p.length > 3 ? (parseInt(p[3],10) || 0) : 0,
+        doubleFaults: p.length > 4 ? (parseInt(p[4],10) || 0) : 0,
+        aces: p.length > 5 ? (parseInt(p[5],10) || 0) : 0,
+        returnWon: p.length > 6 ? (parseInt(p[6],10) || 0) : 0,
+        returnAced: p.length > 7 ? (parseInt(p[7],10) || 0) : 0
+      });
+    }
+    return out;
+  }
+
+  /* ============================================================
+   * learning.yml の1プレイヤー分を集計する
+   * ============================================================ */
+  function buildPlayerLearning(node){
+    // 通算(バケツ集計)は使わず、1球ごとの直近サンプルログ(latest)と直近50試合スパンの
+    // 記録(recent-matches)だけを見る
+    var data = { name: node.name || "", samples: [], recentMatches: [] };
+    data.samples = parseSamples(node.latest);
+    data.recentMatches = parseRecentMatches(node["recent-matches"]);
+    return data;
+  }
+
+  /* ============================================================
+   * 集計ヘルパー: バケツ配列 → 球種別の defense/offense 指標
+   * ============================================================ */
+  /** 来た球の種類ごとに返せた/空振り/追いつけなかった回数を数える(1球ごとの直近サンプルから) */
+  function defenseByKindFromSamples(samples){
+    var res = {};
+    SHOT_KINDS.forEach(function(k){ res[k] = { count:0, whiff:0, unreach:0 }; });
+    samples.forEach(function(s){
+      var d = decodeBucketIndex(s.bucket);
+      if (!d) return;
+      var r = res[d.kind]; if (!r) return;
+      if (s.kind === "S") r.count++;
+      else if (s.kind === "F"){
+        if (s.failOrdinal === 0) r.whiff++;
+        else if (s.failOrdinal === 1) r.unreach++;
+      }
+    });
+    for (var k in res){
+      var r = res[k];
+      r.faced = r.count + r.whiff + r.unreach;
+      r.returnRate = safeDiv(r.count, r.faced);
+      r.whiffRate = safeDiv(r.whiff, r.faced);
+      r.unreachRate = safeDiv(r.unreach, r.faced);
+    }
+    return res;
+  }
+  /** 球種ごとの使用回数(winSamp.attemptsを流用)とネット/オーバーの自滅ミス率を数える */
+  function offenseByKindFromSamples(samples, winSamp){
+    var res = {};
+    RETURNABLE.forEach(function(k){ res[k] = { attempts: winSamp[k].attempts, selfErrors:0 }; });
+    samples.forEach(function(s){
+      if (s.kind !== "F") return;
+      var d = decodeBucketIndex(s.bucket);
+      if (!d || !res[d.kind]) return;
+      if (s.failOrdinal === 2 || s.failOrdinal === 3) res[d.kind].selfErrors++;
+    });
+    for (var k in res){
+      res[k].missRate = safeDiv(res[k].selfErrors, res[k].attempts);
+    }
+    return res;
+  }
+  /** latest サンプルから、球種ごとの「得点したか」を集計する(通算バケツには保存されないため) */
+  function winRateFromSamples(samples){
+    var res = {};
+    RETURNABLE.forEach(function(k){ res[k] = { attempts:0, wins:0 }; });
+    samples.forEach(function(s){
+      if (s.kind !== "S") return;
+      var k = RETURNABLE[s.shotIndex];
+      if (!k) return;
+      res[k].attempts++;
+      if (s.winner) res[k].wins++;
+    });
+    for (var k in res) res[k].pointRate = safeDiv(res[k].wins, res[k].attempts);
+    return res;
+  }
+  /**
+   * 「VS: 球種別の強さ」用。来た球の種類(k)ごとに、それを返球できた球のうち
+   * 得点につながった割合を求める(=来た球への強さを、それを打ち返して取れたポイントで見る)
+   */
+  function vsPointRateByKind(samples){
+    var res = {};
+    SHOT_KINDS.forEach(function(k){ res[k] = { attempts:0, wins:0 }; });
+    samples.forEach(function(s){
+      if (s.kind !== "S") return;
+      var d = decodeBucketIndex(s.bucket);
+      if (!d || !res[d.kind]) return;
+      res[d.kind].attempts++;
+      if (s.winner) res[d.kind].wins++;
+    });
+    for (var k in res) res[k].pointRate = safeDiv(res[k].wins, res[k].attempts);
+    return res;
+  }
+
+  /** 球種ごとに、左右回転(側回転)の絶対値が0.4以上だった球の割合を求める(1球ごとのサンプルから) */
+  /** DRIVE/BackSpin/Curveの全体スピン率と同じ基準(縦・横どちらかの回転がしきい値を満たせば該当) */
+  function isHighSpin(s){
+    return s.spinVert <= -0.5 || s.spinVert >= 0.3 || Math.abs(s.spinSide) >= 0.4;
+  }
+  function highSpinRateByKind(samples){
+    var res = {};
+    RETURNABLE.concat(["SERVE"]).forEach(function(k){ res[k] = { n:0, high:0 }; });
+    samples.forEach(function(s){
+      if (s.kind === "S"){
+        var k = RETURNABLE[s.shotIndex];
+        if (!k) return;
+        res[k].n++;
+        if (isHighSpin(s)) res[k].high++;
+      } else if (s.kind === "V"){
+        res.SERVE.n++;
+        if (isHighSpin(s)) res.SERVE.high++;
+      }
+    });
+    for (var k in res) res[k].rate = safeDiv(res[k].high, res[k].n);
+    return res;
+  }
+
+  /* ============================================================
+   * プレイヤー1人分の全指標を組み立てる
+   * ============================================================ */
+  // 実際の learning.yml(全プレイヤー)の分布から算出した基準値(15/50/85パーセンタイル)。
+  // 攻撃系(STRAIGHT/SMASH)は得点率を重く、守備系(LOB/WEAK_LOB/DROP)はミス率を重くする
+  var ATTACK_KINDS = { STRAIGHT:true, SMASH:true };
+  var KIND_WEIGHT = {
+    STRAIGHT: { p:0.75, m:0.25 }, SMASH: { p:0.75, m:0.25 },
+    LOB: { p:0.25, m:0.75 }, WEAK_LOB: { p:0.25, m:0.75 }, DROP: { p:0.25, m:0.75 }
+  };
+  var SHOT_ANCHORS = {
+    // [下手, 平均, 上手] の (得点率×重み - ミス率×重み) の目安。実データ(1球ごとのサンプル、
+    // サンプル数30以上の選手)の15/50/85パーセンタイルで算出
+    STRAIGHT: [-0.0296,  0.0031, 0.1045],
+    SMASH:    [ 0.0253,  0.1214, 0.2366],
+    LOB:      [-0.1213, -0.0456, -0.0117],
+    WEAK_LOB: [-0.0698, -0.0202, -0.0016],
+    DROP:     [-0.1619, -0.0636,  0.0114]
+  };
+  // 「VS: 球種別の強さ」のValue(来た球にどれだけ強いか、攻撃側のバリューとは別の独自評価)の基準値。
+  // [下手, 平均, 上手] は来た球への返球率(returnRate)の目安。実データ(1球ごとのサンプル、
+  // サンプル数30以上・その球種を15球以上受けている選手)の15/50/85パーセンタイルで算出
+  var DEFENSE_ANCHORS = {
+    STRAIGHT: [0.7946, 0.8714, 0.9172],
+    SMASH:    [0.5316, 0.6944, 0.7281],
+    LOB:      [0.7936, 0.8750, 0.8973],
+    WEAK_LOB: [0.8744, 0.9239, 0.9460],
+    DROP:     [0.8897, 0.9198, 0.9333],
+    SERVE:    [0.8503, 0.9146, 0.9644]
+  };
+
+  function computeMetrics(learn){
+    var m = {};
+    // 球種別の得意・不得意は1球ごとの直近サンプルログ(learn.samples)から算出する
+    var defAll = defenseByKindFromSamples(learn.samples);
+    var winSamp = winRateFromSamples(learn.samples);
+    var offAll = offenseByKindFromSamples(learn.samples, winSamp);
+
+    // ---- 球種別ホイール(Value) ----
+    m.wheel = {};
+    RETURNABLE.forEach(function(k){
+      var pr = winSamp[k].pointRate;
+      var mr = offAll[k].missRate;
+      var anchor = SHOT_ANCHORS[k];
+      var w = KIND_WEIGHT[k];
+      var raw = (pr == null ? 0 : pr) * w.p - (mr == null ? 0 : mr) * w.m;
+      var score = mapScore(raw, anchor[0], anchor[1], anchor[2]);
+      score = confidenceClamp(score, offAll[k].attempts, 50);
+      m.wheel[k] = { score: score, pointRate: pr, missRate: mr,
+                     attempts: offAll[k].attempts, whiffAttempts: winSamp[k].attempts,
+                     usage: null };
+    });
+    // サーブ関連は1球ごとのサンプルではなく、直近50試合スパンの記録(recentMatches)を見る
+    // (フォルト・ダブルフォルト・エース・リターンエースされた は試合単位で意味のある単位のため)。
+    // フォルトは軽視、ダブルフォルト減点・サービスエース加点・被リターンエース減点
+    (function(){
+      var rm = learn.recentMatches || [];
+      var attempts = 0, faults = 0, doubleFaults = 0, aces = 0, returnAced = 0;
+      rm.forEach(function(t){
+        attempts += t.serveAttempts; faults += t.faults; doubleFaults += t.doubleFaults;
+        aces += t.aces; returnAced += t.returnAced;
+      });
+      var completed = attempts - faults; // フォルトせず打ち切れたサーブの本数
+      var points = completed + doubleFaults; // 実際に打ち切った回数の目安(サーブで争ったポイント数)
+      var aceRate = safeDiv(aces, completed);
+      var dfRate = safeDiv(doubleFaults, points);
+      var acedRate = safeDiv(returnAced, completed);
+      // ダブルフォルトを重く、被リターンエースを軽めに見る(実データの複数選手の並びから調整)
+      var raw = (aceRate || 0) * 1.8 - (dfRate || 0) * 2.2 - (acedRate || 0) * 0.4;
+      // 通算ベースから50試合スパンのレートに切り替えたことで、少ない試合数でも数値が
+      // 振れやすくなったため、信頼が満ちるまでのサンプル数を大きく増やして極端な値を抑える
+      // (50試合分フルに近いサーブ本数が溜まるまでは65寄りに圧縮される)
+      var score = mapScore(raw, -0.06, 0.0000, 0.065);
+      score = confidenceClamp(score, completed, 150);
+      m.wheel.SERVE = { score: score, aceRate: aceRate, dfRate: dfRate, acedRate: acedRate, attempts: completed };
+    })();
+
+    // 総使用率(球種選択の割合)。サーブは1ポイントに1回しか無く分母を薄めてしまうため除外し、
+    // 5球種(ストレート/スマッシュ/ロブ/弱ロブ/ドロップ)だけの中での割合にする
+    var totalOutgoing = 0;
+    RETURNABLE.forEach(function(k){ totalOutgoing += offAll[k].attempts; });
+    var totalAll = totalOutgoing + (m.wheel.SERVE.attempts || 0);
+    RETURNABLE.forEach(function(k){ m.wheel[k].usage = safeDiv(offAll[k].attempts, totalOutgoing); });
+    m.wheel.SERVE.usage = safeDiv(m.wheel.SERVE.attempts, totalAll);
+
+    // ---- 使用率による加点(得意技として多用している球種を評価する) ----
+    // 全体平均使用率(全プレイヤー合計、サーブ抜き5球種の中での割合)からの比率が2倍を超えたところから
+    // なだらかに加点する(2倍ちょうどではほぼ0、3倍・5倍と離れるほど増える)。
+    // ただしValueが既に65以下(そもそも苦手)/90以上(既に十分高い)のときは加点を弱める。
+    (function(){
+      // 実データ(サンプル100球以上のプレイヤー)の合計から算出したサーブ抜きの平均使用率
+      var avgUsage = { STRAIGHT:0.4825, SMASH:0.1054, LOB:0.2079, WEAK_LOB:0.0973, DROP:0.1069 };
+      var UNIT = 3.3, LOW_DAMP = 0.85, HIGH_DAMP = 0.45;
+      RETURNABLE.forEach(function(k){
+        var w = m.wheel[k];
+        if (w.score == null || w.usage == null || !avgUsage[k]) return;
+        var ratio = w.usage / avgUsage[k];
+        var excess = Math.max(0, ratio - 2);
+        var damp = w.score <= 65 ? LOW_DAMP : (w.score >= 90 ? HIGH_DAMP : 1.0);
+        var bonus = excess * UNIT * damp;
+        w.usageRatio = ratio;
+        w.usageBonus = bonus;
+        w.score = clamp(w.score + bonus, 0, 99);
+      });
+    })();
+
+    // ---- Offence / Deffence / P%-M% (learning.yml 全体の分布から算出した基準値) ----
+    // 攻撃力: ストレート+スマッシュを合算し、得点率を重く見る(得点率0.75 / ミス率0.25)
+    var offAttempts = winSamp.STRAIGHT.attempts + winSamp.SMASH.attempts;
+    var offWins = winSamp.STRAIGHT.wins + winSamp.SMASH.wins;
+    var offErr = offAll.STRAIGHT.selfErrors + offAll.SMASH.selfErrors;
+    var offP = safeDiv(offWins, offAttempts), offM = safeDiv(offErr, offAttempts);
+    var offRaw = (offP == null ? 0 : offP) * 0.75 - (offM == null ? 0 : offM) * 0.25;
+    // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
+    m.offence = scoreFromDiff(offRaw, -0.0219, 0.0151, 0.1214, offAttempts);
+
+    var defSmash = defAll.SMASH;
+    var lobMiss = offAll.LOB.missRate;
+    var defenceRaw = (defSmash.returnRate == null ? 0.5 : defSmash.returnRate) * 0.4
+                    - (lobMiss == null ? 0.15 : lobMiss) * 0.25
+                    - (avgWhiff(defAll)) * 0.15
+                    - (avgUnreach(defAll)) * 0.2;
+    m.deffence = scoreFromDiff(defenceRaw, 0.1192, 0.2008, 0.2674, defSmash.faced + offAll.LOB.attempts);
+
+    var pmAttempts = 0, pmWins = 0, pmSelfErr = 0;
+    RETURNABLE.forEach(function(k){
+      pmAttempts += winSamp[k].attempts; pmWins += winSamp[k].wins; pmSelfErr += offAll[k].selfErrors;
+    });
+    var pRate = safeDiv(pmWins, pmAttempts), mRate = safeDiv(pmSelfErr, pmAttempts);
+    var pmDiff = (pRate == null ? 0 : pRate) - (mRate == null ? 0 : mRate);
+    // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
+    m.pm = scoreFromDiff(pmDiff, -0.1295, -0.0681, 0.0283, pmAttempts);
+    m.pmDetail = { pointRate: pRate, missRate: mRate };
+    // 選手ページの表示ではP%-M%(差分1本)ではなく、Point%とMiss%をそれぞれ100点満点で見せる
+    // (Overallの計算自体は従来通りpmDiffを使うので、ここでの見せ方の変更による数値への影響は無い)
+    m.pointScore = scoreFromDiff(pRate, 0.0259, 0.0923, 0.1483, pmAttempts);
+    m.missScore = scoreFromDiff(mRate == null ? null : -mRate, -0.1783, -0.1477, -0.1072, pmAttempts);
+
+    // Overall: 守備力を厚めに(1 : 2 : 1.25)。sota2486 のような守備型選手が正しく評価されるよう
+    // 実データで調整した重み
+    m.overall = weightedAvg([[m.offence,1],[m.deffence,2],[m.pm,1.25]]);
+
+    // ---- vsSlow / vsFast / vsSpin(1球ごとのサンプルログから集計。基準値は learning.yml 全体の
+    // 返球率の分布から算出) ----
+    // vsSpin は、来た球そのものの横回転が大きかったか(incomingHighSpin)を1球ごとに直接見る
+    var vsSlowFaced = samplesReturnFaced(learn.samples, function(d){ return d.speed === "slow"; });
+    var vsFastFaced = samplesReturnFaced(learn.samples, function(d){ return d.speed === "fast"; });
+    var vsSpinFaced = samplesReturnFaced(learn.samples, function(d, s){ return !!s.incomingHighSpin; });
+
+    // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
+    m.vsSlow = scoreFromReturnFaced(vsSlowFaced, 0.8610, 0.9121, 0.9247);
+    m.vsFast = scoreFromReturnFaced(vsFastFaced, 0.6245, 0.7076, 0.7947);
+    m.vsSlowRate = vsSlowFaced.returnRate; m.vsFastRate = vsFastFaced.returnRate;
+    // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
+    m.vsSpin = scoreFromReturnFaced(vsSpinFaced, 0.8122, 0.8674, 0.9005);
+    m.vsSpinRate = vsSpinFaced.returnRate;
+
+    // ---- Unreach% / Whiff% / Chase% ----
+    var totalFaced = defAll.STRAIGHT.faced+defAll.SMASH.faced+defAll.LOB.faced+defAll.WEAK_LOB.faced+defAll.DROP.faced+defAll.SERVE.faced;
+    var totalWhiff = defAll.STRAIGHT.whiff+defAll.SMASH.whiff+defAll.LOB.whiff+defAll.WEAK_LOB.whiff+defAll.DROP.whiff+defAll.SERVE.whiff;
+    var totalUnreach = defAll.STRAIGHT.unreach+defAll.SMASH.unreach+defAll.LOB.unreach+defAll.WEAK_LOB.unreach+defAll.DROP.unreach+defAll.SERVE.unreach;
+    m.unreachRate = safeDiv(totalUnreach, totalFaced);
+    m.whiffRate = safeDiv(totalWhiff, totalFaced);
+    m.unreachScore = scoreFromDiff(1 - (m.unreachRate==null?0.065:m.unreachRate), 0.9350, 0.9695, 0.9873, totalFaced);
+    m.whiffScore = scoreFromDiff(1 - (m.whiffRate==null?0.11:m.whiffRate), 0.8437, 0.8893, 0.9122, totalFaced);
+    // Chase%: 拾いに行かなかった(見送った)割合が高いほど高スコアになるようにしている
+    // (chaseRate = 拾いに行った割合。スコア化にはその逆の見送り率 1-chaseRate を使う)
+    // アラウンドエリアのスイング率は、1球ごとのサンプルではなく直近50試合スパンの記録を見る
+    var aaCame = 0, aaSwung = 0;
+    (learn.recentMatches || []).forEach(function(t){ aaCame += t.came; aaSwung += t.swung; });
+    m.chaseRate = safeDiv(aaSwung, aaCame);
+    var ignoreRate = m.chaseRate == null ? null : 1 - m.chaseRate;
+    m.chaseScore = scoreFromDiff(ignoreRate==null?0.294:ignoreRate, 0.1683, 0.2940, 0.3639, aaCame);
+
+    // ---- DRIVE / BackSpin / Curve(1球ごとのサンプルの回転で分類) ----
+    m.drive = spinClassScore(learn.samples, function(s){ return s.spinVert <= -0.5; }, 0.0387, 0.0838, 0.2833, 30);
+    m.backspin = spinClassScore(learn.samples, function(s){ return s.spinVert >= 0.3; }, 0.0000, 0.0560, 0.1403, 15);
+    m.curve = spinClassScore(learn.samples, function(s){ return Math.abs(s.spinSide) >= 0.4; }, 0.0000, 0.0704, 0.1612, 50);
+
+    // 全体(DRIVE/BackSpin/Curveのいずれかに該当する球)のスピン率が2%未満なら、
+    // そもそも回転をほとんど使っていない人という扱いで、3つとも65からの距離をさらに半分にする
+    (function(){
+      var totalSwings = 0, spunSwings = 0;
+      learn.samples.forEach(function(s){
+        if (s.kind !== "S") return;
+        totalSwings++;
+        if (isHighSpin(s)) spunSwings++;
+      });
+      var overallSpinRate = safeDiv(spunSwings, totalSwings);
+      if (overallSpinRate == null || overallSpinRate < 0.02){
+        m.drive.score = compressToward65(m.drive.score, 0.5);
+        m.backspin.score = compressToward65(m.backspin.score, 0.5);
+        m.curve.score = compressToward65(m.curve.score, 0.5);
+      }
+      m.overallSpinRate = overallSpinRate;
+    })();
+
+    // ---- 適正(コート/シングルス・ダブルス): 自分の中での偏差値 ----
+    m.courtSuitability = surfaceSuitability(learn);
+    m.formatSuitability = formatSuitability(learn);
+
+    m.defenseByKind = defAll;
+
+    // ---- 「VS: 球種別の強さ」(来た球への強さの独自評価。攻撃側のバリュー/Point%/Miss%とは別物) ----
+    // Value: 来た球を返せた割合。Point%: 来た球を返して得点につながった割合。
+    // Miss%: 来た球を自滅(ネット/オーバー)で落とした割合。Whiff%は既存のdefenseByKindのまま
+    var vsPointRate = vsPointRateByKind(learn.samples);
+    var vsSelfErr = {};
+    SHOT_KINDS.forEach(function(k){ vsSelfErr[k] = 0; });
+    learn.samples.forEach(function(s){
+      if (s.kind !== "F") return;
+      var d = decodeBucketIndex(s.bucket);
+      if (!d || !(d.kind in vsSelfErr)) return;
+      if (s.failOrdinal === 2 || s.failOrdinal === 3) vsSelfErr[d.kind]++;
+    });
+    RETURNABLE.concat(["SERVE"]).forEach(function(k){
+      var d = defAll[k];
+      var anchor = DEFENSE_ANCHORS[k];
+      if (!d || !anchor || !m.wheel[k]) return;
+      var dv = mapScore(d.returnRate, anchor[0], anchor[1], anchor[2]);
+      m.wheel[k].defenseValue = confidenceClamp(dv, d.faced, 30);
+      m.wheel[k].vsPointRate = vsPointRate[k] ? vsPointRate[k].pointRate : null;
+      m.wheel[k].vsMissRate = safeDiv(vsSelfErr[k], d.faced);
+    });
+    // TOTAL列用: RETURNABLE(サーブ除く)を対戦数で重み付け平均した値
+    (function(){
+      var sumV=0, wV=0, sumP=0, wP=0, sumM=0, wM=0;
+      RETURNABLE.forEach(function(k){
+        var d = defAll[k];
+        if (!d || !d.faced) return;
+        var dv = m.wheel[k].defenseValue;
+        if (dv != null) { sumV += dv * d.faced; wV += d.faced; }
+        var pr = vsPointRate[k];
+        if (pr && pr.attempts > 0) { sumP += pr.wins; wP += pr.attempts; }
+        sumM += vsSelfErr[k]; wM += d.faced;
+      });
+      m.defenseValueTotal = wV > 0 ? sumV / wV : null;
+      m.vsPointRateTotal = wP > 0 ? sumP / wP : null;
+      m.vsMissRateTotal = wM > 0 ? sumM / wM : null;
+    })();
+
+    // 詳細テーブル用(Spin列は平均回転ではなく、側回転0.4以上だった球の割合)
+    m.wheelDetail = {};
+    var highSpin = highSpinRateByKind(learn.samples);
+    RETURNABLE.concat(["SERVE"]).forEach(function(k){
+      m.wheelDetail[k] = { usage: m.wheel[k].usage, pointRate: m.wheel[k].pointRate,
+                             spin: highSpin[k].rate, missRate: m.wheel[k].missRate };
+    });
+
+    return m;
+  }
+
+  function avgWhiff(defAll){
+    var n=0,d=0;
+    RETURNABLE.forEach(function(k){ if(defAll[k].faced){ n+=defAll[k].whiff; d+=defAll[k].faced; } });
+    return d>0 ? n/d : 0.1;
+  }
+  function avgUnreach(defAll){
+    var n=0,d=0;
+    RETURNABLE.forEach(function(k){ if(defAll[k].faced){ n+=defAll[k].unreach; d+=defAll[k].faced; } });
+    return d>0 ? n/d : 0.1;
+  }
+  function scoreFromDiff(raw, lo, mid, hi, n){
+    return confidenceClamp(mapScore(raw, lo, mid, hi), n||0, 30);
+  }
+  /**
+   * returnRate(= 1 - whiffRate - unreachRate、この3つは完全に従属なので個別に重み付けしない)を
+   * そのままスコア化する。lo/mid/hi は learning.yml 全体の分布(15/50/85パーセンタイル)から算出
+   */
+  /**
+   * 1球ごとのサンプル(S=返せた、F=失点)から、条件に合う球の返球率を集計する。
+   * decodeBucketIndex() で得られる {kind,speed,position} を filterFn に渡して絞り込む
+   */
+  function samplesReturnFaced(samples, filterFn){
+    var faced = 0, count = 0;
+    samples.forEach(function(s){
+      if (s.kind === "S"){
+        var d = decodeBucketIndex(s.bucket);
+        if (!filterFn(d, s)) return;
+        faced++; count++;
+      } else if (s.kind === "F"){
+        // 空振り(0)・追いつけない(1)だけが「来た球に対応できなかった」に当たる。
+        // ネット(2)・オーバー(3)は自分の返球自体のミスで別集計(offenseByKind)の対象のため除く
+        if (s.failOrdinal !== 0 && s.failOrdinal !== 1) return;
+        var d2 = decodeBucketIndex(s.bucket);
+        if (!filterFn(d2, s)) return;
+        faced++;
+      }
+    });
+    return { faced: faced, count: count, returnRate: safeDiv(count, faced) };
+  }
+  function scoreFromReturnFaced(facedResult, lo, mid, hi){
+    var returnRate = facedResult.returnRate;
+    return confidenceClamp(mapScore(returnRate==null?mid:returnRate, lo, mid, hi), facedResult.faced, 30);
+  }
+  /**
+   * DRIVE/BackSpin/Curve用。得点率だけでなく、そのスイング自体がネット/オーバーで自滅した割合
+   * (missRate)も見る。raw = pointRate - missRate とし、lo/mid/hi は元々pointRate単体の分布から
+   * 出した基準値をそのまま流用している(旧データはselfErrorが常にfalse=missRate 0なので、
+   * raw=pointRateとなり既存のスコアと完全に一致する。新しいデータが増えるにつれ、自滅が多い
+   * 球種ほど自然にスコアが下がっていく)
+   */
+  function spinClassScore(samples, classifyFn, lo, mid, hi, fullConfidenceAt){
+    var attempts=0, wins=0, selfErr=0;
+    samples.forEach(function(s){
+      if (s.kind !== "S") return;
+      if (!classifyFn(s)) return;
+      attempts++;
+      if (s.winner) wins++;
+      if (s.selfError) selfErr++;
+    });
+    var pr = safeDiv(wins, attempts);
+    var mr = safeDiv(selfErr, attempts);
+    var raw = (pr==null?mid:pr) - (mr==null?0:mr);
+    var score = confidenceClamp(mapScore(raw, lo, mid, hi), attempts, fullConfidenceAt);
+    return { score: score, pointRate: pr, missRate: mr, attempts: attempts };
+  }
+  function weightedAvg(pairs){
+    var sum=0, w=0;
+    pairs.forEach(function(p){ if (p[0]!=null){ sum += p[0]*p[1]; w += p[1]; } });
+    return w>0 ? sum/w : null;
+  }
+
+  /** 条件(filterFn、無指定なら全件)に合うサンプルの返球率(空振り・追いつけない を除く)を求める */
+  function returnRateOf(samples, filterFn){
+    var faced=0, ok=0, whiffU=0;
+    samples.forEach(function(sample){
+      if (filterFn && !filterFn(sample)) return;
+      if (sample.kind === "S"){ faced++; ok++; }
+      else if (sample.kind === "F"){ faced++; if (sample.failOrdinal===0||sample.failOrdinal===1) whiffU++; }
+    });
+    return { raw: faced >= 5 ? (ok - whiffU) / faced : null, faced: faced };
+  }
+  function surfaceSuitability(learn){
+    var surfaces = ["HARD","CLAY","GRASS","OMNI"];
+    var raws = {};
+    var facedOf = {};
+    surfaces.forEach(function(s){
+      var r = returnRateOf(learn.samples, function(sample){ return sample.surface === s; });
+      raws[s] = r.raw; facedOf[s] = r.faced;
+    });
+    // コート4つに加えて、コートを問わない全体平均も5つ目の値として偏差値の母集団に加える
+    // (コート同士の比較だけでなく、自分の平均との比較でも適性を見るため)
+    raws.ALL = returnRateOf(learn.samples, null).raw;
+    var result = zScoreLabels(raws, surfaces.concat(["ALL"]));
+    // 4コートのうちどれか1つでもサンプルが80件に満たなければ、全コートまとめて
+    // VERY BAD/VERY GOOD を出さずBAD〜GOODに丸める(4コートすべてが80件以上揃って初めて解除)
+    var minFaced = Math.min(facedOf.HARD, facedOf.CLAY, facedOf.GRASS, facedOf.OMNI);
+    if (minFaced < 80){
+      surfaces.forEach(function(s){ result[s] = clampHensachiRange(result[s], "bad1", "good1"); });
+    }
+    return result;
+  }
+  function formatSuitability(learn){
+    var modes = ["SINGLES","DOUBLES"];
+    var raws = {};
+    modes.forEach(function(m){
+      raws[m] = returnRateOf(learn.samples, function(sample){ return !!sample.doubles === (m === "DOUBLES"); }).raw;
+    });
+    // シングルス・ダブルスに加えて、両方合わせた合計も3つ目の値として偏差値の母集団に加える
+    raws.TOTAL = returnRateOf(learn.samples, null).raw;
+    return zScoreLabels(raws, modes.concat(["TOTAL"]));
+  }
+  function zScoreLabels(raws, keys){
+    var vals = keys.map(function(k){ return raws[k]; }).filter(function(v){ return v!=null; });
+    var res = {};
+    if (vals.length === 0){ keys.forEach(function(k){ res[k] = hensachiLabel(null); }); return res; }
+    if (vals.length === 1){
+      // 比較対象が1つしか無い場合、比べようが無いのでデータがある方だけ「NORMAL」として出す
+      // (データが無い方は引き続き―のまま)
+      keys.forEach(function(k){ res[k] = raws[k] != null ? hensachiLabel(50) : hensachiLabel(null); });
+      return res;
+    }
+    var mean = vals.reduce(function(a,b){return a+b;},0)/vals.length;
+    var sd = Math.sqrt(vals.reduce(function(a,b){return a+(b-mean)*(b-mean);},0)/vals.length) || 0.0001;
+    keys.forEach(function(k){
+      var v = raws[k];
+      if (v == null){ res[k] = hensachiLabel(null); return; }
+      var z = 50 + 10*(v-mean)/sd;
+      res[k] = hensachiLabel(z);
+    });
+    return res;
+  }
+
+  /* ============================================================
+   * players.yml パース
+   * ============================================================ */
+  function buildPlayerStats(node){
+    if (!node) return null;
+    function block(prefix){
+      return {
+        games: node[prefix+"games-played"] || 0,
+        wins: node[prefix+"wins"] || 0,
+        losses: node[prefix+"losses"] || 0,
+        pointsFor: node[prefix+"points-for"] || 0,
+        pointsAgainst: node[prefix+"points-against"] || 0,
+        setsFor: node[prefix+"sets-for"] || 0,
+        setsAgainst: node[prefix+"sets-against"] || 0
+      };
+    }
+    var total = block(""), singles = block("singles-"), doubles = block("doubles-");
+    var titles = {
+      tournamentsPlayed: node["tournaments-played"] || 0,
+      tournamentWins: node["tournament-wins"] || 0,
+      singlesTournamentWins: node["singles-tournament-wins"] || 0,
+      doublesTournamentWins: node["doubles-tournament-wins"] || 0,
+      leaguesPlayed: node["leagues-played"] || 0,
+      leagueWins: node["league-wins"] || 0,
+      singlesLeagueWins: node["singles-league-wins"] || 0,
+      doublesLeagueWins: node["doubles-league-wins"] || 0
+    };
+    var history = [];
+    if (node["rating-history"]){
+      for (var mKey in node["rating-history"]){
+        history.push([mKey, node["rating-history"][mKey]]);
+      }
+      history.sort(function(a,b){ return a[0] < b[0] ? -1 : 1; });
+    }
+    return { name: node.name, rating: node.rating, history: history, total: total, singles: singles, doubles: doubles, titles: titles };
+  }
+
+  /* ============================================================
+   * 読み込み & 状態管理
+   * ============================================================ */
+  var state = { learning:null, players:null, record:null, tournamentWb:null, leagueWb:null, activeId:null, avatars:{} };
+
+  function loadYamlFile(file, cb){
+    var reader = new FileReader();
+    reader.onload = function(){
+      try{ cb(null, jsyaml.load(reader.result)); }
+      catch(e){ cb(e); }
+    };
+    reader.onerror = function(){ cb(reader.error); };
+    reader.readAsText(file);
+  }
+
+  function cacheSet(key, text){ try{ localStorage.setItem(key, text); }catch(e){} }
+  function cacheGet(key){ try{ return localStorage.getItem(key); }catch(e){ return null; } }
+
+  function loadLearningFile(f){
+    loadYamlFile(f, function(err, data){
+      if (err){ setStatus("learningStatus", false, "読み込み失敗"); return; }
+      state.learning = data;
+      setStatus("learningStatus", true, f.name);
+      var reader = new FileReader();
+      reader.onload = function(){ cacheSet("baseline_learning_yml", reader.result); };
+      reader.readAsText(f);
+      rebuild();
+    });
+  }
+  function loadPlayersFile(f){
+    loadYamlFile(f, function(err, data){
+      if (err){ setStatus("playersStatus", false, "読み込み失敗"); return; }
+      state.players = data;
+      setStatus("playersStatus", true, f.name);
+      var reader = new FileReader();
+      reader.onload = function(){ cacheSet("baseline_players_yml", reader.result); };
+      reader.readAsText(f);
+      rebuild();
+    });
+  }
+  function loadRecordFile(f){
+    loadYamlFile(f, function(err, data){
+      if (err){ setStatus("recordStatus", false, "読み込み失敗"); return; }
+      state.record = data;
+      setStatus("recordStatus", true, f.name);
+      var reader = new FileReader();
+      reader.onload = function(){ cacheSet("baseline_record_yml", reader.result); };
+      reader.readAsText(f);
+      rebuild();
+    });
+  }
+  function loadTournamentFile(f){
+    var reader = new FileReader();
+    reader.onload = function(){
+      try {
+        state.tournamentWb = XLSX.read(reader.result, { type: "array" });
+        setStatus("tournamentStatus", true, f.name);
+      } catch(err){
+        setStatus("tournamentStatus", false, "読み込み失敗");
+      }
+      rebuild();
+    };
+    reader.onerror = function(){ setStatus("tournamentStatus", false, "読み込み失敗"); };
+    reader.readAsArrayBuffer(f);
+  }
+  function loadLeagueFile(f){
+    var reader = new FileReader();
+    reader.onload = function(){
+      try {
+        state.leagueWb = XLSX.read(reader.result, { type: "array" });
+        setStatus("leagueStatus", true, f.name);
+      } catch(err){
+        setStatus("leagueStatus", false, "読み込み失敗");
+      }
+      rebuild();
+    };
+    reader.onerror = function(){ setStatus("leagueStatus", false, "読み込み失敗"); };
+    reader.readAsArrayBuffer(f);
+  }
+  /**
+   * プロフィール写真はまとめて複数選択できるようにし、ファイル名(拡張子を除いた部分)が
+   * プレイヤーのUUIDか名前(大文字小文字は区別しない)と一致するものだけを自動で拾う。
+   * どのプレイヤーとも一致しなかったファイルはそのまま無視する(エラーにはしない)。
+   */
+  function loadAvatarFiles(files){
+    if (files.length === 0) return;
+    var loaded = 0;
+    files.forEach(function(f){
+      var reader = new FileReader();
+      reader.onload = function(){
+        var base = f.name.replace(/\.[a-zA-Z0-9]+$/, "").trim().toLowerCase();
+        if (base) state.avatars[base] = reader.result;
+        loaded++;
+        if (loaded === files.length){
+          var matched = files.filter(function(ff){
+            var b = ff.name.replace(/\.[a-zA-Z0-9]+$/, "").trim().toLowerCase();
+            return b && players && Object.keys(players).some(function(id){
+              return id.toLowerCase() === b || (players[id].name || "").toLowerCase() === b;
+            });
+          }).length;
+          setStatus("avatarStatus", true, files.length + "枚読み込み(" + matched + "人と一致)");
+          rebuild();
+        }
+      };
+      reader.onerror = function(){
+        loaded++;
+        if (loaded === files.length){ setStatus("avatarStatus", true, files.length + "枚読み込み"); rebuild(); }
+      };
+      reader.readAsDataURL(f);
+    });
+  }
+
+  var AVATAR_EXTS = ["png","jpg","jpeg","gif","webp","bmp"];
+  /**
+   * まとめて選んだファイル群を、拡張子とファイル名から種類ごとに振り分ける。
+   * learning/players/record.ymlはファイル名にそれぞれの単語が含まれているかで判別し、
+   * tournament/league.xlsxも同様。判別できないファイルはnullを返し、何もせず無視する
+   */
+  function classifyFile(file){
+    var name = file.name.toLowerCase();
+    var extMatch = /\.([a-z0-9]+)$/.exec(name);
+    var ext = extMatch ? extMatch[1] : "";
+    if (ext === "yml" || ext === "yaml"){
+      if (name.indexOf("learning") >= 0) return "learning";
+      if (name.indexOf("player") >= 0) return "players";
+      if (name.indexOf("record") >= 0) return "record";
+      return null;
+    }
+    if (ext === "xlsx"){
+      if (name.indexOf("tournament") >= 0 || name.indexOf("大会") >= 0) return "tournament";
+      if (name.indexOf("league") >= 0 || name.indexOf("リーグ") >= 0) return "league";
+      return null;
+    }
+    if (AVATAR_EXTS.indexOf(ext) >= 0) return "avatar";
+    return null;
+  }
+
+  document.getElementById("bulkInput").addEventListener("change", function(e){
+    var files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+    var avatarFiles = [], unmatched = 0;
+    files.forEach(function(f){
+      var kind = classifyFile(f);
+      if (kind === "learning") loadLearningFile(f);
+      else if (kind === "players") loadPlayersFile(f);
+      else if (kind === "record") loadRecordFile(f);
+      else if (kind === "tournament") loadTournamentFile(f);
+      else if (kind === "league") loadLeagueFile(f);
+      else if (kind === "avatar") avatarFiles.push(f);
+      else unmatched++;
+    });
+    if (avatarFiles.length) loadAvatarFiles(avatarFiles);
+    if (unmatched > 0) setStatus("bulkStatus", false, files.length + "件中" + unmatched + "件は種類を判別できず無視しました");
+    else setStatus("bulkStatus", true, files.length + "件読み込み");
+  });
+
+  function setStatus(id, ok, text){
+    var el = document.getElementById(id);
+    el.classList.toggle("missing", !ok);
+    el.innerHTML = ok ? ("<b>&#10003;</b> " + text) : text;
+  }
+
+  // 優先順位: 1) このブラウザで以前アップロードした内容(localStorage) 2) ページに埋め込まれた既定データ 3) 空
+  // 手動でファイルを選び直せば、いつでもそちらが優先されます(アップロードのたびに上の2つを上書きする)
+  // 自動読み込みはしない。毎回ページ上部のボタンからファイルを選択する方式にしている。
+
+  /* ============================================================
+   * プレイヤー一覧の統合 & 描画
+   * ============================================================ */
+  var players = {}; // id -> { id, name, learn, stats }
+  var matchRecords = []; // record.ymlから組み立てた試合一覧(新しい順)
+
+  /**
+   * record.yml(match-singles / match-doubles)を、シングルス・ダブルスをまとめた
+   * 1つの試合一覧に組み立てる。practice(個人練習)はそもそもrecord.ymlに書かれないため
+   * 除外の必要はない。
+   */
+  function buildMatchRecords(doc){
+    var out = [];
+    if (!doc) return out;
+    ["match-singles","match-doubles"].forEach(function(sectionName){
+      var section = doc[sectionName];
+      if (!section) return;
+      var format = sectionName === "match-doubles" ? "doubles" : "singles";
+      Object.keys(section).forEach(function(id){
+        var e = section[id];
+        if (!e) return;
+        var red, blue;
+        if (format === "singles"){
+          red = { name: e.red && e.red.name, uuid: e.red && e.red.uuid };
+          blue = { name: e.blue && e.blue.name, uuid: e.blue && e.blue.uuid };
+        } else {
+          red = { name: e.red && e.red.name,
+                   aName: e.red && e.red["a-name"], aUuid: e.red && e.red["a-uuid"],
+                   bName: e.red && e.red["b-name"], bUuid: e.red && e.red["b-uuid"] };
+          blue = { name: e.blue && e.blue.name,
+                    aName: e.blue && e.blue["a-name"], aUuid: e.blue && e.blue["a-uuid"],
+                    bName: e.blue && e.blue["b-name"], bUuid: e.blue && e.blue["b-uuid"] };
+        }
+        var setScores = (e["set-scores"] || []).map(function(s){
+          var parts = String(s).split("-");
+          return [parseInt(parts[0],10)||0, parseInt(parts[1],10)||0];
+        });
+        var redPoints = setScores.reduce(function(a,s){ return a+s[0]; }, 0);
+        var bluePoints = setScores.reduce(function(a,s){ return a+s[1]; }, 0);
+        out.push({
+          id: id, format: format, status: e.status, timestamp: e.timestamp,
+          surface: e["court-surface"], pointsToWinSet: e["points-to-win-set"],
+          setsToWinMatch: e["sets-to-win-match"], deuce: e.deuce,
+          red: red, blue: blue,
+          redSets: e.red ? e.red["sets-won"] : null, blueSets: e.blue ? e.blue["sets-won"] : null,
+          setScores: setScores, redPoints: redPoints, bluePoints: bluePoints,
+          winner: e.winner || null
+        });
+      });
+    });
+    out.sort(function(a,b){ return (a.timestamp||"") < (b.timestamp||"") ? 1 : -1; }); // 新しい順
+    return out;
+  }
+
+  function rebuild(){
+    players = {};
+    var lp = (state.learning && state.learning.players) || {};
+    var pp = (state.players && state.players.players) || {};
+    var ids = {};
+    Object.keys(lp).forEach(function(id){ ids[id]=1; });
+    Object.keys(pp).forEach(function(id){ ids[id]=1; });
+
+    var ANDROID_NAME = /^Android[A-Z]$/;
+    Object.keys(ids).forEach(function(id){
+      var lnode = lp[id], pnode = pp[id];
+      var name = (pnode && pnode.name) || (lnode && lnode.name) || null;
+      if (!name) return; // 名前が無いプレイヤー(未キャッシュのUUIDのみの記録など)は表示しない
+      if (ANDROID_NAME.test(name)) return; // アンドロイド(AndroidA/B/C)は選手ではないので除外
+      var learn = lnode ? buildPlayerLearning(lnode) : buildPlayerLearning({});
+      var stats = pnode ? buildPlayerStats(pnode) : null;
+      var sampleCount = learn.samples.filter(function(s){ return s.kind === "S"; }).length;
+      players[id] = { id:id, name:name, learn:learn, stats:stats, hasName:true, sampleCount:sampleCount };
+    });
+    matchRecords = buildMatchRecords(state.record);
+
+    renderTabs();
+    if (typeof pageState !== "undefined" && pageState.page !== "player") renderPageTabs();
+  }
+
+  function renderTabs(){
+    var tabWrap = document.getElementById("tabs");
+    // 300件(サンプル数)以上のプレイヤーを先に、それぞれの中はアルファベット順
+    var TAB_SAMPLE_THRESHOLD = 300;
+    var ids = Object.keys(players).sort(function(a,b){
+      var pa = players[a], pb = players[b];
+      var ga = pa.sampleCount >= TAB_SAMPLE_THRESHOLD ? 0 : 1;
+      var gb = pb.sampleCount >= TAB_SAMPLE_THRESHOLD ? 0 : 1;
+      if (ga !== gb) return ga - gb;
+      return pa.name.localeCompare(pb.name);
+    });
+    if (ids.length === 0){
+      tabWrap.innerHTML = '<div class="tabs-empty">選手データが見つかりません</div>';
+      document.getElementById("emptyState").hidden = false;
+      document.getElementById("board").hidden = true;
+      return;
+    }
+    document.getElementById("emptyState").hidden = true;
+    document.getElementById("board").hidden = false;
+    tabWrap.innerHTML = "";
+    if (!state.activeId || !players[state.activeId]) state.activeId = ids[0];
+    ids.forEach(function(id){
+      var tab = document.createElement("div");
+      tab.className = "tab" + (id === state.activeId ? " active" : "");
+      tab.textContent = players[id].name;
+      tab.addEventListener("click", function(){ state.activeId = id; renderTabs(); renderBoard(); });
+      tabWrap.appendChild(tab);
+    });
+    renderBoard();
+  }
+
+  /* ---------- SVGアイコン(汎用シルエット) ---------- */
+  var SILHOUETTE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>';
+
+  /** state.avatarsから、このプレイヤーのUUIDか名前(大文字小文字を区別しない)に一致する写真を探す */
+  function avatarFor(p){
+    if (!p) return null;
+    return state.avatars[String(p.id).toLowerCase()] || state.avatars[String(p.name).toLowerCase()] || null;
+  }
+  /** アバター表示用のHTML(写真が見つかればimg、無ければ汎用シルエット) */
+  function avatarIconHtml(p){
+    var av = avatarFor(p);
+    return av ? '<img src="' + av + '" alt="">' : SILHOUETTE;
+  }
+
+  function renderBoard(){
+    var p = players[state.activeId];
+    if (!p) return;
+    var m = computeMetrics(p.learn);
+    var board = document.getElementById("board");
+    board.innerHTML = "";
+    board.appendChild(renderLeftPanel(p, m));
+    board.appendChild(renderMidPanel(p, m));
+    board.appendChild(renderRightPanel(p, m));
+  }
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+
+  /* ============================================================
+   * ページ切り替え(選手ページ / ランキング / 試合結果 / 対戦成績)
+   * ============================================================ */
+  var pageState = { page: "player" };
+  Array.prototype.forEach.call(document.getElementById("pageTabs").querySelectorAll(".page-tab"), function(tab){
+    tab.addEventListener("click", function(){
+      pageState.page = tab.getAttribute("data-page");
+      renderPageTabs();
+    });
+  });
+  function renderPageTabs(){
+    Array.prototype.forEach.call(document.getElementById("pageTabs").querySelectorAll(".page-tab"), function(tab){
+      tab.classList.toggle("active", tab.getAttribute("data-page") === pageState.page);
+    });
+    document.getElementById("pagePlayer").hidden = pageState.page !== "player";
+    document.getElementById("pageRanking").hidden = pageState.page !== "ranking";
+    document.getElementById("pageResults").hidden = pageState.page !== "results";
+    document.getElementById("pageMatchup").hidden = pageState.page !== "matchup";
+    if (pageState.page === "ranking") renderRankingPage();
+    else if (pageState.page === "results") renderResultsPage();
+    else if (pageState.page === "matchup") renderMatchupPage();
+  }
+  /** 選手名をクリックしたときに選手ページへ移動する共通処理(ランキング等から使う) */
+  function goToPlayer(id){
+    if (!players[id]) return;
+    state.activeId = id;
+    pageState.page = "player";
+    renderPageTabs();
+    renderTabs();
+  }
+
+  /* ============================================================
+   * ランキングページ
+   * ============================================================ */
+  var rankState = { subTab: "matches", sortKey: null, sortDir: "desc" };
+
+  function renderRankingPage(){
+    var container = document.getElementById("pageRanking");
+    container.innerHTML = "";
+    if (Object.keys(players).length === 0){
+      container.appendChild(el("div","rank-panel"));
+      container.firstChild.appendChild(el("div","rank-empty","ファイルを読み込むとランキングが表示されます"));
+      return;
+    }
+    var subTabs = el("div","sub-tabs");
+    [["matches","MATCHES"],["pairs","DOUBLES PAIRS"],["stats","STATUS"],["kinds","SHOT TYPES"]].forEach(function(t){
+      var tab = el("div","sub-tab" + (rankState.subTab===t[0] ? " active" : ""), t[1]);
+      tab.addEventListener("click", function(){
+        if (rankState.subTab === t[0]) return;
+        rankState.subTab = t[0]; rankState.sortKey = null; rankState.sortDir = "desc";
+        renderRankingPage();
+      });
+      subTabs.appendChild(tab);
+    });
+    container.appendChild(subTabs);
+    var panel = el("div","rank-panel");
+    container.appendChild(panel);
+    if (rankState.subTab === "matches") renderMatchRecordTable(panel);
+    else if (rankState.subTab === "pairs") renderDoublesPairTable(panel);
+    else if (rankState.subTab === "stats") renderStatsTable(panel);
+    else renderShotKindTable(panel);
+  }
+
+  /** ソート可能な列見出しを1つ作る(クリックでrankState.sortKey/sortDirを更新して再描画)
+   *  opts.defaultAsc=true の項目(低いほど良い指標)は、新しく選んだ最初のクリックで昇順から始める */
+  function sortableHeader(label, key, opts){
+    opts = opts || {};
+    var th = document.createElement("th");
+    var span = document.createElement("span");
+    span.textContent = label;
+    th.appendChild(span);
+    if (rankState.sortKey === key) { th.classList.add("sorted"); th.classList.add("sorted-col"); }
+    if (opts.groupGap) th.classList.add("group-gap");
+    th.addEventListener("click", function(){
+      if (rankState.sortKey === key) rankState.sortDir = (rankState.sortDir === "desc" ? "asc" : "desc");
+      else { rankState.sortKey = key; rankState.sortDir = opts.defaultAsc ? "asc" : "desc"; }
+      renderRankingPage();
+    });
+    return th;
+  }
+
+  /** columns([{key,value(row)}])とrankStateの現在のソート指定に従って rows を並べ替える */
+  function sortRows(rows, columns){
+    if (!rankState.sortKey) return rows;
+    var col = null;
+    for (var i = 0; i < columns.length; i++) if (columns[i].key === rankState.sortKey) { col = columns[i]; break; }
+    if (!col) return rows;
+    var dir = rankState.sortDir === "asc" ? 1 : -1;
+    return rows.slice().sort(function(a,b){
+      var va = col.value(a), vb = col.value(b);
+      if (va == null && vb == null) return 0;
+      if (va == null) return 1;  // データ無しは常に末尾
+      if (vb == null) return -1;
+      if (va < vb) return -1 * dir;
+      if (va > vb) return 1 * dir;
+      return 0;
+    });
+  }
+
+  function rankNameCell(p){
+    var td = document.createElement("td");
+    td.className = "rank-name";
+    td.innerHTML = '<span class="rank-avatar">' + avatarIconHtml(p) + '</span>' + p.name;
+    td.addEventListener("click", function(){ goToPlayer(p.id); });
+    return td;
+  }
+  /** 現在ソート中の列なら sorted-col、グループの境目なら group-gap を付けるプレーンな<td> */
+  function dataCell(text, key, opts){
+    opts = opts || {};
+    var td = document.createElement("td");
+    td.textContent = text;
+    if (key && key === rankState.sortKey) td.classList.add("sorted-col");
+    if (opts.groupGap) td.classList.add("group-gap");
+    return td;
+  }
+  function valueBoxCell(v, key, opts){
+    opts = opts || {};
+    var td = document.createElement("td");
+    td.innerHTML = '<span class="value-box" style="background:' + colorForScore(v) + '">' + (v!=null?Math.round(v):"―") + '</span>';
+    if (key && key === rankState.sortKey) td.classList.add("sorted-col");
+    if (opts.groupGap) td.classList.add("group-gap");
+    return td;
+  }
+  /** 単一指標(miss%/whiff%など)のセル。100点満点化はせず割合をそのまま出しつつ、色だけ付ける。
+   *  higherIsBetter=false なら「低いほど良い」指標として色付けを反転する。
+   *  opts.score を渡すと、色は割合の値からではなくその100点満点スコア(選手ページのSTATUSと同じ基準)から作る */
+  function rateCell(v, key, opts){
+    opts = opts || {};
+    var td = document.createElement("td");
+    td.innerHTML = rateChipHtml(v, opts.higherIsBetter !== false, opts.score);
+    if (key && key === rankState.sortKey) td.classList.add("sorted-col");
+    if (opts.groupGap) td.classList.add("group-gap");
+    return td;
+  }
+  /** レートのセル。表示は実際のレート値のまま、色だけ2700〜3200を0〜100点に見立てて付ける */
+  function ratingCell(rating, key, opts){
+    opts = opts || {};
+    var td = document.createElement("td");
+    td.innerHTML = ratingChipHtml(rating);
+    if (key && key === rankState.sortKey) td.classList.add("sorted-col");
+    if (opts.groupGap) td.classList.add("group-gap");
+    return td;
+  }
+  function winRateOf(w, l){ var g = (w||0) + (l||0); return g > 0 ? w/g : null; }
+  function shareRateOf(f, a){ var t = (f||0) + (a||0); return t > 0 ? f/t : null; }
+
+  /** ---- 試合成績: TOTAL/SINGLES/DOUBLESの通算成績ランキング ---- */
+  function renderMatchRecordTable(panel){
+    var rows = Object.keys(players).map(function(id){ return players[id]; }).filter(function(p){ return p.stats; });
+    if (rows.length === 0){ panel.appendChild(el("div","rank-empty","players.ymlを読み込んでください")); return; }
+
+    var columns = [
+      { key:"rating", value:function(p){ return p.stats.rating; } }
+    ];
+    ["total","singles","doubles"].forEach(function(g){
+      columns.push({ key:g+".games", value:function(p){ return p.stats[g].games; } });
+      columns.push({ key:g+".wins", value:function(p){ return p.stats[g].wins; } });
+      columns.push({ key:g+".losses", value:function(p){ return p.stats[g].losses; } });
+      columns.push({ key:g+".pt", value:function(p){ return shareRateOf(p.stats[g].pointsFor, p.stats[g].pointsAgainst); } });
+      columns.push({ key:g+".set", value:function(p){ return shareRateOf(p.stats[g].setsFor, p.stats[g].setsAgainst); } });
+      columns.push({ key:g+".win", value:function(p){ return winRateOf(p.stats[g].wins, p.stats[g].losses); } });
+    });
+    columns.push({ key:"titles.league", value:function(p){ return p.stats.titles.leagueWins; } });
+    columns.push({ key:"titles.tournament", value:function(p){ return p.stats.titles.tournamentWins; } });
+    var sorted = rankState.sortKey ? sortRows(rows, columns)
+        : rows.slice().sort(function(a,b){ return (b.stats.rating||0) - (a.stats.rating||0); });
+
+    panel.appendChild(el("div","rank-note","列見出しをクリックすると並び替え(もう一度クリックで昇順⇔降順)。リーグ優勝・トーナメント優勝はplayers.ymlの通算記録から集計しています。"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var groupRow = el("tr","rank-group");
+    groupRow.appendChild(document.createElement("th"));
+    [["TOTAL",7],["SINGLES",6],["DOUBLES",6],["TITLES",2]].forEach(function(g, gi){
+      var th = document.createElement("th"); th.textContent = g[0]; th.colSpan = g[1];
+      if (gi > 0) th.classList.add("group-gap");
+      groupRow.appendChild(th);
+    });
+    thead.appendChild(groupRow);
+    var headRow = document.createElement("tr");
+    headRow.appendChild(document.createElement("th"));
+    headRow.appendChild(sortableHeader("RATE","rating"));
+    ["total","singles","doubles"].forEach(function(g, gi){
+      headRow.appendChild(sortableHeader("GAME",g+".games", {groupGap: gi>0}));
+      headRow.appendChild(sortableHeader("WIN",g+".wins"));
+      headRow.appendChild(sortableHeader("LOSE",g+".losses"));
+      headRow.appendChild(sortableHeader("PT%",g+".pt"));
+      headRow.appendChild(sortableHeader("SET%",g+".set"));
+      headRow.appendChild(sortableHeader("WIN%",g+".win"));
+    });
+    headRow.appendChild(sortableHeader("LEAGUE","titles.league", {groupGap:true}));
+    headRow.appendChild(sortableHeader("TOURNEY","titles.tournament"));
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    sorted.forEach(function(p){
+      var tr = document.createElement("tr");
+      tr.appendChild(rankNameCell(p));
+      var s = p.stats;
+      tr.appendChild(ratingCell(s.rating, "rating"));
+      ["total","singles","doubles"].forEach(function(g, gi){
+        var b = s[g];
+        var gap = gi > 0;
+        tr.appendChild(dataCell(String(b.games), g+".games", {groupGap: gap}));
+        tr.appendChild(dataCell(String(b.wins), g+".wins"));
+        tr.appendChild(dataCell(String(b.losses), g+".losses"));
+        tr.appendChild(rateCell(shareRateOf(b.pointsFor,b.pointsAgainst), g+".pt"));
+        tr.appendChild(rateCell(shareRateOf(b.setsFor,b.setsAgainst), g+".set"));
+        tr.appendChild(rateCell(winRateOf(b.wins,b.losses), g+".win"));
+      });
+      tr.appendChild(dataCell(String(s.titles.leagueWins), "titles.league", {groupGap:true}));
+      tr.appendChild(dataCell(String(s.titles.tournamentWins), "titles.tournament"));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+  }
+
+  /** ---- ダブルス試合成績: ペア単位の成績(record.ymlが必要なため未対応) ---- */
+  /** ペアの組み合わせを表す安定したキー(名前をアルファベット順に並べて連結) */
+  function pairKey(nameA, nameB){
+    if (!nameA || !nameB) return null;
+    var pair = [nameA, nameB].sort();
+    return pair[0] + " & " + pair[1];
+  }
+
+  /** record.ymlのダブルス試合一覧から、ペア(同じチームを組んだ2人)ごとの通算成績を集計する */
+  function buildPairStats(){
+    var byKey = {}; // key -> {names:[a,b], games, wins, losses, pointsFor, pointsAgainst, setsFor, setsAgainst}
+    matchRecords.forEach(function(m){
+      if (m.format !== "doubles" || m.status !== "COMPLETED") return;
+      [["red","blue"],["blue","red"]].forEach(function(pair){
+        var self = m[pair[0]], opp = m[pair[1]];
+        if (!self || !self.aName || !self.bName) return;
+        var key = pairKey(self.aName, self.bName);
+        if (!key) return;
+        var rec = byKey[key] || (byKey[key] = {
+          names: [self.aName, self.bName].sort(), games:0, wins:0, losses:0,
+          pointsFor:0, pointsAgainst:0, setsFor:0, setsAgainst:0
+        });
+        rec.games++;
+        var selfPts = pair[0] === "red" ? m.redPoints : m.bluePoints;
+        var oppPts = pair[0] === "red" ? m.bluePoints : m.redPoints;
+        var selfSets = pair[0] === "red" ? m.redSets : m.blueSets;
+        var oppSets = pair[0] === "red" ? m.blueSets : m.redSets;
+        rec.pointsFor += selfPts || 0; rec.pointsAgainst += oppPts || 0;
+        rec.setsFor += selfSets || 0; rec.setsAgainst += oppSets || 0;
+        if (m.winner === pair[0].toUpperCase()) rec.wins++;
+        else if (m.winner) rec.losses++;
+      });
+    });
+    return Object.keys(byKey).map(function(k){ return byKey[k]; });
+  }
+
+  /** ---- ダブルス試合成績: 同じペアで1試合以上組んだ組み合わせのランキング ---- */
+  function renderDoublesPairTable(panel){
+    if (!state.record){
+      panel.appendChild(el("div","rank-empty","record.ymlを読み込んでください(上部のアップロード欄)。"));
+      return;
+    }
+    var pairs = buildPairStats();
+    if (pairs.length === 0){
+      panel.appendChild(el("div","rank-empty","同じペアで完了したダブルス試合が見つかりません。"));
+      return;
+    }
+    var columns = [
+      { key:"games", value:function(p){ return p.games; } },
+      { key:"wins", value:function(p){ return p.wins; } },
+      { key:"losses", value:function(p){ return p.losses; } },
+      { key:"pt", value:function(p){ return shareRateOf(p.pointsFor, p.pointsAgainst); } },
+      { key:"set", value:function(p){ return shareRateOf(p.setsFor, p.setsAgainst); } },
+      { key:"win", value:function(p){ return winRateOf(p.wins, p.losses); } }
+    ];
+    var sorted = rankState.sortKey ? sortRows(pairs, columns)
+        : pairs.slice().sort(function(a,b){ return b.wins - a.wins; });
+
+    panel.appendChild(el("div","rank-note","record.ymlに記録されている完了済みのダブルス試合(公式戦のみ)から、同じ2人が組んだ試合をペア単位で集計しています。"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var headRow = document.createElement("tr");
+    headRow.appendChild(document.createElement("th"));
+    headRow.appendChild(sortableHeader("GAME","games"));
+    headRow.appendChild(sortableHeader("WIN","wins"));
+    headRow.appendChild(sortableHeader("LOSE","losses"));
+    headRow.appendChild(sortableHeader("PT%","pt"));
+    headRow.appendChild(sortableHeader("SET%","set"));
+    headRow.appendChild(sortableHeader("WIN%","win"));
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    sorted.forEach(function(p){
+      var tr = document.createElement("tr");
+      var nameTd = document.createElement("td");
+      nameTd.className = "rank-name";
+      nameTd.textContent = p.names.join(" & ");
+      tr.appendChild(nameTd);
+      tr.appendChild(dataCell(String(p.games), "games"));
+      tr.appendChild(dataCell(String(p.wins), "wins"));
+      tr.appendChild(dataCell(String(p.losses), "losses"));
+      tr.appendChild(rateCell(shareRateOf(p.pointsFor,p.pointsAgainst), "pt"));
+      tr.appendChild(rateCell(shareRateOf(p.setsFor,p.setsAgainst), "set"));
+      tr.appendChild(rateCell(winRateOf(p.wins,p.losses), "win"));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+  }
+
+  /** ---- スタッツ: 選手ページ中央パネルと同じ指標のランキング(サンプル100球未満は除外) ---- */
+  function renderStatsTable(panel){
+    var rows = Object.keys(players).map(function(id){ return players[id]; }).filter(function(p){ return p.sampleCount >= 100; });
+    if (rows.length === 0){ panel.appendChild(el("div","rank-empty","1球ごとのサンプルが100球以上のプレイヤーがいません")); return; }
+    rows.forEach(function(p){ if (!p._m) p._m = computeMetrics(p.learn); });
+
+    var columns = [
+      { key:"overall", value:function(p){ return p._m.overall; } },
+      { key:"off", value:function(p){ return p._m.offence; } },
+      { key:"def", value:function(p){ return p._m.deffence; } },
+      { key:"p", value:function(p){ return p._m.pmDetail.pointRate; } },
+      { key:"m", value:function(p){ return p._m.pmDetail.missRate; } },
+      { key:"vsSlow", value:function(p){ return p._m.vsSlow; } },
+      { key:"vsFast", value:function(p){ return p._m.vsFast; } },
+      { key:"vsSpin", value:function(p){ return p._m.vsSpin; } },
+      { key:"unreach", value:function(p){ return p._m.unreachRate; } },
+      { key:"whiff", value:function(p){ return p._m.whiffRate; } },
+      { key:"chase", value:function(p){ return p._m.chaseRate; } },
+      { key:"drive", value:function(p){ return p._m.drive.score; } },
+      { key:"backspin", value:function(p){ return p._m.backspin.score; } },
+      { key:"curve", value:function(p){ return p._m.curve.score; } }
+    ];
+    var sorted = rankState.sortKey ? sortRows(rows, columns)
+        : rows.slice().sort(function(a,b){ return (b._m.overall||0) - (a._m.overall||0); });
+
+    panel.appendChild(el("div","rank-note","1球ごとのサンプルが100球未満のプレイヤーは表示していません。overall/off/def/slow/fast/spin/drive/backspin/curveは100点満点のスコア、point%/miss%/unreach%/whiff%/chase%は割合そのもの(色は付きます)。"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var groupRow = el("tr","rank-group");
+    groupRow.appendChild(document.createElement("th"));
+    [["Value",5],["VS",3],["AV",3],["Spin",3]].forEach(function(g, gi){
+      var th = document.createElement("th"); th.textContent = g[0]; th.colSpan = g[1];
+      if (gi > 0) th.classList.add("group-gap");
+      groupRow.appendChild(th);
+    });
+    thead.appendChild(groupRow);
+    var headRow = document.createElement("tr");
+    headRow.appendChild(document.createElement("th"));
+    [["overall","overall",false],["off","off",false],["def","def",false],["point%","p",true],["miss%","m",true,true],
+     ["slow","vsSlow",true],["fast","vsFast",true],["spin","vsSpin",true],
+     ["unreach%","unreach",true,true],["whiff%","whiff",false,true],["chase%","chase",false,true],
+     ["drive","drive",true],["backspin","backspin",false],["curve","curve",false]
+    ].forEach(function(t){ headRow.appendChild(sortableHeader(t[0], t[1], {groupGap:t[2], defaultAsc:t[3]})); });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    sorted.forEach(function(p){
+      var tr = document.createElement("tr");
+      tr.appendChild(rankNameCell(p));
+      var m = p._m;
+      tr.appendChild(valueBoxCell(m.overall, "overall"));
+      tr.appendChild(valueBoxCell(m.offence, "off"));
+      tr.appendChild(valueBoxCell(m.deffence, "def"));
+      tr.appendChild(rateCell(m.pmDetail.pointRate, "p", {groupGap:true, score:m.pointScore}));
+      tr.appendChild(rateCell(m.pmDetail.missRate, "m", {higherIsBetter:false, score:m.missScore}));
+      tr.appendChild(valueBoxCell(m.vsSlow, "vsSlow", {groupGap:true}));
+      tr.appendChild(valueBoxCell(m.vsFast, "vsFast"));
+      tr.appendChild(valueBoxCell(m.vsSpin, "vsSpin"));
+      tr.appendChild(rateCell(m.unreachRate, "unreach", {higherIsBetter:false, groupGap:true, score:m.unreachScore}));
+      tr.appendChild(rateCell(m.whiffRate, "whiff", {higherIsBetter:false, score:m.whiffScore}));
+      tr.appendChild(rateCell(m.chaseRate, "chase", {higherIsBetter:false, score:m.chaseScore}));
+      tr.appendChild(valueBoxCell(m.drive.score, "drive", {groupGap:true}));
+      tr.appendChild(valueBoxCell(m.backspin.score, "backspin"));
+      tr.appendChild(valueBoxCell(m.curve.score, "curve"));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+  }
+
+  /** ---- 球種: 自分が打つときの強さ(Value)と、相手から来るときの強さ(VS)のランキング ---- */
+  function renderShotKindTable(panel){
+    var rows = Object.keys(players).map(function(id){ return players[id]; }).filter(function(p){ return p.sampleCount >= 100; });
+    if (rows.length === 0){ panel.appendChild(el("div","rank-empty","1球ごとのサンプルが100球以上のプレイヤーがいません")); return; }
+    rows.forEach(function(p){ if (!p._m) p._m = computeMetrics(p.learn); });
+
+    var columns = [];
+    DISPLAY_ORDER.forEach(function(k){ columns.push({ key:"off."+k, value:function(p){ return p._m.wheel[k].score; } }); });
+    DISPLAY_ORDER.forEach(function(k){ columns.push({ key:"def."+k, value:function(p){ return p._m.wheel[k].defenseValue; } }); });
+    var sorted = rankState.sortKey ? sortRows(rows, columns)
+        : rows.slice().sort(function(a,b){ return (b._m.overall||0) - (a._m.overall||0); });
+
+    panel.appendChild(el("div","rank-note",
+        "1球ごとのサンプルが100球未満のプレイヤーは表示していません。左(Value)=自分がその球種を打ったときの強さ、右(VS)=相手からその球種が来たときの強さ。"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var groupRow = el("tr","rank-group");
+    groupRow.appendChild(document.createElement("th"));
+    var g1 = document.createElement("th"); g1.textContent = "Value"; g1.colSpan = 6; groupRow.appendChild(g1);
+    var g2 = document.createElement("th"); g2.textContent = "VS"; g2.colSpan = 6; g2.classList.add("group-gap"); groupRow.appendChild(g2);
+    thead.appendChild(groupRow);
+    var headRow = document.createElement("tr");
+    headRow.appendChild(document.createElement("th"));
+    DISPLAY_ORDER.forEach(function(k){ headRow.appendChild(sortableHeader(KIND_LABEL_EN[k], "off."+k)); });
+    DISPLAY_ORDER.forEach(function(k, i){ headRow.appendChild(sortableHeader(KIND_LABEL_EN[k], "def."+k, {groupGap: i===0})); });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    sorted.forEach(function(p){
+      var tr = document.createElement("tr");
+      tr.appendChild(rankNameCell(p));
+      DISPLAY_ORDER.forEach(function(k){ tr.appendChild(valueBoxCell(p._m.wheel[k].score, "off."+k)); });
+      DISPLAY_ORDER.forEach(function(k, i){ tr.appendChild(valueBoxCell(p._m.wheel[k].defenseValue, "def."+k, {groupGap: i===0})); });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+  }
+
+  /* ============================================================
+   * 試合結果ページ(試合全般はrecord.ymlから作成。大会・リーグはtournament.xlsx/league.xlsxの
+   * 読み込みに対応するまでの間、未対応のプレースホルダーのまま)
+   * ============================================================ */
+  var resultsState = { subTab: "all" };
+
+  var FORMAT_COLOR = { singles:"#f0c400", doubles:"#e63946" };
+  var COURT_COLOR = { HARD:"#00a29a", CLAY:"#ea5514", GRASS:"#00913a", OMNI:"#8fc31f" };
+
+  /** 色付きの丸みを帯びたタグ(FORMAT/COURT列に使う)を持つ<td> */
+  function tagCell(text, color){
+    var td = document.createElement("td");
+    if (text == null){ td.textContent = "―"; return td; }
+    td.innerHTML = '<span class="rate-chip" style="background:' + (color || "#8a97a1") + '">' + text + '</span>';
+    return td;
+  }
+
+  function renderResultsPage(){
+    var container = document.getElementById("pageResults");
+    container.innerHTML = "";
+    var subTabs = el("div","sub-tabs");
+    [["all","ALL MATCHES"],["singles","SINGLES"],["doubles","DOUBLES"],["tournament","TOURNAMENT"],["league","LEAGUE"]].forEach(function(t){
+      var tab = el("div","sub-tab" + (resultsState.subTab===t[0] ? " active" : ""), t[1]);
+      tab.addEventListener("click", function(){
+        if (resultsState.subTab === t[0]) return;
+        resultsState.subTab = t[0];
+        renderResultsPage();
+      });
+      subTabs.appendChild(tab);
+    });
+    container.appendChild(subTabs);
+    var panel = el("div","rank-panel");
+    container.appendChild(panel);
+    if (resultsState.subTab === "all") renderAllMatchesTable(panel, null);
+    else if (resultsState.subTab === "singles") renderAllMatchesTable(panel, "singles");
+    else if (resultsState.subTab === "doubles") renderAllMatchesTable(panel, "doubles");
+    else if (resultsState.subTab === "tournament") renderTournamentResults(panel);
+    else renderLeagueResults(panel);
+  }
+
+  /* ============================================================
+   * 大会結果(tournament.xlsxの「◆ 試合結果」「◆ 順位」セクションを読む。
+   * 罫線で描かれたトーナメント表そのものは再現せず、代わりに結果を表として出す)
+   * ============================================================ */
+  var tournamentState = { sheet: null };
+
+  /** tournament.xlsxの1シート(1大会)を解析する */
+  function parseTournamentSheet(sheet){
+    var rows = XLSX.utils.sheet_to_json(sheet, { header:1, defval:null, raw:true });
+    var title = (rows[0] && rows[0][0]) || "";
+    var info = (rows[1] && rows[1][0]) || "";
+    var resultsIdx = -1, standingsIdx = -1;
+    rows.forEach(function(row, i){
+      if (!row || row[0] == null) return;
+      var v = String(row[0]);
+      if (v.indexOf("試合結果") >= 0) resultsIdx = i;
+      if (v.indexOf("順位") >= 0) standingsIdx = i;
+    });
+    var matches = [];
+    if (resultsIdx >= 0){
+      var start = resultsIdx + 2; // 見出し行の次が列見出し、その次からデータ
+      var end = standingsIdx >= 0 ? standingsIdx : rows.length;
+      for (var r = start; r < end; r++){
+        var row = rows[r];
+        if (!row || row[1] == null) continue; // 勝者列が無ければ空行とみなす
+        matches.push({ round: row[0], winner: row[1], loser: row[2], sets: row[3], detail: row[4] });
+      }
+    }
+    var standings = [];
+    if (standingsIdx >= 0){
+      for (var r2 = standingsIdx + 1; r2 < rows.length; r2++){
+        var row2 = rows[r2];
+        if (row2 && row2[0] != null) standings.push(String(row2[0]));
+      }
+    }
+    return { title: String(title), info: String(info), matches: matches, standings: standings };
+  }
+
+  function renderTournamentResults(panel){
+    if (!state.tournamentWb){
+      panel.appendChild(el("div","rank-empty","tournament.xlsxを読み込んでください(上部のアップロード欄)。"));
+      return;
+    }
+    var wb = state.tournamentWb;
+    var sheetNames = wb.SheetNames || [];
+    if (sheetNames.length === 0){
+      panel.appendChild(el("div","rank-empty","大会のシートが見つかりません。"));
+      return;
+    }
+    if (!tournamentState.sheet || sheetNames.indexOf(tournamentState.sheet) < 0) tournamentState.sheet = sheetNames[0];
+
+    var picker = el("div","matchup-picker");
+    var sel = document.createElement("select");
+    sel.className = "matchup-select";
+    sheetNames.forEach(function(name){
+      var opt = document.createElement("option");
+      opt.value = name; opt.textContent = name;
+      if (name === tournamentState.sheet) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", function(){ tournamentState.sheet = sel.value; renderResultsPage(); });
+    picker.appendChild(sel);
+    panel.appendChild(picker);
+
+    var data = parseTournamentSheet(wb.Sheets[tournamentState.sheet]);
+    panel.appendChild(el("div","panel-title", data.title || tournamentState.sheet));
+    if (data.info) panel.appendChild(el("div","rank-note", data.info));
+
+    if (data.standings.length){
+      panel.appendChild(el("div","panel-title mt","STANDINGS"));
+      var stBox = el("div","standings-box");
+      var stTable = document.createElement("table");
+      stTable.className = "rank-table";
+      var stHead = document.createElement("thead");
+      var stHeadRow = document.createElement("tr");
+      ["PLACEMENT","NAME"].forEach(function(h){ stHeadRow.appendChild(el("th","",h)); });
+      stHead.appendChild(stHeadRow);
+      stTable.appendChild(stHead);
+      var stBody = document.createElement("tbody");
+      data.standings.forEach(function(line){
+        var parsed = parsePlacementLine(String(line));
+        var tr = document.createElement("tr");
+        tr.appendChild(tagCell(parsed.label || "―", placementBadgeColor(parsed.label)));
+        var nameTd = document.createElement("td");
+        nameTd.className = "rank-name";
+        nameTd.textContent = parsed.name;
+        tr.appendChild(nameTd);
+        stBody.appendChild(tr);
+      });
+      stTable.appendChild(stBody);
+      stBox.appendChild(stTable);
+      panel.appendChild(stBox);
+    }
+
+    if (data.matches.length === 0){
+      panel.appendChild(el("div","panel-title mt","MATCH RESULTS"));
+      panel.appendChild(el("div","rank-empty","この大会の試合結果はまだありません(開催前、または進行中の可能性があります)。"));
+      return;
+    }
+
+    panel.appendChild(el("div","panel-title mt","BRACKET"));
+    renderBracket(panel, data.matches);
+
+    panel.appendChild(el("div","panel-title mt","MATCH RESULTS"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var headRow = document.createElement("tr");
+    ["ROUND","WINNER","LOSER","SETS","SET SCORES"].forEach(function(h){ headRow.appendChild(el("th","",h)); });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    data.matches.forEach(function(m){
+      var tr = document.createElement("tr");
+      var roundTd = document.createElement("td");
+      roundTd.className = "rank-name";
+      roundTd.textContent = m.round != null ? String(m.round) : "―";
+      tr.appendChild(roundTd);
+      tr.appendChild(dataCell(m.winner != null ? String(m.winner) : "―"));
+      tr.appendChild(dataCell(m.loser != null ? String(m.loser) : "―"));
+      tr.appendChild(dataCell(m.sets != null ? String(m.sets) : "―"));
+      tr.appendChild(dataCell(m.detail != null ? String(m.detail) : "―"));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+  }
+
+  /**
+   * 「◆ 試合結果」の行(登場順=ラウンド→枠順)から二分木(森)を組み立てて描画する。
+   * シード(不戦勝)がいると、そのラウンドの枠数が綺麗に半分にならないため、単純に
+   * 「ラウンドr のi番目はラウンドr-1の2i・2i+1番目」という位置ベースの組み立ては使わない。
+   * 代わりに、一番進んだラウンドの各試合から出発し、勝者・敗者の名前を1つ前のラウンドの
+   * 試合一覧の中から探して遡っていく(見つからなければ、その選手はそこまでシードで
+   * 勝ち上がってきたということなので、そこを「一人だけの枠」として木の葉にする)。
+   * これで「一人一枠から伸びていく」形になり、シードがあっても崩れない。
+   */
+  function renderBracket(panel, matches){
+    var order = [], byRound = {}, thirdPlace = null;
+    matches.forEach(function(m){
+      var r = String(m.round);
+      if (r === "3位決定戦"){ thirdPlace = m; return; }
+      if (!byRound[r]){ byRound[r] = []; order.push(r); }
+      byRound[r].push(m);
+    });
+    if (order.length === 0){
+      if (thirdPlace) panel.appendChild(el("div","rank-note","この大会には3位決定戦のみが記録されています。"));
+      return;
+    }
+
+    function findMatch(roundIdx, name){
+      if (roundIdx < 0) return null;
+      var list = byRound[order[roundIdx]] || [];
+      for (var i = 0; i < list.length; i++){
+        if (list[i].winner === name || list[i].loser === name) return list[i];
+      }
+      return null;
+    }
+    /**
+     * 選手1人分の枠を、その人が直前のラウンドで戦った試合まで遡って組み立てる(無ければ一人だけの葉)。
+     * roundIdxが0(一番最初のラウンド)まで遡り切ったら、そこはもう「最初の試合」そのものなので
+     * それ以上は遡らず children を null にする(遡る前のラウンドが存在しないだけで、シードではない)
+     */
+    function buildFrom(name, roundIdx){
+      var m = findMatch(roundIdx, name);
+      if (!m) return { name: name, match: null, children: null };
+      var children = roundIdx - 1 >= 0 ? [ buildFrom(m.winner, roundIdx - 1), buildFrom(m.loser, roundIdx - 1) ] : null;
+      return { match: m, round: order[roundIdx], children: children };
+    }
+
+    var lastIdx = order.length - 1;
+    var lastRoundLabel = order[lastIdx];
+    var isFinalRound = lastRoundLabel === "決勝";
+    var roots = byRound[lastRoundLabel].map(function(m){
+      return {
+        match: m, round: lastRoundLabel,
+        children: [ buildFrom(m.winner, lastIdx - 1), buildFrom(m.loser, lastIdx - 1) ]
+      };
+    });
+
+    var wrap = el("div","bracket-wrap");
+    var tree = el("div","bracket-tree");
+    roots.forEach(function(root){ tree.appendChild(renderBracketNode(root, isFinalRound)); });
+    wrap.appendChild(tree);
+    panel.appendChild(wrap);
+
+    if (thirdPlace){
+      panel.appendChild(el("div","panel-title mt small","3RD PLACE MATCH"));
+      var box = el("div","bracket-wrap");
+      box.appendChild(bracketMatchCard({ match: thirdPlace, round: "3位決定戦" }, false));
+      panel.appendChild(box);
+    }
+  }
+
+  function renderBracketNode(node, isFinal){
+    var wrap = el("div","b-node");
+    if (node.children){
+      var childrenWrap = el("div","b-children");
+      node.children.forEach(function(c){
+        var childBox = el("div","b-child");
+        childBox.appendChild(renderBracketNode(c, false));
+        childrenWrap.appendChild(childBox);
+      });
+      wrap.appendChild(childrenWrap);
+      var matchWrap = el("div","b-match-wrap");
+      matchWrap.appendChild(bracketMatchCard(node, isFinal));
+      wrap.appendChild(matchWrap);
+    } else {
+      wrap.appendChild(bracketMatchCard(node, false));
+    }
+    return wrap;
+  }
+
+  /** node = {match, round} (通常の1試合) か {name} (シードで勝ち上がってきた、対戦相手の記録が無い一人だけの枠) */
+  function bracketMatchCard(node, isFinal){
+    var box = el("div","b-match" + (isFinal ? " final" : ""));
+    if (node.round) box.appendChild(el("div","b-round-label", node.round));
+    var m = node.match;
+    if (!m){
+      if (node.name){
+        var seedRow = el("div","b-row win");
+        seedRow.appendChild(el("span","b-name", String(node.name)));
+        box.appendChild(seedRow);
+        box.appendChild(el("div","b-seed-note","シード"));
+      } else {
+        box.appendChild(el("div","b-tbd","TBD"));
+      }
+      return box;
+    }
+    var sets = m.sets != null ? String(m.sets).split("-") : [null, null];
+    var winRow = el("div","b-row win");
+    winRow.appendChild(el("span","b-name", m.winner != null ? String(m.winner) : "―"));
+    winRow.appendChild(el("span","b-sets", sets[0] || ""));
+    var loseRow = el("div","b-row lose");
+    loseRow.appendChild(el("span","b-name", m.loser != null ? String(m.loser) : "―"));
+    loseRow.appendChild(el("span","b-sets", sets[1] || ""));
+    box.appendChild(winRow);
+    box.appendChild(loseRow);
+    if (m.detail) box.appendChild(el("div","b-detail", String(m.detail)));
+    return box;
+  }
+
+  /* ============================================================
+   * リーグ結果(league.xlsxの総当たり表・「◆ 試合結果」「◆ 順位」セクションを読む)
+   * ============================================================ */
+  var leagueState = { sheet: null };
+  var RANK_BADGE_COLOR = { 1:"#d4af37", 2:"#9aa5ad", 3:"#b5651d" };
+
+  /** "1. sota2486 (note)" のようなチームラベルから、順位番号や注記を取り除いた名前だけを返す */
+  function cleanTeamLabel(label){
+    return String(label == null ? "" : label).replace(/^\d+\.\s*/, "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+  }
+  /** "1位" のような順位テキストから数値部分だけを取り出す(無ければnull) */
+  function rankNum(rankText){
+    var m = /^(\d+)/.exec(String(rankText == null ? "" : rankText));
+    return m ? parseInt(m[1], 10) : null;
+  }
+  /** "優勝: sota2486" のような大会の順位1行を {label:"優勝", name:"sota2486"} に分解する */
+  function parsePlacementLine(line){
+    var m = /^(.*?)[:：]\s*(.*)$/.exec(line);
+    if (!m) return { label: "", name: line };
+    // 古いtournament.xlsx(「第1回戦敗退」表記)でも新しい表記(「1回戦敗退」)と揃うように、
+    // 先頭の「第」は取り除く
+    return { label: m[1].replace(/^第/, ""), name: m[2] };
+  }
+  /** 大会の順位ラベル(優勝/準優勝/3位/ベスト4など)から、リーグの順位バッジと同じ配色を割り当てる */
+  function placementBadgeColor(label){
+    label = String(label || "");
+    if (label.indexOf("優勝") === 0) return RANK_BADGE_COLOR[1];
+    if (label.indexOf("準優勝") === 0) return RANK_BADGE_COLOR[2];
+    if (label.indexOf("3位") === 0 || label.indexOf("4位") === 0 || label.indexOf("ベスト4") === 0) return RANK_BADGE_COLOR[3];
+    return "#8a97a1";
+  }
+
+  /** league.xlsxの1シート(1リーグ)を解析する */
+  function parseLeagueSheet(sheet){
+    var rows = XLSX.utils.sheet_to_json(sheet, { header:1, defval:null, raw:true });
+    var title = (rows[0] && rows[0][0]) || "";
+    var info = (rows[1] && rows[1][0]) || "";
+    var headerIdx = -1, resultsIdx = -1, standingsIdx = -1;
+    rows.forEach(function(row, i){
+      if (!row || row[0] == null) return;
+      var v = String(row[0]);
+      if (headerIdx < 0 && v.indexOf("チーム") >= 0) headerIdx = i;
+      if (v.indexOf("試合結果") >= 0) resultsIdx = i;
+      if (v.indexOf("順位") >= 0) standingsIdx = i;
+    });
+
+    var teams = [];
+    if (headerIdx >= 0){
+      var headerRow = rows[headerIdx] || [];
+      var winColIdx = -1;
+      for (var c = 1; c < headerRow.length; c++){ if (headerRow[c] === "勝"){ winColIdx = c; break; } }
+      if (winColIdx >= 0){
+        var teamNames = headerRow.slice(1, winColIdx);
+        var loseColIdx = winColIdx + 1, diffColIdx = winColIdx + 2, rankColIdx = winColIdx + 3;
+        var n = teamNames.length;
+        for (var i = 0; i < n; i++){
+          var r = rows[headerIdx + 1 + i] || [];
+          teams.push({
+            label: r[0] != null ? String(r[0]) : teamNames[i],
+            grid: r.slice(1, 1 + n),
+            win: r[winColIdx], lose: r[loseColIdx], diff: r[diffColIdx], rank: r[rankColIdx]
+          });
+        }
+      }
+    }
+
+    var matches = [];
+    if (resultsIdx >= 0){
+      var start = resultsIdx + 2; // 見出し行の次が列見出し、その次からデータ
+      var end = standingsIdx >= 0 ? standingsIdx : rows.length;
+      for (var r2 = start; r2 < end; r2++){
+        var row2 = rows[r2];
+        if (!row2 || row2[1] == null) continue; // 敗者列が無ければ空行(「まだありません」含む)とみなす
+        matches.push({ winner: row2[0], loser: row2[1], sets: row2[2], detail: row2[3] });
+      }
+    }
+    var standingsText = [];
+    if (standingsIdx >= 0){
+      for (var r3 = standingsIdx + 1; r3 < rows.length; r3++){
+        var row3 = rows[r3];
+        if (row3 && row3[0] != null) standingsText.push(String(row3[0]) + (row3[1] != null ? "  " + String(row3[1]) : ""));
+      }
+    }
+    return { title: String(title), info: String(info), teams: teams, matches: matches, standingsText: standingsText };
+  }
+
+  function renderLeagueResults(panel){
+    if (!state.leagueWb){
+      panel.appendChild(el("div","rank-empty","league.xlsxを読み込んでください(上部のアップロード欄)。"));
+      return;
+    }
+    var wb = state.leagueWb;
+    var sheetNames = wb.SheetNames || [];
+    if (sheetNames.length === 0){
+      panel.appendChild(el("div","rank-empty","リーグのシートが見つかりません。"));
+      return;
+    }
+    if (!leagueState.sheet || sheetNames.indexOf(leagueState.sheet) < 0) leagueState.sheet = sheetNames[0];
+
+    var picker = el("div","matchup-picker");
+    var sel = document.createElement("select");
+    sel.className = "matchup-select";
+    sheetNames.forEach(function(name){
+      var opt = document.createElement("option");
+      opt.value = name; opt.textContent = name;
+      if (name === leagueState.sheet) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", function(){ leagueState.sheet = sel.value; renderResultsPage(); });
+    picker.appendChild(sel);
+    panel.appendChild(picker);
+
+    var data = parseLeagueSheet(wb.Sheets[leagueState.sheet]);
+    panel.appendChild(el("div","panel-title", data.title || leagueState.sheet));
+    if (data.info) panel.appendChild(el("div","rank-note", data.info));
+
+    if (data.teams.length === 0){
+      panel.appendChild(el("div","rank-empty","このリーグの総当たり表を読み取れませんでした。"));
+      return;
+    }
+
+    panel.appendChild(el("div","panel-title mt","STANDINGS"));
+    var standingsBox = el("div","standings-box");
+    var standingsTable = document.createElement("table");
+    standingsTable.className = "rank-table";
+    var sHead = document.createElement("thead");
+    var sHeadRow = document.createElement("tr");
+    ["RANK","TEAM","W","L","+/-"].forEach(function(h){ sHeadRow.appendChild(el("th","",h)); });
+    sHead.appendChild(sHeadRow);
+    standingsTable.appendChild(sHead);
+    var sBody = document.createElement("tbody");
+    data.teams.slice().sort(function(a,b){
+      var ra = rankNum(a.rank), rb = rankNum(b.rank);
+      if (ra == null) return 1; if (rb == null) return -1;
+      return ra - rb;
+    }).forEach(function(t){
+      var tr = document.createElement("tr");
+      tr.appendChild(tagCell(t.rank != null ? String(t.rank) : "―", RANK_BADGE_COLOR[rankNum(t.rank)] || "#8a97a1"));
+      var nameTd = document.createElement("td");
+      nameTd.className = "rank-name";
+      nameTd.textContent = cleanTeamLabel(t.label);
+      tr.appendChild(nameTd);
+      tr.appendChild(dataCell(t.win != null ? String(t.win) : "―"));
+      tr.appendChild(dataCell(t.lose != null ? String(t.lose) : "―"));
+      tr.appendChild(dataCell(t.diff != null ? String(t.diff) : "―"));
+      sBody.appendChild(tr);
+    });
+    standingsTable.appendChild(sBody);
+    standingsBox.appendChild(standingsTable);
+    panel.appendChild(standingsBox);
+
+    panel.appendChild(el("div","panel-title mt","ROUND-ROBIN TABLE"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var headRow = document.createElement("tr");
+    headRow.appendChild(el("th","","TEAM"));
+    data.teams.forEach(function(t){ headRow.appendChild(el("th","", cleanTeamLabel(t.label))); });
+    ["W","L","+/-","RANK"].forEach(function(h){ headRow.appendChild(el("th","",h)); });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    data.teams.forEach(function(t){
+      var tr = document.createElement("tr");
+      var nameTd = document.createElement("td");
+      nameTd.className = "rank-name";
+      nameTd.textContent = t.label;
+      tr.appendChild(nameTd);
+      t.grid.forEach(function(cellVal){
+        // null(まだ対戦していない/対角線)は色を付けない。○=勝ち(緑)、×=負け・スキップ(赤)は
+        // どちらも「結果が確定しているマス」なので同じ枠(色付きチップ)で統一して表示する
+        if (cellVal == null){ tr.appendChild(dataCell("―")); return; }
+        var text = String(cellVal);
+        var color = text.indexOf("○") === 0 ? "#00913a" : "#e63946";
+        tr.appendChild(tagCell(text, color));
+      });
+      tr.appendChild(dataCell(t.win != null ? String(t.win) : "―"));
+      tr.appendChild(dataCell(t.lose != null ? String(t.lose) : "―"));
+      tr.appendChild(dataCell(t.diff != null ? String(t.diff) : "―"));
+      tr.appendChild(dataCell(t.rank != null ? String(t.rank) : "―"));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+
+    panel.appendChild(el("div","panel-title mt","MATCH RESULTS"));
+    if (data.matches.length === 0){
+      panel.appendChild(el("div","rank-empty","この総当たり戦の試合結果はまだありません(開催前、または進行中の可能性があります)。"));
+      return;
+    }
+    var table2 = document.createElement("table");
+    table2.className = "rank-table";
+    var thead2 = document.createElement("thead");
+    var headRow2 = document.createElement("tr");
+    ["WINNER","LOSER","SETS","SET SCORES"].forEach(function(h){ headRow2.appendChild(el("th","",h)); });
+    thead2.appendChild(headRow2);
+    table2.appendChild(thead2);
+    var tbody2 = document.createElement("tbody");
+    data.matches.forEach(function(m){
+      var tr = document.createElement("tr");
+      var winnerTd = document.createElement("td");
+      winnerTd.className = "rank-name";
+      winnerTd.textContent = m.winner != null ? String(m.winner) : "―";
+      tr.appendChild(winnerTd);
+      tr.appendChild(dataCell(m.loser != null ? String(m.loser) : "―"));
+      tr.appendChild(dataCell(m.sets != null ? String(m.sets) : "―"));
+      tr.appendChild(dataCell(m.detail != null ? String(m.detail) : "―"));
+      tbody2.appendChild(tr);
+    });
+    table2.appendChild(tbody2);
+    panel.appendChild(table2);
+  }
+
+  function renderAllMatchesTable(panel, formatFilter){
+    if (!state.record){
+      panel.appendChild(el("div","rank-empty","record.ymlを読み込んでください(上部のアップロード欄)。"));
+      return;
+    }
+    var list = formatFilter ? matchRecords.filter(function(m){ return m.format === formatFilter; }) : matchRecords;
+    if (list.length === 0){
+      panel.appendChild(el("div","rank-empty","記録されている試合が見つかりません。"));
+      return;
+    }
+    panel.appendChild(el("div","rank-note",
+        "practice(個人練習)以外の試合(公式戦)を新しい順に並べています。中断した試合はステータス欄に表示されます。"));
+    var table = document.createElement("table");
+    table.className = "rank-table";
+    var thead = document.createElement("thead");
+    var headRow = document.createElement("tr");
+    ["DATE","FORMAT","COURT","RED","BLUE","WINNER","SETS","SET SCORES","STATUS"].forEach(function(h){
+      headRow.appendChild(el("th","",h));
+    });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    list.forEach(function(m){
+      var tr = document.createElement("tr");
+      var dateTd = document.createElement("td");
+      dateTd.className = "rank-name";
+      dateTd.textContent = m.timestamp ? m.timestamp.slice(0,16).replace("T"," ") : "―";
+      tr.appendChild(dateTd);
+      tr.appendChild(tagCell(m.format === "doubles" ? "DOUBLES" : "SINGLES", FORMAT_COLOR[m.format]));
+      tr.appendChild(tagCell(m.surface, m.surface ? COURT_COLOR[m.surface] : null));
+      tr.appendChild(dataCell((m.red && m.red.name) || "―"));
+      tr.appendChild(dataCell((m.blue && m.blue.name) || "―"));
+      tr.appendChild(dataCell(m.winner === "RED" ? (m.red && m.red.name) : m.winner === "BLUE" ? (m.blue && m.blue.name) : "―"));
+      tr.appendChild(dataCell((m.redSets!=null && m.blueSets!=null) ? (m.redSets + "-" + m.blueSets) : "―"));
+      tr.appendChild(dataCell(m.setScores.map(function(s){ return s[0]+"-"+s[1]; }).join(" / ") || "―"));
+      tr.appendChild(dataCell(m.status || "―"));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+  }
+
+  /* ============================================================
+   * 対戦成績ページ(record.ymlから2人の対戦成績・ペア成績を計算する)
+   * ============================================================ */
+  var matchupState = { a: "", b: "" };
+
+  /** nameA視点で、nameAとnameBの対戦成績(シングルス/ダブルス(相手同士)/合計)とペア成績(味方同士)を求める */
+  function computeHeadToHead(nameA, nameB){
+    var singles = { games:0, aWins:0, bWins:0, aPoints:0, bPoints:0, aSets:0, bSets:0 };
+    var doublesOpp = { games:0, aWins:0, bWins:0, aPoints:0, bPoints:0, aSets:0, bSets:0 };
+    var pair = { games:0, wins:0, losses:0, pointsFor:0, pointsAgainst:0, setsFor:0, setsAgainst:0 };
+
+    matchRecords.forEach(function(m){
+      if (m.status !== "COMPLETED" || !m.winner) return;
+      if (m.format === "singles"){
+        var rName = m.red && m.red.name, bName = m.blue && m.blue.name;
+        var aIsRed = rName === nameA && bName === nameB;
+        var aIsBlue = bName === nameA && rName === nameB;
+        if (!aIsRed && !aIsBlue) return;
+        singles.games++;
+        var aPts = aIsRed ? m.redPoints : m.bluePoints, bPts = aIsRed ? m.bluePoints : m.redPoints;
+        var aSets = aIsRed ? m.redSets : m.blueSets, bSets = aIsRed ? m.blueSets : m.redSets;
+        singles.aPoints += aPts||0; singles.bPoints += bPts||0;
+        singles.aSets += aSets||0; singles.bSets += bSets||0;
+        if (m.winner === (aIsRed?"RED":"BLUE")) singles.aWins++; else singles.bWins++;
+      } else {
+        var redNames = [m.red && m.red.aName, m.red && m.red.bName];
+        var blueNames = [m.blue && m.blue.aName, m.blue && m.blue.bName];
+        var aInRed = redNames.indexOf(nameA) >= 0, bInRed = redNames.indexOf(nameB) >= 0;
+        var aInBlue = blueNames.indexOf(nameA) >= 0, bInBlue = blueNames.indexOf(nameB) >= 0;
+        if ((aInRed && bInBlue) || (aInBlue && bInRed)){
+          var aIsRed2 = aInRed;
+          doublesOpp.games++;
+          var aPts2 = aIsRed2 ? m.redPoints : m.bluePoints, bPts2 = aIsRed2 ? m.bluePoints : m.redPoints;
+          var aSets2 = aIsRed2 ? m.redSets : m.blueSets, bSets2 = aIsRed2 ? m.blueSets : m.redSets;
+          doublesOpp.aPoints += aPts2||0; doublesOpp.bPoints += bPts2||0;
+          doublesOpp.aSets += aSets2||0; doublesOpp.bSets += bSets2||0;
+          if (m.winner === (aIsRed2?"RED":"BLUE")) doublesOpp.aWins++; else doublesOpp.bWins++;
+        } else if ((aInRed && bInRed) || (aInBlue && bInBlue)){
+          var selfIsRed = aInRed;
+          pair.games++;
+          var selfPts = selfIsRed ? m.redPoints : m.bluePoints, oppPts = selfIsRed ? m.bluePoints : m.redPoints;
+          var selfSets = selfIsRed ? m.redSets : m.blueSets, oppSets = selfIsRed ? m.blueSets : m.redSets;
+          pair.pointsFor += selfPts||0; pair.pointsAgainst += oppPts||0;
+          pair.setsFor += selfSets||0; pair.setsAgainst += oppSets||0;
+          if (m.winner === (selfIsRed?"RED":"BLUE")) pair.wins++; else pair.losses++;
+        }
+      }
+    });
+
+    var combined = {
+      games: singles.games + doublesOpp.games,
+      aWins: singles.aWins + doublesOpp.aWins, bWins: singles.bWins + doublesOpp.bWins,
+      aPoints: singles.aPoints + doublesOpp.aPoints, bPoints: singles.bPoints + doublesOpp.bPoints,
+      aSets: singles.aSets + doublesOpp.aSets, bSets: singles.bSets + doublesOpp.bSets
+    };
+    return { singles: singles, doubles: doublesOpp, combined: combined, pair: pair };
+  }
+
+  function renderMatchupPage(){
+    var container = document.getElementById("pageMatchup");
+    container.innerHTML = "";
+    var panel = el("div","rank-panel");
+    container.appendChild(panel);
+
+    if (!state.record){
+      panel.appendChild(el("div","rank-empty","record.ymlを読み込んでください(上部のアップロード欄)。"));
+      return;
+    }
+    var names = Object.keys(players).map(function(id){ return players[id].name; }).sort(function(a,b){ return a.localeCompare(b); });
+    if (names.length === 0){
+      panel.appendChild(el("div","rank-empty","選手データが見つかりません。learning.yml/players.ymlも読み込んでください。"));
+      return;
+    }
+
+    var picker = el("div","matchup-picker");
+    function makeSelect(current, onChange){
+      var sel = document.createElement("select");
+      sel.className = "matchup-select";
+      var blank = document.createElement("option");
+      blank.value = ""; blank.textContent = "選手を選択";
+      sel.appendChild(blank);
+      names.forEach(function(n){
+        var opt = document.createElement("option");
+        opt.value = n; opt.textContent = n;
+        if (n === current) opt.selected = true;
+        sel.appendChild(opt);
+      });
+      sel.addEventListener("change", function(){ onChange(sel.value); renderMatchupPage(); });
+      return sel;
+    }
+    picker.appendChild(makeSelect(matchupState.a, function(v){ matchupState.a = v; }));
+    picker.appendChild(el("div","matchup-vs","VS"));
+    picker.appendChild(makeSelect(matchupState.b, function(v){ matchupState.b = v; }));
+    panel.appendChild(picker);
+
+    if (!matchupState.a || !matchupState.b || matchupState.a === matchupState.b){
+      panel.appendChild(el("div","rank-empty","2人の選手を選んでください。"));
+      return;
+    }
+
+    var h2h = computeHeadToHead(matchupState.a, matchupState.b);
+    function statTable(title, data, aLabel, bLabel){
+      panel.appendChild(el("div","panel-title mt", title));
+      if (data.games === 0){
+        panel.appendChild(el("div","rank-note","対戦記録がありません。"));
+        return;
+      }
+      var table = document.createElement("table");
+      table.className = "rank-table";
+      var thead = document.createElement("thead");
+      var hr = document.createElement("tr");
+      ["","GAME","WIN","PT%","SET%","WIN%"].forEach(function(h){ hr.appendChild(el("th","",h)); });
+      thead.appendChild(hr);
+      table.appendChild(thead);
+      var tbody = document.createElement("tbody");
+      [[aLabel, data.aWins, data.bWins, data.aPoints, data.bPoints, data.aSets, data.bSets],
+       [bLabel, data.bWins, data.aWins, data.bPoints, data.aPoints, data.bSets, data.aSets]
+      ].forEach(function(row){
+        var tr = document.createElement("tr");
+        var nameTd = document.createElement("td"); nameTd.className = "rank-name"; nameTd.textContent = row[0];
+        tr.appendChild(nameTd);
+        tr.appendChild(dataCell(String(data.games)));
+        tr.appendChild(dataCell(String(row[1])));
+        tr.appendChild(rateCell(shareRateOf(row[3], row[4])));
+        tr.appendChild(rateCell(shareRateOf(row[5], row[6])));
+        tr.appendChild(rateCell(winRateOf(row[1], row[2])));
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      panel.appendChild(table);
+    }
+    statTable("TOTAL(シングルス+ダブルス、対戦相手として)", h2h.combined, matchupState.a, matchupState.b);
+    statTable("SINGLES", h2h.singles, matchupState.a, matchupState.b);
+    statTable("DOUBLES(相手チームとして対戦)", h2h.doubles, matchupState.a, matchupState.b);
+
+    panel.appendChild(el("div","panel-title mt","PAIR RECORD(同じチームを組んだとき)"));
+    if (h2h.pair.games === 0){
+      panel.appendChild(el("div","rank-note","2人が同じチームを組んだダブルス試合はありません。"));
+    } else {
+      var pTable = document.createElement("table");
+      pTable.className = "rank-table";
+      var pThead = document.createElement("thead");
+      var pHr = document.createElement("tr");
+      ["","GAME","WIN","LOSE","PT%","SET%","WIN%"].forEach(function(h){ pHr.appendChild(el("th","",h)); });
+      pThead.appendChild(pHr);
+      pTable.appendChild(pThead);
+      var pBody = document.createElement("tbody");
+      var tr = document.createElement("tr");
+      var nameTd = document.createElement("td"); nameTd.className = "rank-name";
+      nameTd.textContent = matchupState.a + " & " + matchupState.b;
+      tr.appendChild(nameTd);
+      tr.appendChild(dataCell(String(h2h.pair.games)));
+      tr.appendChild(dataCell(String(h2h.pair.wins)));
+      tr.appendChild(dataCell(String(h2h.pair.losses)));
+      tr.appendChild(rateCell(shareRateOf(h2h.pair.pointsFor, h2h.pair.pointsAgainst)));
+      tr.appendChild(rateCell(shareRateOf(h2h.pair.setsFor, h2h.pair.setsAgainst)));
+      tr.appendChild(rateCell(winRateOf(h2h.pair.wins, h2h.pair.losses)));
+      pBody.appendChild(tr);
+      pTable.appendChild(pBody);
+      panel.appendChild(pTable);
+    }
+  }
+
+  /* ---------- 左パネル ---------- */
+  function renderLeftPanel(p, m){
+    var panel = el("div","panel");
+    var avatarWrap = el("div","avatar-wrap");
+    avatarWrap.appendChild(el("div","avatar", avatarIconHtml(p)));
+    var nameEl = el("div","p-name", escapeHtml(p.name));
+    avatarWrap.appendChild(nameEl);
+    panel.appendChild(avatarWrap);
+
+    // 成績テーブル
+    var table = el("table","stat-table");
+    table.innerHTML = "<thead><tr><th></th><th>G</th><th>W</th><th>L</th><th>Pt%</th><th>Set%</th><th>Win%</th></tr></thead>";
+    var tbody = document.createElement("tbody");
+    var s = p.stats;
+    [["TOTAL", s && s.total],["SINGLES", s && s.singles],["DOUBLES", s && s.doubles]].forEach(function(row){
+      var b = row[1];
+      var tr = document.createElement("tr");
+      if (!b || !b.games){
+        tr.innerHTML = "<td>"+row[0]+"</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td>";
+      } else {
+        var ptPct = safeDiv(b.pointsFor, b.pointsFor+b.pointsAgainst);
+        var setPct = safeDiv(b.setsFor, b.setsFor+b.setsAgainst);
+        var winPct = safeDiv(b.wins, b.games);
+        tr.innerHTML = "<td>"+row[0]+"</td><td>"+b.games+"</td><td>"+b.wins+"</td><td>"+b.losses+"</td><td>"+pct(ptPct)+"</td><td>"+pct(setPct)+"</td><td>"+pct(winPct)+"</td>";
+      }
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    panel.appendChild(table);
+
+    // positioning / playstyle (/tennis player <name> style と同じ基準・既定しきい値で判定、1行にまとめる)
+    var playStyle = computePlayStyle(p.learn);
+    panel.appendChild(el("div","panel-title mt","PLAYSTYLE"));
+    panel.appendChild(el("div","kv-line",
+      '<span class="k">タイプ・傾向</span><span class="v">'
+      + (playStyle ? (playStyle.style + "・" + playStyle.pos) : "データ不足")
+      + '</span>'));
+    panel.appendChild(el("div","kv-line",
+      '<span class="k">平均打球位置・ボレー率</span><span class="v">'
+      + (playStyle ? (round1(playStyle.netDistanceAvg) + "block ・ " + pct(playStyle.volleyRate)) : "データ不足")
+      + '</span>'));
+
+    // suitable(コート/シングルス・ダブルスの適正)
+    renderSuitableSection(panel, m);
+
+    // rate
+    panel.appendChild(el("div","panel-title mt","RATE"));
+    var rate = p.stats ? p.stats.rating : null;
+    var rateRow = el("div","rate-row");
+    var rateNumEl = el("span","rate-num", rate!=null ? Math.round(rate) : "―");
+    if (rate != null) rateNumEl.style.color = colorForScore(ratingScore(rate));
+    rateRow.appendChild(rateNumEl);
+    if (p.stats && p.stats.history.length >= 2){
+      var last = p.stats.history[p.stats.history.length-1][1];
+      var prev = p.stats.history[p.stats.history.length-2][1];
+      var d = last - prev;
+      var dEl = el("span","rate-delta " + (d>=0?"up":"down"), (d>=0?"+":"") + Math.round(d*10)/10);
+      rateRow.appendChild(dEl);
+    }
+    panel.appendChild(rateRow);
+
+    // rate trend
+    panel.appendChild(el("div","panel-title mt","RATE TREND"));
+    var sparkWrap = el("div","sparkline-wrap");
+    if (p.stats && p.stats.history.length >= 2){
+      sparkWrap.appendChild(renderSparkline(p.stats.history));
+    } else {
+      sparkWrap.appendChild(el("div","spark-empty","月別データが不足しています"));
+    }
+    panel.appendChild(sparkWrap);
+
+    return panel;
+  }
+
+  /**
+   * /tennis player <名前> style と全く同じ基準・計算式でプレースタイル(攻守のタイプ)と
+   * ポジショニング(立ち位置)を求める。しきい値は config.yml の player-style.* の既定値
+   * (AiLearningManager.describeStyle と同一)。サーバー側でこれを上書きしている場合は
+   * 実際の判定とズレる可能性がある。
+   * コマンドの既定(dataset=latest)に合わせ、1球ごとの直近サンプルログから算出する。
+   * シングルスのデータ(無ければ全体)を対象にする(コマンド側も singlesDataOf を使うため)。
+   */
+  function computePlayStyle(learn){
+    var singlesSwings = learn.samples.filter(function(s){ return s.kind === "S" && !s.doubles; });
+    var swingSamples = singlesSwings.length > 0 ? singlesSwings : learn.samples.filter(function(s){ return s.kind === "S"; });
+    var swings = 0, volleyCount = 0, netDistWeighted = 0;
+    var shotSum = { STRAIGHT:0, SMASH:0, LOB:0, WEAK_LOB:0, DROP:0 };
+    swingSamples.forEach(function(s){
+      swings++;
+      netDistWeighted += s.netDistance || 0;
+      if (s.volley) volleyCount++;
+      var k = RETURNABLE[s.shotIndex];
+      if (k) shotSum[k]++;
+    });
+    if (swings <= 0) return null;
+
+    var netDistanceAvg = netDistWeighted / swings;
+    var smash = shotSum.SMASH / swings;
+    var drop = shotSum.DROP / swings;
+    var normalLob = shotSum.LOB / swings;
+    var weakLob = shotSum.WEAK_LOB / swings;
+    var allLob = normalLob + weakLob;
+    var straight = shotSum.STRAIGHT / swings;
+    var volley = volleyCount / swings;
+
+    // config.yml の player-style.* と同じ値(2026-09-01時点)
+    var counterSmashTh = 0.15, counterLobTh = 0.25, tricksterTh = 0.30;
+    var allDropTh = 0.05, allLobTh = 0.10, allSmashTh = 0.15;
+    var solidStraightTh = 0.70, solidLobTh = 0.05, solidVolleyMaxTh = 0.40;
+    var attackSmashTh = 0.15, attackStraightTh = 0.50, defenseTh = 0.40;
+    var netTh = 0.4, backTh = 9;
+
+    var isCounter = smash >= counterSmashTh && normalLob >= counterLobTh;
+    var isTrickster = (drop + weakLob) >= tricksterTh;
+    var isAllRounderBase = drop >= allDropTh && normalLob >= allLobTh && smash >= allSmashTh;
+    var isSolid = straight >= solidStraightTh && normalLob >= solidLobTh && volley <= solidVolleyMaxTh;
+    var isAttack = smash >= attackSmashTh && straight >= attackStraightTh;
+    var isDefense = allLob >= defenseTh;
+
+    var tier1Count = (isCounter?1:0) + (isTrickster?1:0) + (isAllRounderBase?1:0) + (isSolid?1:0);
+    var tier2Count = (isAttack?1:0) + (isDefense?1:0);
+    var style;
+    if (tier2Count >= 2){
+      style = "オールラウンダー型";
+    } else if (tier1Count >= 2){
+      style = "バランス型";
+    } else if (tier1Count === 1 && tier2Count === 1){
+      if (isCounter) style = "カウンター型";
+      else if (isTrickster) style = "技巧派";
+      else if (isSolid) style = "堅実派";
+      else style = "オールラウンダー型";
+    } else if (tier1Count === 1){
+      if (isCounter) style = "カウンター型";
+      else if (isTrickster) style = "技巧派";
+      else if (isSolid) style = "堅実派";
+      else style = "オールラウンダー型";
+    } else if (tier2Count === 1){
+      style = isAttack ? "攻撃型" : "守備型";
+    } else {
+      style = "バランス型";
+    }
+
+    var netEnd = volley >= netTh;
+    var backEnd = netDistanceAvg >= backTh;
+    var pos;
+    if (netEnd === backEnd) pos = "中間型";
+    else if (netEnd) pos = "ネットプレー主体";
+    else pos = "後方型";
+
+    return { style: style, pos: pos, netDistanceAvg: netDistanceAvg, volleyRate: volley };
+  }
+
+  /** レートの推移(月ごとの区切り線と、基準線として3000のラインを付けたスパークライン) */
+  function renderSparkline(history){
+    var w = 280, h = 64, pad = 6, plotBottom = h - 16; // 下に月ラベル用の余白を確保
+    var REFERENCE_RATING = 3000;
+    var vals = history.map(function(h){ return h[1]; }).concat([REFERENCE_RATING]);
+    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
+    if (min === max){ min -= 1; max += 1; }
+    var svgns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(svgns, "svg");
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+
+    function xOf(i){ return pad + (w-2*pad) * (history.length===1 ? 0 : i/(history.length-1)); }
+    function yOf(v){ return plotBottom - (plotBottom-pad) * ((v-min)/(max-min)); }
+
+    // 3000のライン(基準線)
+    var refY = yOf(REFERENCE_RATING);
+    var refLine = document.createElementNS(svgns,"line");
+    refLine.setAttribute("x1", pad); refLine.setAttribute("x2", w-pad);
+    refLine.setAttribute("y1", refY.toFixed(1)); refLine.setAttribute("y2", refY.toFixed(1));
+    refLine.setAttribute("stroke", "var(--ink-3)");
+    refLine.setAttribute("stroke-width", "1");
+    refLine.setAttribute("stroke-dasharray", "3,2");
+    svg.appendChild(refLine);
+    var refLabel = document.createElementNS(svgns,"text");
+    refLabel.setAttribute("x", w - pad);
+    refLabel.setAttribute("y", (refY - 2).toFixed(1));
+    refLabel.setAttribute("font-size", "6");
+    refLabel.setAttribute("text-anchor", "end");
+    refLabel.setAttribute("fill", "var(--ink-3)");
+    refLabel.textContent = "3000";
+    svg.appendChild(refLabel);
+
+    // 月の区切り線 + ラベル(データ点=各月なので、混雑しないよう間引いて表示)
+    var maxLabels = Math.max(2, Math.floor(w / 34));
+    var step = Math.max(1, Math.ceil(history.length / maxLabels));
+    history.forEach(function(hist, i){
+      var x = xOf(i);
+      var grid = document.createElementNS(svgns,"line");
+      grid.setAttribute("x1", x.toFixed(1)); grid.setAttribute("x2", x.toFixed(1));
+      grid.setAttribute("y1", pad); grid.setAttribute("y2", plotBottom);
+      grid.setAttribute("stroke", "var(--line-strong)");
+      grid.setAttribute("stroke-width", "0.5");
+      svg.appendChild(grid);
+
+      var isLast = i === history.length - 1;
+      if (i % step !== 0 && !isLast) return;
+      var label = document.createElementNS(svgns,"text");
+      label.setAttribute("x", x.toFixed(1));
+      label.setAttribute("y", h - 3);
+      label.setAttribute("font-size", "6");
+      label.setAttribute("text-anchor", i === 0 ? "start" : (isLast ? "end" : "middle"));
+      label.setAttribute("fill", "var(--ink-3)");
+      label.textContent = (hist[0] || "").slice(2); // "yyyy-MM" -> "yy-MM"
+      svg.appendChild(label);
+    });
+
+    var coords = history.map(function(hist, i){ return [xOf(i), yOf(hist[1])]; });
+    var d = coords.map(function(c,i){ return (i===0?"M":"L") + c[0].toFixed(1) + " " + c[1].toFixed(1); }).join(" ");
+    var areaD = d + " L" + coords[coords.length-1][0].toFixed(1) + " " + plotBottom + " L" + coords[0][0].toFixed(1) + " " + plotBottom + " Z";
+
+    var area = document.createElementNS(svgns,"path");
+    area.setAttribute("d", areaD);
+    area.setAttribute("fill", "var(--accent-soft)");
+    svg.appendChild(area);
+
+    var line = document.createElementNS(svgns,"path");
+    line.setAttribute("d", d);
+    line.setAttribute("fill","none");
+    line.setAttribute("stroke","var(--accent)");
+    line.setAttribute("stroke-width","2");
+    line.setAttribute("stroke-linecap","round");
+    line.setAttribute("stroke-linejoin","round");
+    svg.appendChild(line);
+
+    var lastC = coords[coords.length-1];
+    var dot = document.createElementNS(svgns,"circle");
+    dot.setAttribute("cx", lastC[0]); dot.setAttribute("cy", lastC[1]); dot.setAttribute("r","3");
+    dot.setAttribute("fill","var(--accent)");
+    svg.appendChild(dot);
+
+    var titleEl = document.createElementNS(svgns,"title");
+    titleEl.textContent = history.map(function(h){ return h[0]+": "+Math.round(h[1]); }).join("\n");
+    svg.appendChild(titleEl);
+
+    return svg;
+  }
+
+  /* ---------- 中央パネル(ステータス) ---------- */
+  /** opts.raw: このスコアのもとになった実際の指標(割合等)を、pct()等で整形済みの文字列で渡すと右に灰色で出る */
+  function meterRow(label, score, opts){
+    opts = opts || {};
+    var row = el("div","meter-row" + (opts.gap?" section-gap":""));
+    var labelEl = el("div","meter-label"+(opts.strong?" strong":""), label);
+    if (opts.desc) labelEl.title = opts.desc;
+    row.appendChild(labelEl);
+    var track = el("div","meter-track");
+    var fill = el("div","meter-fill");
+    var w = score==null ? 0 : clamp(score,0,100);
+    // 開いた瞬間に0%から伸びるアニメーションにするため、最初は0%で作っておき、
+    // 描画された後(次の次のフレーム)で本来の幅にする。1回のrAFだけだと最初のスタイル
+    // 適用と同じフレームに丸め込まれてしまうことがあるため、2重にして確実にトランジションさせる
+    fill.style.width = "0%";
+    fill.style.background = colorForScore(score);
+    track.appendChild(fill);
+    row.appendChild(track);
+    var badge = el("div","meter-badge", score==null?"―":Math.round(score));
+    badge.style.background = colorForScore(score);
+    row.appendChild(badge);
+    row.appendChild(el("div","meter-raw", opts.raw != null ? opts.raw : ""));
+    raf(function(){
+      raf(function(){ fill.style.width = w + "%"; });
+    });
+    return row;
+  }
+
+  function renderMidPanel(p, m){
+    var panel = el("div","panel");
+    panel.appendChild(el("div","panel-title","STATUS"));
+    panel.appendChild(meterRow("OVERALL", m.overall, {strong:true,
+      desc:"Offence・Deffence・Point%・Miss%を組み合わせた総合スコア(1:2:1.25の重み付け)"}));
+    panel.appendChild(meterRow("Offence", m.offence, {gap:true,
+      desc:"ストレート・スマッシュを打ったときの攻撃力(得点率を重視、自滅ミス率も少し考慮)"}));
+    panel.appendChild(meterRow("Deffence", m.deffence,
+      {desc:"相手のスマッシュへの返球力・ロブでの自滅の少なさ・空振り率/追いつけない率など、守備力全般"}));
+    panel.appendChild(meterRow("Point%", m.pointScore,
+      {raw:pct(m.pmDetail.pointRate), desc:"5球種(ストレート/スマッシュ/ロブ/弱ロブ/ドロップ)合計で、自分が打った球が得点につながった割合"}));
+    panel.appendChild(meterRow("Miss%", m.missScore,
+      {raw:pct(m.pmDetail.missRate), desc:"5球種合計で、自分が打った球のうちネット/オーバーで自滅した割合(空振り・追いつけないは含まない)"}));
+    panel.appendChild(meterRow("vsSlow", m.vsSlow,
+      {gap:true, raw:pct(m.vsSlowRate), desc:"相手から遅い球が来たときの返球率(空振り・追いつけないを含めた分母に対する、実際に返せた割合)"}));
+    panel.appendChild(meterRow("vsFast", m.vsFast,
+      {raw:pct(m.vsFastRate), desc:"相手から速い球が来たときの返球率"}));
+    panel.appendChild(meterRow("vsSpin", m.vsSpin,
+      {raw:pct(m.vsSpinRate), desc:"相手から横回転の大きい球が来たときの返球率"}));
+    panel.appendChild(meterRow("Unreach%", m.unreachScore,
+      {gap:true, raw:pct(m.unreachRate), desc:"来た球に追いつけずに失点した割合(灰色の数値が低いほどスコアは高くなります)"}));
+    panel.appendChild(meterRow("Whiff%", m.whiffScore,
+      {raw:pct(m.whiffRate), desc:"来た球に空振りして失点した割合(灰色の数値が低いほどスコアは高くなります)"}));
+    panel.appendChild(meterRow("Chase%", m.chaseScore,
+      {raw:pct(m.chaseRate), desc:"アラウンドエリアの球を実際に追いかけて振った割合(灰色の数値が低い=見送りが多いほどスコアは高くなります)"}));
+    panel.appendChild(meterRow("DRIVE", m.drive.score,
+      {gap:true, raw:pct(m.drive.pointRate)+"/"+pct(m.drive.missRate),
+       desc:"強いトップスピン(縦回転が下向き)をかけて打った球の得点率/自滅(ネット・オーバー)率"}));
+    panel.appendChild(meterRow("BackSpin", m.backspin.score,
+      {raw:pct(m.backspin.pointRate)+"/"+pct(m.backspin.missRate),
+       desc:"バックスピン(縦回転が上向き)をかけて打った球の得点率/自滅(ネット・オーバー)率"}));
+    panel.appendChild(meterRow("Curve", m.curve.score,
+      {raw:pct(m.curve.pointRate)+"/"+pct(m.curve.missRate),
+       desc:"横回転を大きくかけて打った球の得点率/自滅(ネット・オーバー)率"}));
+    renderMatchHistory(panel, p.name);
+    return panel;
+  }
+
+  /** record.ymlの試合一覧から、このプレイヤーが関わった試合(公式戦のみ)を抜き出す */
+  function matchesForPlayer(name){
+    return matchRecords.filter(function(mr){
+      if (mr.format === "singles"){
+        return (mr.red && mr.red.name === name) || (mr.blue && mr.blue.name === name);
+      }
+      return (mr.red && (mr.red.aName === name || mr.red.bName === name))
+          || (mr.blue && (mr.blue.aName === name || mr.blue.bName === name));
+    });
+  }
+
+  /**
+   * STATUSパネルの下に、このプレイヤーの試合一覧をスクロール可能なリストとして表示する。
+   * .match-historyがmargin-top:autoでmidパネルの下端に押し下げられるので、
+   * (.boardのalign-items:stretchと合わさって)左右のパネルとできるだけ下端が揃うようになる
+   */
+  function renderMatchHistory(panel, playerName){
+    var wrap = el("div","match-history");
+    wrap.appendChild(el("div","panel-title","MATCH HISTORY"));
+    var scroll = el("div","match-history-scroll");
+    if (!state.record){
+      scroll.appendChild(el("div","rank-empty mh-empty","record.ymlを読み込むと試合一覧が表示されます"));
+    } else {
+      var list = matchesForPlayer(playerName);
+      if (list.length === 0){
+        scroll.appendChild(el("div","rank-empty mh-empty","記録された試合が見つかりません"));
+      } else {
+        list.forEach(function(mr){
+          var mySide = mr.format === "singles"
+              ? ((mr.red && mr.red.name === playerName) ? "RED" : "BLUE")
+              : ((mr.red && (mr.red.aName === playerName || mr.red.bName === playerName)) ? "RED" : "BLUE");
+          var oppSide = mySide === "RED" ? "BLUE" : "RED";
+          var oppObj = mr[oppSide.toLowerCase()];
+          var mySets = mySide === "RED" ? mr.redSets : mr.blueSets;
+          var oppSets = mySide === "RED" ? mr.blueSets : mr.redSets;
+          var result = mr.winner === mySide ? "WIN" : (mr.winner === oppSide ? "LOSE" : null);
+
+          var row = el("div","mh-row");
+          row.appendChild(el("span","mh-date", mr.timestamp ? mr.timestamp.slice(5,10) : "―"));
+          row.appendChild(el("span","mh-badge" + (result==="WIN"?" win":result==="LOSE"?" lose":""), result || "―"));
+          row.appendChild(el("span","mh-opp", "vs " + ((oppObj && oppObj.name) || "―")));
+          row.appendChild(el("span","mh-score", (mySets!=null && oppSets!=null) ? (mySets+"-"+oppSets) : "―"));
+          scroll.appendChild(row);
+        });
+      }
+    }
+    wrap.appendChild(scroll);
+    panel.appendChild(wrap);
+  }
+
+  /* ---------- 右パネル(球種ホイール + 適正) ---------- */
+  function renderRightPanel(p, m){
+    var panel = el("div","panel");
+    panel.appendChild(el("div","panel-title","球種別バリュー"));
+    panel.appendChild(renderWheel(m));
+
+    panel.appendChild(el("div","panel-title mt","球種データ"));
+    var t1 = el("table","kind-table");
+    var head = "<tr><th></th>" + DISPLAY_ORDER.map(function(k){return "<th>"+KIND_LABEL_EN[k]+"</th>";}).join("") + "<th>TOTAL</th></tr>";
+    var rows = ["Usage","Point%","Spin%","Miss%"].map(function(rowName){
+      var cells = DISPLAY_ORDER.map(function(k){
+        var d = m.wheelDetail[k];
+        var v = "―";
+        if (rowName === "Usage") v = k==="SERVE" ? "" : (d.usage!=null ? pct(d.usage) : "―");
+        if (rowName === "Point%") v = d.pointRate!=null ? pct(d.pointRate) : (k==="SERVE" && m.wheel.SERVE.aceRate!=null ? pct(m.wheel.SERVE.aceRate) : "―");
+        if (rowName === "Spin%") v = d.spin!=null ? pct(d.spin) : "―";
+        if (rowName === "Miss%") v = d.missRate!=null ? pct(d.missRate) : (k==="SERVE" && m.wheel.SERVE.dfRate!=null ? pct(m.wheel.SERVE.dfRate) : "―");
+        return "<td>"+v+"</td>";
+      }).join("");
+      // TOTAL列: 球種(RETURNABLE、サーブ除く)全体をまとめた値
+      var totalV = "―";
+      if (rowName === "Usage") totalV = "100%";
+      if (rowName === "Point%") totalV = m.pmDetail.pointRate!=null ? pct(m.pmDetail.pointRate) : "―";
+      if (rowName === "Spin%") totalV = m.overallSpinRate!=null ? pct(m.overallSpinRate) : "―";
+      if (rowName === "Miss%") totalV = m.pmDetail.missRate!=null ? pct(m.pmDetail.missRate) : "―";
+      return "<tr><td>"+rowName+"</td>"+cells+"<td>"+totalV+"</td></tr>";
+    }).join("");
+    t1.innerHTML = head + rows;
+    panel.appendChild(t1);
+
+    panel.appendChild(el("div","panel-title mt-lg","VS: 球種別の強さ"));
+    var t2 = el("table","kind-table");
+    var rows2 = ["Value","Point%","Whiff%","Miss%"].map(function(rowName){
+      var cells = DISPLAY_ORDER.map(function(k){
+        var w = m.wheel[k];
+        var v = "―";
+        if (rowName === "Value") {
+          var vs = w.defenseValue;
+          var box = '<span class="value-box" style="background:' + colorForScore(vs) + '">' + (vs!=null?Math.round(vs):"―") + '</span>';
+          return "<td>" + box + "</td>";
+        }
+        if (rowName === "Point%") v = w.vsPointRate!=null ? pct(w.vsPointRate) : "―";
+        if (rowName === "Whiff%") {
+          var dk = m.defenseByKind[k];
+          v = (dk && dk.whiffRate!=null) ? pct(dk.whiffRate) : "―";
+        }
+        if (rowName === "Miss%") v = w.vsMissRate!=null ? pct(w.vsMissRate) : "―";
+        return "<td>"+v+"</td>";
+      }).join("");
+      // TOTAL列: 球種(RETURNABLE、サーブ除く)全体をまとめた値
+      var totalCell;
+      if (rowName === "Value") {
+        var ov = m.defenseValueTotal;
+        totalCell = '<span class="value-box" style="background:' + colorForScore(ov) + '">' + (ov!=null?Math.round(ov):"―") + '</span>';
+      } else if (rowName === "Point%") {
+        totalCell = m.vsPointRateTotal!=null ? pct(m.vsPointRateTotal) : "―";
+      } else if (rowName === "Whiff%") {
+        var rWhiff = 0, rFaced = 0;
+        RETURNABLE.forEach(function(k){ var dk = m.defenseByKind[k]; if (dk && dk.faced){ rWhiff += dk.whiff; rFaced += dk.faced; } });
+        totalCell = rFaced > 0 ? pct(rWhiff/rFaced) : "―";
+      } else {
+        totalCell = m.vsMissRateTotal!=null ? pct(m.vsMissRateTotal) : "―";
+      }
+      return "<tr><td>"+rowName+"</td>"+cells+"<td>"+totalCell+"</td></tr>";
+    }).join("");
+    t2.innerHTML = head + rows2;
+    panel.appendChild(t2);
+
+    return panel;
+  }
+
+  /** 適正(コート/シングルス・ダブルス)のセクション。左パネルに置く */
+  /** typeごとに列を分け、種類名の下にその判定(チップ)を並べる表を1つ作る */
+  function suitTable(types, resultOf){
+    var table = el("table","suit-table");
+    var headRow = document.createElement("tr");
+    var bodyRow = document.createElement("tr");
+    types.forEach(function(t){
+      var th = document.createElement("th");
+      th.textContent = t;
+      headRow.appendChild(th);
+      var td = document.createElement("td");
+      var r = resultOf(t);
+      var chip = el("span","chip", r.label);
+      chip.style.background = TONE_COLOR[r.tone];
+      td.appendChild(chip);
+      bodyRow.appendChild(td);
+    });
+    table.appendChild(headRow);
+    table.appendChild(bodyRow);
+    return table;
+  }
+
+  function renderSuitableSection(panel, m){
+    panel.appendChild(el("div","panel-title mt","SUITABLE"));
+    panel.appendChild(el("div","suit-sub","COURT"));
+    panel.appendChild(suitTable(["HARD","CLAY","GRASS","OMNI"], function(t){ return m.courtSuitability[t]; }));
+    panel.appendChild(el("div","suit-sub","GAME"));
+    panel.appendChild(suitTable(["SINGLES","DOUBLES"], function(t){ return m.formatSuitability[t]; }));
+  }
+
+  function renderWheel(m){
+    var wrap = el("div","wheel-wrap");
+    var size = 280, cx = size/2, cy = size/2, rOuter = 96, rInner = 30;
+    var svgns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(svgns,"svg");
+    svg.setAttribute("viewBox","0 0 " + size + " " + size);
+
+    var order = DISPLAY_ORDER;
+    var n = order.length;
+    var gap = 0.04; // ラジアン単位のすき間
+    var segEls = []; // 値ウェッジ(中央から伸びるアニメーション対象)
+
+    // 目盛りの輪(25/50/75/100)
+    [0.25,0.5,0.75,1].forEach(function(f){
+      var c = document.createElementNS(svgns,"circle");
+      c.setAttribute("cx",cx); c.setAttribute("cy",cy);
+      c.setAttribute("r", rInner + (rOuter-rInner)*f);
+      c.setAttribute("fill","none");
+      c.setAttribute("stroke","var(--line)");
+      c.setAttribute("stroke-width","1");
+      svg.appendChild(c);
+    });
+
+    order.forEach(function(k, i){
+      var a0 = -Math.PI/2 + i * (2*Math.PI/n) + gap/2;
+      var a1 = -Math.PI/2 + (i+1) * (2*Math.PI/n) - gap/2;
+      var score = m.wheel[k] ? m.wheel[k].score : null;
+      var frac = score==null ? 0 : clamp(score,0,100)/100;
+      var rMid = rInner + (rOuter-rInner)*frac;
+
+      // 背景(満杯)ウェッジ
+      var bgPath = wedgePath(cx,cy,rInner,rOuter,a0,a1);
+      var bg = document.createElementNS(svgns,"path");
+      bg.setAttribute("d", bgPath);
+      bg.setAttribute("fill", "var(--panel-2)");
+      bg.setAttribute("stroke","var(--line)");
+      bg.setAttribute("stroke-width","1");
+      svg.appendChild(bg);
+
+      // 値ウェッジ
+      var valPath = wedgePath(cx,cy,rInner,Math.max(rInner+2,rMid),a0,a1);
+      var seg = document.createElementNS(svgns,"path");
+      seg.setAttribute("d", valPath);
+      seg.setAttribute("fill", colorForScore(score));
+      // 開いた瞬間に中央から伸びてくるアニメーション用。中心(cx,cy)を基準にscale(0)から始める
+      seg.style.transformOrigin = cx + "px " + cy + "px";
+      seg.style.transform = "scale(0)";
+      seg.style.transition = "transform .5s ease";
+      svg.appendChild(seg);
+      segEls.push(seg);
+
+      // ラベル(外側)
+      var aMid = (a0+a1)/2;
+      var lx = cx + (rOuter+22) * Math.cos(aMid);
+      var ly = cy + (rOuter+22) * Math.sin(aMid);
+      var txt = document.createElementNS(svgns,"text");
+      txt.setAttribute("x", lx); txt.setAttribute("y", ly-6);
+      txt.setAttribute("text-anchor","middle");
+      txt.setAttribute("class","wheel-label");
+      txt.setAttribute("font-size","11");
+      txt.setAttribute("fill","var(--ink-2)");
+      txt.textContent = KIND_LABEL_EN[k];
+      svg.appendChild(txt);
+
+      var numTxt = document.createElementNS(svgns,"text");
+      numTxt.setAttribute("x", lx); numTxt.setAttribute("y", ly+9);
+      numTxt.setAttribute("text-anchor","middle");
+      numTxt.setAttribute("class","wheel-num");
+      numTxt.setAttribute("font-size","14");
+      numTxt.setAttribute("fill", colorForScore(score));
+      numTxt.textContent = score==null ? "―" : Math.round(score);
+      svg.appendChild(numTxt);
+    });
+
+    var centerTxt = document.createElementNS(svgns,"text");
+    centerTxt.setAttribute("x",cx); centerTxt.setAttribute("y",cy+4);
+    centerTxt.setAttribute("text-anchor","middle");
+    centerTxt.setAttribute("font-size","10");
+    centerTxt.setAttribute("fill","var(--ink-3)");
+    centerTxt.textContent = "SHOT";
+    svg.appendChild(centerTxt);
+
+    wrap.appendChild(svg);
+    raf(function(){
+      raf(function(){
+        segEls.forEach(function(seg){ seg.style.transform = "scale(1)"; });
+      });
+    });
+    return wrap;
+  }
+  function wedgePath(cx,cy,r0,r1,a0,a1){
+    function pt(r,a){ return [cx + r*Math.cos(a), cy + r*Math.sin(a)]; }
+    var p0 = pt(r0,a0), p1 = pt(r1,a0), p2 = pt(r1,a1), p3 = pt(r0,a1);
+    var large = (a1-a0) > Math.PI ? 1 : 0;
+    return "M "+p0[0]+" "+p0[1]
+      + " L "+p1[0]+" "+p1[1]
+      + " A "+r1+" "+r1+" 0 "+large+" 1 "+p2[0]+" "+p2[1]
+      + " L "+p3[0]+" "+p3[1]
+      + " A "+r0+" "+r0+" 0 "+large+" 0 "+p0[0]+" "+p0[1]
+      + " Z";
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];
+    });
+  }
+
+  /* ============================================================
+   * 自動読み込み(GitHub Pagesなど、このHTMLと同じ場所にlearning.yml等を置いて公開する場合用)
+   * 同じディレクトリのファイルをfetchで探しにいき、見つかった分だけ読み込む。
+   * 無いファイル(404)は静かに無視するので、一部だけ置いていても問題ない。
+   * 手動のアップロード欄はそのまま残っているので、ローカルの新しいファイルで上書きしたいときは
+   * そちらから選べば良い(後から読み込んだ方が state を上書きする)
+   * ============================================================ */
+  function autoLoadFromRepo(){
+    function fetchYaml(name){
+      return fetch(name, { cache:"no-store" })
+        .then(function(res){ if (!res.ok) throw new Error("not found"); return res.text(); })
+        .then(function(text){ return jsyaml.load(text); });
+    }
+    function fetchXlsx(name){
+      return fetch(name, { cache:"no-store" })
+        .then(function(res){ if (!res.ok) throw new Error("not found"); return res.arrayBuffer(); })
+        .then(function(buf){ return XLSX.read(buf, { type:"array" }); });
+    }
+    var p1 = fetchYaml("learning.yml").then(function(d){ state.learning = d; setStatus("learningStatus", true, "learning.yml(自動)"); }).catch(function(){});
+    var p2 = fetchYaml("players.yml").then(function(d){ state.players = d; setStatus("playersStatus", true, "players.yml(自動)"); }).catch(function(){});
+    var p3 = fetchYaml("record.yml").then(function(d){ state.record = d; setStatus("recordStatus", true, "record.yml(自動)"); }).catch(function(){});
+    var p4 = fetchXlsx("tournament.xlsx").then(function(wb){ state.tournamentWb = wb; setStatus("tournamentStatus", true, "tournament.xlsx(自動)"); }).catch(function(){});
+    var p5 = fetchXlsx("league.xlsx").then(function(wb){ state.leagueWb = wb; setStatus("leagueStatus", true, "league.xlsx(自動)"); }).catch(function(){});
+    Promise.all([p1,p2,p3,p4,p5]).then(function(){
+      rebuild();
+      autoLoadAvatars();
+    });
+  }
+
+  /**
+   * players.yml/learning.ymlの読み込みが終わった後、選手ごとに「名前.png」「UUID.png」
+   * (jpg/jpeg/webpも試す)を同じ場所から探しにいく。見つかったものだけ反映する
+   */
+  function autoLoadAvatars(){
+    var candidates = [];
+    Object.keys(players).forEach(function(id){
+      candidates.push(id);
+      if (players[id].name) candidates.push(players[id].name);
+    });
+    if (candidates.length === 0) return;
+    var exts = ["png","jpg","jpeg","webp"];
+    var doneCount = 0;
+    function finishOne(){ doneCount++; if (doneCount === candidates.length){ setStatus("avatarStatus", true, "同じ場所の画像を自動チェック済み"); rebuild(); } }
+    candidates.forEach(function(key){
+      (function tryExt(i){
+        if (i >= exts.length){ finishOne(); return; }
+        var fname = key + "." + exts[i];
+        var contentType = null;
+        fetch(fname, { cache:"no-store" })
+          .then(function(res){
+            if (!res.ok) throw new Error("not found");
+            contentType = res.headers.get("content-type") || ("image/" + exts[i]);
+            return res.arrayBuffer();
+          })
+          .then(function(buf){
+            state.avatars[key.toLowerCase()] = "data:" + contentType + ";base64," + arrayBufferToBase64(buf);
+            finishOne();
+          })
+          .catch(function(){ tryExt(i+1); });
+      })(0);
+    });
+  }
+  /** ArrayBuffer(取得した画像)をbase64文字列に変換する(data URL組み立て用) */
+  function arrayBufferToBase64(buf){
+    var bytes = new Uint8Array(buf), binary = "";
+    for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
+  }
+
+  // fetchが無い環境(古いブラウザ等)では何もしない。file://で直接開いたときもfetchはCORSで
+  // 失敗することが多いが、その場合も各fetchが個別にcatchされるので手動アップロード欄が使える
+  if (typeof fetch === "function") autoLoadFromRepo();
+
+})();
+</script>
+</body>
+</html>
