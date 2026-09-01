@@ -2773,8 +2773,10 @@
    * シングルスのデータ(無ければ全体)を対象にする(コマンド側も singlesDataOf を使うため)。
    */
   function computePlayStyle(learn){
-    var singlesSwings = learn.samples.filter(function(s){ return s.kind === "S" && !s.doubles; });
-    var swingSamples = singlesSwings.length > 0 ? singlesSwings : learn.samples.filter(function(s){ return s.kind === "S"; });
+    // 打球位置・ボレー率・球種割合(プレースタイル判定)は、/tennis player <name> style (Java側)と
+    // 合わせてシングルスのみを見る。ダブルスデータへのフォールバックはしない
+    // (シングルスのサンプルが1球も無ければ「データ不足」として扱う)
+    var swingSamples = learn.samples.filter(function(s){ return s.kind === "S" && !s.doubles; });
     var swings = 0, volleyCount = 0, netDistWeighted = 0;
     var shotSum = { STRAIGHT:0, SMASH:0, LOB:0, WEAK_LOB:0, DROP:0 };
     swingSamples.forEach(function(s){
