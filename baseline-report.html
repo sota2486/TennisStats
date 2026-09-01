@@ -299,7 +299,10 @@
   .rank-note{ font-size:11px; color:var(--ink-3); margin-bottom:10px; }
   /* table-layout:fixedでwidth:100%を強制すると列数が多いときヘッダー文字が切れるため、
      各列にmin-widthだけ与えて自然な幅で伸ばし、はみ出た分は.rank-panelの横スクロールに任せる */
-  .rank-table{ border-collapse:collapse; font-size:11.5px; white-space:nowrap; table-layout:fixed; }
+  /* border-collapse:collapseだと、横スクロール時に固定列(sticky)の背景が
+     隣の列との共有ボーダーの下に描画されてしまい、隣の内容が透けて見えるブラウザがある。
+     separateにして罫線を各セル側で個別に持たせることで、sticky列が確実に上に乗るようにする */
+  .rank-table{ border-collapse:separate; border-spacing:0; font-size:11.5px; white-space:nowrap; table-layout:fixed; }
   .rank-table th:first-child, .rank-table td:first-child{ width:180px; min-width:180px; }
   .rank-table th:not(:first-child), .rank-table td:not(:first-child){ width:78px; min-width:78px; }
   /* 種類ごとのグループ(TOTAL/SINGLES/DOUBLES、Value/VSなど)の境目に少し余白を空ける */
