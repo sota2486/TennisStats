@@ -151,9 +151,9 @@
   }
   .panel-title{
     font-size:11px; font-weight:600; letter-spacing:.12em; color:var(--ink-3);
-    text-transform:uppercase; margin:0 0 10px;
+    text-transform:uppercase; margin:0 0 7px;
   }
-  .panel-title.mt{ margin-top:12px; }
+  .panel-title.mt{ margin-top:10px; }
   /* 球種データとVS(球種別の強さ)の間だけ、他より広めに空ける */
   .panel-title.mt-lg{ margin-top:26px; }
 
@@ -169,17 +169,17 @@
   .p-name{ font-size:19px; font-weight:600; text-align:center; }
   .p-sub{ font-size:11px; color:var(--ink-3); text-align:center; letter-spacing:.04em; }
 
-  .stat-table{ width:100%; border-collapse:collapse; font-size:11.5px; margin-top:12px; }
+  .stat-table{ width:100%; border-collapse:collapse; font-size:11.5px; margin-top:10px; }
   .stat-table th{
     text-align:right; font-weight:500; color:var(--ink-3); padding:4px 3px; font-size:10px;
     text-transform:uppercase; letter-spacing:.04em; border-bottom:1px solid var(--line);
   }
   .stat-table th:first-child{ text-align:left; }
-  .stat-table td{ text-align:right; padding:5px 3px; border-bottom:1px solid var(--line); color:var(--ink-2); }
+  .stat-table td{ text-align:right; padding:4px 3px; border-bottom:1px solid var(--line); color:var(--ink-2); }
   .stat-table td:first-child{ text-align:left; color:var(--ink); font-weight:500; }
   .stat-table tr:last-child td{ border-bottom:none; }
 
-  .kv-line{ display:flex; justify-content:space-between; gap:8px; font-size:12px; padding:5px 0; border-bottom:1px solid var(--line); }
+  .kv-line{ display:flex; justify-content:space-between; gap:8px; font-size:12px; padding:4px 0; border-bottom:1px solid var(--line); }
   .kv-line:last-child{ border-bottom:none; }
   .kv-line .k{ color:var(--ink-3); }
   .kv-line .v{ color:var(--ink); font-weight:500; text-align:right; }
@@ -190,10 +190,10 @@
   .rate-delta.up{ color:var(--good); }
   .rate-delta.down{ color:var(--bad); }
 
-  .sparkline-wrap{ margin-top:8px; min-height:64px; }
-  .sparkline-wrap svg{ width:100%; height:64px; display:block; }
+  .sparkline-wrap{ margin-top:6px; min-height:56px; }
+  .sparkline-wrap svg{ width:100%; height:56px; display:block; }
   .spark-empty{
-    height:64px; display:flex; align-items:center; justify-content:center;
+    height:56px; display:flex; align-items:center; justify-content:center;
     font-size:11px; color:var(--ink-3); text-align:center;
   }
 
@@ -213,10 +213,24 @@
   .meter-note{ grid-column:1/-1; font-size:10px; color:var(--ink-3); margin:-6px 0 8px 80px; }
 
   /* right: wheel + tables */
-  .wheel-wrap{ display:flex; justify-content:center; margin-bottom:0; }
-  .wheel-wrap svg{ width:100%; max-width:310px; height:auto; }
+  .wheel-wrap{ display:flex; justify-content:flex-start; margin-bottom:0; }
+  .wheel-wrap svg{ width:100%; max-width:350px; height:auto; }
   .wheel-num{ font-family:'Oswald'; font-weight:600; }
   .wheel-label{ font-family:'IBM Plex Sans'; font-weight:500; }
+
+  /* PLAYSTYLEの1行目: 球種使用率(サーブ除く)の帯グラフ */
+  .usage-bar-wrap{ margin:2px 0 6px; }
+  .usage-bar{ display:flex; height:17px; border-radius:5px; overflow:hidden; background:var(--track); }
+  .usage-bar-seg{
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    font-size:9px; font-weight:700; color:#fff; white-space:nowrap;
+  }
+  .usage-bar-legend{
+    display:flex; flex-wrap:nowrap; justify-content:space-between; gap:4px;
+    margin-top:5px; font-size:7.5px; letter-spacing:.02em; text-transform:uppercase; color:var(--ink-2);
+  }
+  .usage-bar-legend-item{ display:inline-flex; align-items:center; gap:3px; white-space:nowrap; }
+  .usage-bar-legend-item i{ width:8px; height:8px; border-radius:2px; display:inline-block; }
 
   .kind-table{ width:100%; table-layout:fixed; border-collapse:collapse; font-size:10.5px; margin-top:6px; }
   .kind-table th:first-child, .kind-table td:first-child{ width:34px; }
@@ -249,7 +263,7 @@
 
   .suit-sub{
     font-size:10px; font-weight:600; letter-spacing:.08em; color:var(--ink-3);
-    text-transform:uppercase; margin:10px 0 4px;
+    text-transform:uppercase; margin:8px 0 4px;
   }
   .suit-table{ width:100%; table-layout:fixed; border-collapse:separate; border-spacing:4px 0; font-size:10px; }
   .suit-table th{
@@ -2749,6 +2763,7 @@
     // positioning / playstyle (/tennis player <name> style と同じ基準・既定しきい値で判定、1行にまとめる)
     var playStyle = computePlayStyle(p.learn);
     panel.appendChild(el("div","panel-title mt","PLAYSTYLE"));
+    panel.appendChild(renderShotUsageBar(m));
     panel.appendChild(el("div","kv-line",
       '<span class="k">タイプ・傾向</span><span class="v">'
       + (playStyle ? (playStyle.style + "・" + playStyle.pos) : "データ不足")
@@ -2846,7 +2861,7 @@
 
   /** レートの推移(月ごとの区切り線と、基準線として3000のラインを付けたスパークライン) */
   function renderSparkline(history){
-    var w = 280, h = 64, pad = 6, plotBottom = h - 16; // 下に月ラベル用の余白を確保
+    var w = 280, h = 56, pad = 6, plotBottom = h - 15; // 下に月ラベル用の余白を確保
     var REFERENCE_RATING = 3000;
     var vals = history.map(function(h){ return h[1]; }).concat([REFERENCE_RATING]);
     var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
@@ -3161,9 +3176,18 @@
     panel.appendChild(suitTable(["SINGLES","DOUBLES"], function(t){ return m.formatSuitability[t]; }));
   }
 
+  /** 球種ごとの色(内側の使用率円グラフ用。サーブは含めない) */
+  var KIND_PIE_COLOR = {
+    STRAIGHT: "#eab308", // 黄色
+    SMASH: "#e63946",    // 赤
+    DROP: "#3b82f6",     // 青
+    LOB: "#15803d",      // 緑(少し深め)
+    WEAK_LOB: "#a3e635"  // 黄緑
+  };
+
   function renderWheel(m){
     var wrap = el("div","wheel-wrap");
-    var size = 280, cx = size/2, cy = size/2, rOuter = 96, rInner = 30;
+    var size = 340, cx = size/2, cy = size/2, rOuter = 115, rInner = 42;
     var svgns = "http://www.w3.org/2000/svg";
     var svg = document.createElementNS(svgns,"svg");
     svg.setAttribute("viewBox","0 0 " + size + " " + size);
@@ -3261,6 +3285,40 @@
       + " L "+p3[0]+" "+p3[1]
       + " A "+r0+" "+r0+" 0 "+large+" 0 "+p0[0]+" "+p0[1]
       + " Z";
+  }
+
+  /** PLAYSTYLEの1行目に置く、球種の使用率(サーブ除く)の帯グラフ(横棒を割合で塗り分け) */
+  function renderShotUsageBar(m){
+    var wrap = el("div","usage-bar-wrap");
+    var bar = el("div","usage-bar");
+    var legend = el("div","usage-bar-legend");
+
+    var kinds = DISPLAY_ORDER.filter(function(k){ return k !== "SERVE"; });
+    var total = kinds.reduce(function(s,k){ return s + (m.wheel[k] && m.wheel[k].usage != null ? m.wheel[k].usage : 0); }, 0);
+
+    kinds.forEach(function(k){
+      var u = m.wheel[k] && m.wheel[k].usage != null ? m.wheel[k].usage : 0;
+      var pct = total > 0 ? u/total : 0;
+      var color = KIND_PIE_COLOR[k] || "var(--ink-3)";
+
+      var seg = el("div","usage-bar-seg");
+      seg.style.width = (pct*100) + "%";
+      seg.style.background = color;
+      // 幅が狭い区切りは数字が入りきらないので、ある程度の幅がある球種だけ%を書く
+      if (pct >= 0.08) seg.textContent = Math.round(pct*100) + "%";
+      bar.appendChild(seg);
+
+      var item = el("span","usage-bar-legend-item");
+      var dot = el("i");
+      dot.style.background = color;
+      item.appendChild(dot);
+      item.appendChild(document.createTextNode(KIND_LABEL_EN[k] + " " + Math.round(pct*100) + "%"));
+      legend.appendChild(item);
+    });
+
+    wrap.appendChild(bar);
+    wrap.appendChild(legend);
+    return wrap;
   }
 
   function escapeHtml(s){
