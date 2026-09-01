@@ -314,6 +314,8 @@
   .rank-table.rank-table-dense td.group-gap, .rank-table.rank-table-dense th.group-gap{ border-left:8px solid var(--bg); }
   .rank-table.rank-table-dense th, .rank-table.rank-table-dense td{ padding:4px 4px; }
   .rank-table.rank-table-dense .rate-chip{ min-width:32px; padding:2px 4px; min-height:17px; border-radius:8px; font-size:9.5px; }
+  /* STATUS/SHOT TYPESは項目数が多い分、名前欄をその分だけ狭くする(元の180pxの2/3) */
+  .rank-table.rank-table-narrow-name th:first-child, .rank-table.rank-table-narrow-name td:first-child{ width:120px; min-width:120px; }
   .rank-table th:first-child, .rank-table td:first-child{ text-align:left; position:sticky; left:0; background:var(--panel); }
   .rank-table thead th{
     color:var(--ink-3); font-weight:600; font-size:9.5px; text-transform:uppercase; letter-spacing:.03em;
@@ -1902,7 +1904,7 @@
         : rows.slice().sort(function(a,b){ return (b._m.overall||0) - (a._m.overall||0); });
 
     var table = document.createElement("table");
-    table.className = "rank-table";
+    table.className = "rank-table rank-table-narrow-name";
     var thead = document.createElement("thead");
     var groupRow = el("tr","rank-group");
     groupRow.appendChild(document.createElement("th"));
@@ -1960,7 +1962,7 @@
         : rows.slice().sort(function(a,b){ return (b._m.overall||0) - (a._m.overall||0); });
 
     var table = document.createElement("table");
-    table.className = "rank-table";
+    table.className = "rank-table rank-table-narrow-name";
     var thead = document.createElement("thead");
     var groupRow = el("tr","rank-group");
     groupRow.appendChild(document.createElement("th"));
