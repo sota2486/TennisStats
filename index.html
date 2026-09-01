@@ -300,7 +300,9 @@
   /* table-layout:fixedでwidth:100%を強制すると列数が多いときヘッダー文字が切れるため、
      各列にmin-widthだけ与えて自然な幅で伸ばし、はみ出た分は.rank-panelの横スクロールに任せる */
   .rank-table{ border-collapse:collapse; font-size:11.5px; white-space:nowrap; table-layout:fixed; }
-  .rank-table th:first-child, .rank-table td:first-child{ width:180px; min-width:180px; }
+  .rank-table th:first-child, .rank-table td:first-child{ width:140px; min-width:140px; }
+  /* GAME/WIN/LOSEのような小さい整数しか入らない列は、他の数値列よりさらに狭くする */
+  .rank-table th.col-narrow, .rank-table td.col-narrow{ width:42px; min-width:42px; }
   .rank-table th:not(:first-child), .rank-table td:not(:first-child){ width:62px; min-width:62px; }
   /* 種類ごとのグループ(TOTAL/SINGLES/DOUBLES、Value/VSなど)の境目に少し余白を空ける */
   .rank-table td.group-gap, .rank-table th.group-gap{ border-left:10px solid var(--bg); }
@@ -1600,6 +1602,7 @@
     th.appendChild(span);
     if (rankState.sortKey === key) { th.classList.add("sorted"); th.classList.add("sorted-col"); }
     if (opts.groupGap) th.classList.add("group-gap");
+    if (opts.narrow) th.classList.add("col-narrow");
     th.addEventListener("click", function(){
       if (rankState.sortKey === key) rankState.sortDir = (rankState.sortDir === "desc" ? "asc" : "desc");
       else { rankState.sortKey = key; rankState.sortDir = opts.defaultAsc ? "asc" : "desc"; }
@@ -1640,6 +1643,7 @@
     td.textContent = text;
     if (key && key === rankState.sortKey) td.classList.add("sorted-col");
     if (opts.groupGap) td.classList.add("group-gap");
+    if (opts.narrow) td.classList.add("col-narrow");
     return td;
   }
   function valueBoxCell(v, key, opts){
@@ -1709,9 +1713,9 @@
     headRow.appendChild(document.createElement("th"));
     headRow.appendChild(sortableHeader("RATE","rating"));
     ["total","singles","doubles"].forEach(function(g, gi){
-      headRow.appendChild(sortableHeader("GAME",g+".games", {groupGap: gi>0}));
-      headRow.appendChild(sortableHeader("WIN",g+".wins"));
-      headRow.appendChild(sortableHeader("LOSE",g+".losses"));
+      headRow.appendChild(sortableHeader("GAME",g+".games", {groupGap: gi>0, narrow:true}));
+      headRow.appendChild(sortableHeader("WIN",g+".wins", {narrow:true}));
+      headRow.appendChild(sortableHeader("LOSE",g+".losses", {narrow:true}));
       headRow.appendChild(sortableHeader("PT%",g+".pt"));
       headRow.appendChild(sortableHeader("SET%",g+".set"));
       headRow.appendChild(sortableHeader("WIN%",g+".win"));
@@ -1730,9 +1734,9 @@
       ["total","singles","doubles"].forEach(function(g, gi){
         var b = s[g];
         var gap = gi > 0;
-        tr.appendChild(dataCell(String(b.games), g+".games", {groupGap: gap}));
-        tr.appendChild(dataCell(String(b.wins), g+".wins"));
-        tr.appendChild(dataCell(String(b.losses), g+".losses"));
+        tr.appendChild(dataCell(String(b.games), g+".games", {groupGap: gap, narrow:true}));
+        tr.appendChild(dataCell(String(b.wins), g+".wins", {narrow:true}));
+        tr.appendChild(dataCell(String(b.losses), g+".losses", {narrow:true}));
         tr.appendChild(rateCell(shareRateOf(b.pointsFor,b.pointsAgainst), g+".pt"));
         tr.appendChild(rateCell(shareRateOf(b.setsFor,b.setsAgainst), g+".set"));
         tr.appendChild(rateCell(winRateOf(b.wins,b.losses), g+".win"));
