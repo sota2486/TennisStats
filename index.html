@@ -300,13 +300,20 @@
   /* table-layout:fixedでwidth:100%を強制すると列数が多いときヘッダー文字が切れるため、
      各列にmin-widthだけ与えて自然な幅で伸ばし、はみ出た分は.rank-panelの横スクロールに任せる */
   .rank-table{ border-collapse:collapse; font-size:11.5px; white-space:nowrap; table-layout:fixed; }
-  .rank-table th:first-child, .rank-table td:first-child{ width:140px; min-width:140px; }
-  /* GAME/WIN/LOSEのような小さい整数しか入らない列は、他の数値列よりさらに狭くする */
-  .rank-table th.col-narrow, .rank-table td.col-narrow{ width:28px; min-width:28px; padding-left:4px; padding-right:4px; }
-  .rank-table th:not(:first-child), .rank-table td:not(:first-child){ width:62px; min-width:62px; }
+  .rank-table th:first-child, .rank-table td:first-child{ width:180px; min-width:180px; }
+  .rank-table th:not(:first-child), .rank-table td:not(:first-child){ width:78px; min-width:78px; }
   /* 種類ごとのグループ(TOTAL/SINGLES/DOUBLES、Value/VSなど)の境目に少し余白を空ける */
   .rank-table td.group-gap, .rank-table th.group-gap{ border-left:10px solid var(--bg); }
-  .rank-table th, .rank-table td{ padding:5px 7px; text-align:right; border-bottom:1px solid var(--line); }
+  .rank-table th, .rank-table td{ padding:6px 9px; text-align:right; border-bottom:1px solid var(--line); }
+  /* RANKING > MATCHESだけは列数が非常に多く横スクロールが出てしまうため、
+     このテーブルだけ文字・余白・列幅を詰めた専用の見た目にする(他のrank-tableには影響しない) */
+  .rank-table.rank-table-dense{ font-size:10.5px; }
+  .rank-table.rank-table-dense th:first-child, .rank-table.rank-table-dense td:first-child{ width:120px; min-width:120px; }
+  .rank-table.rank-table-dense th:not(:first-child), .rank-table.rank-table-dense td:not(:first-child){ width:50px; min-width:50px; }
+  .rank-table.rank-table-dense th.col-narrow, .rank-table.rank-table-dense td.col-narrow{ width:22px; min-width:22px; padding-left:2px; padding-right:2px; }
+  .rank-table.rank-table-dense td.group-gap, .rank-table.rank-table-dense th.group-gap{ border-left:8px solid var(--bg); }
+  .rank-table.rank-table-dense th, .rank-table.rank-table-dense td{ padding:4px 4px; }
+  .rank-table.rank-table-dense .rate-chip{ min-width:32px; padding:2px 4px; min-height:17px; border-radius:8px; font-size:9.5px; }
   .rank-table th:first-child, .rank-table td:first-child{ text-align:left; position:sticky; left:0; background:var(--panel); }
   .rank-table thead th{
     color:var(--ink-3); font-weight:600; font-size:9.5px; text-transform:uppercase; letter-spacing:.03em;
@@ -331,7 +338,7 @@
     border-bottom:1px solid var(--line); padding-bottom:3px;
   }
   .rank-table tbody tr:hover td{ background:var(--panel-2); }
-  .rank-table td.rank-name{ font-weight:600; color:var(--ink); cursor:pointer; }
+  .rank-table td.rank-name{ font-weight:600; color:var(--ink); cursor:pointer; overflow:hidden; text-overflow:ellipsis; text-align:left; }
   .rank-table td.rank-name:hover{ color:var(--accent-ink); text-decoration:underline; }
   .rank-table td.rank-idx{ color:var(--ink-3); text-align:center; width:28px; }
   .rank-avatar{
@@ -1636,6 +1643,21 @@
     td.addEventListener("click", function(){ goToPlayer(p.id); });
     return td;
   }
+  /** record.ymlのred/blue片側オブジェクトから、1人(シングルス)/2人(ダブルス)の名前配列を取り出す */
+  function namesOfSide(sideObj){
+    if (!sideObj) return ["―"];
+    if (sideObj.aName) return [sideObj.aName, sideObj.bName];
+    return [sideObj.name || "―"];
+  }
+  /** 1人 or 2人分の名前を、それぞれの顔写真アイコン付きで表示する<td>(ダブルスのペア名などに使う) */
+  function namesCell(names){
+    var td = document.createElement("td");
+    td.className = "rank-name";
+    td.innerHTML = names.map(function(n){
+      return '<span class="rank-avatar">' + avatarIconHtml({ id:"", name:n }) + '</span>';
+    }).join("") + names.join(" & ");
+    return td;
+  }
   /** 現在ソート中の列なら sorted-col、グループの境目なら group-gap を付けるプレーンな<td> */
   function dataCell(text, key, opts){
     opts = opts || {};
@@ -1699,7 +1721,7 @@
         : rows.slice().sort(function(a,b){ return (b.stats.rating||0) - (a.stats.rating||0); });
 
     var table = document.createElement("table");
-    table.className = "rank-table";
+    table.className = "rank-table rank-table-dense";
     var thead = document.createElement("thead");
     var groupRow = el("tr","rank-group");
     groupRow.appendChild(document.createElement("th"));
@@ -1824,10 +1846,7 @@
     var tbody = document.createElement("tbody");
     sorted.forEach(function(p){
       var tr = document.createElement("tr");
-      var nameTd = document.createElement("td");
-      nameTd.className = "rank-name";
-      nameTd.textContent = p.names.join(" & ");
-      tr.appendChild(nameTd);
+      tr.appendChild(namesCell(p.names));
       tr.appendChild(dataCell(String(p.games), "games"));
       tr.appendChild(dataCell(String(p.wins), "wins"));
       tr.appendChild(dataCell(String(p.losses), "losses"));
@@ -2489,8 +2508,8 @@
       var winnerSets = winnerIsBlue ? m.blueSets : m.redSets;
       var loserSets = winnerIsBlue ? m.redSets : m.blueSets;
       var setScoresOrdered = m.setScores.map(function(s){ return winnerIsBlue ? [s[1], s[0]] : s; });
-      tr.appendChild(dataCell((winnerObj && winnerObj.name) || "―"));
-      tr.appendChild(dataCell((loserObj && loserObj.name) || "―"));
+      tr.appendChild(namesCell(namesOfSide(winnerObj)));
+      tr.appendChild(namesCell(namesOfSide(loserObj)));
       tr.appendChild(dataCell((winnerSets!=null && loserSets!=null) ? (winnerSets + "-" + loserSets) : "―"));
       tr.appendChild(dataCell(setScoresOrdered.map(function(s){ return s[0]+"-"+s[1]; }).join(" / ") || "―"));
       tr.appendChild(dataCell(m.status || "―"));
