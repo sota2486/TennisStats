@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Baseline Report</title>
+<title>Tennis Savant</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%BE%3C/text%3E%3C/svg%3E">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap');
 
@@ -83,9 +84,10 @@
     padding:10px 18px; margin-bottom:10px;
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
   }
-  .brand{ display:flex; align-items:baseline; gap:10px; margin-right:auto; }
+  .brand{ display:flex; align-items:center; gap:10px; margin-right:auto; }
   .brand .mark{ font-family:'Oswald'; font-weight:700; font-size:20px; letter-spacing:.04em; }
   .brand .sub{ font-size:11px; color:var(--ink-3); letter-spacing:.08em; text-transform:uppercase; }
+  .brand-icon{ font-size:24px; line-height:1; }
 
   .file-controls{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
   .file-btn{
@@ -219,7 +221,7 @@
   .kind-table{ width:100%; table-layout:fixed; border-collapse:collapse; font-size:10.5px; margin-top:6px; }
   .kind-table th:first-child, .kind-table td:first-child{ width:34px; }
   .kind-table th{
-    font-weight:600; color:var(--ink-3); padding:3px 1px; text-align:center; font-size:7.5px;
+    font-weight:600; color:var(--ink-3); padding:3px 1px; text-align:center; font-size:6.5px;
     text-transform:uppercase; letter-spacing:0; border-bottom:1px solid var(--line);
     line-height:1.15; overflow-wrap:anywhere; white-space:normal;
   }
@@ -261,7 +263,7 @@
   /* ---------- 選手ページ: 試合一覧(STATUSの下、常に3試合分ほど見える高さでスクロール) ---------- */
   .match-history{ margin-top:10px; }
   .match-history-scroll{
-    max-height:124px; overflow-y:auto; display:flex; flex-direction:column; gap:4px;
+    max-height:200px; overflow-y:auto; display:flex; flex-direction:column; gap:4px;
     border-top:1px solid var(--line); padding-top:8px;
   }
   .mh-row{ display:flex; align-items:center; gap:8px; padding:5px 2px; font-size:11px; flex:0 0 auto; }
@@ -404,8 +406,8 @@
 
   <div class="topbar">
     <div class="brand">
-      <span class="mark">Baseline Report</span>
-      <span class="sub">learning.yml &times; players.yml</span>
+      <span class="brand-icon" aria-hidden="true">&#127934;</span>
+      <span class="mark">Tennis Savant</span>
     </div>
     <div class="file-controls">
       <label class="file-btn file-btn-bulk">
@@ -2402,11 +2404,19 @@
       tr.appendChild(nameTd);
       t.grid.forEach(function(cellVal){
         // null(まだ対戦していない/対角線)は色を付けない。○=勝ち(緑)、×=負け・スキップ(赤)は
-        // どちらも「結果が確定しているマス」なので同じ枠(色付きチップ)で統一して表示する
+        // どちらも「結果が確定しているマス」なので同じ枠(色付きチップ)で統一して表示する。
+        // 記号(○/×)は元データの文字をそのまま信用せず、セル内の「自分のセット数-相手のセット数」を
+        // 実際に比較して勝敗を判定し直す(記号が古いバージョンのデータで食い違っていても正しく出るように)
         if (cellVal == null){ tr.appendChild(dataCell("―")); return; }
         var text = String(cellVal);
-        var color = text.indexOf("○") === 0 ? "#00913a" : "#e63946";
-        tr.appendChild(tagCell(text, color));
+        var scoreMatch = /(\d+)\s*-\s*(\d+)/.exec(text);
+        if (scoreMatch){
+          var selfSets = parseInt(scoreMatch[1], 10), oppSets = parseInt(scoreMatch[2], 10);
+          var won = selfSets > oppSets;
+          tr.appendChild(tagCell((won ? "○ " : "× ") + selfSets + "-" + oppSets, won ? "#00913a" : "#e63946"));
+        } else {
+          tr.appendChild(tagCell(text, "#e63946"));
+        }
       });
       tr.appendChild(dataCell(t.win != null ? String(t.win) : "―"));
       tr.appendChild(dataCell(t.lose != null ? String(t.lose) : "―"));
@@ -3021,8 +3031,13 @@
     panel.appendChild(el("div","panel-title mt","球種データ"));
     var t1 = el("table","kind-table");
     var head = "<tr><th></th>" + DISPLAY_ORDER.map(function(k){return "<th>"+KIND_LABEL_EN[k]+"</th>";}).join("") + "<th>TOTAL</th></tr>";
-    var rows = ["Usage","Point%","Spin%","Miss%"].map(function(rowName){
+    var rows = ["Value","Usage","Point%","Spin%","Miss%"].map(function(rowName){
       var cells = DISPLAY_ORDER.map(function(k){
+        // Valueは上の球種別バリューのホイールと全く同じスコアを、同じ色付きボックスで出す
+        if (rowName === "Value"){
+          var sc = m.wheel[k] ? m.wheel[k].score : null;
+          return "<td><span class=\"value-box\" style=\"background:" + colorForScore(sc) + "\">" + (sc!=null?Math.round(sc):"―") + "</span></td>";
+        }
         var d = m.wheelDetail[k];
         var v = "―";
         if (rowName === "Usage") v = k==="SERVE" ? "" : (d.usage!=null ? pct(d.usage) : "―");
@@ -3033,6 +3048,14 @@
       }).join("");
       // TOTAL列: 球種(RETURNABLE、サーブ除く)全体をまとめた値
       var totalV = "―";
+      if (rowName === "Value"){
+        var sumV=0, wV=0;
+        RETURNABLE.forEach(function(k){
+          var wk = m.wheel[k];
+          if (wk && wk.score!=null && wk.attempts){ sumV += wk.score*wk.attempts; wV += wk.attempts; }
+        });
+        totalV = wV>0 ? ("<span class=\"value-box\" style=\"background:" + colorForScore(sumV/wV) + "\">" + Math.round(sumV/wV) + "</span>") : "―";
+      }
       if (rowName === "Usage") totalV = "100%";
       if (rowName === "Point%") totalV = m.pmDetail.pointRate!=null ? pct(m.pmDetail.pointRate) : "―";
       if (rowName === "Spin%") totalV = m.overallSpinRate!=null ? pct(m.overallSpinRate) : "―";
