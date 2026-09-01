@@ -1,0 +1,1152 @@
+match-singles:
+  '1':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T14:02:24.699605873Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 57431ef6-5a46-4d19-9cc1-1acfec3dc08a
+      name: Philia_Gray
+      sets-won: 0
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 1-5
+    winner: BLUE
+  '2':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-29T14:02:25.386386306Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    blue:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 1-5
+    winner: BLUE
+  '3':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:03:01.452237590Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 2
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 5-3
+    - 5-1
+    winner: RED
+  '6':
+    court-id: 5
+    court-surface: CLAY
+    timestamp: '2026-08-29T14:03:45.980887686Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 964f2b43-b8c1-4c76-b860-dd3ed53212a2
+      name: Rosario20
+      sets-won: 0
+    blue:
+      uuid: f51b1265-a385-453e-ae03-67e1e84e70b8
+      name: Obake_zzz
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 3-5
+    winner: BLUE
+  '4':
+    court-id: 9
+    court-surface: HARD
+    timestamp: '2026-08-29T14:04:14.030174349Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      name: AndroidA
+      sets-won: 2
+    set-scores:
+    - 5-3
+    - 2-5
+    - 2-5
+    winner: BLUE
+  '5':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-08-29T14:05:42.649492765Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    blue:
+      uuid: ba70a6e4-357e-4f17-a382-3f0881685e89
+      name: east_company
+      sets-won: 0
+    set-scores:
+    - 5-1
+    - 5-3
+    winner: RED
+  '12':
+    court-id: 9
+    court-surface: HARD
+    timestamp: '2026-08-29T14:10:48.435223917Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 2-5
+    winner: BLUE
+  '9':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-29T14:11:50.029661622Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    blue:
+      uuid: 964f2b43-b8c1-4c76-b860-dd3ed53212a2
+      name: Rosario20
+      sets-won: 0
+    set-scores:
+    - 5-0
+    - 5-2
+    winner: RED
+  '11':
+    court-id: 10
+    court-surface: HARD
+    timestamp: '2026-08-29T14:12:10.631330153Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 5-2
+    - 2-5
+    winner: BLUE
+  '10':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-08-29T14:12:23.093169190Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 57431ef6-5a46-4d19-9cc1-1acfec3dc08a
+      name: Philia_Gray
+      sets-won: 0
+    blue:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 2-5
+    winner: BLUE
+  '8':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T14:12:32.779828984Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      name: AndroidA
+      sets-won: 2
+    blue:
+      uuid: f51b1265-a385-453e-ae03-67e1e84e70b8
+      name: Obake_zzz
+      sets-won: 1
+    set-scores:
+    - 5-2
+    - 3-5
+    - 5-1
+    winner: RED
+  '7':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:13:17.592247641Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    blue:
+      uuid: ba70a6e4-357e-4f17-a382-3f0881685e89
+      name: east_company
+      sets-won: 0
+    set-scores:
+    - 5-3
+    - 5-4
+    winner: RED
+  '15':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T14:17:02.630857884Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      name: AndroidA
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 4-5
+    winner: BLUE
+  '17':
+    court-id: 10
+    court-surface: HARD
+    timestamp: '2026-08-29T14:17:33.126465319Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 1
+    set-scores:
+    - 2-5
+    - 5-1
+    - 5-3
+    winner: RED
+  '13':
+    court-id: 9
+    court-surface: HARD
+    timestamp: '2026-08-29T14:18:09.379191812Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    blue:
+      uuid: f51b1265-a385-453e-ae03-67e1e84e70b8
+      name: Obake_zzz
+      sets-won: 1
+    set-scores:
+    - 4-5
+    - 5-0
+    - 5-2
+    winner: RED
+  '18':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-08-29T14:19:08.128667168Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 2
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    set-scores:
+    - 5-4
+    - 4-5
+    - 5-4
+    winner: RED
+  '14':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-29T14:19:26.392620478Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: ba70a6e4-357e-4f17-a382-3f0881685e89
+      name: east_company
+      sets-won: 2
+    blue:
+      uuid: 964f2b43-b8c1-4c76-b860-dd3ed53212a2
+      name: Rosario20
+      sets-won: 1
+    set-scores:
+    - 4-5
+    - 5-1
+    - 5-1
+    winner: RED
+  '16':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-08-29T14:19:32.589078492Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 57431ef6-5a46-4d19-9cc1-1acfec3dc08a
+      name: Philia_Gray
+      sets-won: 2
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    set-scores:
+    - 4-5
+    - 5-3
+    - 5-3
+    winner: RED
+  '19':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T14:23:42.078109329Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 57431ef6-5a46-4d19-9cc1-1acfec3dc08a
+      name: Philia_Gray
+      sets-won: 0
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 1-5
+    winner: BLUE
+  '20':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-08-29T14:24:01.028866394Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 2
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-3
+    - 5-3
+    winner: RED
+  '24':
+    court-id: 10
+    court-surface: HARD
+    timestamp: '2026-08-29T14:24:43.528607636Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: ba70a6e4-357e-4f17-a382-3f0881685e89
+      name: east_company
+      sets-won: 0
+    blue:
+      uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      name: AndroidA
+      sets-won: 2
+    set-scores:
+    - 0-5
+    - 2-5
+    winner: BLUE
+  '21':
+    court-id: 9
+    court-surface: HARD
+    timestamp: '2026-08-29T14:25:18.942601050Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    set-scores:
+    - 5-4
+    - 5-4
+    winner: RED
+  '23':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-29T14:26:02.727312628Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: f51b1265-a385-453e-ae03-67e1e84e70b8
+      name: Obake_zzz
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 1-5
+    winner: BLUE
+  '22':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:26:26.095322992Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 4d05b54a-466b-4993-a20a-7eab9768323c
+      name: AndroidB
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 5-3
+    - 3-5
+    winner: BLUE
+  '27':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-29T14:30:31.579803104Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    blue:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 0-5
+    winner: BLUE
+  '25':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:30:51.977995225Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 57431ef6-5a46-4d19-9cc1-1acfec3dc08a
+      name: Philia_Gray
+      sets-won: 2
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-2
+    - 5-1
+    winner: RED
+  '29':
+    court-id: 10
+    court-surface: HARD
+    timestamp: '2026-08-29T14:32:16.279852248Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 4d05b54a-466b-4993-a20a-7eab9768323c
+      name: AndroidB
+      sets-won: 0
+    blue:
+      uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      name: AndroidA
+      sets-won: 2
+    set-scores:
+    - 4-5
+    - 1-5
+    winner: BLUE
+  '30':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-08-29T14:32:36.229768051Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: f51b1265-a385-453e-ae03-67e1e84e70b8
+      name: Obake_zzz
+      sets-won: 0
+    blue:
+      uuid: ba70a6e4-357e-4f17-a382-3f0881685e89
+      name: east_company
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 4-5
+    winner: BLUE
+  '28':
+    court-id: 9
+    court-surface: HARD
+    timestamp: '2026-08-29T14:33:06.550332931Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    set-scores:
+    - 5-1
+    - 2-5
+    - 1-5
+    winner: BLUE
+  '26':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T14:33:36.708902783Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 1
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 2
+    set-scores:
+    - 4-5
+    - 5-2
+    - 4-5
+    winner: BLUE
+  '32':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:47:09.311088508Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 0
+    set-scores:
+    - 5-4
+    - 5-4
+    winner: RED
+  '31':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T14:47:33.312437550Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 5-1
+    - 2-5
+    - 5-4
+    winner: RED
+  '33':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:51:43.263697029Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    set-scores:
+    - 4-5
+    - 4-5
+    winner: BLUE
+  '34':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T14:54:55.832881019Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 0
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 2-5
+    winner: BLUE
+  '35':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-30T09:39:49.023095655Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    set-scores:
+    - 4-6
+    - 5-1
+    - 5-2
+    winner: RED
+  '36':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-30T09:40:03.480706369Z'
+    status: CANCELLED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 10-8
+  '37':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-30T09:51:58.676984112Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 1
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 2
+    set-scores:
+    - 4-6
+    - 5-0
+    - 2-5
+    winner: BLUE
+  '38':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-30T09:52:24.774120191Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 2
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    set-scores:
+    - 5-0
+    - 3-5
+    - 5-3
+    winner: RED
+  '40':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-30T09:57:17.676334489Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    set-scores:
+    - 5-1
+    - 2-5
+    - 5-2
+    winner: RED
+  '39':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-30T09:58:50.925550377Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 7-5
+    - 2-5
+    - 5-2
+    winner: RED
+  '41':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-30T10:03:30.276130473Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 2
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-2
+    - 6-4
+    winner: RED
+  '42':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-30T10:06:55.003604324Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    set-scores:
+    - 5-0
+    - 5-2
+    winner: RED
+  '43':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-30T13:21:16.500607170Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 2
+    set-scores:
+    - 4-5
+    - 5-4
+    - 3-5
+    winner: BLUE
+  '44':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-31T15:18:13.373352730Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 2-5
+    winner: BLUE
+  '45':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-08-31T15:19:05.584739795Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 1
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    set-scores:
+    - 5-4
+    winner: RED
+  '47':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-31T15:20:54.479391977Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 0
+    set-scores:
+    - 5-4
+    winner: RED
+  '46':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-31T15:21:02.275950320Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    set-scores:
+    - 5-3
+    winner: RED
+  '49':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-31T15:22:17.748809804Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 1-5
+    winner: BLUE
+  '48':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-31T15:22:41.542343326Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    blue:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 1
+    set-scores:
+    - 3-5
+    winner: BLUE
+match-doubles:
+  '2':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-08-29T15:24:44.703352614Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      b-name: AndroidA
+      name: rlaiy & AndroidA
+      sets-won: 2
+    blue:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 1
+    set-scores:
+    - 5-2
+    - 2-5
+    - 5-4
+    winner: RED
+  '1':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T15:24:52.660565010Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      a-uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      a-name: sota2486
+      b-uuid: 196d5305-414b-4841-9730-05a15b586666
+      b-name: Jtype916
+      name: sota2486 & Jtype916
+      sets-won: 2
+    blue:
+      a-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      a-name: Alpha6000
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: Alpha6000 & pipis_57
+      sets-won: 1
+    set-scores:
+    - 5-2
+    - 2-5
+    - 5-2
+    winner: RED
+  '4':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T15:27:59.436356972Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      a-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      a-name: Alpha6000
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: Alpha6000 & pipis_57
+      sets-won: 0
+    blue:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      b-name: AndroidA
+      name: rlaiy & AndroidA
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 1-5
+    winner: BLUE
+  '3':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T15:30:09.306015872Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      a-uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      a-name: sota2486
+      b-uuid: 196d5305-414b-4841-9730-05a15b586666
+      b-name: Jtype916
+      name: sota2486 & Jtype916
+      sets-won: 2
+    blue:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 1
+    set-scores:
+    - 3-5
+    - 5-1
+    - 5-4
+    winner: RED
+  '5':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-08-29T15:34:07.833659589Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      a-uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      a-name: sota2486
+      b-uuid: 196d5305-414b-4841-9730-05a15b586666
+      b-name: Jtype916
+      name: sota2486 & Jtype916
+      sets-won: 2
+    blue:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: d8122ee6-88a3-42d7-86ff-c2612de6dec6
+      b-name: AndroidA
+      name: rlaiy & AndroidA
+      sets-won: 0
+    set-scores:
+    - 5-1
+    - 5-3
+    winner: RED
+  '6':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-08-29T15:34:40.327772157Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    red:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 1
+    blue:
+      a-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      a-name: Alpha6000
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: Alpha6000 & pipis_57
+      sets-won: 2
+    set-scores:
+    - 5-1
+    - 2-5
+    - 2-5
+    winner: BLUE
