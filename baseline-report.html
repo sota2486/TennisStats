@@ -2359,7 +2359,7 @@
     standingsTable.className = "rank-table";
     var sHead = document.createElement("thead");
     var sHeadRow = document.createElement("tr");
-    ["RANK","TEAM","W","L","+/-"].forEach(function(h){ sHeadRow.appendChild(el("th","",h)); });
+    ["RANK","TEAM","W","L","SET+-"].forEach(function(h){ sHeadRow.appendChild(el("th","",h)); });
     sHead.appendChild(sHeadRow);
     standingsTable.appendChild(sHead);
     var sBody = document.createElement("tbody");
@@ -2390,7 +2390,7 @@
     var headRow = document.createElement("tr");
     headRow.appendChild(el("th","","TEAM"));
     data.teams.forEach(function(t){ headRow.appendChild(el("th","", cleanTeamLabel(t.label))); });
-    ["W","L","+/-","RANK"].forEach(function(h){ headRow.appendChild(el("th","",h)); });
+    ["W","L","SET+-","RANK"].forEach(function(h){ headRow.appendChild(el("th","",h)); });
     thead.appendChild(headRow);
     table.appendChild(thead);
     var tbody = document.createElement("tbody");
@@ -2461,7 +2461,7 @@
     table.className = "rank-table";
     var thead = document.createElement("thead");
     var headRow = document.createElement("tr");
-    ["DATE","FORMAT","COURT","RED","BLUE","WINNER","SETS","SET SCORES","STATUS"].forEach(function(h){
+    ["DATE","FORMAT","COURT","WINNER","LOSER","SETS","SET SCORES","STATUS"].forEach(function(h){
       headRow.appendChild(el("th","",h));
     });
     thead.appendChild(headRow);
@@ -2476,11 +2476,17 @@
       tr.appendChild(dateTd);
       tr.appendChild(tagCell(m.format === "doubles" ? "DOUBLES" : "SINGLES", FORMAT_COLOR[m.format]));
       tr.appendChild(tagCell(m.surface, m.surface ? COURT_COLOR[m.surface] : null));
-      tr.appendChild(dataCell((m.red && m.red.name) || "―"));
-      tr.appendChild(dataCell((m.blue && m.blue.name) || "―"));
-      tr.appendChild(dataCell(m.winner === "RED" ? (m.red && m.red.name) : m.winner === "BLUE" ? (m.blue && m.blue.name) : "―"));
-      tr.appendChild(dataCell((m.redSets!=null && m.blueSets!=null) ? (m.redSets + "-" + m.blueSets) : "―"));
-      tr.appendChild(dataCell(m.setScores.map(function(s){ return s[0]+"-"+s[1]; }).join(" / ") || "―"));
+      // 勝者/敗者の順で揃える(勝者が未確定の試合は、便宜上red側を左に置く)
+      var winnerIsBlue = m.winner === "BLUE";
+      var winnerObj = winnerIsBlue ? m.blue : m.red;
+      var loserObj = winnerIsBlue ? m.red : m.blue;
+      var winnerSets = winnerIsBlue ? m.blueSets : m.redSets;
+      var loserSets = winnerIsBlue ? m.redSets : m.blueSets;
+      var setScoresOrdered = m.setScores.map(function(s){ return winnerIsBlue ? [s[1], s[0]] : s; });
+      tr.appendChild(dataCell((winnerObj && winnerObj.name) || "―"));
+      tr.appendChild(dataCell((loserObj && loserObj.name) || "―"));
+      tr.appendChild(dataCell((winnerSets!=null && loserSets!=null) ? (winnerSets + "-" + loserSets) : "―"));
+      tr.appendChild(dataCell(setScoresOrdered.map(function(s){ return s[0]+"-"+s[1]; }).join(" / ") || "―"));
       tr.appendChild(dataCell(m.status || "―"));
       tbody.appendChild(tr);
     });
@@ -2681,21 +2687,6 @@
     table.appendChild(tbody);
     panel.appendChild(table);
 
-    // positioning / playstyle (/tennis player <name> style と同じ基準・既定しきい値で判定、1行にまとめる)
-    var playStyle = computePlayStyle(p.learn);
-    panel.appendChild(el("div","panel-title mt","PLAYSTYLE"));
-    panel.appendChild(el("div","kv-line",
-      '<span class="k">タイプ・傾向</span><span class="v">'
-      + (playStyle ? (playStyle.style + "・" + playStyle.pos) : "データ不足")
-      + '</span>'));
-    panel.appendChild(el("div","kv-line",
-      '<span class="k">平均打球位置・ボレー率</span><span class="v">'
-      + (playStyle ? (round1(playStyle.netDistanceAvg) + "block ・ " + pct(playStyle.volleyRate)) : "データ不足")
-      + '</span>'));
-
-    // suitable(コート/シングルス・ダブルスの適正)
-    renderSuitableSection(panel, m);
-
     // rate
     panel.appendChild(el("div","panel-title mt","RATE"));
     var rate = p.stats ? p.stats.rating : null;
@@ -2721,6 +2712,21 @@
       sparkWrap.appendChild(el("div","spark-empty","月別データが不足しています"));
     }
     panel.appendChild(sparkWrap);
+
+    // positioning / playstyle (/tennis player <name> style と同じ基準・既定しきい値で判定、1行にまとめる)
+    var playStyle = computePlayStyle(p.learn);
+    panel.appendChild(el("div","panel-title mt","PLAYSTYLE"));
+    panel.appendChild(el("div","kv-line",
+      '<span class="k">タイプ・傾向</span><span class="v">'
+      + (playStyle ? (playStyle.style + "・" + playStyle.pos) : "データ不足")
+      + '</span>'));
+    panel.appendChild(el("div","kv-line",
+      '<span class="k">平均打球位置・ボレー率</span><span class="v">'
+      + (playStyle ? (round1(playStyle.netDistanceAvg) + "block ・ " + pct(playStyle.volleyRate)) : "データ不足")
+      + '</span>'));
+
+    // suitable(コート/シングルス・ダブルスの適正)
+    renderSuitableSection(panel, m);
 
     return panel;
   }
@@ -3103,7 +3109,7 @@
     panel.appendChild(el("div","panel-title mt","SUITABLE"));
     panel.appendChild(el("div","suit-sub","COURT"));
     panel.appendChild(suitTable(["HARD","CLAY","GRASS","OMNI"], function(t){ return m.courtSuitability[t]; }));
-    panel.appendChild(el("div","suit-sub","GAME"));
+    panel.appendChild(el("div","suit-sub","FORMAT"));
     panel.appendChild(suitTable(["SINGLES","DOUBLES"], function(t){ return m.formatSuitability[t]; }));
   }
 
