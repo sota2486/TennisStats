@@ -1649,13 +1649,30 @@
     if (sideObj.aName) return [sideObj.aName, sideObj.bName];
     return [sideObj.name || "―"];
   }
+  /**
+   * "A & B"のようなペア名(または1人の名前)の文字列から、顔写真アイコン(1〜2個)のHTMLを作る。
+   * <td>を新しく作らず、既存の要素のinnerHTMLに埋め込みたい場所(トーナメントのブラケットカード等)用
+   */
+  function avatarPrefixHtml(name){
+    if (!name) return "";
+    return String(name).split(" & ").map(function(n){
+      return '<span class="rank-avatar">' + avatarIconHtml({ id:"", name:n }) + '</span>';
+    }).join("");
+  }
   /** 1人 or 2人分の名前を、それぞれの顔写真アイコン付きで表示する<td>(ダブルスのペア名などに使う) */
   function namesCell(names){
+    return namesCellRaw(names, names.join(" & "));
+  }
+  /**
+   * アイコンを出す名前の一覧(avatarNames)と、実際に表示するテキスト(displayText)を別々に指定する版。
+   * 「ベスト4: A、B」のように" & "とは違う区切りが元の文言にある場合、表示だけは元の文言のままにしたいので使う
+   */
+  function namesCellRaw(avatarNames, displayText){
     var td = document.createElement("td");
     td.className = "rank-name";
-    td.innerHTML = names.map(function(n){
+    td.innerHTML = avatarNames.map(function(n){
       return '<span class="rank-avatar">' + avatarIconHtml({ id:"", name:n }) + '</span>';
-    }).join("") + names.join(" & ");
+    }).join("") + displayText;
     return td;
   }
   /** 現在ソート中の列なら sorted-col、グループの境目なら group-gap を付けるプレーンな<td> */
@@ -2092,10 +2109,8 @@
         var parsed = parsePlacementLine(String(line));
         var tr = document.createElement("tr");
         tr.appendChild(tagCell(parsed.label || "―", placementBadgeColor(parsed.label)));
-        var nameTd = document.createElement("td");
-        nameTd.className = "rank-name";
-        nameTd.textContent = parsed.name;
-        tr.appendChild(nameTd);
+        // ベスト4等、複数チームが「、」区切りで並ぶ行(ペアの"&"とは別)もアイコンだけそれぞれ出す(表示文言は元のまま)
+        tr.appendChild(namesCellRaw(String(parsed.name).split(/、| & /), parsed.name));
         stBody.appendChild(tr);
       });
       stTable.appendChild(stBody);
@@ -2127,8 +2142,8 @@
       roundTd.className = "rank-name";
       roundTd.textContent = m.round != null ? String(m.round) : "―";
       tr.appendChild(roundTd);
-      tr.appendChild(dataCell(m.winner != null ? String(m.winner) : "―"));
-      tr.appendChild(dataCell(m.loser != null ? String(m.loser) : "―"));
+      tr.appendChild(namesCell(m.winner != null ? String(m.winner).split(" & ") : ["―"]));
+      tr.appendChild(namesCell(m.loser != null ? String(m.loser).split(" & ") : ["―"]));
       tr.appendChild(dataCell(m.sets != null ? String(m.sets) : "―"));
       tr.appendChild(dataCell(m.detail != null ? String(m.detail) : "―"));
       tbody.appendChild(tr);
@@ -2230,7 +2245,7 @@
     if (!m){
       if (node.name){
         var seedRow = el("div","b-row win");
-        seedRow.appendChild(el("span","b-name", String(node.name)));
+        seedRow.appendChild(el("span","b-name", avatarPrefixHtml(node.name) + String(node.name)));
         box.appendChild(seedRow);
         box.appendChild(el("div","b-seed-note","シード"));
       } else {
@@ -2240,10 +2255,10 @@
     }
     var sets = m.sets != null ? String(m.sets).split("-") : [null, null];
     var winRow = el("div","b-row win");
-    winRow.appendChild(el("span","b-name", m.winner != null ? String(m.winner) : "―"));
+    winRow.appendChild(el("span","b-name", avatarPrefixHtml(m.winner) + (m.winner != null ? String(m.winner) : "―")));
     winRow.appendChild(el("span","b-sets", sets[0] || ""));
     var loseRow = el("div","b-row lose");
-    loseRow.appendChild(el("span","b-name", m.loser != null ? String(m.loser) : "―"));
+    loseRow.appendChild(el("span","b-name", avatarPrefixHtml(m.loser) + (m.loser != null ? String(m.loser) : "―")));
     loseRow.appendChild(el("span","b-sets", sets[1] || ""));
     box.appendChild(winRow);
     box.appendChild(loseRow);
@@ -2389,10 +2404,7 @@
     }).forEach(function(t){
       var tr = document.createElement("tr");
       tr.appendChild(tagCell(t.rank != null ? String(t.rank) : "―", RANK_BADGE_COLOR[rankNum(t.rank)] || "#8a97a1"));
-      var nameTd = document.createElement("td");
-      nameTd.className = "rank-name";
-      nameTd.textContent = cleanTeamLabel(t.label);
-      tr.appendChild(nameTd);
+      tr.appendChild(namesCell(cleanTeamLabel(t.label).split(" & ")));
       tr.appendChild(dataCell(t.win != null ? String(t.win) : "―"));
       tr.appendChild(dataCell(t.lose != null ? String(t.lose) : "―"));
       tr.appendChild(dataCell(t.diff != null ? String(t.diff) : "―"));
@@ -2415,10 +2427,7 @@
     var tbody = document.createElement("tbody");
     data.teams.forEach(function(t){
       var tr = document.createElement("tr");
-      var nameTd = document.createElement("td");
-      nameTd.className = "rank-name";
-      nameTd.textContent = t.label;
-      tr.appendChild(nameTd);
+      tr.appendChild(namesCellRaw(cleanTeamLabel(t.label).split(" & "), t.label));
       t.grid.forEach(function(cellVal){
         // null(まだ対戦していない/対角線)は色を付けない。○=勝ち(緑)、×=負け・スキップ(赤)は
         // どちらも「結果が確定しているマス」なので同じ枠(色付きチップ)で統一して表示する。
@@ -2459,11 +2468,8 @@
     var tbody2 = document.createElement("tbody");
     data.matches.forEach(function(m){
       var tr = document.createElement("tr");
-      var winnerTd = document.createElement("td");
-      winnerTd.className = "rank-name";
-      winnerTd.textContent = m.winner != null ? String(m.winner) : "―";
-      tr.appendChild(winnerTd);
-      tr.appendChild(dataCell(m.loser != null ? String(m.loser) : "―"));
+      tr.appendChild(namesCell(m.winner != null ? String(m.winner).split(" & ") : ["―"]));
+      tr.appendChild(namesCell(m.loser != null ? String(m.loser).split(" & ") : ["―"]));
       tr.appendChild(dataCell(m.sets != null ? String(m.sets) : "―"));
       tr.appendChild(dataCell(m.detail != null ? String(m.detail) : "―"));
       tbody2.appendChild(tr);
@@ -2638,8 +2644,7 @@
        [bLabel, data.bWins, data.aWins, data.bPoints, data.aPoints, data.bSets, data.aSets]
       ].forEach(function(row){
         var tr = document.createElement("tr");
-        var nameTd = document.createElement("td"); nameTd.className = "rank-name"; nameTd.textContent = row[0];
-        tr.appendChild(nameTd);
+        tr.appendChild(namesCell([row[0]]));
         tr.appendChild(dataCell(String(data.games)));
         tr.appendChild(dataCell(String(row[1])));
         tr.appendChild(rateCell(shareRateOf(row[3], row[4])));
@@ -2667,9 +2672,7 @@
       pTable.appendChild(pThead);
       var pBody = document.createElement("tbody");
       var tr = document.createElement("tr");
-      var nameTd = document.createElement("td"); nameTd.className = "rank-name";
-      nameTd.textContent = matchupState.a + " & " + matchupState.b;
-      tr.appendChild(nameTd);
+      tr.appendChild(namesCell([matchupState.a, matchupState.b]));
       tr.appendChild(dataCell(String(h2h.pair.games)));
       tr.appendChild(dataCell(String(h2h.pair.wins)));
       tr.appendChild(dataCell(String(h2h.pair.losses)));
