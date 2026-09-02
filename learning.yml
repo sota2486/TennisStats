@@ -7923,12 +7923,65 @@ players:
     - 1788186429|V|31|18.45|0.767|-0.172|-0.1|HARD|0|0
     - 1788186431|S|4|3|1|43.254|0.509|0.273|-0.024|6.593|1|HARD|0|0|1|0
     - 1788186433|S|4|2|1|51.15|0.712|0.035|0.356|6.919|1|HARD|1|0|1|0
+    - 1788352540|S|49|0|0|17.919|0.726|0.102|-0.119|8.52|1|HARD|1|0|0|0
+    - 1788352547|V|28|13.35|0.642|-0.017|-0.028|HARD|0|0
+    - 1788352547|X|HARD|0|0
+    - 1788352549|V|28|17.4|0.65|-0.037|-0.228|HARD|0|0
+    - 1788352549|X|HARD|0|0
+    - 1788352549|XX|HARD|0|0
+    - 1788352555|S|49|0|0|18.184|0.722|-0.012|0.01|8.634|1|HARD|0|0|0|0
+    - 1788352558|S|37|1|0|-2.048|1.191|0.023|-0.198|7.959|1|HARD|0|0|1|1
+    - 1788352558|F|16|2|HARD|0|1
+    - 1788352560|S|16|3|0|44.346|0.501|0.364|-0.07|7.013|1|HARD|0|0|0|0
+    - 1788352563|V|31|24.6|0.75|-0.341|-0.126|HARD|0|0
+    - 1788352567|S|28|0|0|20.322|0.764|0.052|0.001|4.286|1|HARD|0|0|0|1
+    - 1788352568|F|4|3|HARD|0|0
+    - 1788352577|S|49|0|0|20.311|0.765|0.001|0.009|8.242|1|HARD|0|0|0|0
+    - 1788352580|S|37|3|0|45.218|0.521|0.061|0.374|4.374|1|HARD|0|0|1|0
+    - 1788352582|S|37|0|0|19.206|0.745|0.043|-0.057|5.549|1|HARD|0|0|0|1
+    - 1788352583|F|4|3|HARD|0|0
+    - 1788352588|V|31|16.35|0.742|-0.196|0.075|HARD|0|0
+    - 1788352592|S|28|1|0|2.459|0.985|-0.005|0.285|6.829|1|HARD|1|0|1|0
+    - 1788352600|S|49|0|0|25.601|0.714|-0.13|0.059|8.77|1|HARD|1|0|0|0
+    - 1788352606|V|40|19.5|0.725|-0.304|-0.469|HARD|0|0
+    - 1788352609|V|31|18.75|0.725|-0.225|-0.04|HARD|0|0
+    - 1788352612|S|28|0|1|22.397|0.792|0.0|0.0|4.883|0|HARD|0|0|0|0
+    - 1788352615|F|1|1|HARD|0|1
+    - 1788352719|F|50|0|HARD|0|0
+    - 1788352726|V|31|22.35|0.8|-0.254|0.049|HARD|0|0
+    - 1788352729|S|28|1|0|2.63|1.118|0.014|0.23|5.714|1|HARD|1|0|1|0
+    - 1788352736|S|49|0|0|15.983|0.69|-0.016|0.009|7.172|1|HARD|0|0|0|0
+    - 1788352739|S|37|2|0|47.615|0.68|0.122|-0.026|6.799|1|HARD|1|0|0|0
+    - 1788352747|V|31|16.18|0.792|0.029|0.297|HARD|0|0
+    - 1788352748|X|HARD|0|0
+    - 1788352750|V|31|16.95|0.708|-0.007|-0.067|HARD|0|0
+    - 1788352753|V|31|22.35|0.725|-0.43|0.037|HARD|0|0
+    - 1788352756|V|31|22.65|0.75|-0.042|0.022|HARD|0|0
+    - 1788352759|S|28|0|0|24.83|0.709|0.0|0.0|4.719|0|HARD|0|0|0|0
+    - 1788352763|S|37|2|0|49.094|0.759|0.307|0.952|7.656|1|HARD|0|0|0|1
+    - 1788352765|F|19|3|HARD|0|1
+    - 1788352774|S|49|2|0|50.025|0.673|0.101|-0.016|8.225|1|HARD|0|0|0|0
+    - 1788352777|S|4|0|0|16.745|0.76|0.085|0.008|7.773|1|HARD|1|0|0|0
+    - 1788352798|V|31|23.1|0.775|-0.367|0.034|HARD|0|0
+    - 1788352801|S|4|2|0|49.734|0.688|0.086|0.055|8.517|1|HARD|0|0|1|0
+    - 1788352805|S|19|3|1|43.202|0.521|0.051|0.149|6.448|1|HARD|0|0|1|0
+    - 1788352807|S|37|2|0|48.353|0.675|0.263|0.448|7.064|1|HARD|0|0|0|0
+    - 1788352811|S|19|1|1|3.791|1.074|-0.045|0.051|5.268|1|HARD|0|0|0|1
+    - 1788352811|F|16|3|HARD|0|0
+    - 1788352820|S|49|0|0|16.967|0.762|-0.031|0.059|8.231|1|HARD|0|0|0|0
+    - 1788352822|S|37|0|0|16.88|0.754|0.075|-0.237|7.269|1|HARD|1|0|0|0
+    - 1788352834|V|31|20.25|0.742|-0.236|0.04|HARD|0|0
+    - 1788352835|X|HARD|0|0
+    - 1788352837|V|31|20.7|0.742|-0.244|0.055|HARD|0|0
+    - 1788352840|S|28|0|0|21.478|0.731|0.008|0.037|7.234|1|HARD|0|0|0|0
+    - 1788352842|S|37|3|0|46.145|0.495|0.068|0.74|6.594|1|HARD|0|0|0|0
+    - 1788352845|S|37|2|0|47.474|0.699|0.072|0.051|5.196|1|HARD|0|0|0|1
+    - 1788352847|F|19|3|HARD|0|0
+    - 1788352856|S|49|0|0|19.609|0.776|0.033|-0.012|8.637|1|HARD|1|0|0|0
     around-area:
-      total-came: 175
-      total-swung: 102
+      total-came: 177
+      total-swung: 104
     recent-matches:
-    - 6,4,5,1,0,1,0,1
-    - 7,4,6,2,1,0,1,0
     - 11,9,5,1,0,0,0,0
     - 7,5,4,1,0,0,0,0
     - 3,2,3,0,0,0,0,1
@@ -7977,13 +8030,15 @@ players:
     - 1,1,5,1,0,2,2,0
     - 3,2,4,0,0,0,1,1
     - 3,2,6,1,0,0,1,0
+    - 0,0,6,2,1,0,2,1
+    - 2,2,8,2,0,0,1,0
     serve:
-      count: 256
-      faults: 57
-      double-faults: 13
+      count: 270
+      faults: 61
+      double-faults: 14
       aces: 15
-      return-won: 13
-      return-aced: 27
+      return-won: 16
+      return-aced: 28
       buckets:
         top-straight-fast-high:
           count: 2
@@ -7993,12 +8048,12 @@ players:
           spin-vert: -0.542
           spin-side: 0.067
         flat-straight-slow-mid:
-          count: 4
+          count: 6
           aces: 0
-          angle: 17.813
-          speed: 0.668
-          spin-vert: -0.08
-          spin-side: 0.018
+          angle: 17.0
+          speed: 0.661
+          spin-vert: -0.062
+          spin-side: 0.055
         flat-straight-mid-low:
           count: 4
           aces: 0
@@ -8007,12 +8062,12 @@ players:
           spin-vert: -0.018
           spin-side: 0.019
         flat-straight-mid-mid:
-          count: 171
+          count: 182
           aces: 8
-          angle: 19.205
-          speed: 0.764
-          spin-vert: -0.075
-          spin-side: 0.022
+          angle: 19.276
+          speed: 0.763
+          spin-vert: -0.083
+          spin-side: 0.025
         flat-straight-mid-high:
           count: 3
           aces: 0
@@ -8042,12 +8097,12 @@ players:
           spin-vert: -0.184
           spin-side: 0.024
         flat-curve-mid-mid:
-          count: 2
+          count: 3
           aces: 0
-          angle: 15.675
-          speed: 0.788
-          spin-vert: -0.007
-          spin-side: 0.314
+          angle: 16.95
+          speed: 0.767
+          spin-vert: -0.106
+          spin-side: 0.366
         flat-curve-fast-mid:
           count: 2
           aces: 0
@@ -8104,7 +8159,7 @@ players:
           DROP: 0
         failures:
           WHIFF: 0
-          UNREACHABLE: 0
+          UNREACHABLE: 1
           NET: 3
           OUT: 1
           DOUBLE_FAULT: 0
@@ -8161,30 +8216,30 @@ players:
           OUT: 1
           DOUBLE_FAULT: 0
       STRAIGHT-mid-mid:
-        count: 130
+        count: 132
         volley: 102
-        bounced: 28
-        angle: 32.078
+        bounced: 30
+        angle: 32.096
         speed: 0.708
-        spin-vert: -0.006
-        spin-side: 0.1
-        spin-count: 127
-        net-distance: 6.967
+        spin-vert: -0.005
+        spin-side: 0.099
+        spin-count: 129
+        net-distance: 6.985
         side-spins:
-          straight: 113
+          straight: 115
           curve: 13
           hook: 1
         shots:
-          STRAIGHT: 38
+          STRAIGHT: 39
           SMASH: 22
-          LOB: 42
+          LOB: 43
           WEAK_LOB: 26
           DROP: 2
         failures:
           WHIFF: 15
           UNREACHABLE: 1
           NET: 4
-          OUT: 11
+          OUT: 13
           DOUBLE_FAULT: 0
       STRAIGHT-mid-end:
         count: 22
@@ -8317,30 +8372,30 @@ players:
           OUT: 3
           DOUBLE_FAULT: 0
       SMASH-fast-mid:
-        count: 82
+        count: 83
         volley: 70
-        bounced: 12
-        angle: 44.01
-        speed: 0.668
-        spin-vert: 0.05
-        spin-side: 0.147
-        spin-count: 82
-        net-distance: 7.203
+        bounced: 13
+        angle: 44.014
+        speed: 0.666
+        spin-vert: 0.054
+        spin-side: 0.146
+        spin-count: 83
+        net-distance: 7.201
         side-spins:
-          straight: 71
+          straight: 72
           curve: 9
           hook: 2
         shots:
           STRAIGHT: 9
           SMASH: 2
           LOB: 60
-          WEAK_LOB: 8
+          WEAK_LOB: 9
           DROP: 3
         failures:
           WHIFF: 23
           UNREACHABLE: 10
-          NET: 8
-          OUT: 12
+          NET: 9
+          OUT: 13
           DOUBLE_FAULT: 0
       SMASH-fast-end:
         count: 15
@@ -8395,30 +8450,30 @@ players:
           OUT: 8
           DOUBLE_FAULT: 0
       LOB-slow-mid:
-        count: 20
-        volley: 19
+        count: 22
+        volley: 21
         bounced: 1
-        angle: 16.947
-        speed: 0.927
-        spin-vert: -0.086
-        spin-side: 0.115
-        spin-count: 19
-        net-distance: 6.897
+        angle: 17.542
+        speed: 0.915
+        spin-vert: -0.078
+        spin-side: 0.114
+        spin-count: 21
+        net-distance: 6.803
         side-spins:
-          straight: 18
+          straight: 20
           curve: 0
           hook: 1
         shots:
           STRAIGHT: 2
-          SMASH: 12
+          SMASH: 13
           LOB: 4
-          WEAK_LOB: 2
+          WEAK_LOB: 3
           DROP: 0
         failures:
           WHIFF: 4
           UNREACHABLE: 0
           NET: 1
-          OUT: 24
+          OUT: 26
           DOUBLE_FAULT: 0
       LOB-slow-end:
         count: 9
@@ -8473,22 +8528,22 @@ players:
           OUT: 0
           DOUBLE_FAULT: 0
       WEAK_LOB-slow-mid:
-        count: 109
-        volley: 56
-        bounced: 53
-        angle: 25.942
-        speed: 0.769
-        spin-vert: -0.048
-        spin-side: 0.1
-        spin-count: 107
-        net-distance: 6.49
+        count: 115
+        volley: 57
+        bounced: 58
+        angle: 25.407
+        speed: 0.773
+        spin-vert: -0.046
+        spin-side: 0.101
+        spin-count: 111
+        net-distance: 6.444
         side-spins:
-          straight: 98
+          straight: 102
           curve: 9
           hook: 0
         shots:
-          STRAIGHT: 21
-          SMASH: 35
+          STRAIGHT: 25
+          SMASH: 37
           LOB: 16
           WEAK_LOB: 24
           DROP: 13
@@ -8551,24 +8606,24 @@ players:
           OUT: 0
           DOUBLE_FAULT: 0
       DROP-slow-mid:
-        count: 112
+        count: 121
         volley: 33
-        bounced: 79
-        angle: 34.883
-        speed: 0.659
-        spin-vert: 0.046
-        spin-side: 0.162
-        spin-count: 108
-        net-distance: 6.094
+        bounced: 88
+        angle: 34.916
+        speed: 0.664
+        spin-vert: 0.051
+        spin-side: 0.176
+        spin-count: 117
+        net-distance: 6.124
         side-spins:
-          straight: 88
-          curve: 15
-          hook: 5
+          straight: 93
+          curve: 17
+          hook: 7
         shots:
-          STRAIGHT: 13
-          SMASH: 17
-          LOB: 23
-          WEAK_LOB: 45
+          STRAIGHT: 15
+          SMASH: 18
+          LOB: 27
+          WEAK_LOB: 47
           DROP: 14
         failures:
           WHIFF: 3
@@ -8603,23 +8658,23 @@ players:
           OUT: 0
           DOUBLE_FAULT: 0
       SERVE-mid-mid:
-        count: 41
+        count: 49
         volley: 0
-        bounced: 41
-        angle: 35.26
-        speed: 0.614
-        spin-vert: 0.037
-        spin-side: 0.077
-        spin-count: 41
-        net-distance: 8.015
+        bounced: 49
+        angle: 33.271
+        speed: 0.633
+        spin-vert: 0.032
+        spin-side: 0.07
+        spin-count: 49
+        net-distance: 8.062
         side-spins:
-          straight: 40
+          straight: 48
           curve: 0
           hook: 1
         shots:
-          STRAIGHT: 18
+          STRAIGHT: 25
           SMASH: 0
-          LOB: 9
+          LOB: 10
           WEAK_LOB: 9
           DROP: 5
         failures:
@@ -8649,7 +8704,7 @@ players:
           WEAK_LOB: 4
           DROP: 6
         failures:
-          WHIFF: 9
+          WHIFF: 10
           UNREACHABLE: 0
           NET: 0
           OUT: 0
@@ -8708,12 +8763,12 @@ players:
           DOUBLE_FAULT: 0
     singles:
       serve:
-        count: 231
-        faults: 48
-        double-faults: 10
+        count: 245
+        faults: 52
+        double-faults: 11
         aces: 14
-        return-won: 0
-        return-aced: 0
+        return-won: 3
+        return-aced: 1
         buckets:
           top-straight-fast-high:
             count: 1
@@ -8723,12 +8778,12 @@ players:
             spin-vert: -0.57
             spin-side: 0.041
           flat-straight-slow-mid:
-            count: 3
+            count: 5
             aces: 0
-            angle: 19.75
-            speed: 0.671
-            spin-vert: -0.109
-            spin-side: 0.02
+            angle: 18.0
+            speed: 0.661
+            spin-vert: -0.076
+            spin-side: 0.063
           flat-straight-mid-low:
             count: 4
             aces: 0
@@ -8737,12 +8792,12 @@ players:
             spin-vert: -0.018
             spin-side: 0.019
           flat-straight-mid-mid:
-            count: 157
+            count: 168
             aces: 8
-            angle: 18.971
-            speed: 0.764
-            spin-vert: -0.075
-            spin-side: 0.023
+            angle: 19.064
+            speed: 0.763
+            spin-vert: -0.084
+            spin-side: 0.027
           flat-straight-mid-high:
             count: 2
             aces: 0
@@ -8772,12 +8827,12 @@ players:
             spin-vert: -0.173
             spin-side: 0.018
           flat-curve-mid-mid:
-            count: 2
+            count: 3
             aces: 0
-            angle: 15.675
-            speed: 0.788
-            spin-vert: -0.007
-            spin-side: 0.314
+            angle: 16.95
+            speed: 0.767
+            spin-vert: -0.106
+            spin-side: 0.366
           flat-curve-fast-mid:
             count: 2
             aces: 0
@@ -8834,7 +8889,7 @@ players:
             DROP: 0
           failures:
             WHIFF: 0
-            UNREACHABLE: 0
+            UNREACHABLE: 1
             NET: 3
             OUT: 1
             DOUBLE_FAULT: 0
@@ -8891,30 +8946,30 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         STRAIGHT-mid-mid:
-          count: 117
+          count: 119
           volley: 91
-          bounced: 26
-          angle: 30.541
+          bounced: 28
+          angle: 30.586
           speed: 0.725
-          spin-vert: -0.011
-          spin-side: 0.1
-          spin-count: 114
-          net-distance: 7.181
+          spin-vert: -0.009
+          spin-side: 0.099
+          spin-count: 116
+          net-distance: 7.197
           side-spins:
-            straight: 101
+            straight: 103
             curve: 12
             hook: 1
           shots:
-            STRAIGHT: 38
+            STRAIGHT: 39
             SMASH: 22
-            LOB: 39
+            LOB: 40
             WEAK_LOB: 16
             DROP: 2
           failures:
             WHIFF: 15
             UNREACHABLE: 1
             NET: 3
-            OUT: 10
+            OUT: 12
             DOUBLE_FAULT: 0
         STRAIGHT-mid-end:
           count: 22
@@ -9021,30 +9076,30 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         SMASH-fast-mid:
-          count: 81
+          count: 82
           volley: 70
-          bounced: 11
-          angle: 43.963
-          speed: 0.667
-          spin-vert: 0.049
-          spin-side: 0.148
-          spin-count: 81
-          net-distance: 7.229
+          bounced: 12
+          angle: 43.968
+          speed: 0.665
+          spin-vert: 0.053
+          spin-side: 0.147
+          spin-count: 82
+          net-distance: 7.226
           side-spins:
-            straight: 70
+            straight: 71
             curve: 9
             hook: 2
           shots:
             STRAIGHT: 9
             SMASH: 2
             LOB: 59
-            WEAK_LOB: 8
+            WEAK_LOB: 9
             DROP: 3
           failures:
             WHIFF: 23
             UNREACHABLE: 10
-            NET: 5
-            OUT: 12
+            NET: 6
+            OUT: 13
             DOUBLE_FAULT: 0
         SMASH-fast-end:
           count: 15
@@ -9099,30 +9154,30 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         LOB-slow-mid:
-          count: 19
-          volley: 18
+          count: 21
+          volley: 20
           bounced: 1
-          angle: 17.851
-          speed: 0.915
-          spin-vert: -0.087
-          spin-side: 0.12
-          spin-count: 18
-          net-distance: 7.045
+          angle: 18.389
+          speed: 0.904
+          spin-vert: -0.078
+          spin-side: 0.118
+          spin-count: 20
+          net-distance: 6.932
           side-spins:
-            straight: 17
+            straight: 19
             curve: 0
             hook: 1
           shots:
             STRAIGHT: 2
-            SMASH: 11
+            SMASH: 12
             LOB: 4
-            WEAK_LOB: 2
+            WEAK_LOB: 3
             DROP: 0
           failures:
             WHIFF: 3
             UNREACHABLE: 0
             NET: 1
-            OUT: 19
+            OUT: 21
             DOUBLE_FAULT: 0
         LOB-slow-end:
           count: 9
@@ -9177,22 +9232,22 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         WEAK_LOB-slow-mid:
-          count: 96
-          volley: 52
-          bounced: 44
-          angle: 25.364
-          speed: 0.777
-          spin-vert: -0.055
-          spin-side: 0.099
-          spin-count: 94
-          net-distance: 6.661
+          count: 102
+          volley: 53
+          bounced: 49
+          angle: 24.795
+          speed: 0.781
+          spin-vert: -0.052
+          spin-side: 0.101
+          spin-count: 98
+          net-distance: 6.599
           side-spins:
-            straight: 86
+            straight: 90
             curve: 8
             hook: 0
           shots:
-            STRAIGHT: 19
-            SMASH: 32
+            STRAIGHT: 23
+            SMASH: 34
             LOB: 13
             WEAK_LOB: 21
             DROP: 11
@@ -9255,24 +9310,24 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         DROP-slow-mid:
-          count: 54
+          count: 63
           volley: 10
-          bounced: 44
-          angle: 33.791
-          speed: 0.699
-          spin-vert: 0.07
-          spin-side: 0.147
-          spin-count: 52
-          net-distance: 6.857
+          bounced: 53
+          angle: 34.01
+          speed: 0.703
+          spin-vert: 0.077
+          spin-side: 0.176
+          spin-count: 61
+          net-distance: 6.805
           side-spins:
-            straight: 44
-            curve: 5
-            hook: 3
+            straight: 49
+            curve: 7
+            hook: 5
           shots:
-            STRAIGHT: 12
-            SMASH: 7
-            LOB: 14
-            WEAK_LOB: 15
+            STRAIGHT: 14
+            SMASH: 8
+            LOB: 18
+            WEAK_LOB: 17
             DROP: 6
           failures:
             WHIFF: 3
@@ -9307,23 +9362,23 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         SERVE-mid-mid:
-          count: 38
+          count: 46
           volley: 0
-          bounced: 38
-          angle: 34.15
-          speed: 0.614
-          spin-vert: 0.044
-          spin-side: 0.076
-          spin-count: 38
-          net-distance: 7.971
+          bounced: 46
+          angle: 32.224
+          speed: 0.634
+          spin-vert: 0.037
+          spin-side: 0.069
+          spin-count: 46
+          net-distance: 8.029
           side-spins:
-            straight: 37
+            straight: 45
             curve: 0
             hook: 1
           shots:
-            STRAIGHT: 18
+            STRAIGHT: 25
             SMASH: 0
-            LOB: 7
+            LOB: 8
             WEAK_LOB: 8
             DROP: 5
           failures:
@@ -9353,7 +9408,7 @@ players:
             WEAK_LOB: 4
             DROP: 5
           failures:
-            WHIFF: 7
+            WHIFF: 8
             UNREACHABLE: 0
             NET: 0
             OUT: 0
@@ -21075,52 +21130,6 @@ players:
     - 1788025318|S|22|4|1|34.161|0.447|-0.172|-0.047|5.755|1|CLAY|1|0|1|0
     - 1788025958|F|22|1|GRASS|0|1
     - 1788070531|S|31|4|1|37.85|0.412|0.079|0.04|6.528|1|HARD|0|0|1|0
-    - 1788083377|S|4|4|1|34.344|0.427|0.045|0.318|5.894|1|HARD|0|0|1|0
-    - 1788083388|V|40|33.184|0.742|-0.218|0.31|HARD|0|0
-    - 1788083392|F|37|0|HARD|0|1
-    - 1788083398|S|49|3|0|44.13|0.518|0.054|0.712|6.369|1|HARD|0|0|1|0
-    - 1788083400|F|28|3|HARD|0|1
-    - 1788083405|V|28|28.571|0.692|-0.116|-0.179|HARD|0|0
-    - 1788083407|S|4|4|1|37.063|0.451|-0.09|-0.144|4.076|1|HARD|0|0|1|0
-    - 1788083408|F|36|3|HARD|0|1
-    - 1788083417|F|49|0|HARD|0|1
-    - 1788083422|V|32|48.303|0.7|-0.205|0.123|HARD|0|0
-    - 1788083425|S|28|3|1|46.291|0.49|-0.086|0.58|4.845|1|HARD|0|0|1|0
-    - 1788083429|S|20|2|1|46.093|0.576|-0.364|0.143|9.18|1|HARD|0|0|1|0
-    - 1788083430|F|19|3|HARD|0|1
-    - 1788083438|S|49|4|0|36.695|0.444|-0.009|0.019|6.696|1|HARD|0|0|1|0
-    - 1788083440|S|37|4|1|34.168|0.421|0.054|0.023|5.444|1|HARD|0|0|1|0
-    - 1788083446|V|37|32.757|0.683|-0.109|-0.324|HARD|0|0
-    - 1788083448|S|28|3|1|45.557|0.519|0.048|-0.623|7.309|1|HARD|0|0|1|0
-    - 1788083452|S|28|3|1|44.542|0.482|-0.108|0.126|5.586|1|HARD|0|0|1|0
-    - 1788083456|F|28|0|HARD|0|1
-    - 1788083468|S|52|3|0|43.389|0.487|0.083|0.541|5.997|1|HARD|1|0|1|0
-    - 1788083476|V|31|29.255|0.725|-0.18|0.054|HARD|0|0
-    - 1788083485|S|49|4|0|33.486|0.43|0.144|0.046|6.582|1|HARD|0|0|1|0
-    - 1788083488|S|36|4|1|35.343|0.458|-0.075|-0.253|3.776|1|HARD|0|0|1|0
-    - 1788083494|V|32|36.857|0.717|-0.183|-0.257|HARD|0|0
-    - 1788083497|S|27|3|1|44.308|0.539|-0.018|0.177|3.741|1|HARD|0|0|1|0
-    - 1788083500|F|4|0|HARD|0|1
-    - 1788083509|S|49|2|0|49.061|0.712|0.132|0.278|6.629|1|HARD|0|0|1|0
-    - 1788083512|S|4|4|1|36.058|0.434|-0.213|0.001|5.158|1|HARD|0|0|1|0
-    - 1788083515|S|37|4|1|34.514|0.431|0.076|-0.088|6.251|1|HARD|0|0|1|0
-    - 1788083592|S|49|3|0|45.204|0.526|0.114|-0.427|8.253|1|HARD|0|0|1|0
-    - 1788083596|F|16|0|HARD|0|1
-    - 1788083601|V|40|27.888|0.717|-0.14|-0.383|HARD|0|0
-    - 1788083610|S|52|3|0|43.297|0.465|0.125|0.251|6.707|1|HARD|0|0|1|0
-    - 1788083613|S|28|4|1|36.491|0.452|-0.084|0.24|6.975|1|HARD|0|0|1|0
-    - 1788083616|S|28|3|1|45.945|0.497|0.011|-0.496|6.504|1|HARD|0|0|1|0
-    - 1788083624|V|31|33.44|0.708|-0.171|0.189|HARD|0|0
-    - 1788083626|S|4|4|1|34.726|0.396|-0.07|0.36|5.497|1|HARD|0|0|1|0
-    - 1788083635|S|52|0|0|12.725|0.64|0.159|-0.163|6.699|1|HARD|1|0|1|0
-    - 1788083636|F|1|2|HARD|0|1
-    - 1788083640|V|31|30.194|0.717|-0.138|-0.234|HARD|0|0
-    - 1788083649|S|52|3|0|45.398|0.464|0.03|0.349|7.275|1|HARD|0|0|1|0
-    - 1788083653|S|28|4|1|35.384|0.425|-0.206|-0.067|6.044|1|HARD|0|0|1|0
-    - 1788083656|S|28|3|1|45.46|0.521|0.096|0.318|7.518|1|HARD|0|0|1|0
-    - 1788083660|F|16|0|HARD|0|1
-    - 1788083683|V|31|33.44|0.7|-0.109|0.244|HARD|0|0
-    - 1788083685|S|4|4|1|36.521|0.404|0.082|0.005|5.65|1|HARD|0|0|1|0
     - 1788083688|S|4|3|1|46.407|0.521|0.109|0.594|6.37|1|HARD|0|0|1|0
     - 1788083697|S|49|3|0|45.739|0.52|0.075|-0.545|8.998|1|HARD|0|0|1|0
     - 1788083699|F|28|2|HARD|0|1
@@ -22554,12 +22563,56 @@ players:
     - 1788285106|S|17|2|0|48.881|0.604|0.21|0.587|9.382|1|GRASS|0|1|0|0
     - 1788285166|V|57|8.242|0.708|0.598|-0.049|GRASS|1|0
     - 1788285201|F|17|1|GRASS|1|0
+    - 1788352539|V|31|13.879|0.742|0.236|0.023|HARD|0|0
+    - 1788352542|F|4|0|HARD|0|0
+    - 1788352554|V|31|20.029|0.708|0.278|-0.01|HARD|0|0
+    - 1788352556|S|3|4|1|35.151|0.466|0.02|-0.426|3.364|1|HARD|1|0|0|0
+    - 1788352564|S|49|3|0|45.824|0.475|0.374|-0.282|6.229|1|HARD|1|0|0|0
+    - 1788352573|V|58|15.673|0.708|0.462|0.03|HARD|0|0
+    - 1788352574|X|HARD|0|0
+    - 1788352576|V|28|14.05|0.692|0.194|0.011|HARD|0|0
+    - 1788352578|S|3|4|1|36.693|0.393|-0.146|0.497|1.9|1|HARD|0|0|0|0
+    - 1788352581|S|28|4|1|35.444|0.428|-0.556|0.013|4.092|1|HARD|1|0|0|0
+    - 1788352589|S|49|3|0|45.634|0.531|-0.012|0.559|6.761|1|HARD|0|0|0|0
+    - 1788352593|F|15|0|HARD|0|0
+    - 1788352598|V|32|38.565|0.708|-0.371|0.205|HARD|0|0
+    - 1788352601|S|3|4|1|39.968|0.394|-0.556|-0.684|2.793|1|HARD|0|0|0|1
+    - 1788352602|F|36|3|HARD|0|1
+    - 1788352610|S|49|3|0|44.006|0.525|0.013|-0.323|6.231|1|HARD|0|0|0|0
+    - 1788352612|S|3|0|1|26.41|0.645|-0.279|0.589|3.631|1|HARD|1|0|0|0
+    - 1788352717|V|58|14.306|0.742|0.34|0.039|HARD|0|0
+    - 1788352727|S|49|3|0|44.849|0.521|0.133|0.526|6.961|1|HARD|0|0|0|0
+    - 1788352730|F|15|1|HARD|0|0
+    - 1788352735|V|31|12.769|0.725|0.262|-0.022|HARD|0|0
+    - 1788352737|S|3|4|1|32.632|0.406|-0.118|0.161|2.739|1|HARD|0|0|0|0
+    - 1788352742|F|19|0|HARD|0|0
+    - 1788352757|S|49|3|0|43.707|0.493|0.304|-0.251|7.024|1|HARD|0|0|0|0
+    - 1788352760|S|3|4|1|39.507|0.42|0.127|0.211|2.246|1|HARD|1|0|0|0
+    - 1788352770|V|58|11.06|0.7|0.32|0.023|HARD|0|0
+    - 1788352773|V|58|14.135|0.725|0.358|0.009|HARD|0|0
+    - 1788352776|S|19|0|1|19.534|0.74|-0.79|0.118|7.111|1|HARD|0|0|0|0
+    - 1788352778|S|4|0|1|20.114|0.665|-0.212|0.002|5.561|1|HARD|0|0|0|1
+    - 1788352779|F|4|3|HARD|0|0
+    - 1788352800|S|49|0|0|21.573|0.695|-0.37|0.482|6.999|1|HARD|0|0|0|0
+    - 1788352803|S|19|2|1|46.432|0.649|-0.258|0.484|8.036|1|HARD|0|0|0|0
+    - 1788352806|S|27|4|1|35.359|0.457|-0.62|0.044|3.403|1|HARD|0|0|0|0
+    - 1788352809|S|19|2|1|48.808|0.65|-0.125|0.311|8.584|1|HARD|1|0|1|0
+    - 1788352816|V|30|7.985|0.7|0.229|-0.026|HARD|0|0
+    - 1788352817|X|HARD|0|0
+    - 1788352819|V|31|17.125|0.767|0.016|-0.002|HARD|0|0
+    - 1788352820|S|4|4|1|33.013|0.434|-0.353|-0.108|4.712|1|HARD|0|0|0|0
+    - 1788352824|F|3|0|HARD|0|0
+    - 1788352838|S|49|3|0|44.798|0.531|-0.023|-0.339|6.244|1|HARD|0|0|0|0
+    - 1788352840|S|3|4|1|37.337|0.42|-0.332|0.164|3.192|1|HARD|0|0|0|0
+    - 1788352844|S|28|4|1|31.744|0.408|-0.336|0.21|4.114|1|HARD|1|0|1|0
+    - 1788352853|V|31|12.342|0.708|0.079|0.018|HARD|0|0
+    - 1788352854|X|HARD|0|0
+    - 1788352855|V|58|14.563|0.717|0.387|-0.002|HARD|0|0
+    - 1788352858|F|3|0|HARD|0|0
     around-area:
-      total-came: 250
-      total-swung: 157
+      total-came: 253
+      total-swung: 159
     recent-matches:
-    - 1,0,0,0,0,0,0,0
-    - 3,2,0,0,0,0,0,0
     - 3,3,0,0,0,0,0,0
     - 3,1,0,0,0,0,0,0
     - 1,1,0,0,0,0,0,0
@@ -22608,13 +22661,15 @@ players:
     - 2,2,3,1,0,0,0,0
     - 0,0,2,0,0,0,0,0
     - 5,1,2,0,0,0,0,0
+    - 0,0,5,1,0,0,1,2
+    - 3,2,8,2,0,1,0,1
     serve:
-      count: 643
-      faults: 95
+      count: 656
+      faults: 98
       double-faults: 2
-      aces: 9
-      return-won: 15
-      return-aced: 11
+      aces: 10
+      return-won: 16
+      return-aced: 14
       buckets:
         top-straight-mid-high:
           count: 3
@@ -22638,12 +22693,12 @@ players:
           spin-vert: -0.029
           spin-side: 0.018
         flat-straight-slow-mid:
-          count: 10
+          count: 11
           aces: 0
-          angle: 25.547
+          angle: 24.502
           speed: 0.692
-          spin-vert: -0.084
-          spin-side: 0.163
+          spin-vert: -0.059
+          spin-side: 0.149
         flat-straight-slow-high:
           count: 3
           aces: 0
@@ -22652,26 +22707,26 @@ players:
           spin-vert: -0.184
           spin-side: 0.035
         flat-straight-mid-low:
-          count: 2
+          count: 3
           aces: 0
-          angle: 6.619
-          speed: 0.746
-          spin-vert: 0.28
-          spin-side: 0.007
+          angle: 7.074
+          speed: 0.731
+          spin-vert: 0.263
+          spin-side: 0.013
         flat-straight-mid-mid:
-          count: 199
+          count: 204
           aces: 3
-          angle: 24.766
+          angle: 24.532
           speed: 0.735
-          spin-vert: -0.079
-          spin-side: 0.069
+          spin-vert: -0.073
+          spin-side: 0.068
         flat-straight-mid-high:
-          count: 93
+          count: 94
           aces: 4
-          angle: 44.979
+          angle: 44.911
           speed: 0.725
-          spin-vert: -0.27
-          spin-side: 0.075
+          spin-vert: -0.271
+          spin-side: 0.076
         flat-straight-fast-mid:
           count: 9
           aces: 0
@@ -22736,12 +22791,12 @@ players:
           spin-vert: 0.598
           spin-side: 0.049
         back-straight-mid-mid:
-          count: 18
-          aces: 1
-          angle: 14.743
+          count: 23
+          aces: 2
+          angle: 14.57
           speed: 0.717
-          spin-vert: 0.462
-          spin-side: 0.016
+          spin-vert: 0.443
+          spin-side: 0.017
     buckets:
       STRAIGHT-slow-center:
         count: 15
@@ -22796,56 +22851,56 @@ players:
           OUT: 0
           DOUBLE_FAULT: 0
       STRAIGHT-mid-center:
-        count: 247
-        volley: 245
+        count: 254
+        volley: 252
         bounced: 2
-        angle: 36.568
+        angle: 36.535
         speed: 0.447
         spin-vert: -0.178
-        spin-side: 0.238
-        spin-count: 245
+        spin-side: 0.242
+        spin-count: 252
         net-distance: 2.849
         side-spins:
-          straight: 102
-          curve: 50
-          hook: 5
+          straight: 105
+          curve: 53
+          hook: 6
         shots:
-          STRAIGHT: 6
+          STRAIGHT: 7
           SMASH: 4
           LOB: 4
           WEAK_LOB: 20
-          DROP: 213
+          DROP: 219
         failures:
-          WHIFF: 12
+          WHIFF: 14
           UNREACHABLE: 2
           NET: 4
           OUT: 6
           DOUBLE_FAULT: 0
       STRAIGHT-mid-mid:
-        count: 251
-        volley: 237
+        count: 253
+        volley: 239
         bounced: 14
-        angle: 37.807
+        angle: 37.718
         speed: 0.495
-        spin-vert: -0.096
-        spin-side: 0.264
-        spin-count: 249
-        net-distance: 5.49
+        spin-vert: -0.097
+        spin-side: 0.262
+        spin-count: 251
+        net-distance: 5.487
         side-spins:
-          straight: 79
+          straight: 81
           curve: 37
           hook: 8
         shots:
-          STRAIGHT: 20
+          STRAIGHT: 21
           SMASH: 4
           LOB: 9
           WEAK_LOB: 85
-          DROP: 133
+          DROP: 134
         failures:
-          WHIFF: 17
+          WHIFF: 18
           UNREACHABLE: 12
           NET: 6
-          OUT: 23
+          OUT: 24
           DOUBLE_FAULT: 0
       STRAIGHT-mid-end:
         count: 3
@@ -23050,8 +23105,8 @@ players:
           WEAK_LOB: 7
           DROP: 34
         failures:
-          WHIFF: 16
-          UNREACHABLE: 15
+          WHIFF: 17
+          UNREACHABLE: 16
           NET: 3
           OUT: 21
           DOUBLE_FAULT: 0
@@ -23134,27 +23189,27 @@ players:
           OUT: 3
           DOUBLE_FAULT: 0
       LOB-slow-mid:
-        count: 86
-        volley: 78
+        count: 89
+        volley: 81
         bounced: 8
-        angle: 40.175
-        speed: 0.561
-        spin-vert: -0.199
+        angle: 40.11
+        speed: 0.565
+        spin-vert: -0.205
         spin-side: 0.297
-        spin-count: 86
-        net-distance: 6.596
+        spin-count: 89
+        net-distance: 6.64
         side-spins:
-          straight: 28
-          curve: 12
+          straight: 29
+          curve: 14
           hook: 7
         shots:
-          STRAIGHT: 3
+          STRAIGHT: 4
           SMASH: 6
-          LOB: 18
+          LOB: 20
           WEAK_LOB: 34
           DROP: 25
         failures:
-          WHIFF: 9
+          WHIFF: 10
           UNREACHABLE: 10
           NET: 3
           OUT: 10
@@ -23186,17 +23241,17 @@ players:
           OUT: 0
           DOUBLE_FAULT: 0
       WEAK_LOB-slow-center:
-        count: 101
-        volley: 100
+        count: 102
+        volley: 101
         bounced: 1
-        angle: 36.4
+        angle: 36.39
         speed: 0.46
-        spin-vert: -0.237
-        spin-side: 0.181
-        spin-count: 99
-        net-distance: 2.839
+        spin-vert: -0.241
+        spin-side: 0.18
+        spin-count: 100
+        net-distance: 2.845
         side-spins:
-          straight: 75
+          straight: 76
           curve: 19
           hook: 2
         shots:
@@ -23204,7 +23259,7 @@ players:
           SMASH: 3
           LOB: 0
           WEAK_LOB: 12
-          DROP: 84
+          DROP: 85
         failures:
           WHIFF: 3
           UNREACHABLE: 0
@@ -23212,17 +23267,17 @@ players:
           OUT: 4
           DOUBLE_FAULT: 0
       WEAK_LOB-slow-mid:
-        count: 108
-        volley: 94
+        count: 110
+        volley: 96
         bounced: 14
-        angle: 35.49
-        speed: 0.522
-        spin-vert: -0.156
-        spin-side: 0.186
-        spin-count: 107
-        net-distance: 5.31
+        angle: 35.456
+        speed: 0.52
+        spin-vert: -0.161
+        spin-side: 0.185
+        spin-count: 109
+        net-distance: 5.288
         side-spins:
-          straight: 78
+          straight: 80
           curve: 16
           hook: 6
         shots:
@@ -23230,7 +23285,7 @@ players:
           SMASH: 9
           LOB: 3
           WEAK_LOB: 31
-          DROP: 60
+          DROP: 62
         failures:
           WHIFF: 9
           UNREACHABLE: 0
@@ -23287,7 +23342,7 @@ players:
           WHIFF: 9
           UNREACHABLE: 0
           NET: 9
-          OUT: 8
+          OUT: 9
           DOUBLE_FAULT: 0
       DROP-slow-mid:
         count: 191
@@ -23368,24 +23423,24 @@ players:
           OUT: 0
           DOUBLE_FAULT: 0
       SERVE-mid-mid:
-        count: 251
+        count: 258
         volley: 33
-        bounced: 218
-        angle: 40.432
+        bounced: 225
+        angle: 40.461
         speed: 0.524
         spin-vert: 0.07
-        spin-side: 0.336
-        spin-count: 248
-        net-distance: 6.683
+        spin-side: 0.338
+        spin-count: 255
+        net-distance: 6.682
         side-spins:
-          straight: 39
-          curve: 95
+          straight: 41
+          curve: 100
           hook: 15
         shots:
-          STRAIGHT: 19
+          STRAIGHT: 20
           SMASH: 2
           LOB: 13
-          WEAK_LOB: 176
+          WEAK_LOB: 182
           DROP: 41
         failures:
           WHIFF: 25
@@ -23499,12 +23554,12 @@ players:
           DOUBLE_FAULT: 0
     singles:
       serve:
-        count: 591
-        faults: 89
+        count: 604
+        faults: 92
         double-faults: 2
-        aces: 5
-        return-won: 0
-        return-aced: 4
+        aces: 6
+        return-won: 1
+        return-aced: 7
         buckets:
           top-straight-mid-high:
             count: 2
@@ -23528,12 +23583,12 @@ players:
             spin-vert: -0.029
             spin-side: 0.018
           flat-straight-slow-mid:
-            count: 10
+            count: 11
             aces: 0
-            angle: 25.547
+            angle: 24.502
             speed: 0.692
-            spin-vert: -0.084
-            spin-side: 0.163
+            spin-vert: -0.059
+            spin-side: 0.149
           flat-straight-slow-high:
             count: 3
             aces: 0
@@ -23542,26 +23597,26 @@ players:
             spin-vert: -0.184
             spin-side: 0.035
           flat-straight-mid-low:
-            count: 2
+            count: 3
             aces: 0
-            angle: 6.619
-            speed: 0.746
-            spin-vert: 0.28
-            spin-side: 0.007
+            angle: 7.074
+            speed: 0.731
+            spin-vert: 0.263
+            spin-side: 0.013
           flat-straight-mid-mid:
-            count: 194
+            count: 199
             aces: 3
-            angle: 24.759
+            angle: 24.52
             speed: 0.735
-            spin-vert: -0.082
-            spin-side: 0.069
+            spin-vert: -0.076
+            spin-side: 0.068
           flat-straight-mid-high:
-            count: 68
+            count: 69
             aces: 2
-            angle: 44.221
+            angle: 44.139
             speed: 0.725
-            spin-vert: -0.255
-            spin-side: 0.074
+            spin-vert: -0.257
+            spin-side: 0.076
           flat-straight-fast-mid:
             count: 9
             aces: 0
@@ -23619,12 +23674,12 @@ players:
             spin-vert: 0.452
             spin-side: 0.013
           back-straight-mid-mid:
-            count: 3
-            aces: 0
-            angle: 16.186
-            speed: 0.711
-            spin-vert: 0.393
-            spin-side: 0.006
+            count: 8
+            aces: 1
+            angle: 14.787
+            speed: 0.716
+            spin-vert: 0.381
+            spin-side: 0.015
       buckets:
         STRAIGHT-slow-center:
           count: 15
@@ -23679,56 +23734,56 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         STRAIGHT-mid-center:
-          count: 151
-          volley: 149
+          count: 158
+          volley: 156
           bounced: 2
-          angle: 36.312
-          speed: 0.465
+          angle: 36.271
+          speed: 0.464
           spin-vert: -0.178
-          spin-side: 0.237
-          spin-count: 149
-          net-distance: 2.968
+          spin-side: 0.244
+          spin-count: 156
+          net-distance: 2.962
           side-spins:
-            straight: 36
-            curve: 22
-            hook: 3
+            straight: 39
+            curve: 25
+            hook: 4
           shots:
-            STRAIGHT: 6
+            STRAIGHT: 7
             SMASH: 4
             LOB: 4
             WEAK_LOB: 15
-            DROP: 122
+            DROP: 128
           failures:
-            WHIFF: 11
+            WHIFF: 13
             UNREACHABLE: 2
             NET: 3
             OUT: 6
             DOUBLE_FAULT: 0
         STRAIGHT-mid-mid:
-          count: 234
-          volley: 220
+          count: 236
+          volley: 222
           bounced: 14
-          angle: 37.87
+          angle: 37.774
           speed: 0.498
-          spin-vert: -0.09
-          spin-side: 0.26
-          spin-count: 232
-          net-distance: 5.547
+          spin-vert: -0.092
+          spin-side: 0.258
+          spin-count: 234
+          net-distance: 5.544
           side-spins:
-            straight: 71
+            straight: 73
             curve: 29
             hook: 7
           shots:
-            STRAIGHT: 19
+            STRAIGHT: 20
             SMASH: 4
             LOB: 9
             WEAK_LOB: 82
-            DROP: 120
+            DROP: 121
           failures:
-            WHIFF: 17
+            WHIFF: 18
             UNREACHABLE: 12
             NET: 6
-            OUT: 22
+            OUT: 23
             DOUBLE_FAULT: 0
         STRAIGHT-mid-end:
           count: 2
@@ -23933,8 +23988,8 @@ players:
             WEAK_LOB: 7
             DROP: 10
           failures:
-            WHIFF: 15
-            UNREACHABLE: 15
+            WHIFF: 16
+            UNREACHABLE: 16
             NET: 2
             OUT: 21
             DOUBLE_FAULT: 0
@@ -24017,27 +24072,27 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         LOB-slow-mid:
-          count: 78
-          volley: 71
+          count: 81
+          volley: 74
           bounced: 7
-          angle: 39.938
-          speed: 0.564
-          spin-vert: -0.185
+          angle: 39.876
+          speed: 0.568
+          spin-vert: -0.193
           spin-side: 0.308
-          spin-count: 78
-          net-distance: 6.664
+          spin-count: 81
+          net-distance: 6.71
           side-spins:
-            straight: 22
-            curve: 11
+            straight: 23
+            curve: 13
             hook: 6
           shots:
-            STRAIGHT: 3
+            STRAIGHT: 4
             SMASH: 6
-            LOB: 15
+            LOB: 17
             WEAK_LOB: 33
             DROP: 21
           failures:
-            WHIFF: 9
+            WHIFF: 10
             UNREACHABLE: 10
             NET: 1
             OUT: 9
@@ -24069,17 +24124,17 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         WEAK_LOB-slow-center:
-          count: 43
-          volley: 42
+          count: 44
+          volley: 43
           bounced: 1
-          angle: 34.247
-          speed: 0.496
-          spin-vert: -0.235
-          spin-side: 0.164
-          spin-count: 42
-          net-distance: 2.84
+          angle: 34.272
+          speed: 0.495
+          spin-vert: -0.244
+          spin-side: 0.161
+          spin-count: 43
+          net-distance: 2.853
           side-spins:
-            straight: 31
+            straight: 32
             curve: 8
             hook: 0
           shots:
@@ -24087,7 +24142,7 @@ players:
             SMASH: 3
             LOB: 0
             WEAK_LOB: 4
-            DROP: 35
+            DROP: 36
           failures:
             WHIFF: 2
             UNREACHABLE: 0
@@ -24095,17 +24150,17 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         WEAK_LOB-slow-mid:
-          count: 99
-          volley: 85
+          count: 101
+          volley: 87
           bounced: 14
-          angle: 35.068
-          speed: 0.527
-          spin-vert: -0.137
-          spin-side: 0.19
-          spin-count: 97
-          net-distance: 5.361
+          angle: 35.039
+          speed: 0.525
+          spin-vert: -0.143
+          spin-side: 0.188
+          spin-count: 99
+          net-distance: 5.336
           side-spins:
-            straight: 68
+            straight: 70
             curve: 16
             hook: 6
           shots:
@@ -24113,7 +24168,7 @@ players:
             SMASH: 9
             LOB: 2
             WEAK_LOB: 29
-            DROP: 54
+            DROP: 56
           failures:
             WHIFF: 9
             UNREACHABLE: 0
@@ -24170,7 +24225,7 @@ players:
             WHIFF: 8
             UNREACHABLE: 0
             NET: 6
-            OUT: 5
+            OUT: 6
             DOUBLE_FAULT: 0
         DROP-slow-mid:
           count: 184
@@ -24251,24 +24306,24 @@ players:
             OUT: 0
             DOUBLE_FAULT: 0
         SERVE-mid-mid:
-          count: 209
+          count: 216
           volley: 33
-          bounced: 176
-          angle: 39.737
+          bounced: 183
+          angle: 39.794
           speed: 0.529
           spin-vert: 0.066
-          spin-side: 0.327
-          spin-count: 206
-          net-distance: 6.737
+          spin-side: 0.329
+          spin-count: 213
+          net-distance: 6.734
           side-spins:
-            straight: 27
-            curve: 68
+            straight: 29
+            curve: 73
             hook: 12
           shots:
-            STRAIGHT: 19
+            STRAIGHT: 20
             SMASH: 2
             LOB: 13
-            WEAK_LOB: 136
+            WEAK_LOB: 142
             DROP: 39
           failures:
             WHIFF: 25
