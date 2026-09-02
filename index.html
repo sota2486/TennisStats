@@ -1149,15 +1149,19 @@
     return w>0 ? sum/w : null;
   }
 
-  /** 条件(filterFn、無指定なら全件)に合うサンプルの返球率(空振り・追いつけない を除く)を求める */
+  /**
+   * 条件(filterFn、無指定なら全件)に合うサンプルの返球率を求める。
+   * 空振り(WHIFF)・追いつけない(UNREACHABLE)もネット/オーバーと同じ「失敗」として
+   * 分母に含める(コート/ダブルス適性は、その場所・形式でどれだけ拾えているか全体を見るため)。
+   */
   function returnRateOf(samples, filterFn){
-    var faced=0, ok=0, whiffU=0;
+    var faced=0, ok=0;
     samples.forEach(function(sample){
       if (filterFn && !filterFn(sample)) return;
       if (sample.kind === "S"){ faced++; ok++; }
-      else if (sample.kind === "F"){ faced++; if (sample.failOrdinal===0||sample.failOrdinal===1) whiffU++; }
+      else if (sample.kind === "F"){ faced++; }
     });
-    return { raw: faced >= 5 ? (ok - whiffU) / faced : null, faced: faced };
+    return { raw: faced >= 5 ? ok / faced : null, faced: faced };
   }
   function surfaceSuitability(learn){
     var surfaces = ["HARD","CLAY","GRASS","OMNI"];
