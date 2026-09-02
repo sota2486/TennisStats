@@ -942,19 +942,22 @@
     // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
     m.offence = scoreFromDiff(offRaw, -0.0219, 0.0151, 0.1214, offAttempts);
 
-    var defSmash = defAll.SMASH;
-    var lobMiss = offAll.LOB.missRate;
-    var defenceRaw = (defSmash.returnRate == null ? 0.5 : defSmash.returnRate) * 0.4
-                    - (lobMiss == null ? 0.15 : lobMiss) * 0.25
-                    - (avgWhiff(defAll)) * 0.15
-                    - (avgUnreach(defAll)) * 0.2;
-    m.deffence = scoreFromDiff(defenceRaw, 0.1192, 0.2008, 0.2674, defSmash.faced + offAll.LOB.attempts);
-
+    // deffenceでもミス率(mRate)を少し見るため、P%-M%より先に計算しておく
     var pmAttempts = 0, pmWins = 0, pmSelfErr = 0;
     RETURNABLE.forEach(function(k){
       pmAttempts += winSamp[k].attempts; pmWins += winSamp[k].wins; pmSelfErr += offAll[k].selfErrors;
     });
     var pRate = safeDiv(pmWins, pmAttempts), mRate = safeDiv(pmSelfErr, pmAttempts);
+
+    var defSmash = defAll.SMASH;
+    var lobMiss = offAll.LOB.missRate;
+    var defenceRaw = (defSmash.returnRate == null ? 0.5 : defSmash.returnRate) * 0.4
+                    - (lobMiss == null ? 0.15 : lobMiss) * 0.25
+                    - (avgWhiff(defAll)) * 0.15
+                    - (avgUnreach(defAll)) * 0.2
+                    - (mRate == null ? 0.09 : mRate) * 0.1;
+    m.deffence = scoreFromDiff(defenceRaw, 0.0922, 0.1738, 0.2404, defSmash.faced + offAll.LOB.attempts);
+
     var pmDiff = (pRate == null ? 0 : pRate) - (mRate == null ? 0 : mRate);
     // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
     m.pm = scoreFromDiff(pmDiff, -0.1295, -0.0681, 0.0283, pmAttempts);
@@ -3111,7 +3114,7 @@
 
     panel.appendChild(el("div","panel-title mt-lg","VS: 球種別の強さ"));
     var t2 = el("table","kind-table");
-    var rows2 = ["Value","Point%","Whiff%","Miss%"].map(function(rowName){
+    var rows2 = ["Value","Point%","Whiff%","Unreach%","Miss%"].map(function(rowName){
       var cells = DISPLAY_ORDER.map(function(k){
         var w = m.wheel[k];
         var v = "―";
@@ -3124,6 +3127,10 @@
         if (rowName === "Whiff%") {
           var dk = m.defenseByKind[k];
           v = (dk && dk.whiffRate!=null) ? pct(dk.whiffRate) : "―";
+        }
+        if (rowName === "Unreach%") {
+          var dk2 = m.defenseByKind[k];
+          v = (dk2 && dk2.unreachRate!=null) ? pct(dk2.unreachRate) : "―";
         }
         if (rowName === "Miss%") v = w.vsMissRate!=null ? pct(w.vsMissRate) : "―";
         return "<td>"+v+"</td>";
@@ -3139,6 +3146,10 @@
         var rWhiff = 0, rFaced = 0;
         RETURNABLE.forEach(function(k){ var dk = m.defenseByKind[k]; if (dk && dk.faced){ rWhiff += dk.whiff; rFaced += dk.faced; } });
         totalCell = rFaced > 0 ? pct(rWhiff/rFaced) : "―";
+      } else if (rowName === "Unreach%") {
+        var rUnreach = 0, rFaced2 = 0;
+        RETURNABLE.forEach(function(k){ var dk = m.defenseByKind[k]; if (dk && dk.faced){ rUnreach += dk.unreach; rFaced2 += dk.faced; } });
+        totalCell = rFaced2 > 0 ? pct(rUnreach/rFaced2) : "―";
       } else {
         totalCell = m.vsMissRateTotal!=null ? pct(m.vsMissRateTotal) : "―";
       }
