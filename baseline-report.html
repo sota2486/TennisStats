@@ -2317,6 +2317,11 @@
     return { mean: mean, sd: Math.sqrt(varSum / xs.length), n: xs.length };
   }
   /** 表示する文字は自由に決め、色だけ偏差(50±30)から付けるセル */
+  /** drive/backspin/curveのセル表示用。「point%/miss%」の形式(選手ページの表示と同じ)にする */
+  function spinRateText(spin){
+    if (!spin || (spin.pointRate == null && spin.missRate == null)) return "―";
+    return pct(spin.pointRate) + "/" + pct(spin.missRate);
+  }
   function zCell(text, z, key, opts){
     opts = opts || {};
     var td = document.createElement("td");
@@ -2494,18 +2499,18 @@
       tr.appendChild(valueBoxCell(m.deffence, "def"));
       tr.appendChild(rateCell(m.pmDetail.pointRate, "p", {groupGap:true, score:m.pointScore}));
       tr.appendChild(rateCell(m.pmDetail.missRate, "m", {higherIsBetter:false, score:m.missScore}));
-      tr.appendChild(valueBoxCell(m.vsSlow, "vsSlow", {groupGap:true}));
-      tr.appendChild(valueBoxCell(m.vsFast, "vsFast"));
-      tr.appendChild(valueBoxCell(m.vsSpin, "vsSpin"));
+      tr.appendChild(zCell(m.vsSlowRate!=null ? pct(m.vsSlowRate) : "―", m.vsSlow, "vsSlow", {groupGap:true}));
+      tr.appendChild(zCell(m.vsFastRate!=null ? pct(m.vsFastRate) : "―", m.vsFast, "vsFast"));
+      tr.appendChild(zCell(m.vsSpinRate!=null ? pct(m.vsSpinRate) : "―", m.vsSpin, "vsSpin"));
       tr.appendChild(rateCell(m.unreachRate, "unreach", {higherIsBetter:false, groupGap:true, score:m.unreachScore}));
       tr.appendChild(rateCell(m.whiffRate, "whiff", {higherIsBetter:false, score:m.whiffScore}));
       tr.appendChild(rateCell(m.chaseRate, "chase", {higherIsBetter:false, score:m.chaseScore}));
       tr.appendChild(rateCell(m.rallyBands.short.pointRate, "shortRally", {groupGap:true, score:m.shortRally}));
       tr.appendChild(rateCell(m.rallyBands.mid.pointRate, "midRally", {score:m.midRally}));
       tr.appendChild(rateCell(m.rallyBands.long.pointRate, "longRally", {score:m.longRally}));
-      tr.appendChild(valueBoxCell(m.drive.score, "drive", {groupGap:true}));
-      tr.appendChild(valueBoxCell(m.backspin.score, "backspin"));
-      tr.appendChild(valueBoxCell(m.curve.score, "curve"));
+      tr.appendChild(zCell(spinRateText(m.drive), m.drive.score, "drive", {groupGap:true}));
+      tr.appendChild(zCell(spinRateText(m.backspin), m.backspin.score, "backspin"));
+      tr.appendChild(zCell(spinRateText(m.curve), m.curve.score, "curve"));
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
