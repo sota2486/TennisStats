@@ -1113,13 +1113,11 @@
     m.pm = scoreFromDiff(pmDiff, -0.1295, -0.0681, 0.0283, pmAttempts);
     m.pmDetail = { pointRate: pRate, missRate: mRate };
     // 選手ページの表示ではP%-M%(差分1本)ではなく、Point%とMiss%をそれぞれ100点満点で見せる
-    // (Overallの計算自体は従来通りpmDiffを使うので、ここでの見せ方の変更による数値への影響は無い)
     m.pointScore = scoreFromDiff(pRate, 0.0259, 0.0923, 0.1483, pmAttempts);
     m.missScore = scoreFromDiff(mRate == null ? null : -mRate, -0.1783, -0.1477, -0.1072, pmAttempts);
 
-    // Overall: 守備力を厚めに(1 : 2 : 1.25)。sota2486 のような守備型選手が正しく評価されるよう
-    // 実データで調整した重み
-    m.overall = weightedAvg([[m.offence,1],[m.deffence,2],[m.pm,1.25]]);
+    // Overall: Offence・Deffenceを1.5、Point%・Miss%を1として重み付け平均
+    m.overall = weightedAvg([[m.offence,1.5],[m.deffence,1.5],[m.pointScore,1],[m.missScore,1]]);
 
     // ---- vsSlow / vsFast / vsSpin(1球ごとのサンプルログから集計。基準値は learning.yml 全体の
     // 返球率の分布から算出) ----
@@ -1310,7 +1308,7 @@
       r.lpointRate = total > 0 ? r.lost / total : null;
       // 勝率50%を平均(65点)、35%を下位、65%を上位の目安に置いた暫定値。
       // ラリー記録が溜まったら実データの分布で引き直す
-      r.score = total > 0 ? scoreFromDiff(r.pointRate, 0.35, 0.50, 0.65, total) : null;
+      r.score = total > 0 ? scoreFromDiff(r.pointRate, 0.35, 0.50, 0.60, total) : null;
     });
     return res;
   }
@@ -1710,7 +1708,7 @@
 
     var ANDROID_NAME = /^Android[A-Z]$/;
     // saitamaもAndroidA/B/Cと同じく選手ではないため除外する
-    var NON_PLAYER_NAME = /^saitama$/;
+    var NON_PLAYER_NAME = /^saitama$/i;
     Object.keys(ids).forEach(function(id){
       var lnode = lp[id], pnode = pp[id];
       var name = (pnode && pnode.name) || (lnode && lnode.name) || null;
@@ -3716,7 +3714,7 @@
   function rallyTypeName(rallyAvg){
     if (rallyAvg == null) return null;
     if (rallyAvg < 3.5) return "短期決着型";
-    if (rallyAvg < 5) return "展開型";
+    if (rallyAvg < 4.5) return "展開型";
     return "長期戦型";
   }
 
@@ -3839,7 +3837,7 @@
     var panel = el("div","panel");
     panel.appendChild(el("div","panel-title","STATUS"));
     panel.appendChild(meterRow("OVERALL", m.overall, {strong:true,
-      desc:"Offence・Deffence・Point%・Miss%を組み合わせた総合スコア(1:2:1.25の重み付け)"}));
+      desc:"Offence・Deffence・Point%・Miss%を組み合わせた総合スコア(1.5:1.5:1:1の重み付け)"}));
     panel.appendChild(meterRow("Offence", m.offence, {gap:true,
       desc:"ストレート・スマッシュを打ったときの攻撃力(得点率を重視、自滅ミス率も少し考慮)"}));
     panel.appendChild(meterRow("Deffence", m.deffence,
