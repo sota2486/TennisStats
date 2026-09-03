@@ -106,24 +106,24 @@ players:
     doubles-league-wins: 0
   c755d081-1374-4cf4-9801-b7e1ab19d947:
     name: sota2486
-    rating: 3068.28251
+    rating: 3044.39688
     rating-history:
       2026-08: 3061.44782
-      2026-09: 3068.28251
-    games-played: 22
+      2026-09: 3044.39688
+    games-played: 23
     wins: 18
-    losses: 4
-    points-for: 208
-    points-against: 146
+    losses: 5
+    points-for: 213
+    points-against: 156
     sets-for: 34
-    sets-against: 14
-    singles-games-played: 16
+    sets-against: 16
+    singles-games-played: 17
     singles-wins: 13
-    singles-losses: 3
-    singles-points-for: 153
-    singles-points-against: 102
+    singles-losses: 4
+    singles-points-for: 158
+    singles-points-against: 112
     singles-sets-for: 25
-    singles-sets-against: 9
+    singles-sets-against: 11
     doubles-games-played: 6
     doubles-wins: 5
     doubles-losses: 1
@@ -386,23 +386,23 @@ players:
     doubles-league-wins: 0
   c17c7abf-b429-426b-a812-fa587a86b9d7:
     name: Pen4
-    rating: 2989.93709
+    rating: 3013.82272
     rating-history:
       2026-08: 2993.83333
-      2026-09: 2989.93709
-    games-played: 9
-    wins: 4
+      2026-09: 3013.82272
+    games-played: 10
+    wins: 5
     losses: 5
-    points-for: 64
-    points-against: 76
-    sets-for: 8
+    points-for: 74
+    points-against: 81
+    sets-for: 10
     sets-against: 12
-    singles-games-played: 7
-    singles-wins: 3
+    singles-games-played: 8
+    singles-wins: 4
     singles-losses: 4
-    singles-points-for: 49
-    singles-points-against: 56
-    singles-sets-for: 6
+    singles-points-for: 59
+    singles-points-against: 61
+    singles-sets-for: 8
     singles-sets-against: 9
     doubles-games-played: 2
     doubles-wins: 1

@@ -1709,11 +1709,13 @@
     Object.keys(pp).forEach(function(id){ ids[id]=1; });
 
     var ANDROID_NAME = /^Android[A-Z]$/;
+    // saitamaもAndroidA/B/Cと同じく選手ではないため除外する
+    var NON_PLAYER_NAME = /^saitama$/;
     Object.keys(ids).forEach(function(id){
       var lnode = lp[id], pnode = pp[id];
       var name = (pnode && pnode.name) || (lnode && lnode.name) || null;
       if (!name) return; // 名前が無いプレイヤー(未キャッシュのUUIDのみの記録など)は表示しない
-      if (ANDROID_NAME.test(name)) return; // アンドロイド(AndroidA/B/C)は選手ではないので除外
+      if (ANDROID_NAME.test(name) || NON_PLAYER_NAME.test(name)) return; // アンドロイド(AndroidA/B/C)・saitamaは選手ではないので除外
       var learn = lnode ? buildPlayerLearning(lnode) : buildPlayerLearning({});
       var stats = pnode ? buildPlayerStats(pnode) : null;
       var sampleCount = learn.samples.filter(function(s){ return s.kind === "S"; }).length;
@@ -3713,8 +3715,8 @@
    */
   function rallyTypeName(rallyAvg){
     if (rallyAvg == null) return null;
-    if (rallyAvg < 3) return "短期決着型";
-    if (rallyAvg < 6) return "展開型";
+    if (rallyAvg < 3.5) return "短期決着型";
+    if (rallyAvg < 5) return "展開型";
     return "長期戦型";
   }
 
