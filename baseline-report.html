@@ -290,6 +290,8 @@
     border-top:1px solid var(--line); padding-top:8px;
   }
   .mh-row{ display:flex; align-items:center; gap:8px; padding:5px 2px; font-size:11px; flex:0 0 auto; }
+  .mh-row.clickable{ cursor:pointer; }
+  .mh-row.clickable:hover{ background:var(--panel-2); }
   .mh-row:not(:last-child){ border-bottom:1px solid var(--line); }
   .mh-date{ flex:0 0 auto; width:38px; color:var(--ink-3); font-variant-numeric:tabular-nums; }
   .mh-badge{
@@ -3212,19 +3214,32 @@
     var svg = document.createElementNS(svgns,"svg");
     svg.setAttribute("viewBox","0 0 " + size + " " + size);
     if (total > 0){
-      var a = -Math.PI/2;
-      kinds.forEach(function(k){
-        var c = st.kinds[k];
-        if (c <= 0) return;
-        var span = (c/total) * 2*Math.PI;
-        var slice = document.createElementNS(svgns,"path");
-        slice.setAttribute("d", wedgePath(cx,cy,0,r,a,a+span));
-        slice.setAttribute("fill", KIND_PIE_COLOR[k] || "var(--ink-3)");
-        slice.setAttribute("stroke","var(--panel)");
-        slice.setAttribute("stroke-width","1.5");
-        svg.appendChild(slice);
-        a += span;
-      });
+      // 1球種だけで100%を占める場合、扇形の始点と終点が一致してSVGの円弧が消えてしまうので
+      // 普通の円として塗る
+      var soleKind = null, soleCount = 0;
+      kinds.forEach(function(k){ if (st.kinds[k] > 0){ soleKind = k; soleCount++; } });
+      if (soleCount === 1){
+        var full = document.createElementNS(svgns,"circle");
+        full.setAttribute("cx",cx); full.setAttribute("cy",cy); full.setAttribute("r", r);
+        full.setAttribute("fill", KIND_PIE_COLOR[soleKind] || "var(--ink-3)");
+        full.setAttribute("stroke","var(--panel)");
+        full.setAttribute("stroke-width","1.5");
+        svg.appendChild(full);
+      } else {
+        var a = -Math.PI/2;
+        kinds.forEach(function(k){
+          var c = st.kinds[k];
+          if (c <= 0) return;
+          var span = (c/total) * 2*Math.PI;
+          var slice = document.createElementNS(svgns,"path");
+          slice.setAttribute("d", wedgePath(cx,cy,0,r,a,a+span));
+          slice.setAttribute("fill", KIND_PIE_COLOR[k] || "var(--ink-3)");
+          slice.setAttribute("stroke","var(--panel)");
+          slice.setAttribute("stroke-width","1.5");
+          svg.appendChild(slice);
+          a += span;
+        });
+      }
     } else {
       var empty = document.createElementNS(svgns,"circle");
       empty.setAttribute("cx",cx); empty.setAttribute("cy",cy); empty.setAttribute("r", r);
@@ -3250,6 +3265,12 @@
     body.appendChild(side);
     wrap.appendChild(body);
     return wrap;
+  }
+
+  /** この試合の1球ごとのデータ(サマリ or 生ログ)があるかどうかを、表を作らず軽く調べる */
+  function matchDetailHasData(mr){
+    if (mr.perPlayer) return Object.keys(mr.perPlayer).length > 0;
+    return collectMatchStats(matchKeyOfRecord(mr)).length > 0;
   }
 
   /** 試合詳細。record.ymlの結果に、その試合の1球ごとの記録を合わせて見せる */
@@ -3898,11 +3919,19 @@
           var oppSets = mySide === "RED" ? mr.blueSets : mr.redSets;
           var result = mr.winner === mySide ? "WIN" : (mr.winner === oppSide ? "LOSE" : null);
 
-          var row = el("div","mh-row");
+          var hasData = matchDetailHasData(mr);
+          var row = el("div","mh-row" + (hasData ? " clickable" : ""));
           row.appendChild(el("span","mh-date", jstMonthDay(mr.timestamp)));
           row.appendChild(el("span","mh-badge" + (result==="WIN"?" win":result==="LOSE"?" lose":""), result || "―"));
           row.appendChild(el("span","mh-opp", "vs " + ((oppObj && oppObj.name) || "―")));
           row.appendChild(el("span","mh-score", (mySets!=null && oppSets!=null) ? (mySets+"-"+oppSets) : "―"));
+          if (hasData){
+            row.addEventListener("click", function(){
+              resultsState.detailKey = matchKeyOfRecord(mr);
+              pageState.page = "results";
+              renderPageTabs();
+            });
+          }
           scroll.appendChild(row);
         });
       }

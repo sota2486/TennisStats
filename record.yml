@@ -1095,6 +1095,273 @@ match-singles:
     - 3-5
     - 5-3
     winner: RED
+  '53':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T14:03:31.963536943Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 29
+        points: 10
+        self-errors: 4
+        serves: 8
+        faults: 2
+        double-faults: 1
+        aces: 1
+        rally-sum: 50
+        rally-count: 14
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 12
+          LOB: 6
+          WEAK_LOB: 1
+          DROP: 1
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 25
+        points: 4
+        self-errors: 6
+        serves: 8
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 50
+        rally-count: 14
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 0
+          out: 6
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 3
+          LOB: 14
+          WEAK_LOB: 4
+          DROP: 0
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-1
+    - 5-4
+    winner: RED
+  '54':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T14:10:22.661233497Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 54
+        points: 12
+        self-errors: 8
+        serves: 11
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 97
+        rally-count: 21
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 1
+          out: 7
+          double_fault: 0
+        kinds:
+          STRAIGHT: 19
+          SMASH: 10
+          LOB: 13
+          WEAK_LOB: 8
+          DROP: 4
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 51
+        points: 8
+        self-errors: 7
+        serves: 17
+        faults: 6
+        double-faults: 0
+        aces: 0
+        rally-sum: 96
+        rally-count: 20
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 6
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 22
+          SMASH: 8
+          LOB: 13
+          WEAK_LOB: 2
+          DROP: 6
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 2
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 5-1
+    - 2-5
+    - 5-3
+    winner: RED
+  '55':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T14:17:15.162963597Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 9
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 3
+          DROP: 6
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 11
+        points: 0
+        self-errors: 4
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 1
+          DROP: 0
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-0
+    winner: RED
+  '56':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T14:21:07.971525623Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 16
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 4
+          LOB: 4
+          WEAK_LOB: 1
+          DROP: 0
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 13
+        points: 1
+        self-errors: 1
+        serves: 5
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 3
+          DROP: 10
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    set-scores:
+    - 5-1
+    winner: RED
 match-doubles:
   '2':
     court-id: 3
@@ -1374,3 +1641,242 @@ match-doubles:
     set-scores:
     - 1-5
     winner: BLUE
+  '8':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T13:50:45.262056288Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 13
+        points: 1
+        self-errors: 1
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 14
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 4
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 6
+          WEAK_LOB: 0
+          DROP: 0
+      c18ae830-96ab-477e-a81a-450c87b8eabc:
+        name: EmeraldREX91
+        shots: 31
+        points: 8
+        self-errors: 7
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 67
+        rally-count: 16
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 6
+          double_fault: 0
+        kinds:
+          STRAIGHT: 16
+          SMASH: 13
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 23
+        points: 9
+        self-errors: 0
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 2
+        rally-sum: 48
+        rally-count: 15
+        fails:
+          whiff: 4
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 3
+          LOB: 12
+          WEAK_LOB: 0
+          DROP: 0
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 20
+        points: 3
+        self-errors: 2
+        serves: 10
+        faults: 5
+        double-faults: 1
+        aces: 0
+        rally-sum: 32
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 2
+          LOB: 7
+          WEAK_LOB: 2
+          DROP: 0
+    red:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      b-name: EmeraldREX91
+      name: LagnaKt & EmeraldREX91
+      sets-won: 1
+    blue:
+      a-uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      a-name: sota2486
+      b-uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      b-name: Pen4
+      name: sota2486 & Pen4
+      sets-won: 2
+    set-scores:
+    - 5-3
+    - 2-5
+    - 3-5
+    winner: BLUE
+  '9':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T13:57:22.657380463Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      c18ae830-96ab-477e-a81a-450c87b8eabc:
+        name: EmeraldREX91
+        shots: 10
+        points: 1
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 4
+        rally-count: 1
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 19
+        points: 8
+        self-errors: 2
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 51
+        rally-count: 10
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 4
+          LOB: 1
+          WEAK_LOB: 2
+          DROP: 6
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 11
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 17
+        rally-count: 2
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 1
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 1
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 21
+        points: 1
+        self-errors: 6
+        serves: 4
+        faults: 3
+        double-faults: 1
+        aces: 0
+        rally-sum: 38
+        rally-count: 9
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 8
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 7
+          WEAK_LOB: 5
+          DROP: 1
+    red:
+      a-uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      a-name: EmeraldREX91
+      b-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      b-name: LagnaKt
+      name: EmeraldREX91 & LagnaKt
+      sets-won: 2
+    blue:
+      a-uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      a-name: sota2486
+      b-uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      b-name: Pen4
+      name: sota2486 & Pen4
+      sets-won: 0
+    set-scores:
+    - 5-1
+    - 5-1
+    winner: RED
