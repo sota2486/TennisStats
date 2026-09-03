@@ -989,6 +989,112 @@ match-singles:
     set-scores:
     - 3-5
     winner: BLUE
+  '50':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-01T16:30:20.871091198Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 0
+    blue:
+      uuid: 9c303f52-ae92-4667-89bb-3d319bb31de7
+      name: Saitama
+      sets-won: 1
+    set-scores:
+    - 2-5
+    winner: BLUE
+  '51':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-01T16:34:20.973246207Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 0
+    blue:
+      uuid: 9c303f52-ae92-4667-89bb-3d319bb31de7
+      name: Saitama
+      sets-won: 1
+    set-scores:
+    - 3-5
+    winner: BLUE
+  '52':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T09:26:50.912105901Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      c18ae830-96ab-477e-a81a-450c87b8eabc:
+        name: EmeraldREX91
+        shots: 61
+        points: 13
+        self-errors: 5
+        serves: 15
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 120
+        rally-count: 25
+        fails:
+          whiff: 6
+          unreachable: 1
+          net: 2
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 42
+          SMASH: 11
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 3
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 62
+        points: 12
+        self-errors: 5
+        serves: 16
+        faults: 3
+        double-faults: 0
+        aces: 1
+        rally-sum: 120
+        rally-count: 24
+        fails:
+          whiff: 7
+          unreachable: 1
+          net: 3
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 41
+          SMASH: 4
+          LOB: 12
+          WEAK_LOB: 2
+          DROP: 3
+    red:
+      uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      name: EmeraldREX91
+      sets-won: 2
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 5-4
+    - 3-5
+    - 5-3
+    winner: RED
 match-doubles:
   '2':
     court-id: 3
@@ -1149,4 +1255,122 @@ match-doubles:
     - 5-1
     - 2-5
     - 2-5
+    winner: BLUE
+  '7':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-03T13:14:51.065754684Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 1
+        points: 0
+        self-errors: 0
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 12
+        rally-count: 4
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+      c18ae830-96ab-477e-a81a-450c87b8eabc:
+        name: EmeraldREX91
+        shots: 8
+        points: 0
+        self-errors: 1
+        serves: 1
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 4
+        rally-count: 1
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 2
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+      f9da9725-57c1-4a33-9408-b50daccea35d:
+        name: nextbardo
+        shots: 7
+        points: 3
+        self-errors: 0
+        serves: 3
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 7
+        rally-count: 3
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 0
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 5
+        points: 2
+        self-errors: 0
+        serves: 1
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 9
+        rally-count: 2
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 3
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+    red:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      b-name: EmeraldREX91
+      name: LagnaKt & EmeraldREX91
+      sets-won: 0
+    blue:
+      a-uuid: f9da9725-57c1-4a33-9408-b50daccea35d
+      a-name: nextbardo
+      b-uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      b-name: sota2486
+      name: nextbardo & sota2486
+      sets-won: 1
+    set-scores:
+    - 1-5
     winner: BLUE

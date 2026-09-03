@@ -1,0 +1,54 @@
+# テニスプラグイン 試合(ゲーム/セット)関連の設定
+#
+# rating.* : /tennis game single match の完走時に変動するレーティングの計算式(players.yml に反映)
+#   1. 基礎ポイント: 勝者は base-points(既定2)加算、敗者は同じだけ減算
+#   2. 追加ポイント(勝者側の値):
+#        {|取得セット数-失セット数| - 1} × 先取セット数 × set-diff-multiplier(既定3)
+#        + {|総得点数-総失点数| - 1} ÷ point-diff-divisor(既定4)
+#      勝者はこの追加ポイントをそのまま加算、敗者はその loser-additional-factor(既定2/3)倍を減算
+#   3. レート差補正: 両者とも match モードを min-games-for-adjustment(既定5)試合以上こなしている場合のみ、
+#      上記の追加ポイントに以下の係数がかかる(ratingDiff = 対戦前のレート差の絶対値)
+#        勝ち・対戦前レートが高い方  : (favorite-win-divisor(200) - ratingDiff) / favorite-win-divisor  (下限 favorite-win-min-multiplier=0.2)
+#        勝ち・対戦前レートが低い方  : ratingDiff / underdog-win-divisor(50) + 1  (上限 underdog-win-max-multiplier=5)
+#        負け・対戦前レートが高い方  : ratingDiff / upset-loss-divisor(50) + 1  (上限 upset-loss-max-multiplier=5)
+#        負け・対戦前レートが低い方  : (expected-loss-divisor(100) - ratingDiff) / expected-loss-divisor  (下限 expected-loss-min-multiplier=0)
+#   initial: 初期レート(既定3000) / decimal-places: 保存する小数桁数(既定5)
+# 詳細は README「レーティングについて」参照。
+
+default:
+  points: 5
+  sets: 1
+  deuce: false
+broadcast:
+  radius: 30.0
+  point-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  set-win-sound: ENTITY_PLAYER_LEVELUP
+  game-start-sound: BLOCK_NOTE_BLOCK_PLING
+  serve-fault-sound: ENTITY_VILLAGER_NO
+  action-bar-override-seconds: 3.0
+positioning:
+  serve-baseline-margin: 1.0
+  serve-side-offset-fraction: 0.25
+  point-transition-delay-seconds: 3.0
+  serve-look-angle-degrees: 25.0
+rally:
+  out-ball-linger-seconds: 3.0
+  non-bounce-materials:
+  - '*_BARS'
+  - '*_FENCE'
+rating:
+  initial: 3000.0
+  base-points: 2.0
+  loser-additional-factor: 1
+  set-diff-multiplier: 3.0
+  point-diff-divisor: 4.0
+  min-games-for-adjustment: 5
+  favorite-win-divisor: 200.0
+  favorite-win-min-multiplier: 0.2
+  underdog-win-divisor: 50.0
+  underdog-win-max-multiplier: 5.0
+  upset-loss-divisor: 50.0
+  upset-loss-max-multiplier: 5.0
+  expected-loss-divisor: 100.0
+  expected-loss-min-multiplier: 0.0
+  decimal-places: 5
