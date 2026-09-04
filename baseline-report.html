@@ -1026,19 +1026,21 @@
   // 決め方: lo=15/mid=50パーセンタイル、hi=85パーセンタイル。ただし mapScore は
   // 「midから(hi-mid)の1.6倍」で頭打ち(99)になるため、上位が99で並んで順位が付かなくなる項目では、
   // 最高の選手が97.5前後に収まる幅(mid+(最大-mid)/1.30)まで hi を広げている。
+  // 同様に、下位が15で並ぶ項目では lo を mid-(mid-最小)/1.40 まで下げている。
   // 対象人数が少ない項目(WEAK_LOB/DROPの攻撃Value、DRIVE)は、パーセンタイルが不安定なため据え置き。
   // ラリー長別(Short/Mid/Long)の 0.35/0.50/0.60 は実データではなく指定値なので対象外。
-  // 攻撃系(STRAIGHT/SMASH)は得点率を重く、守備系(LOB/WEAK_LOB/DROP)はミス率を重くする
+  // 攻撃系(STRAIGHT/SMASH)は得点率とミス率を同じ重さで、
+  // 守備系(LOB/WEAK_LOB/DROP)はミス率を重く見る
   var ATTACK_KINDS = { STRAIGHT:true, SMASH:true };
   var KIND_WEIGHT = {
-    STRAIGHT: { p:0.75, m:0.25 }, SMASH: { p:0.75, m:0.25 },
+    STRAIGHT: { p:0.5, m:0.5 }, SMASH: { p:0.5, m:0.5 },
     LOB: { p:0.25, m:0.75 }, WEAK_LOB: { p:0.25, m:0.75 }, DROP: { p:0.25, m:0.75 }
   };
   var SHOT_ANCHORS = {
     // [下手, 平均, 上手] の (得点率×重み - ミス率×重み) の目安。実データ(1球ごとのサンプル、
     // サンプル数30以上の選手)の15/50/85パーセンタイルで算出
-    STRAIGHT: [ 0.0025,  0.0394, 0.1000],
-    SMASH:    [ 0.0253,  0.1214, 0.2366],
+    STRAIGHT: [-0.0546, -0.0296, 0.0536],
+    SMASH:    [-0.0408,  0.0304, 0.1216],
     LOB:      [-0.1264, -0.0762, -0.0118],
     WEAK_LOB: [-0.0698, -0.0202, -0.0016],
     DROP:     [-0.1619, -0.0636,  0.0114]
@@ -1239,8 +1241,8 @@
 
     // ---- DRIVE / BackSpin / Curve(1球ごとのサンプルの回転で分類) ----
     m.drive = spinClassScore(learn.samples, function(s){ return s.spinVert <= -0.5; }, 0.0387, 0.0838, 0.2833, 30);
-    m.backspin = spinClassScore(learn.samples, function(s){ return s.spinVert >= 0.3; }, -0.2064, -0.0678, -0.0067, 15);
-    m.curve = spinClassScore(learn.samples, function(s){ return Math.abs(s.spinSide) >= 0.4; }, 0.0000, 0.0704, 0.1612, 50);
+    m.backspin = spinClassScore(learn.samples, function(s){ return s.spinVert >= 0.3; }, -0.2619, -0.0667, 0.0453, 15);
+    m.curve = spinClassScore(learn.samples, function(s){ return Math.abs(s.spinSide) >= 0.4; }, -0.0793, 0.0848, 0.2593, 50);
 
     // 全体(DRIVE/BackSpin/Curveのいずれかに該当する球)のスピン率が2%未満なら、
     // そもそも回転をほとんど使っていない人という扱いで、3つとも65からの距離をさらに半分にする
