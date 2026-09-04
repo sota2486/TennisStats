@@ -1494,6 +1494,80 @@ match-singles:
     - 3-5
     - 2-5
     winner: BLUE
+  '59':
+    court-id: 11
+    court-surface: HARD
+    timestamp: '2026-09-04T12:06:53.109651449Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 23
+        points: 6
+        self-errors: 6
+        serves: 8
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 45
+        rally-count: 16
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 2
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 2
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 8
+        rating-before: 3015.14953
+        rating-after: 3011.5576
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 23
+        points: 10
+        self-errors: 3
+        serves: 8
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 45
+        rally-count: 16
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 3
+          LOB: 3
+          WEAK_LOB: 2
+          DROP: 3
+        rating-before: 3044.39688
+        rating-after: 3048.31785
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 2
+    set-scores:
+    - 4-5
+    - 2-5
+    point-progression:
+    - RBBBRRRBB
+    - RRBBBBB
+    winner: BLUE
 match-doubles:
   '2':
     court-id: 3

@@ -106,23 +106,23 @@ players:
     doubles-league-wins: 0
   c755d081-1374-4cf4-9801-b7e1ab19d947:
     name: sota2486
-    rating: 3044.39688
+    rating: 3048.31785
     rating-history:
       2026-08: 3061.44782
-      2026-09: 3044.39688
-    games-played: 23
-    wins: 18
+      2026-09: 3048.31785
+    games-played: 24
+    wins: 19
     losses: 5
-    points-for: 213
-    points-against: 156
-    sets-for: 34
+    points-for: 223
+    points-against: 162
+    sets-for: 36
     sets-against: 16
-    singles-games-played: 17
-    singles-wins: 13
+    singles-games-played: 18
+    singles-wins: 14
     singles-losses: 4
-    singles-points-for: 158
-    singles-points-against: 112
-    singles-sets-for: 25
+    singles-points-for: 168
+    singles-points-against: 118
+    singles-sets-for: 27
     singles-sets-against: 11
     doubles-games-played: 6
     doubles-wins: 5
@@ -281,24 +281,24 @@ players:
     doubles-league-wins: 0
   97bf4ab1-2263-4b42-84f9-08e33133faf2:
     name: LagnaKt
-    rating: 3015.14953
+    rating: 3011.5576
     rating-history:
       2026-08: 3020.31721
-      2026-09: 3015.14953
-    games-played: 18
+      2026-09: 3011.5576
+    games-played: 19
     wins: 6
-    losses: 12
-    points-for: 143
-    points-against: 153
+    losses: 13
+    points-for: 149
+    points-against: 163
     sets-for: 19
-    sets-against: 22
-    singles-games-played: 12
+    sets-against: 24
+    singles-games-played: 13
     singles-wins: 5
-    singles-losses: 7
-    singles-points-for: 92
-    singles-points-against: 97
+    singles-losses: 8
+    singles-points-for: 98
+    singles-points-against: 107
     singles-sets-for: 13
-    singles-sets-against: 13
+    singles-sets-against: 15
     doubles-games-played: 6
     doubles-wins: 1
     doubles-losses: 5
