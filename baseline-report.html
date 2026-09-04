@@ -1023,6 +1023,9 @@
    * ============================================================ */
   // 実際の learning.yml(全プレイヤー)の分布から算出した基準値(15/50/85パーセンタイル)。
   // 最後に見直したのは2026-09-05(site用/learning.yml、サンプル100球以上の13人)。
+  // 決め方: lo=15/mid=50パーセンタイル、hi=85パーセンタイル。ただし mapScore は
+  // 「midから(hi-mid)の1.6倍」で頭打ち(99)になるため、上位が99で並んで順位が付かなくなる項目では、
+  // 最高の選手が97.5前後に収まる幅(mid+(最大-mid)/1.30)まで hi を広げている。
   // 対象人数が少ない項目(WEAK_LOB/DROPの攻撃Value、DRIVE)は、パーセンタイルが不安定なため据え置き。
   // ラリー長別(Short/Mid/Long)の 0.35/0.50/0.60 は実データではなく指定値なので対象外。
   // 攻撃系(STRAIGHT/SMASH)は得点率を重く、守備系(LOB/WEAK_LOB/DROP)はミス率を重くする
@@ -1044,12 +1047,12 @@
   // [下手, 平均, 上手] は来た球への返球率(returnRate)の目安。実データ(1球ごとのサンプル、
   // サンプル数30以上・その球種を15球以上受けている選手)の15/50/85パーセンタイルで算出
   var DEFENSE_ANCHORS = {
-    STRAIGHT: [0.7946, 0.8714, 0.9172],
-    SMASH:    [0.5349, 0.6462, 0.7447],
-    LOB:      [0.7936, 0.8750, 0.8973],
-    WEAK_LOB: [0.8744, 0.9239, 0.9460],
-    DROP:     [0.8557, 0.9156, 0.9551],
-    SERVE:    [0.8503, 0.9146, 0.9644]
+    STRAIGHT: [0.8268, 0.8646, 0.9267],
+    SMASH:    [0.5349, 0.6462, 0.7466],
+    LOB:      [0.8135, 0.8834, 0.9572],
+    WEAK_LOB: [0.8759, 0.9294, 0.9604],
+    DROP:     [0.8557, 0.9156, 0.9693],
+    SERVE:    [0.8798, 0.9109, 0.9571]
   };
 
   function computeMetrics(learn){
@@ -1160,8 +1163,8 @@
                - offVal(offAll.STRAIGHT.missRate, OFF_FALLBACK.stM) * 0.10
                - offVal(offAll.SMASH.missRate, OFF_FALLBACK.smM) * 0.20
                + offVal(pRate, OFF_FALLBACK.pRate) * 0.20;
-    // 基準値は実データ(learning.yml全体、ストレート+スマッシュ30本以上の選手)の15/50/85パーセンタイル
-    m.offence = scoreFromDiff(offRaw, -0.0351, 0.0398, 0.1159, offAttempts);
+    // 基準値は実データ(site用/learning.yml、表に出る条件と同じサンプル100球以上の13人)の15/50/85パーセンタイル
+    m.offence = scoreFromDiff(offRaw, 0.0061, 0.0370, 0.1592, offAttempts);
 
     // 守備力: スマッシュ返球率0.35 / ミス率(全球種の自滅ミス)0.25 / 空振り率0.2 / 追いつけない率0.2。
     // 空振り率・追いつけない率は5球種の平均
@@ -1170,8 +1173,8 @@
                     - (mRate == null ? 0.09 : mRate) * 0.25
                     - (avgWhiff(defAll)) * 0.2
                     - (avgUnreach(defAll)) * 0.2;
-    // 基準値は実データ(learning.yml全体、defFaced30本以上の選手)の15/50/85パーセンタイルで再算出
-    m.deffence = scoreFromDiff(defenceRaw, 0.0944, 0.1647, 0.1947, defSmash.faced + offAll.LOB.attempts);
+    // 基準値は実データ(site用/learning.yml、表に出る条件と同じサンプル100球以上の13人)の15/50/85パーセンタイル
+    m.deffence = scoreFromDiff(defenceRaw, 0.1134, 0.1606, 0.2064, defSmash.faced + offAll.LOB.attempts);
 
     m.pmDetail = { pointRate: pRate, missRate: mRate };
     // Point%とMiss%をそれぞれ100点満点で見せる。基準値は実データ(site用/learning.yml、サンプル100球以上の13人)の15/50/85パーセンタイルで再算出
@@ -1187,7 +1190,7 @@
 
     // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
     m.vsSlow = scoreFromReturnFaced(vsSlowFaced, 0.8648, 0.9110, 0.9470);
-    m.vsFast = scoreFromReturnFaced(vsFastFaced, 0.6398, 0.7630, 0.8317);
+    m.vsFast = scoreFromReturnFaced(vsFastFaced, 0.6398, 0.7630, 0.8443);
     m.vsSlowRate = vsSlowFaced.returnRate; m.vsFastRate = vsFastFaced.returnRate;
     // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
     m.vsSpin = scoreFromReturnFaced(vsSpinFaced, 0.8122, 0.8674, 0.9005);
@@ -1214,7 +1217,7 @@
     m.whiffRate = safeDiv(totalWhiff, totalFaced);
     // 基準値は実データ(site用/learning.yml、サンプル100球以上の13人)の15/50/85パーセンタイルで再算出
     m.unreachScore = scoreFromDiff(1 - (m.unreachRate==null?0.042:m.unreachRate), 0.9265, 0.9581, 0.9743, totalFaced);
-    m.whiffScore = scoreFromDiff(1 - (m.whiffRate==null?0.087:m.whiffRate), 0.8866, 0.9133, 0.9377, totalFaced);
+    m.whiffScore = scoreFromDiff(1 - (m.whiffRate==null?0.087:m.whiffRate), 0.8866, 0.9133, 0.9451, totalFaced);
     // ---- LPoint%(落としたポイント率) ----
     // 自滅ミス(ネット/オーバー)・空振り・追いつけないを全部合わせた「自分のミスで落とした割合」。
     // 分母は自分に飛んできた球の数なので、Miss%/Whiff%/Unreach% をひとまとめにした指標になる。
