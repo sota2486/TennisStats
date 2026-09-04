@@ -1124,6 +1124,16 @@
       });
     })();
 
+    // ---- Shot: 球種バリュー(サーブ除く5球種)を球数で重み付けして1つにまとめた値 ----
+    (function(){
+      var sum = 0, w = 0;
+      RETURNABLE.forEach(function(k){
+        var wk = m.wheel[k];
+        if (wk && wk.score != null && wk.attempts){ sum += wk.score * wk.attempts; w += wk.attempts; }
+      });
+      m.shotValue = w > 0 ? sum / w : null;
+    })();
+
     // ---- Offence / Deffence / P%-M% (learning.yml 全体の分布から算出した基準値) ----
     // offence(Point%を使う)・deffence(ミス率を使う)の両方で参照するので、先に全体のP%/Miss%を出す
     var pmAttempts = 0, pmWins = 0, pmSelfErr = 0;
@@ -1150,15 +1160,15 @@
     // 基準値は実データ(learning.yml全体、ストレート+スマッシュ30本以上の選手)の15/50/85パーセンタイル
     m.offence = scoreFromDiff(offRaw, -0.0351, 0.0398, 0.1159, offAttempts);
 
-    // 守備力: スマッシュ返球率0.4 / ミス率(全球種の自滅ミス)0.15 / 空振り率0.2 / 追いつけない率0.25。
+    // 守備力: スマッシュ返球率0.35 / ミス率(全球種の自滅ミス)0.25 / 空振り率0.2 / 追いつけない率0.2。
     // 空振り率・追いつけない率は5球種の平均
     var defSmash = defAll.SMASH;
-    var defenceRaw = (defSmash.returnRate == null ? 0.5 : defSmash.returnRate) * 0.4
-                    - (mRate == null ? 0.09 : mRate) * 0.15
+    var defenceRaw = (defSmash.returnRate == null ? 0.5 : defSmash.returnRate) * 0.35
+                    - (mRate == null ? 0.09 : mRate) * 0.25
                     - (avgWhiff(defAll)) * 0.2
-                    - (avgUnreach(defAll)) * 0.25;
+                    - (avgUnreach(defAll)) * 0.2;
     // 基準値は実データ(learning.yml全体、defFaced30本以上の選手)の15/50/85パーセンタイルで再算出
-    m.deffence = scoreFromDiff(defenceRaw, 0.1284, 0.2166, 0.2455, defSmash.faced + offAll.LOB.attempts);
+    m.deffence = scoreFromDiff(defenceRaw, 0.0944, 0.1647, 0.1947, defSmash.faced + offAll.LOB.attempts);
 
     var pmDiff = (pRate == null ? 0 : pRate) - (mRate == null ? 0 : mRate);
     // 基準値は実データ(1500球溜まっている多数プレイ勢を含む分布)の15/50/85パーセンタイルで再算出
@@ -1212,8 +1222,8 @@
     // 基準値は実データ(learning.yml全体、被弾100球以上の選手)の15/50/85パーセンタイルで算出
     m.lpointScore = scoreFromDiff(1 - (m.lpointRate==null?0.262:m.lpointRate), 0.6846, 0.7379, 0.7951, totalFaced);
 
-    // Overall: Offence・Deffenceを1.5、Point%・LPoint%を1として重み付け平均
-    m.overall = weightedAvg([[m.offence,1.5],[m.deffence,1.5],[m.pointScore,1],[m.lpointScore,1]]);
+    // Overall: Offence・Deffence・Shot・Point%・LPoint% の単純平均(重み付けなし)
+    m.overall = weightedAvg([[m.offence,1],[m.deffence,1],[m.shotValue,1],[m.pointScore,1],[m.lpointScore,1]]);
     // Chase%: 拾いに行かなかった(見送った)割合が高いほど高スコアになるようにしている
     // (chaseRate = 拾いに行った割合。スコア化にはその逆の見送り率 1-chaseRate を使う)
     // アラウンドエリアのスイング率は、1球ごとのサンプルではなく直近50試合スパンの記録を見る
@@ -2512,6 +2522,7 @@
       { key:"overall", value:function(p){ return p._m.overall; } },
       { key:"off", value:function(p){ return p._m.offence; } },
       { key:"def", value:function(p){ return p._m.deffence; } },
+      { key:"shot", value:function(p){ return p._m.shotValue; } },
       { key:"p", value:function(p){ return p._m.pmDetail.pointRate; } },
       { key:"lp", value:function(p){ return p._m.lpointRate; } },
       { key:"vsSlow", value:function(p){ return p._m.vsSlow; } },
@@ -2536,7 +2547,7 @@
     var thead = document.createElement("thead");
     var groupRow = el("tr","rank-group");
     groupRow.appendChild(document.createElement("th"));
-    [["Value",5],["VS",3],["AV",4],["Rally",3],["Spin",3]].forEach(function(g, gi){
+    [["Value",6],["VS",3],["AV",4],["Rally",3],["Spin",3]].forEach(function(g, gi){
       var th = document.createElement("th"); th.textContent = g[0]; th.colSpan = g[1];
       if (gi > 0) th.classList.add("group-gap");
       groupRow.appendChild(th);
@@ -2544,7 +2555,7 @@
     thead.appendChild(groupRow);
     var headRow = document.createElement("tr");
     headRow.appendChild(document.createElement("th"));
-    [["overall","overall",false],["off","off",false],["def","def",false],["point%","p",true],["lpoint%","lp",true,true],
+    [["overall","overall",false],["off","off",false],["def","def",false],["shot","shot",false],["point%","p",true],["lpoint%","lp",true,true],
      ["slow","vsSlow",true],["fast","vsFast",true],["spin","vsSpin",true],
      ["miss%","m",true,true],["unreach%","unreach",false,true],["whiff%","whiff",false,true],["chase%","chase",false,true],
      ["short","shortRally",true],["mid","midRally",false],["long","longRally",false],
@@ -2561,6 +2572,7 @@
       tr.appendChild(valueBoxCell(m.overall, "overall"));
       tr.appendChild(valueBoxCell(m.offence, "off"));
       tr.appendChild(valueBoxCell(m.deffence, "def"));
+      tr.appendChild(valueBoxCell(m.shotValue, "shot"));
       tr.appendChild(rateCell(m.pmDetail.pointRate, "p", {groupGap:true, score:m.pointScore}));
       tr.appendChild(rateCell(m.lpointRate, "lp", {higherIsBetter:false, score:m.lpointScore}));
       tr.appendChild(zCell(m.vsSlowRate!=null ? pct(m.vsSlowRate) : "―", m.vsSlow, "vsSlow", {groupGap:true}));
@@ -4152,11 +4164,13 @@
     var panel = el("div","panel");
     panel.appendChild(el("div","panel-title","STATUS"));
     panel.appendChild(meterRow("OVERALL", m.overall, {strong:true,
-      desc:"Offence・Deffence・Point%・LPoint%を組み合わせた総合スコア(1.5:1.5:1:1の重み付け)"}));
+      desc:"Offence・Deffence・Shot・Point%・LPoint%の単純平均(重み付けなし)"}));
     panel.appendChild(meterRow("Offence", m.offence, {gap:true,
       desc:"攻撃力(ストレート得点率0.15・スマッシュ得点率0.35・ストレート自滅0.1・スマッシュ自滅0.2・Point%0.2の重み付け)"}));
     panel.appendChild(meterRow("Deffence", m.deffence,
-      {desc:"守備力全般(スマッシュ返球率0.4・自滅ミス率0.15・空振り率0.2・追いつけない率0.25の重み付け)"}));
+      {desc:"守備力全般(スマッシュ返球率0.35・自滅ミス率0.25・空振り率0.2・追いつけない率0.2の重み付け)"}));
+    panel.appendChild(meterRow("Shot", m.shotValue,
+      {desc:"球種バリュー(サーブを除く5球種)を球数で重み付けして平均した、打球そのものの総合力"}));
     panel.appendChild(meterRow("Point%", m.pointScore,
       {raw:pct(m.pmDetail.pointRate), desc:"5球種(ストレート/スマッシュ/ロブ/弱ロブ/ドロップ)合計で、自分が打った球が得点につながった割合"}));
     panel.appendChild(meterRow("LPoint%", m.lpointScore,
@@ -4286,12 +4300,9 @@
       // TOTAL列: 球種(RETURNABLE、サーブ除く)全体をまとめた値
       var totalV = "―";
       if (rowName === "Value"){
-        var sumV=0, wV=0;
-        RETURNABLE.forEach(function(k){
-          var wk = m.wheel[k];
-          if (wk && wk.score!=null && wk.attempts){ sumV += wk.score*wk.attempts; wV += wk.attempts; }
-        });
-        totalV = wV>0 ? ("<span class=\"value-box\" style=\"background:" + colorForScore(sumV/wV) + "\">" + Math.round(sumV/wV) + "</span>") : "―";
+        totalV = m.shotValue != null
+          ? ("<span class=\"value-box\" style=\"background:" + colorForScore(m.shotValue) + "\">" + Math.round(m.shotValue) + "</span>")
+          : "―";
       }
       if (rowName === "Usage") totalV = "100%";
       if (rowName === "Point%") totalV = m.pmDetail.pointRate!=null ? pct(m.pmDetail.pointRate) : "―";
@@ -4465,12 +4476,21 @@
     });
 
     var centerTxt = document.createElementNS(svgns,"text");
-    centerTxt.setAttribute("x",cx); centerTxt.setAttribute("y",cy+4);
+    centerTxt.setAttribute("x",cx); centerTxt.setAttribute("y",cy-6);
     centerTxt.setAttribute("text-anchor","middle");
     centerTxt.setAttribute("font-size","10");
     centerTxt.setAttribute("fill","var(--ink-3)");
     centerTxt.textContent = "SHOT";
     svg.appendChild(centerTxt);
+    // 中央に球種バリューの総合値(STATUSのShotと同じ値)を出す
+    var centerNum = document.createElementNS(svgns,"text");
+    centerNum.setAttribute("x",cx); centerNum.setAttribute("y",cy+14);
+    centerNum.setAttribute("text-anchor","middle");
+    centerNum.setAttribute("class","wheel-num");
+    centerNum.setAttribute("font-size","20");
+    centerNum.setAttribute("fill", colorForScore(m.shotValue));
+    centerNum.textContent = m.shotValue == null ? "―" : Math.round(m.shotValue);
+    svg.appendChild(centerNum);
 
     wrap.appendChild(svg);
     raf(function(){
