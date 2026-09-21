@@ -1,31 +1,65 @@
 players:
   b31dcf6e-e88f-3476-a5aa-21a045f58355:
     name: AndroidA
-    rating: 3020.6531
+    rating: 3016.14275
     rating-history:
       2026-08: 3020.6531
-      2026-09: 3020.6531
-    games-played: 8
-    wins: 6
-    losses: 2
-    points-for: 79
-    points-against: 58
-    sets-for: 12
-    sets-against: 7
-    singles-games-played: 5
-    singles-wins: 4
+      2026-09: 3016.14275
+    games-played: 12
+    wins: 7
+    losses: 5
+    points-for: 108
+    points-against: 94
+    sets-for: 15
+    sets-against: 13
+    singles-games-played: 6
+    singles-wins: 5
     singles-losses: 1
-    singles-points-for: 53
-    singles-points-against: 34
-    singles-sets-for: 8
+    singles-points-for: 58
+    singles-points-against: 35
+    singles-sets-for: 9
     singles-sets-against: 4
-    doubles-games-played: 3
+    doubles-games-played: 6
     doubles-wins: 2
-    doubles-losses: 1
-    doubles-points-for: 26
-    doubles-points-against: 24
+    doubles-losses: 4
+    doubles-points-for: 50
+    doubles-points-against: 59
+    doubles-sets-for: 6
+    doubles-sets-against: 9
+    tournaments-played: 0
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 3
+    league-wins: 0
+    singles-league-wins: 0
+    doubles-league-wins: 0
+  75350b8d-1eab-458f-ac87-145322dfa917:
+    name: Opanku
+    rating: 3010.99281
+    rating-history:
+      2026-09: 3010.99281
+    games-played: 15
+    wins: 9
+    losses: 6
+    points-for: 72
+    points-against: 63
+    sets-for: 11
+    sets-against: 6
+    singles-games-played: 13
+    singles-wins: 7
+    singles-losses: 6
+    singles-points-for: 52
+    singles-points-against: 51
+    singles-sets-for: 7
+    singles-sets-against: 6
+    doubles-games-played: 2
+    doubles-wins: 2
+    doubles-losses: 0
+    doubles-points-for: 20
+    doubles-points-against: 12
     doubles-sets-for: 4
-    doubles-sets-against: 3
+    doubles-sets-against: 0
     tournaments-played: 0
     tournament-wins: 0
     singles-tournament-wins: 0
@@ -36,24 +70,93 @@ players:
     doubles-league-wins: 0
   e2826df9-3819-301e-9bf3-1bdc6bd6cfe4:
     name: AndroidB
-    rating: 2996.08333
+    rating: 2988.95339
     rating-history:
       2026-08: 2996.08333
-      2026-09: 2996.08333
-    games-played: 2
-    wins: 1
-    losses: 1
-    points-for: 18
-    points-against: 19
+      2026-09: 2988.95339
+    games-played: 18
+    wins: 7
+    losses: 11
+    points-for: 97
+    points-against: 114
+    sets-for: 10
+    sets-against: 16
+    singles-games-played: 15
+    singles-wins: 7
+    singles-losses: 8
+    singles-points-for: 73
+    singles-points-against: 79
+    singles-sets-for: 8
+    singles-sets-against: 10
+    doubles-games-played: 3
+    doubles-wins: 0
+    doubles-losses: 3
+    doubles-points-for: 24
+    doubles-points-against: 35
+    doubles-sets-for: 2
+    doubles-sets-against: 6
+    tournaments-played: 0
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 2
+    league-wins: 0
+    singles-league-wins: 0
+    doubles-league-wins: 0
+  e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+    name: pipis_57
+    rating: 2987.46007
+    rating-history:
+      2026-08: 2962.5311
+      2026-09: 2987.46007
+    games-played: 28
+    wins: 12
+    losses: 16
+    points-for: 171
+    points-against: 203
+    sets-for: 21
+    sets-against: 30
+    singles-games-played: 20
+    singles-wins: 8
+    singles-losses: 12
+    singles-points-for: 101
+    singles-points-against: 126
+    singles-sets-for: 11
+    singles-sets-against: 19
+    doubles-games-played: 8
+    doubles-wins: 4
+    doubles-losses: 4
+    doubles-points-for: 70
+    doubles-points-against: 77
+    doubles-sets-for: 10
+    doubles-sets-against: 11
+    tournaments-played: 1
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 4
+    league-wins: 0
+    singles-league-wins: 0
+    doubles-league-wins: 0
+  900c20b8-451f-4e36-9392-5e4538f0021e:
+    name: azisaba3
+    rating: 2981.1258
+    rating-history:
+      2026-09: 2981.1258
+    games-played: 13
+    wins: 2
+    losses: 11
+    points-for: 37
+    points-against: 63
     sets-for: 2
-    sets-against: 3
-    singles-games-played: 2
-    singles-wins: 1
-    singles-losses: 1
-    singles-points-for: 18
-    singles-points-against: 19
+    sets-against: 11
+    singles-games-played: 13
+    singles-wins: 2
+    singles-losses: 11
+    singles-points-for: 37
+    singles-points-against: 63
     singles-sets-for: 2
-    singles-sets-against: 3
+    singles-sets-against: 11
     doubles-games-played: 0
     doubles-wins: 0
     doubles-losses: 0
@@ -69,34 +172,33 @@ players:
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
-  e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
-    name: pipis_57
-    rating: 2962.5311
+  5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+    name: Dra_goons
+    rating: 2990.15507
     rating-history:
-      2026-08: 2962.5311
-      2026-09: 2962.5311
-    games-played: 10
-    wins: 1
-    losses: 9
-    points-for: 69
-    points-against: 112
-    sets-for: 6
-    sets-against: 19
-    singles-games-played: 7
-    singles-wins: 0
-    singles-losses: 7
-    singles-points-for: 46
-    singles-points-against: 81
+      2026-09: 2990.15507
+    games-played: 15
+    wins: 5
+    losses: 10
+    points-for: 52
+    points-against: 73
+    sets-for: 7
+    sets-against: 10
+    singles-games-played: 13
+    singles-wins: 3
+    singles-losses: 10
+    singles-points-for: 32
+    singles-points-against: 61
     singles-sets-for: 3
-    singles-sets-against: 14
-    doubles-games-played: 3
-    doubles-wins: 1
-    doubles-losses: 2
-    doubles-points-for: 23
-    doubles-points-against: 31
-    doubles-sets-for: 3
-    doubles-sets-against: 5
-    tournaments-played: 1
+    singles-sets-against: 10
+    doubles-games-played: 2
+    doubles-wins: 2
+    doubles-losses: 0
+    doubles-points-for: 20
+    doubles-points-against: 12
+    doubles-sets-for: 4
+    doubles-sets-against: 0
+    tournaments-played: 0
     tournament-wins: 0
     singles-tournament-wins: 0
     doubles-tournament-wins: 0
@@ -106,24 +208,24 @@ players:
     doubles-league-wins: 0
   c755d081-1374-4cf4-9801-b7e1ab19d947:
     name: sota2486
-    rating: 3048.31785
+    rating: 3072.628
     rating-history:
       2026-08: 3061.44782
-      2026-09: 3048.31785
-    games-played: 24
-    wins: 19
-    losses: 5
-    points-for: 223
-    points-against: 162
-    sets-for: 36
-    sets-against: 16
-    singles-games-played: 18
-    singles-wins: 14
-    singles-losses: 4
-    singles-points-for: 168
-    singles-points-against: 118
-    singles-sets-for: 27
-    singles-sets-against: 11
+      2026-09: 3072.628
+    games-played: 37
+    wins: 31
+    losses: 6
+    points-for: 284
+    points-against: 189
+    sets-for: 48
+    sets-against: 17
+    singles-games-played: 31
+    singles-wins: 26
+    singles-losses: 5
+    singles-points-for: 229
+    singles-points-against: 145
+    singles-sets-for: 39
+    singles-sets-against: 12
     doubles-games-played: 6
     doubles-wins: 5
     doubles-losses: 1
@@ -135,73 +237,37 @@ players:
     tournament-wins: 1
     singles-tournament-wins: 1
     doubles-tournament-wins: 0
-    leagues-played: 3
-    league-wins: 3
-    singles-league-wins: 2
+    leagues-played: 4
+    league-wins: 4
+    singles-league-wins: 3
     doubles-league-wins: 1
-  196d5305-414b-4841-9730-05a15b586666:
-    name: Jtype916
-    rating: 3007.875
+  a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+    name: TYPE_NOOB
+    rating: 2991.42883
     rating-history:
-      2026-08: 3010.125
-      2026-09: 3007.875
-    games-played: 6
-    wins: 4
-    losses: 2
-    points-for: 45
-    points-against: 36
-    sets-for: 7
-    sets-against: 4
-    singles-games-played: 3
-    singles-wins: 1
-    singles-losses: 2
-    singles-points-for: 10
-    singles-points-against: 13
-    singles-sets-for: 1
-    singles-sets-against: 2
-    doubles-games-played: 3
-    doubles-wins: 3
-    doubles-losses: 0
-    doubles-points-for: 35
-    doubles-points-against: 23
-    doubles-sets-for: 6
-    doubles-sets-against: 2
-    tournaments-played: 0
-    tournament-wins: 0
-    singles-tournament-wins: 0
-    doubles-tournament-wins: 0
-    leagues-played: 2
-    league-wins: 1
-    singles-league-wins: 0
-    doubles-league-wins: 1
-  6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
-    name: Alpha6000
-    rating: 3001.18443
-    rating-history:
-      2026-08: 3001.25059
-      2026-09: 3001.18443
-    games-played: 16
+      2026-09: 2991.42883
+    games-played: 18
     wins: 7
-    losses: 9
-    points-for: 147
-    points-against: 154
-    sets-for: 18
-    sets-against: 21
+    losses: 11
+    points-for: 75
+    points-against: 108
+    sets-for: 8
+    sets-against: 16
     singles-games-played: 13
     singles-wins: 6
     singles-losses: 7
-    singles-points-for: 124
-    singles-points-against: 123
-    singles-sets-for: 15
-    singles-sets-against: 16
-    doubles-games-played: 3
+    singles-points-for: 46
+    singles-points-against: 56
+    singles-sets-for: 6
+    singles-sets-against: 7
+    doubles-games-played: 5
     doubles-wins: 1
-    doubles-losses: 2
-    doubles-points-for: 23
-    doubles-points-against: 31
-    doubles-sets-for: 3
-    doubles-sets-against: 5
-    tournaments-played: 2
+    doubles-losses: 4
+    doubles-points-for: 29
+    doubles-points-against: 52
+    doubles-sets-for: 2
+    doubles-sets-against: 9
+    tournaments-played: 0
     tournament-wins: 0
     singles-tournament-wins: 0
     doubles-tournament-wins: 0
@@ -209,6 +275,110 @@ players:
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
+  54033f55-45d1-4d56-9d8d-33744d888aec:
+    name: namako3125
+    rating: 2999.75
+    rating-history:
+      2026-09: 2999.75
+    games-played: 2
+    wins: 1
+    losses: 1
+    points-for: 6
+    points-against: 7
+    sets-for: 1
+    sets-against: 1
+    singles-games-played: 2
+    singles-wins: 1
+    singles-losses: 1
+    singles-points-for: 6
+    singles-points-against: 7
+    singles-sets-for: 1
+    singles-sets-against: 1
+    doubles-games-played: 0
+    doubles-wins: 0
+    doubles-losses: 0
+    doubles-points-for: 0
+    doubles-points-against: 0
+    doubles-sets-for: 0
+    doubles-sets-against: 0
+    tournaments-played: 0
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 0
+    league-wins: 0
+    singles-league-wins: 0
+    doubles-league-wins: 0
+  196d5305-414b-4841-9730-05a15b586666:
+    name: Jtype916
+    rating: 3016.61076
+    rating-history:
+      2026-08: 3010.125
+      2026-09: 3016.61076
+    games-played: 25
+    wins: 16
+    losses: 9
+    points-for: 155
+    points-against: 122
+    sets-for: 24
+    sets-against: 14
+    singles-games-played: 16
+    singles-wins: 7
+    singles-losses: 9
+    singles-points-for: 56
+    singles-points-against: 58
+    singles-sets-for: 7
+    singles-sets-against: 9
+    doubles-games-played: 9
+    doubles-wins: 9
+    doubles-losses: 0
+    doubles-points-for: 99
+    doubles-points-against: 64
+    doubles-sets-for: 17
+    doubles-sets-against: 5
+    tournaments-played: 0
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 4
+    league-wins: 2
+    singles-league-wins: 0
+    doubles-league-wins: 2
+  6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+    name: Alpha6000
+    rating: 3033.42343
+    rating-history:
+      2026-08: 3001.25059
+      2026-09: 3033.42343
+    games-played: 35
+    wins: 23
+    losses: 12
+    points-for: 274
+    points-against: 237
+    sets-for: 39
+    sets-against: 27
+    singles-games-played: 27
+    singles-wins: 17
+    singles-losses: 10
+    singles-points-for: 192
+    singles-points-against: 166
+    singles-sets-for: 26
+    singles-sets-against: 19
+    doubles-games-played: 8
+    doubles-wins: 6
+    doubles-losses: 2
+    doubles-points-for: 82
+    doubles-points-against: 71
+    doubles-sets-for: 13
+    doubles-sets-against: 8
+    tournaments-played: 2
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 4
+    league-wins: 1
+    singles-league-wins: 0
+    doubles-league-wins: 1
   f51b1265-a385-453e-ae03-67e1e84e70b8:
     name: Obake_zzz
     rating: 2989.91666
@@ -281,36 +451,36 @@ players:
     doubles-league-wins: 0
   97bf4ab1-2263-4b42-84f9-08e33133faf2:
     name: LagnaKt
-    rating: 3011.5576
+    rating: 3042.88459
     rating-history:
       2026-08: 3020.31721
-      2026-09: 3011.5576
-    games-played: 19
-    wins: 6
-    losses: 13
-    points-for: 149
-    points-against: 163
-    sets-for: 19
-    sets-against: 24
-    singles-games-played: 13
-    singles-wins: 5
-    singles-losses: 8
-    singles-points-for: 98
-    singles-points-against: 107
-    singles-sets-for: 13
-    singles-sets-against: 15
-    doubles-games-played: 6
-    doubles-wins: 1
-    doubles-losses: 5
-    doubles-points-for: 51
-    doubles-points-against: 56
-    doubles-sets-for: 6
-    doubles-sets-against: 9
+      2026-09: 3042.88459
+    games-played: 38
+    wins: 21
+    losses: 17
+    points-for: 267
+    points-against: 219
+    sets-for: 39
+    sets-against: 30
+    singles-games-played: 26
+    singles-wins: 16
+    singles-losses: 10
+    singles-points-for: 160
+    singles-points-against: 126
+    singles-sets-for: 24
+    singles-sets-against: 17
+    doubles-games-played: 12
+    doubles-wins: 5
+    doubles-losses: 7
+    doubles-points-for: 107
+    doubles-points-against: 93
+    doubles-sets-for: 15
+    doubles-sets-against: 13
     tournaments-played: 2
     tournament-wins: 1
     singles-tournament-wins: 1
     doubles-tournament-wins: 0
-    leagues-played: 3
+    leagues-played: 5
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
@@ -384,53 +554,87 @@ players:
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
+  37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+    name: hachi_18
+    rating: 2969.16241
+    rating-history:
+      2026-09: 2969.16241
+    games-played: 19
+    wins: 3
+    losses: 16
+    points-for: 68
+    points-against: 118
+    sets-for: 5
+    sets-against: 20
+    singles-games-played: 14
+    singles-wins: 2
+    singles-losses: 12
+    singles-points-for: 31
+    singles-points-against: 72
+    singles-sets-for: 2
+    singles-sets-against: 12
+    doubles-games-played: 5
+    doubles-wins: 1
+    doubles-losses: 4
+    doubles-points-for: 37
+    doubles-points-against: 46
+    doubles-sets-for: 3
+    doubles-sets-against: 8
+    tournaments-played: 0
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 2
+    league-wins: 0
+    singles-league-wins: 0
+    doubles-league-wins: 0
   c17c7abf-b429-426b-a812-fa587a86b9d7:
     name: Pen4
-    rating: 3013.82272
+    rating: 3024.02404
     rating-history:
       2026-08: 2993.83333
-      2026-09: 3013.82272
-    games-played: 10
-    wins: 5
-    losses: 5
-    points-for: 74
-    points-against: 81
-    sets-for: 10
-    sets-against: 12
-    singles-games-played: 8
-    singles-wins: 4
-    singles-losses: 4
-    singles-points-for: 59
-    singles-points-against: 61
-    singles-sets-for: 8
-    singles-sets-against: 9
-    doubles-games-played: 2
+      2026-09: 3024.02404
+    games-played: 26
+    wins: 15
+    losses: 11
+    points-for: 137
+    points-against: 130
+    sets-for: 20
+    sets-against: 18
+    singles-games-played: 23
+    singles-wins: 14
+    singles-losses: 9
+    singles-points-for: 121
+    singles-points-against: 105
+    singles-sets-for: 18
+    singles-sets-against: 14
+    doubles-games-played: 3
     doubles-wins: 1
-    doubles-losses: 1
-    doubles-points-for: 15
-    doubles-points-against: 20
+    doubles-losses: 2
+    doubles-points-for: 16
+    doubles-points-against: 25
     doubles-sets-for: 2
-    doubles-sets-against: 3
+    doubles-sets-against: 4
     tournaments-played: 1
     tournament-wins: 0
     singles-tournament-wins: 0
     doubles-tournament-wins: 0
-    leagues-played: 0
+    leagues-played: 1
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
   f9da9725-57c1-4a33-9408-b50daccea35d:
     name: nextbardo
-    rating: 3002.375
+    rating: 2992.875
     rating-history:
-      2026-09: 3002.375
-    games-played: 1
-    wins: 1
-    losses: 0
-    points-for: 5
-    points-against: 1
-    sets-for: 1
-    sets-against: 0
+      2026-09: 2992.875
+    games-played: 6
+    wins: 2
+    losses: 4
+    points-for: 34
+    points-against: 53
+    sets-for: 3
+    sets-against: 9
     singles-games-played: 0
     singles-wins: 0
     singles-losses: 0
@@ -438,48 +642,13 @@ players:
     singles-points-against: 0
     singles-sets-for: 0
     singles-sets-against: 0
-    doubles-games-played: 1
-    doubles-wins: 1
-    doubles-losses: 0
-    doubles-points-for: 5
-    doubles-points-against: 1
-    doubles-sets-for: 1
-    doubles-sets-against: 0
-    tournaments-played: 0
-    tournament-wins: 0
-    singles-tournament-wins: 0
-    doubles-tournament-wins: 0
-    leagues-played: 0
-    league-wins: 0
-    singles-league-wins: 0
-    doubles-league-wins: 0
-  634e1202-bfeb-4b78-a56b-d6599020f171:
-    name: omarupin
-    rating: 3023.91667
-    rating-history:
-      2026-08: 3023.91667
-      2026-09: 3023.91667
-    games-played: 5
-    wins: 3
-    losses: 2
-    points-for: 52
-    points-against: 34
-    sets-for: 8
-    sets-against: 4
-    singles-games-played: 5
-    singles-wins: 3
-    singles-losses: 2
-    singles-points-for: 52
-    singles-points-against: 34
-    singles-sets-for: 8
-    singles-sets-against: 4
-    doubles-games-played: 0
-    doubles-wins: 0
-    doubles-losses: 0
-    doubles-points-for: 0
-    doubles-points-against: 0
-    doubles-sets-for: 0
-    doubles-sets-against: 0
+    doubles-games-played: 6
+    doubles-wins: 2
+    doubles-losses: 4
+    doubles-points-for: 34
+    doubles-points-against: 53
+    doubles-sets-for: 3
+    doubles-sets-against: 9
     tournaments-played: 0
     tournament-wins: 0
     singles-tournament-wins: 0
@@ -488,24 +657,59 @@ players:
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
+  634e1202-bfeb-4b78-a56b-d6599020f171:
+    name: omarupin
+    rating: 3004.74556
+    rating-history:
+      2026-08: 3023.91667
+      2026-09: 3004.74556
+    games-played: 23
+    wins: 9
+    losses: 14
+    points-for: 136
+    points-against: 141
+    sets-for: 18
+    sets-against: 20
+    singles-games-played: 18
+    singles-wins: 6
+    singles-losses: 12
+    singles-points-for: 89
+    singles-points-against: 95
+    singles-sets-for: 11
+    singles-sets-against: 14
+    doubles-games-played: 5
+    doubles-wins: 3
+    doubles-losses: 2
+    doubles-points-for: 47
+    doubles-points-against: 46
+    doubles-sets-for: 7
+    doubles-sets-against: 6
+    tournaments-played: 0
+    tournament-wins: 0
+    singles-tournament-wins: 0
+    doubles-tournament-wins: 0
+    leagues-played: 3
+    league-wins: 0
+    singles-league-wins: 0
+    doubles-league-wins: 0
   d2d2217d-3c85-3809-ab71-31413e3778f8:
     name: Saitama
-    rating: 3004.75
+    rating: 3009.25
     rating-history:
-      2026-09: 3004.75
-    games-played: 2
-    wins: 2
+      2026-09: 3009.25
+    games-played: 3
+    wins: 3
     losses: 0
-    points-for: 10
+    points-for: 21
     points-against: 5
-    sets-for: 2
+    sets-for: 3
     sets-against: 0
-    singles-games-played: 2
-    singles-wins: 2
+    singles-games-played: 3
+    singles-wins: 3
     singles-losses: 0
-    singles-points-for: 10
+    singles-points-for: 21
     singles-points-against: 5
-    singles-sets-for: 2
+    singles-sets-for: 3
     singles-sets-against: 0
     doubles-games-played: 0
     doubles-wins: 0
@@ -524,52 +728,52 @@ players:
     doubles-league-wins: 0
   0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
     name: rlaiy
-    rating: 3037.23018
+    rating: 3027.76676
     rating-history:
       2026-08: 3037.23018
-      2026-09: 3037.23018
-    games-played: 11
-    wins: 9
-    losses: 2
-    points-for: 109
-    points-against: 82
-    sets-for: 18
-    sets-against: 8
-    singles-games-played: 8
-    singles-wins: 7
-    singles-losses: 1
-    singles-points-for: 83
-    singles-points-against: 58
-    singles-sets-for: 14
-    singles-sets-against: 5
-    doubles-games-played: 3
-    doubles-wins: 2
-    doubles-losses: 1
-    doubles-points-for: 26
-    doubles-points-against: 24
-    doubles-sets-for: 4
-    doubles-sets-against: 3
+      2026-09: 3027.76676
+    games-played: 18
+    wins: 11
+    losses: 7
+    points-for: 154
+    points-against: 137
+    sets-for: 22
+    sets-against: 17
+    singles-games-played: 10
+    singles-wins: 8
+    singles-losses: 2
+    singles-points-for: 91
+    singles-points-against: 67
+    singles-sets-for: 15
+    singles-sets-against: 6
+    doubles-games-played: 8
+    doubles-wins: 3
+    doubles-losses: 5
+    doubles-points-for: 63
+    doubles-points-against: 70
+    doubles-sets-for: 7
+    doubles-sets-against: 11
     tournaments-played: 1
     tournament-wins: 0
     singles-tournament-wins: 0
     doubles-tournament-wins: 0
-    leagues-played: 2
+    leagues-played: 3
     league-wins: 1
     singles-league-wins: 1
     doubles-league-wins: 0
   c18ae830-96ab-477e-a81a-450c87b8eabc:
     name: EmeraldREX91
-    rating: 2999.16667
+    rating: 2996.80375
     rating-history:
       2026-08: 2998.16667
-      2026-09: 2999.16667
-    games-played: 10
+      2026-09: 2996.80375
+    games-played: 11
     wins: 4
-    losses: 6
-    points-for: 64
-    points-against: 65
+    losses: 7
+    points-for: 65
+    points-against: 70
     sets-for: 8
-    sets-against: 9
+    sets-against: 10
     singles-games-played: 7
     singles-wins: 3
     singles-losses: 4
@@ -577,13 +781,13 @@ players:
     singles-points-against: 45
     singles-sets-for: 5
     singles-sets-against: 6
-    doubles-games-played: 3
+    doubles-games-played: 4
     doubles-wins: 1
-    doubles-losses: 2
-    doubles-points-for: 21
-    doubles-points-against: 20
+    doubles-losses: 3
+    doubles-points-for: 22
+    doubles-points-against: 25
     doubles-sets-for: 3
-    doubles-sets-against: 3
+    doubles-sets-against: 4
     tournaments-played: 1
     tournament-wins: 0
     singles-tournament-wins: 0
@@ -594,36 +798,36 @@ players:
     doubles-league-wins: 0
   14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
     name: M0nJ
-    rating: 2988.20151
+    rating: 2989.58759
     rating-history:
       2026-08: 2988.20151
-      2026-09: 2988.20151
-    games-played: 8
-    wins: 2
-    losses: 6
-    points-for: 68
-    points-against: 86
-    sets-for: 8
-    sets-against: 13
-    singles-games-played: 5
-    singles-wins: 2
-    singles-losses: 3
-    singles-points-for: 38
-    singles-points-against: 50
-    singles-sets-for: 5
-    singles-sets-against: 7
-    doubles-games-played: 3
-    doubles-wins: 0
-    doubles-losses: 3
-    doubles-points-for: 30
-    doubles-points-against: 36
-    doubles-sets-for: 3
-    doubles-sets-against: 6
+      2026-09: 2989.58759
+    games-played: 26
+    wins: 10
+    losses: 16
+    points-for: 172
+    points-against: 185
+    sets-for: 21
+    sets-against: 25
+    singles-games-played: 18
+    singles-wins: 7
+    singles-losses: 11
+    singles-points-for: 91
+    singles-points-against: 113
+    singles-sets-for: 10
+    singles-sets-against: 15
+    doubles-games-played: 8
+    doubles-wins: 3
+    doubles-losses: 5
+    doubles-points-for: 81
+    doubles-points-against: 72
+    doubles-sets-for: 11
+    doubles-sets-against: 10
     tournaments-played: 0
     tournament-wins: 0
     singles-tournament-wins: 0
     doubles-tournament-wins: 0
-    leagues-played: 2
+    leagues-played: 4
     league-wins: 0
     singles-league-wins: 0
     doubles-league-wins: 0
