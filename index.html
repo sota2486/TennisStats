@@ -522,26 +522,24 @@
     border-bottom:1px solid var(--line); padding-bottom:5px; margin-bottom:5px;
   }
   .mrank-card-label{
-    font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-weight:600; font-size:12.5px;
+    font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-weight:600; font-size:13.5px;
     color:var(--ink); letter-spacing:.03em;
   }
   .mrank-card-group{
     font-size:9px; font-weight:600; color:var(--accent-ink); background:var(--accent-soft);
     border-radius:5px; padding:1px 5px; letter-spacing:.04em;
   }
-  .mrank-card-jp{ font-size:9.5px; color:var(--ink-3); margin-left:auto; }
-  .mrank-row{ display:flex; align-items:center; gap:6px; padding:2px 0; font-size:11px; }
-  .mrank-pos{ flex:0 0 16px; text-align:right; color:var(--ink-3); font-family:'Oswald','IBM Plex Sans JP',sans-serif; }
+  .mrank-card-jp{ font-size:10.5px; color:var(--ink-3); margin-left:auto; }
+  .mrank-row{ display:flex; align-items:center; gap:6px; padding:3px 0; font-size:11.5px; }
+  .mrank-pos{ flex:0 0 18px; text-align:right; color:var(--ink-3); font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-size:12px; }
   .mrank-name{
     flex:1 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
     font-weight:600; color:var(--ink);
   }
-  .mrank-others{ color:var(--ink-3); font-weight:500; }
+  .mrank-others{ color:var(--ink-3); font-weight:500; font-size:10px; margin-left:6px; }
   .mrank-val{ flex:0 0 auto; }
   .mrank-count{ font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-weight:600; color:var(--ink); }
-  .mrank-row .rank-avatar{ width:16px; height:16px; border-radius:4px; margin-right:4px; }
-  .mrank-row .rank-avatar svg{ width:10px; height:10px; }
-  .mrank-row .rate-chip{ min-width:34px; padding:1px 5px; min-height:16px; font-size:9.5px; }
+  /* 顔写真・チップは他のLEADERBOARDの表と同じ大きさ(.rank-avatar / .rate-chip の既定)のまま使う */
   .mrank-none{ padding:10px 0; text-align:center; color:var(--ink-3); font-size:10.5px; }
 
   /* 選んだ1項目の全順位。カードより文字も顔写真も大きくする */
@@ -2292,7 +2290,7 @@
    *
    * 項目数が多く1枚の表にすると横に長くなりすぎるため、MATCHESだけこの形にしている。
    * 並び順は「レート / リーグ優勝 / トーナメント優勝」が1行目、そのあとは
-   * GAME・WIN・LOSE・PT%・SET%・WIN%を、それぞれ TOTAL / SINGLES / DOUBLES の順に1行ずつ。
+   * GAME・WIN・PT%・SET%・WIN%を、それぞれ TOTAL / SINGLES / DOUBLES の順に1行ずつ。
    */
   function matchMetricList(){
     var list = [
@@ -2305,7 +2303,6 @@
     ];
     [ { id:"games",  label:"GAME", jp:"試合数",   kind:"count", unit:"試合" },
       { id:"wins",   label:"WIN",  jp:"勝利数",   kind:"count", unit:"勝" },
-      { id:"losses", label:"LOSE", jp:"敗戦数",   kind:"count", unit:"敗" },
       { id:"pt",     label:"PT%",  jp:"得点率",   kind:"rate" },
       { id:"set",    label:"SET%", jp:"セット率", kind:"rate" },
       { id:"win",    label:"WIN%", jp:"勝率",     kind:"rate" }
@@ -2370,13 +2367,12 @@
 
   /**
    * カードに出す5行を作る。
-   * 同率のせいで6人以上になってしまう場合は5人で切り上げ、5行目は名前の代わりに
-   * 「ほか〇人」(その順位で表示しきれなかった人数)を出す
+   * 同率のせいで6人以上になってしまう場合は5人で切り上げ、5人目の名前の横に
+   * 「ほか〇人」(同じ順位で載せきれなかった人数)を添える
    */
   function matchTopFive(rows){
-    if (rows.length <= 5) return rows.map(function(r){ return { rank:r.rank, entry:r }; });
-    var out = [];
-    for (var i = 0; i < 4; i++) out.push({ rank: rows[i].rank, entry: rows[i] });
+    var out = rows.slice(0, 5).map(function(r){ return { rank:r.rank, entry:r }; });
+    if (rows.length <= 5) return out;
     var fifth = rows[4];
     var firstIdx = 4, count = 0;
     rows.forEach(function(r, idx){
@@ -2384,12 +2380,8 @@
       if (idx < firstIdx) firstIdx = idx;
       count++;
     });
-    if (firstIdx + count <= 5) {
-      out.push({ rank: fifth.rank, entry: fifth });           // 同率でも5人に収まる
-    } else {
-      var shownAbove = Math.max(0, 4 - firstIdx);             // 1〜4行目に既に出ている同率者
-      out.push({ rank: fifth.rank, entry: fifth, others: count - shownAbove });
-    }
+    var shown = 5 - firstIdx;                    // 5行目までに出せた同率者の人数
+    if (count > shown) out[4].others = count - shown;
     return out;
   }
 
@@ -2409,12 +2401,9 @@
       matchTopFive(rows).forEach(function(line){
         var row = el("div","mrank-row");
         row.appendChild(el("span","mrank-pos", String(line.rank)));
-        if (line.others != null) {
-          row.appendChild(el("span","mrank-name mrank-others", "ほか" + line.others + "人"));
-        } else {
-          row.appendChild(el("span","mrank-name",
-            '<span class="rank-avatar">' + avatarIconHtml(line.entry.player) + '</span>' + line.entry.player.name));
-        }
+        row.appendChild(el("span","mrank-name",
+          '<span class="rank-avatar">' + avatarIconHtml(line.entry.player) + '</span>' + line.entry.player.name
+          + (line.others != null ? '<span class="mrank-others">ほか' + line.others + '人</span>' : '')));
         row.appendChild(el("span","mrank-val", matchMetricValueHtml(metric, line.entry.value)));
         card.appendChild(row);
       });
