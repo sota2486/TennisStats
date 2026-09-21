@@ -505,6 +505,76 @@
   .rank-avatar svg{ width:13px; height:13px; }
   .rank-avatar img{ width:100%; height:100%; object-fit:contain; }
   .rank-empty{ padding:30px; text-align:center; color:var(--ink-3); font-size:12.5px; }
+
+  /* LEADERBOARD > MATCHES: 項目ごとのトップ5カードを3列に並べ、その下に
+     選んだ1項目の全順位を大きめに出す(項目数が多く、1枚の表だと横に長くなりすぎるため) */
+  .mrank-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; }
+  @media (max-width:1100px){ .mrank-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+  @media (max-width:720px){ .mrank-grid{ grid-template-columns:1fr; } }
+  .mrank-card{
+    border:1px solid var(--line); border-radius:10px; background:var(--panel);
+    padding:9px 11px 7px; cursor:pointer; transition:border-color .12s, background .12s;
+  }
+  .mrank-card:hover{ border-color:var(--accent); background:var(--panel-2); }
+  .mrank-card.selected{ border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
+  .mrank-card-head{
+    display:flex; align-items:baseline; gap:6px;
+    border-bottom:1px solid var(--line); padding-bottom:5px; margin-bottom:5px;
+  }
+  .mrank-card-label{
+    font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-weight:600; font-size:12.5px;
+    color:var(--ink); letter-spacing:.03em;
+  }
+  .mrank-card-group{
+    font-size:9px; font-weight:600; color:var(--accent-ink); background:var(--accent-soft);
+    border-radius:5px; padding:1px 5px; letter-spacing:.04em;
+  }
+  .mrank-card-jp{ font-size:9.5px; color:var(--ink-3); margin-left:auto; }
+  .mrank-row{ display:flex; align-items:center; gap:6px; padding:2px 0; font-size:11px; }
+  .mrank-pos{ flex:0 0 16px; text-align:right; color:var(--ink-3); font-family:'Oswald','IBM Plex Sans JP',sans-serif; }
+  .mrank-name{
+    flex:1 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    font-weight:600; color:var(--ink);
+  }
+  .mrank-others{ color:var(--ink-3); font-weight:500; }
+  .mrank-val{ flex:0 0 auto; }
+  .mrank-count{ font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-weight:600; color:var(--ink); }
+  .mrank-row .rank-avatar{ width:16px; height:16px; border-radius:4px; margin-right:4px; }
+  .mrank-row .rank-avatar svg{ width:10px; height:10px; }
+  .mrank-row .rate-chip{ min-width:34px; padding:1px 5px; min-height:16px; font-size:9.5px; }
+  .mrank-none{ padding:10px 0; text-align:center; color:var(--ink-3); font-size:10.5px; }
+
+  /* 選んだ1項目の全順位。カードより文字も顔写真も大きくする */
+  .mrank-detail{ margin-top:20px; border-top:1px solid var(--line-strong); padding-top:14px; }
+  .mrank-detail-head{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+  .mrank-detail-title{
+    font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-size:19px; font-weight:600;
+    color:var(--ink); letter-spacing:.03em;
+  }
+  .mrank-detail-group{
+    font-size:10.5px; font-weight:600; color:var(--accent-ink); background:var(--accent-soft);
+    border-radius:6px; padding:2px 7px; letter-spacing:.04em;
+  }
+  .mrank-detail-sub{ font-size:12px; color:var(--ink-3); }
+  .mrank-select{
+    margin-left:auto; padding:7px 10px; border-radius:8px; border:1px solid var(--line);
+    background:var(--panel-2); color:var(--ink); font-size:12.5px; font-family:inherit;
+  }
+  .mrank-detail-table{ width:100%; border-collapse:separate; border-spacing:0; font-size:15px; }
+  .mrank-detail-table td{ padding:7px 10px; border-bottom:1px solid var(--line); }
+  .mrank-detail-table td.d-pos{
+    width:60px; text-align:center; color:var(--ink-3);
+    font-family:'Oswald','IBM Plex Sans JP',sans-serif; font-size:17px;
+  }
+  .mrank-detail-table tr.d-top td.d-pos{ color:var(--accent-ink); font-size:20px; }
+  .mrank-detail-table td.d-name{ font-weight:600; color:var(--ink); cursor:pointer; }
+  .mrank-detail-table td.d-name:hover{ color:var(--accent-ink); text-decoration:underline; }
+  .mrank-detail-table td.d-val{ width:130px; text-align:right; }
+  .mrank-detail-table .rank-avatar{ width:34px; height:34px; border-radius:8px; margin-right:10px; }
+  .mrank-detail-table .rank-avatar svg{ width:20px; height:20px; }
+  .mrank-detail-table .rate-chip{ min-width:58px; padding:4px 10px; min-height:24px; font-size:13px; }
+  .mrank-detail-table .mrank-count{ font-size:16px; }
+  .mrank-detail-table tbody tr:hover td{ background:var(--panel-2); }
   .matchup-picker{ display:flex; align-items:center; gap:14px; margin-bottom:16px; }
   .matchup-select{
     flex:1 1 240px; max-width:320px; padding:9px 12px; border-radius:9px; border:1px solid var(--line);
@@ -998,7 +1068,7 @@
   /** 球種ごとに、左右回転(側回転)の絶対値が0.4以上だった球の割合を求める(1球ごとのサンプルから) */
   /** DRIVE/BackSpin/Curveの全体スピン率と同じ基準(縦・横どちらかの回転がしきい値を満たせば該当) */
   function isHighSpin(s){
-    return s.spinVert <= -0.5 || s.spinVert >= 0.3 || Math.abs(s.spinSide) >= 0.4;
+    return s.spinVert <= -0.4 || s.spinVert >= 0.3 || Math.abs(s.spinSide) >= 0.4;
   }
   function highSpinRateByKind(samples){
     var res = {};
@@ -1240,7 +1310,7 @@
     m.chaseScore = scoreFromDiff(ignoreRate==null?0.294:ignoreRate, 0.1683, 0.2940, 0.3639, aaCame);
 
     // ---- DRIVE / BackSpin / Curve(1球ごとのサンプルの回転で分類) ----
-    m.drive = spinClassScore(learn.samples, function(s){ return s.spinVert <= -0.5; }, 0.0387, 0.0838, 0.2833, 30);
+    m.drive = spinClassScore(learn.samples, function(s){ return s.spinVert <= -0.4; }, 0.1262, 0.2947, 0.3878, 30);
     m.backspin = spinClassScore(learn.samples, function(s){ return s.spinVert >= 0.3; }, -0.2619, -0.0667, 0.0453, 15);
     m.curve = spinClassScore(learn.samples, function(s){ return Math.abs(s.spinSide) >= 0.4; }, -0.0793, 0.0848, 0.2593, 50);
 
@@ -2071,7 +2141,7 @@
   /* ============================================================
    * ランキングページ
    * ============================================================ */
-  var rankState = { subTab: "matches", sortKey: null, sortDir: "desc" };
+  var rankState = { subTab: "matches", sortKey: null, sortDir: "desc", matchMetric: "rating" };
 
   function renderRankingPage(){
     var container = document.getElementById("pageRanking");
@@ -2094,7 +2164,7 @@
     container.appendChild(subTabs);
     var panel = el("div","rank-panel");
     container.appendChild(panel);
-    if (rankState.subTab === "matches") renderMatchRecordTable(panel);
+    if (rankState.subTab === "matches") renderMatchRecordBoard(panel);
     else if (rankState.subTab === "pairs") renderDoublesPairTable(panel);
     else if (rankState.subTab === "style") renderStyleTable(panel);
     else if (rankState.subTab === "stats") renderStatsTable(panel);
@@ -2218,76 +2288,225 @@
   function winRateOf(w, l){ var g = (w||0) + (l||0); return g > 0 ? w/g : null; }
   function shareRateOf(f, a){ var t = (f||0) + (a||0); return t > 0 ? f/t : null; }
 
-  /** ---- 試合成績: TOTAL/SINGLES/DOUBLESの通算成績ランキング ---- */
-  function renderMatchRecordTable(panel){
-    var rows = Object.keys(players).map(function(id){ return players[id]; }).filter(function(p){ return p.stats; });
-    if (rows.length === 0){ panel.appendChild(el("div","rank-empty","players.ymlを読み込んでください")); return; }
-
-    var columns = [
-      { key:"rating", value:function(p){ return p.stats.rating; } }
+  /** ---- 試合成績: 項目ごとのトップ5を3列に並べ、選んだ項目の全順位を下に出す ----
+   *
+   * 項目数が多く1枚の表にすると横に長くなりすぎるため、MATCHESだけこの形にしている。
+   * 並び順は「レート / リーグ優勝 / トーナメント優勝」が1行目、そのあとは
+   * GAME・WIN・LOSE・PT%・SET%・WIN%を、それぞれ TOTAL / SINGLES / DOUBLES の順に1行ずつ。
+   */
+  function matchMetricList(){
+    var list = [
+      { key:"rating", label:"RATE", jp:"レート", group:"", kind:"rating",
+        value:function(p){ return p.stats.rating; } },
+      { key:"titles.league", label:"LEAGUE", jp:"リーグ優勝", group:"", kind:"count", unit:"回",
+        value:function(p){ return p.stats.titles.leagueWins; } },
+      { key:"titles.tournament", label:"TOURNEY", jp:"トーナメント優勝", group:"", kind:"count", unit:"回",
+        value:function(p){ return p.stats.titles.tournamentWins; } }
     ];
-    ["total","singles","doubles"].forEach(function(g){
-      columns.push({ key:g+".games", value:function(p){ return p.stats[g].games; } });
-      columns.push({ key:g+".wins", value:function(p){ return p.stats[g].wins; } });
-      columns.push({ key:g+".losses", value:function(p){ return p.stats[g].losses; } });
-      columns.push({ key:g+".pt", value:function(p){ return shareRateOf(p.stats[g].pointsFor, p.stats[g].pointsAgainst); } });
-      columns.push({ key:g+".set", value:function(p){ return shareRateOf(p.stats[g].setsFor, p.stats[g].setsAgainst); } });
-      columns.push({ key:g+".win", value:function(p){ return winRateOf(p.stats[g].wins, p.stats[g].losses); } });
-    });
-    columns.push({ key:"titles.league", value:function(p){ return p.stats.titles.leagueWins; } });
-    columns.push({ key:"titles.tournament", value:function(p){ return p.stats.titles.tournamentWins; } });
-    var sorted = rankState.sortKey ? sortRows(rows, columns)
-        : rows.slice().sort(function(a,b){ return (b.stats.rating||0) - (a.stats.rating||0); });
-
-    var table = document.createElement("table");
-    table.className = "rank-table rank-table-dense";
-    var thead = document.createElement("thead");
-    var groupRow = el("tr","rank-group");
-    groupRow.appendChild(document.createElement("th"));
-    [["TOTAL",7],["SINGLES",6],["DOUBLES",6],["TITLES",2]].forEach(function(g, gi){
-      var th = document.createElement("th"); th.textContent = g[0]; th.colSpan = g[1];
-      if (gi > 0) th.classList.add("group-gap");
-      groupRow.appendChild(th);
-    });
-    thead.appendChild(groupRow);
-    var headRow = document.createElement("tr");
-    headRow.appendChild(document.createElement("th"));
-    headRow.appendChild(sortableHeader("RATE","rating"));
-    ["total","singles","doubles"].forEach(function(g, gi){
-      headRow.appendChild(sortableHeader("GAME",g+".games", {groupGap: gi>0, narrow:true}));
-      headRow.appendChild(sortableHeader("WIN",g+".wins", {narrow:true}));
-      headRow.appendChild(sortableHeader("LOSE",g+".losses", {narrow:true}));
-      headRow.appendChild(sortableHeader("PT%",g+".pt"));
-      headRow.appendChild(sortableHeader("SET%",g+".set"));
-      headRow.appendChild(sortableHeader("WIN%",g+".win"));
-    });
-    headRow.appendChild(sortableHeader("LEAGUE","titles.league", {groupGap:true}));
-    headRow.appendChild(sortableHeader("TOURNEY","titles.tournament"));
-    thead.appendChild(headRow);
-    table.appendChild(thead);
-
-    var tbody = document.createElement("tbody");
-    sorted.forEach(function(p){
-      var tr = document.createElement("tr");
-      tr.appendChild(rankNameCell(p));
-      var s = p.stats;
-      tr.appendChild(ratingCell(s.rating, "rating"));
-      ["total","singles","doubles"].forEach(function(g, gi){
-        var b = s[g];
-        var gap = gi > 0;
-        tr.appendChild(dataCell(String(b.games), g+".games", {groupGap: gap, narrow:true}));
-        tr.appendChild(dataCell(String(b.wins), g+".wins", {narrow:true}));
-        tr.appendChild(dataCell(String(b.losses), g+".losses", {narrow:true}));
-        tr.appendChild(rateCell(shareRateOf(b.pointsFor,b.pointsAgainst), g+".pt"));
-        tr.appendChild(rateCell(shareRateOf(b.setsFor,b.setsAgainst), g+".set"));
-        tr.appendChild(rateCell(winRateOf(b.wins,b.losses), g+".win"));
+    [ { id:"games",  label:"GAME", jp:"試合数",   kind:"count", unit:"試合" },
+      { id:"wins",   label:"WIN",  jp:"勝利数",   kind:"count", unit:"勝" },
+      { id:"losses", label:"LOSE", jp:"敗戦数",   kind:"count", unit:"敗" },
+      { id:"pt",     label:"PT%",  jp:"得点率",   kind:"rate" },
+      { id:"set",    label:"SET%", jp:"セット率", kind:"rate" },
+      { id:"win",    label:"WIN%", jp:"勝率",     kind:"rate" }
+    ].forEach(function(m){
+      ["total","singles","doubles"].forEach(function(g){
+        list.push({ key:g+"."+m.id, label:m.label, jp:m.jp, group:g.toUpperCase(),
+          kind:m.kind, unit:m.unit,
+          value:function(p){ return matchStatValue(p.stats[g], m.id); } });
       });
-      tr.appendChild(dataCell(String(s.titles.leagueWins), "titles.league", {groupGap:true}));
-      tr.appendChild(dataCell(String(s.titles.tournamentWins), "titles.tournament"));
+    });
+    return list;
+  }
+
+  /** total/singles/doublesのひとかたまりから、項目1つぶんの値を取り出す */
+  function matchStatValue(b, id){
+    if (!b) return null;
+    if (id === "pt") return shareRateOf(b.pointsFor, b.pointsAgainst);
+    if (id === "set") return shareRateOf(b.setsFor, b.setsAgainst);
+    if (id === "win") return winRateOf(b.wins, b.losses);
+    return b[id];
+  }
+
+  function matchMetricByKey(key){
+    var list = matchMetricList();
+    for (var i = 0; i < list.length; i++) if (list[i].key === key) return list[i];
+    return list[0];
+  }
+
+  /** 項目の値を、カード/詳細どちらでも同じ見た目で出す */
+  function matchMetricValueHtml(metric, v){
+    if (v == null) return "―";
+    if (metric.kind === "rating") return ratingChipHtml(v);
+    if (metric.kind === "rate") return rateChipHtml(v);
+    return '<span class="mrank-count">' + v + (metric.unit || "") + '</span>';
+  }
+
+  /**
+   * その項目の順位表。値の大きい順に並べ、同じ値には同じ順位を振る(1,2,2,4…)。
+   * 試合数・勝敗・優勝回数は0の人を載せても意味がないので外す
+   */
+  function matchMetricRanking(metric){
+    var rows = [];
+    Object.keys(players).forEach(function(id){
+      var p = players[id];
+      if (!p.stats) return;
+      var v = metric.value(p);
+      if (v == null) return;
+      if (metric.kind === "count" && !(v > 0)) return;
+      rows.push({ player:p, value:v });
+    });
+    rows.sort(function(a,b){
+      if (b.value !== a.value) return b.value - a.value;
+      return String(a.player.name).localeCompare(String(b.player.name));
+    });
+    var rank = 0;
+    rows.forEach(function(r, i){
+      if (i === 0 || r.value !== rows[i-1].value) rank = i + 1;
+      r.rank = rank;
+    });
+    return rows;
+  }
+
+  /**
+   * カードに出す5行を作る。
+   * 同率のせいで6人以上になってしまう場合は5人で切り上げ、5行目は名前の代わりに
+   * 「ほか〇人」(その順位で表示しきれなかった人数)を出す
+   */
+  function matchTopFive(rows){
+    if (rows.length <= 5) return rows.map(function(r){ return { rank:r.rank, entry:r }; });
+    var out = [];
+    for (var i = 0; i < 4; i++) out.push({ rank: rows[i].rank, entry: rows[i] });
+    var fifth = rows[4];
+    var firstIdx = 4, count = 0;
+    rows.forEach(function(r, idx){
+      if (r.rank !== fifth.rank) return;
+      if (idx < firstIdx) firstIdx = idx;
+      count++;
+    });
+    if (firstIdx + count <= 5) {
+      out.push({ rank: fifth.rank, entry: fifth });           // 同率でも5人に収まる
+    } else {
+      var shownAbove = Math.max(0, 4 - firstIdx);             // 1〜4行目に既に出ている同率者
+      out.push({ rank: fifth.rank, entry: fifth, others: count - shownAbove });
+    }
+    return out;
+  }
+
+  /** 項目1つぶんのカード(上位5人) */
+  function matchMetricCard(metric){
+    var card = el("div","mrank-card" + (rankState.matchMetric === metric.key ? " selected" : ""));
+    var head = el("div","mrank-card-head");
+    head.appendChild(el("span","mrank-card-label", metric.label));
+    if (metric.group) head.appendChild(el("span","mrank-card-group", metric.group));
+    head.appendChild(el("span","mrank-card-jp", metric.jp));
+    card.appendChild(head);
+
+    var rows = matchMetricRanking(metric);
+    if (rows.length === 0) {
+      card.appendChild(el("div","mrank-none","該当者なし"));
+    } else {
+      matchTopFive(rows).forEach(function(line){
+        var row = el("div","mrank-row");
+        row.appendChild(el("span","mrank-pos", String(line.rank)));
+        if (line.others != null) {
+          row.appendChild(el("span","mrank-name mrank-others", "ほか" + line.others + "人"));
+        } else {
+          row.appendChild(el("span","mrank-name",
+            '<span class="rank-avatar">' + avatarIconHtml(line.entry.player) + '</span>' + line.entry.player.name));
+        }
+        row.appendChild(el("span","mrank-val", matchMetricValueHtml(metric, line.entry.value)));
+        card.appendChild(row);
+      });
+    }
+    // カードのどこを押しても、下の全順位エリアがその項目に切り替わる
+    card.addEventListener("click", function(){ selectMatchMetric(metric.key, true); });
+    return card;
+  }
+
+  /** 全順位エリアで見る項目を切り替える(scroll=true ならそのエリアまで移動する) */
+  function selectMatchMetric(key, scroll){
+    rankState.matchMetric = key;
+    renderRankingPage();
+    if (!scroll) return;
+    var area = document.getElementById("mrankDetail");
+    if (area && area.scrollIntoView) area.scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+
+  /** 項目を選ぶプルダウン(TOTAL/SINGLES/DOUBLESごとにまとめる) */
+  function matchMetricSelect(metrics){
+    var sel = document.createElement("select");
+    sel.className = "mrank-select";
+    var groups = [["","レート・タイトル"],["TOTAL","TOTAL"],["SINGLES","SINGLES"],["DOUBLES","DOUBLES"]];
+    groups.forEach(function(g){
+      var og = document.createElement("optgroup");
+      og.label = g[1];
+      metrics.forEach(function(m){
+        if (m.group !== g[0]) return;
+        var opt = document.createElement("option");
+        opt.value = m.key;
+        opt.textContent = m.label + " / " + m.jp;
+        if (m.key === rankState.matchMetric) opt.selected = true;
+        og.appendChild(opt);
+      });
+      if (og.childNodes.length) sel.appendChild(og);
+    });
+    sel.addEventListener("change", function(){ selectMatchMetric(sel.value, false); });
+    return sel;
+  }
+
+  /** 選んだ項目の全順位(カードより文字も顔写真も大きく出す) */
+  function renderMatchMetricDetail(panel, metrics){
+    var metric = matchMetricByKey(rankState.matchMetric);
+    var wrap = el("div","mrank-detail");
+    wrap.id = "mrankDetail";
+    var head = el("div","mrank-detail-head");
+    head.appendChild(el("span","mrank-detail-title", metric.label));
+    if (metric.group) head.appendChild(el("span","mrank-detail-group", metric.group));
+    head.appendChild(el("span","mrank-detail-sub", metric.jp + " の全順位"));
+    head.appendChild(matchMetricSelect(metrics));
+    wrap.appendChild(head);
+
+    var rows = matchMetricRanking(metric);
+    if (rows.length === 0) {
+      wrap.appendChild(el("div","rank-empty","該当者がいません"));
+      panel.appendChild(wrap);
+      return;
+    }
+    var table = document.createElement("table");
+    table.className = "mrank-detail-table";
+    var tbody = document.createElement("tbody");
+    rows.forEach(function(r){
+      var tr = document.createElement("tr");
+      if (r.rank === 1) tr.className = "d-top";
+      var pos = document.createElement("td");
+      pos.className = "d-pos"; pos.textContent = String(r.rank);
+      tr.appendChild(pos);
+      var name = document.createElement("td");
+      name.className = "d-name";
+      name.innerHTML = '<span class="rank-avatar">' + avatarIconHtml(r.player) + '</span>' + r.player.name;
+      name.addEventListener("click", function(){ goToPlayer(r.player.id); });
+      tr.appendChild(name);
+      var val = document.createElement("td");
+      val.className = "d-val";
+      val.innerHTML = matchMetricValueHtml(metric, r.value);
+      tr.appendChild(val);
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
-    panel.appendChild(table);
+    wrap.appendChild(table);
+    panel.appendChild(wrap);
+  }
+
+  function renderMatchRecordBoard(panel){
+    var has = Object.keys(players).some(function(id){ return players[id].stats; });
+    if (!has){ panel.appendChild(el("div","rank-empty","players.ymlを読み込んでください")); return; }
+
+    var metrics = matchMetricList();
+    var grid = el("div","mrank-grid");
+    metrics.forEach(function(m){ grid.appendChild(matchMetricCard(m)); });
+    panel.appendChild(grid);
+    renderMatchMetricDetail(panel, metrics);
   }
 
   /** ---- ダブルス試合成績: ペア単位の成績(record.ymlが必要なため未対応) ---- */
