@@ -1568,6 +1568,6201 @@ match-singles:
     - RBBBRRRBB
     - RRBBBBB
     winner: BLUE
+  '60':
+    court-id: 12
+    court-surface: OMNI
+    timestamp: '2026-09-04T14:42:13.054246948Z'
+    status: CANCELLED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 8
+        points: 3
+        self-errors: 1
+        serves: 6
+        faults: 3
+        double-faults: 1
+        aces: 0
+        rally-sum: 16
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 3
+          DROP: 3
+      964f2b43-b8c1-4c76-b860-dd3ed53212a2:
+        name: Rosario20
+        shots: 9
+        points: 4
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 16
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 2
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 8
+          WEAK_LOB: 0
+          DROP: 0
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    blue:
+      uuid: 964f2b43-b8c1-4c76-b860-dd3ed53212a2
+      name: Rosario20
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - RBBBRRBB
+  '61':
+    court-id: 10
+    court-surface: HARD
+    timestamp: '2026-09-04T16:02:24.274253085Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 11
+        points: 2
+        self-errors: 3
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 21
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3011.4598
+        rating-after: 3008.9598
+      54033f55-45d1-4d56-9d8d-33744d888aec:
+        name: namako3125
+        rating-before: 3000.0
+        rating-after: 3002.5
+    red:
+      uuid: 54033f55-45d1-4d56-9d8d-33744d888aec
+      name: namako3125
+      sets-won: 1
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BBRRRRR
+    winner: RED
+  '62':
+    court-id: 10
+    court-surface: HARD
+    timestamp: '2026-09-04T16:04:23.768230711Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 8
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 3
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 3
+        rating-before: 3008.9598
+        rating-after: 3011.7098
+      54033f55-45d1-4d56-9d8d-33744d888aec:
+        name: namako3125
+        rating-before: 3002.5
+        rating-after: 2999.75
+    red:
+      uuid: 54033f55-45d1-4d56-9d8d-33744d888aec
+      name: namako3125
+      sets-won: 0
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBRBBB
+    winner: BLUE
+  '63':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-04T16:38:23.367882493Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 11
+        points: 3
+        self-errors: 1
+        serves: 6
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 21
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 3
+          DROP: 8
+        rating-before: 3001.18443
+        rating-after: 2999.18443
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 13
+        points: 5
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 24
+        rally-count: 9
+        fails:
+          whiff: 0
+          unreachable: 2
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3037.23018
+        rating-after: 3039.23018
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    blue:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 1
+    set-scores:
+    - 4-5
+    point-progression:
+    - BRBRBRRBB
+    winner: BLUE
+  '64':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-06T13:04:38.231349558Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 10
+        points: 4
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 17
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3011.7098
+        rating-after: 3015.47342
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 11
+        points: 2
+        self-errors: 4
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3039.23018
+        rating-after: 3035.59576
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      name: rlaiy
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BBBRRRRR
+    winner: RED
+  '65':
+    court-id: 8
+    court-surface: CLAY
+    timestamp: '2026-09-06T16:00:22.261032650Z'
+    status: COMPLETED
+    points-to-win-set: 11
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      afbddcca-35b8-4ee7-b4ca-9bae0a2ab0aa:
+        rating-before: 3004.75
+        rating-after: 3009.25
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 3000.0
+        rating-after: 2996.33333
+    red:
+      uuid: afbddcca-35b8-4ee7-b4ca-9bae0a2ab0aa
+      name: Saitama
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 11-0
+    point-progression:
+    - RRRRRRRRRRR
+    winner: RED
+  '66':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-18T12:27:44.115241245Z'
+    status: CANCELLED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 0
+        points: 0
+        self-errors: 0
+        serves: 0
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 0
+        rally-count: 1
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 0
+    set-scores: []
+    point-progression:
+    - R
+  '67':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:05.494999609Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 11
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 21
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 3
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3019.45287
+        rating-after: 3022.30019
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2988.91666
+        rating-after: 2986.45357
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    set-scores:
+    - 5-0
+    point-progression:
+    - RRRRR
+    winner: RED
+  '68':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:21.247949424Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e9624935-4364-4ade-8575-685028d45736:
+        rating-before: 3013.48643
+        rating-after: 3016.14275
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2988.50433
+        rating-after: 2986.12924
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    blue:
+      uuid: e9624935-4364-4ade-8575-685028d45736
+      name: AndroidA
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBRBBB
+    winner: BLUE
+  '69':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:37.850508980Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 7
+        points: 2
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 14
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3006.25
+        rating-after: 3003.91667
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2990.5
+        rating-after: 2993.0
+    red:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 1
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BRRRRBR
+    winner: RED
+  '71':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:42.301399979Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 8
+        points: 2
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 18
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3027.74764
+        rating-after: 3025.41431
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 11
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 18
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 5
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3006.25
+        rating-after: 3008.75
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - RBBBBRB
+    winner: BLUE
+  '70':
+    court-id: 7
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:44.246238429Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 11
+        points: 5
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 21
+        rally-count: 8
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 2
+          DROP: 4
+        rating-before: 2966.36207
+        rating-after: 2968.61207
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 3000.0
+        rating-after: 2997.83333
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - RBBRRBRR
+    winner: RED
+  '72':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:53.843849168Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 12
+        points: 3
+        self-errors: 3
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 23
+        rally-count: 9
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 2
+          DROP: 6
+        rating-before: 3023.40335
+        rating-after: 3020.64684
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 12
+        points: 6
+        self-errors: 2
+        serves: 7
+        faults: 2
+        double-faults: 0
+        aces: 2
+        rally-sum: 24
+        rally-count: 10
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 5
+        rating-before: 3012.34382
+        rating-after: 3015.20209
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 4-6
+    point-progression:
+    - RBRBBBRRBB
+    winner: BLUE
+  '73':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-21T13:22:54.123931746Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 9
+        points: 1
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 18
+        rally-count: 6
+        fails:
+          whiff: 3
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2993.72782
+        rating-after: 2991.50077
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 10
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 18
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3048.31785
+        rating-after: 3050.86314
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - RBBBBB
+    winner: BLUE
+  '76':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:27:15.751781977Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2986.12924
+        rating-after: 2988.62924
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2997.83333
+        rating-after: 2995.5
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBRRBR
+    winner: RED
+  '75':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:27:16.901121560Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 15
+        points: 1
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 30
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 4
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3003.91667
+        rating-after: 3001.41667
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2986.45357
+        rating-after: 2989.20357
+    red:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 1
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRBRRR
+    winner: RED
+  '74':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:27:20.851857361Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 7
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 2
+        double-faults: 1
+        aces: 1
+        rally-sum: 12
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3022.30019
+        rating-after: 3025.02459
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 6
+        points: 0
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 12
+        rally-count: 5
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3015.47342
+        rating-after: 3013.00755
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRBRRR
+    winner: RED
+  '78':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:27:24.248147763Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 8
+        points: 5
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 14
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 3
+          DROP: 0
+        rating-before: 2968.61207
+        rating-after: 2973.90747
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 6
+        points: 1
+        self-errors: 0
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 13
+        rally-count: 6
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 1
+          DROP: 4
+        rating-before: 3015.20209
+        rating-after: 3010.22866
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BBRRRRR
+    winner: RED
+  '80':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:27:27.296038768Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 8
+        points: 3
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 13
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3020.64684
+        rating-after: 3023.07397
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 11
+        points: 2
+        self-errors: 2
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 14
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 2991.50077
+        rating-after: 2989.26459
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRRRBBR
+    winner: RED
+  '79':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:27:41.153270917Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 14
+        points: 1
+        self-errors: 3
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 1
+          LOB: 12
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3025.41431
+        rating-after: 3023.04155
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 15
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 4
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3050.86314
+        rating-after: 3053.51771
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBBRBB
+    winner: BLUE
+  '77':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:29:17.970159304Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 25
+        points: 4
+        self-errors: 6
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 41
+        rally-count: 12
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 2
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 24
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3008.75
+        rating-after: 3006.58333
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2993.0
+        rating-after: 2995.25
+    red:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 1
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    set-scores:
+    - 8-6
+    point-progression:
+    - RRBBBRRBRBBRRR
+    winner: RED
+  '84':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:31:05.398536599Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 7
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 11
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3010.22866
+        rating-after: 3012.89766
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2988.62924
+        rating-after: 2986.23724
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBBRBB
+    winner: BLUE
+  '87':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:31:15.651027626Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 8
+        points: 2
+        self-errors: 4
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 13
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 3
+          DROP: 0
+        rating-before: 3023.04155
+        rating-after: 3020.70832
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 6
+        points: 4
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 12
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3023.07397
+        rating-after: 3025.57389
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - RBBRBBB
+    winner: BLUE
+  '82':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:31:24.746486678Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 3
+        points: 3
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 5
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3013.00755
+        rating-after: 3015.50755
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2995.5
+        rating-after: 2993.16667
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RBRRRBR
+    winner: RED
+  '85':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:31:51.046215798Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 12
+        points: 4
+        self-errors: 3
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 18
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 1
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3053.51771
+        rating-after: 3055.69488
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2995.25
+        rating-after: 2993.18045
+    red:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - RBBRRBBB
+    winner: BLUE
+  '86':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:31:51.848246423Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 7
+        points: 4
+        self-errors: 2
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 14
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 4
+        rating-before: 2973.90747
+        rating-after: 2977.00211
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 7
+        points: 3
+        self-errors: 2
+        serves: 5
+        faults: 2
+        double-faults: 1
+        aces: 0
+        rally-sum: 14
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2989.26459
+        rating-after: 2986.27888
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BRRBBRRR
+    winner: RED
+  '81':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:32:08.547093385Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 24
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 46
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 21
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3025.02459
+        rating-after: 3027.77459
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 22
+        points: 1
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 46
+        rally-count: 6
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 17
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 3
+          DROP: 0
+        rating-before: 3001.41667
+        rating-after: 2998.91667
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRRBRR
+    winner: RED
+  '83':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:33:37.528299709Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        shots: 0
+        points: 0
+        self-errors: 0
+        serves: 0
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 0
+        rally-count: 0
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2989.20357
+        rating-after: 2991.45357
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 37
+        points: 6
+        self-errors: 5
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 70
+        rally-count: 14
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 3
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 36
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3006.58333
+        rating-after: 3004.41666
+    red:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 1
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    set-scores:
+    - 8-6
+    point-progression:
+    - BBBRRRRBBRRBRR
+    winner: RED
+  '93':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:34:59.904018029Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 6
+        points: 0
+        self-errors: 3
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 10
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2993.18045
+        rating-after: 2990.72974
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 5
+        points: 5
+        self-errors: 0
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 10
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3025.57389
+        rating-after: 3028.41192
+    red:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    set-scores:
+    - 0-5
+    point-progression:
+    - BBBBB
+    winner: BLUE
+  '88':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:35:12.547885271Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 11
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3027.77459
+        rating-after: 3030.52459
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2993.16667
+        rating-after: 2990.66667
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRRBRR
+    winner: RED
+  '94':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T13:35:17.552000315Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 7
+        points: 4
+        self-errors: 2
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 2
+        rally-sum: 12
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 3
+        rating-before: 2977.00211
+        rating-after: 2982.12448
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 6
+        points: 2
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 13
+        rally-count: 7
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3020.70832
+        rating-after: 3015.8983
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRRRBBR
+    winner: RED
+  '89':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:35:18.656609134Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 7
+        points: 1
+        self-errors: 1
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2998.91667
+        rating-after: 2996.44417
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 8
+        points: 5
+        self-errors: 0
+        serves: 5
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3004.41666
+        rating-after: 3007.14604
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBBBRB
+    winner: BLUE
+  '91':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:35:22.247548473Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 20
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 36
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 7
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3055.69488
+        rating-after: 3058.03428
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2991.45357
+        rating-after: 2989.33437
+    red:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - RBBBBRB
+    winner: BLUE
+  '92':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:35:41.557267604Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 11
+        points: 6
+        self-errors: 1
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 20
+        rally-count: 10
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2986.27888
+        rating-after: 2988.52883
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2986.23724
+        rating-after: 2984.07064
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    set-scores:
+    - 4-6
+    point-progression:
+    - BBRRBBRRBB
+    winner: BLUE
+  '90':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:35:41.928137739Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 13
+        points: 3
+        self-errors: 4
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 24
+        rally-count: 9
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 4
+          LOB: 0
+          WEAK_LOB: 5
+          DROP: 0
+        rating-before: 3015.50755
+        rating-after: 3013.20169
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 11
+        points: 5
+        self-errors: 1
+        serves: 6
+        faults: 2
+        double-faults: 1
+        aces: 0
+        rally-sum: 22
+        rally-count: 8
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 4
+        rating-before: 3012.89766
+        rating-after: 3015.2912
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 4-6
+    point-progression:
+    - RBBBRBRRBB
+    winner: BLUE
+  '100':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:37:53.846889308Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 5
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 12
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3015.8983
+        rating-after: 3018.10852
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2984.07064
+        rating-after: 2981.95702
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - RRRBBBBB
+    winner: BLUE
+  '99':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:38:01.511152195Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 11
+        points: 3
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 24
+        rally-count: 8
+        fails:
+          whiff: 4
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 4
+        rating-before: 3028.41192
+        rating-after: 3024.16112
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2989.33437
+        rating-after: 2993.73364
+    red:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 1
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BRRRBRBR
+    winner: RED
+  '96':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:38:01.714867951Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 7
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 12
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3015.2912
+        rating-after: 3018.0412
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2990.66667
+        rating-after: 2988.16667
+    red:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBBRBB
+    winner: BLUE
+  '101':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:38:04.900522589Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 8
+        points: 5
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 16
+        rally-count: 8
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2990.72974
+        rating-after: 2992.96898
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 8
+        points: 3
+        self-errors: 3
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 16
+        rally-count: 8
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 3
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 4
+        rating-before: 2982.12448
+        rating-after: 2979.97216
+    red:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 1
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - RBBRBRRR
+    winner: RED
+  '97':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:38:25.856249594Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 19
+        points: 2
+        self-errors: 3
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 39
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 15
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 2996.44417
+        rating-after: 2994.31614
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 20
+        points: 5
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 39
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 15
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3058.03428
+        rating-after: 3060.3803
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - BBRRBBB
+    winner: BLUE
+  '98':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:38:59.405197423Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 17
+        points: 6
+        self-errors: 3
+        serves: 7
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 32
+        rally-count: 10
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 5
+          LOB: 1
+          WEAK_LOB: 1
+          DROP: 5
+        rating-before: 3013.20169
+        rating-after: 3015.42085
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 16
+        points: 4
+        self-errors: 3
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 32
+        rally-count: 10
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2988.52883
+        rating-after: 2986.40328
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 6-4
+    point-progression:
+    - BRRBRBBRRR
+    winner: RED
+  '95':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:39:02.533603037Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 28
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 54
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 27
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3030.52459
+        rating-after: 3033.18692
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 26
+        points: 1
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 54
+        rally-count: 6
+        fails:
+          whiff: 4
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 26
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3007.14604
+        rating-after: 3004.76293
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRBRRR
+    winner: RED
+  '106':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:41:32.709634937Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 7
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 11
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3015.42085
+        rating-after: 3018.34555
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 5
+        points: 1
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 11
+        rally-count: 6
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3018.10852
+        rating-after: 3015.44726
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - BRRRRR
+    winner: RED
+  '105':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:41:34.805308540Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 6
+        points: 0
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 14
+        rally-count: 5
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2994.31614
+        rating-after: 2991.84844
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 8
+        points: 5
+        self-errors: 0
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 14
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3024.16112
+        rating-after: 3027.0119
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    set-scores:
+    - 0-5
+    point-progression:
+    - BBBBB
+    winner: BLUE
+  '108':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:42:20.211271291Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 12
+        points: 3
+        self-errors: 2
+        serves: 6
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 25
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2992.96898
+        rating-after: 2990.21501
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2981.95702
+        rating-after: 2984.81268
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 1
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - RBRBRRBR
+    winner: RED
+  '103':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:42:24.412707705Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 19
+        points: 1
+        self-errors: 3
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 36
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 2
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 18
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3004.76293
+        rating-after: 3002.54102
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 18
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 36
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 13
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3060.3803
+        rating-after: 3062.92173
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BRBBBB
+    winner: BLUE
+  '102':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T13:42:35.204672788Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 28
+        points: 3
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 56
+        rally-count: 8
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 19
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 7
+          DROP: 1
+        rating-before: 3033.18692
+        rating-after: 3030.21248
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 28
+        points: 5
+        self-errors: 1
+        serves: 6
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 56
+        rally-count: 8
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 22
+        rating-before: 3018.0412
+        rating-after: 3021.12421
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - BRBRRBBB
+    winner: BLUE
+  '104':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:43:08.502735057Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 14
+        points: 5
+        self-errors: 3
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 3
+        rally-sum: 26
+        rally-count: 13
+        fails:
+          whiff: 3
+          unreachable: 2
+          net: 0
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 9
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2986.40328
+        rating-after: 2984.23955
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2988.16667
+        rating-after: 2990.41447
+    red:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 8-6
+    point-progression:
+    - BBRRRRBBRBRBRR
+    winner: RED
+  '107':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:43:23.987425221Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 30
+        points: 5
+        self-errors: 3
+        serves: 7
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 61
+        rally-count: 12
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 7
+          LOB: 1
+          WEAK_LOB: 9
+          DROP: 7
+        rating-before: 2979.97216
+        rating-after: 2977.82843
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2993.73364
+        rating-after: 2995.96644
+    red:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 1
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 7-5
+    point-progression:
+    - RBRBBBRRBRRR
+    winner: RED
+  '112':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T13:44:57.460815102Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 4
+        points: 1
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 9
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 2
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3015.44726
+        rating-after: 3011.44529
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2990.41447
+        rating-after: 2994.7916
+    red:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 1
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RBRRRR
+    winner: RED
+  '110':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:45:05.207862319Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 8
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3021.12421
+        rating-after: 3023.73589
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 8
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2984.23955
+        rating-after: 2981.92397
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRRBRR
+    winner: RED
+  '114':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:45:09.760337457Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 7
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 13
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 2
+          DROP: 2
+        rating-before: 3018.34555
+        rating-after: 3021.2049
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 6
+        points: 0
+        self-errors: 1
+        serves: 4
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 13
+        rally-count: 5
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2990.21501
+        rating-after: 2987.73588
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-0
+    point-progression:
+    - RRRRR
+    winner: RED
+  '113':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:45:15.611036212Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 9
+        points: 1
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 19
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2991.84844
+        rating-after: 2988.50724
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 10
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 19
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 2977.82843
+        rating-after: 2981.48973
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BRBBBB
+    winner: BLUE
+  '109':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:45:19.262556133Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 10
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3030.21248
+        rating-after: 3035.08858
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 8
+        points: 1
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 4
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 3062.92173
+        rating-after: 3058.45918
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRRRBR
+    winner: RED
+  '115':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:45:32.363220427Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        shots: 0
+        points: 0
+        self-errors: 0
+        serves: 0
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 0
+        rally-count: 0
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2995.96644
+        rating-after: 2998.2025
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2984.81268
+        rating-after: 2982.6646
+    red:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BRBRBRRR
+    winner: RED
+  '111':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:45:58.691929909Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 18
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 31
+        rally-count: 8
+        fails:
+          whiff: 1
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 18
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3002.54102
+        rating-after: 3006.13692
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 16
+        points: 3
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 31
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 5
+        rating-before: 3027.0119
+        rating-after: 3023.54012
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BBRRRRBR
+    winner: RED
+  '121':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:49:47.723495961Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 6
+        points: 5
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 12
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2988.50724
+        rating-after: 2991.23533
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2982.6646
+        rating-after: 2980.19381
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRBRRR
+    winner: RED
+  '120':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:50:05.115327853Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 8
+        points: 4
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2987.73588
+        rating-after: 2990.65922
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2994.7916
+        rating-after: 2992.05844
+    red:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - RBBRBBB
+    winner: BLUE
+  '117':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:50:07.861580190Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 11
+        points: 5
+        self-errors: 1
+        serves: 5
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 3058.45918
+        rating-after: 3061.07823
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 12
+        points: 1
+        self-errors: 3
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 6
+        rating-before: 3023.54012
+        rating-after: 3021.21472
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRBRRR
+    winner: RED
+  '116':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:50:20.613342276Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 9
+        points: 3
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 5
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3035.08858
+        rating-after: 3037.45567
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 11
+        points: 2
+        self-errors: 3
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 6
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2981.92397
+        rating-after: 2979.76785
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BRRRBRR
+    winner: RED
+  '122':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:50:35.566262103Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 21
+        points: 5
+        self-errors: 2
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 41
+        rally-count: 8
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 8
+          LOB: 0
+          WEAK_LOB: 4
+          DROP: 3
+        rating-before: 3021.2049
+        rating-after: 3023.42615
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2998.2025
+        rating-after: 2996.07417
+    red:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - RRRBBBRR
+    winner: RED
+  '119':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:50:49.213510387Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 14
+        points: 5
+        self-errors: 0
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 27
+        rally-count: 8
+        fails:
+          whiff: 0
+          unreachable: 3
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3006.13692
+        rating-after: 3008.35611
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 16
+        points: 3
+        self-errors: 4
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 27
+        rally-count: 8
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 2
+          DROP: 7
+        rating-before: 2981.48973
+        rating-after: 2979.36414
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BBBRRRRR
+    winner: RED
+  '118':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:51:00.499147485Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 19
+        points: 7
+        self-errors: 5
+        serves: 8
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 33
+        rally-count: 12
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 13
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 5
+        rating-before: 3023.73589
+        rating-after: 3025.97053
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 15
+        points: 5
+        self-errors: 1
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 33
+        rally-count: 12
+        fails:
+          whiff: 4
+          unreachable: 2
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 8
+          WEAK_LOB: 2
+          DROP: 0
+        rating-before: 3011.44529
+        rating-after: 3009.29911
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    set-scores:
+    - 7-5
+    point-progression:
+    - RBRBBRBRRBRR
+    winner: RED
+  '123':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:52:22.962179207Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 10
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 17
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 3037.45567
+        rating-after: 3040.37447
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 9
+        points: 0
+        self-errors: 3
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 17
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3021.21472
+        rating-after: 3018.65633
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    set-scores:
+    - 5-0
+    point-progression:
+    - RRRRR
+    winner: RED
+  '126':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:52:38.161888421Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 6
+        points: 5
+        self-errors: 1
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 2
+        rally-sum: 10
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3025.97053
+        rating-after: 3028.38225
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 5
+        points: 2
+        self-errors: 0
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 10
+        rally-count: 7
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2990.65922
+        rating-after: 2988.44359
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BRRRRBR
+    winner: RED
+  '127':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T13:52:44.110534073Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 8
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 14
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3008.35611
+        rating-after: 3011.0005
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2980.19381
+        rating-after: 2977.83462
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - BRRRRR
+    winner: RED
+  '129':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:52:44.969160591Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 10
+        points: 1
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 21
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 2991.23533
+        rating-after: 2988.89628
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 12
+        points: 5
+        self-errors: 1
+        serves: 5
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 21
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 4
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 3
+        rating-before: 3023.42615
+        rating-after: 3026.05543
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BBBBRB
+    winner: BLUE
+  '125':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:52:47.461315029Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 9
+        points: 3
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 3061.07823
+        rating-after: 3063.22609
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 10
+        points: 3
+        self-errors: 4
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 18
+        rally-count: 8
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 2
+          DROP: 3
+        rating-before: 2979.36414
+        rating-after: 2977.33366
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - RRBRRBBR
+    winner: RED
+  '128':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:53:12.465116157Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2996.07417
+        rating-after: 2998.31915
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2992.05844
+        rating-after: 2989.89847
+    red:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 1
+    set-scores:
+    - 4-6
+    point-progression:
+    - BRBRRBRBBB
+    winner: BLUE
+  '124':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:53:51.207542421Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 16
+        points: 6
+        self-errors: 2
+        serves: 9
+        faults: 3
+        double-faults: 0
+        aces: 0
+        rally-sum: 31
+        rally-count: 10
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2979.76785
+        rating-after: 2983.64207
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 15
+        points: 4
+        self-errors: 2
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 31
+        rally-count: 10
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 7
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3009.29911
+        rating-after: 3005.55744
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    set-scores:
+    - 6-4
+    point-progression:
+    - BRBBBRRRRR
+    winner: RED
+  '130':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:55:55.517923055Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 17
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 33
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 14
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3040.37447
+        rating-after: 3043.20038
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 16
+        points: 0
+        self-errors: 1
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 33
+        rally-count: 5
+        fails:
+          whiff: 4
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 7
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3005.55744
+        rating-after: 3003.12289
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    set-scores:
+    - 5-0
+    point-progression:
+    - RRRRR
+    winner: RED
+  '132':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:55:58.209140809Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 12
+        points: 5
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 27
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2983.64207
+        rating-after: 2986.70417
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 15
+        points: 1
+        self-errors: 5
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 27
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 13
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2988.44359
+        rating-after: 2985.6555
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - BRRRRR
+    winner: RED
+  '135':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:55:59.318496478Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 11
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3011.0005
+        rating-after: 3008.57577
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 11
+        points: 4
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 19
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3026.05543
+        rating-after: 3028.74897
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - RBBBBB
+    winner: BLUE
+  '136':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:55:59.547262384Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 9
+        points: 5
+        self-errors: 0
+        serves: 6
+        faults: 2
+        double-faults: 0
+        aces: 1
+        rally-sum: 21
+        rally-count: 8
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2988.89628
+        rating-after: 2991.2014
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2989.89847
+        rating-after: 2987.67835
+    red:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - RBBRRBBB
+    winner: BLUE
+  '133':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:56:01.516580060Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 13
+        points: 5
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 25
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3063.22609
+        rating-after: 3065.51261
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2977.83462
+        rating-after: 2975.78592
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBRBRR
+    winner: RED
+  '131':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:56:17.759881912Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 15
+        points: 3
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 32
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 10
+        rating-before: 3018.65633
+        rating-after: 3014.28579
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 17
+        points: 4
+        self-errors: 3
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 31
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 3
+          DROP: 5
+        rating-before: 2977.33366
+        rating-after: 2981.85641
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - BBRRBRBB
+    winner: BLUE
+  '134':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:56:56.191960068Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 31
+        points: 6
+        self-errors: 1
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 62
+        rally-count: 10
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 14
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 14
+        rating-before: 3028.38225
+        rating-after: 3030.59467
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        shots: 0
+        points: 0
+        self-errors: 0
+        serves: 0
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 0
+        rally-count: 0
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2998.31915
+        rating-after: 2996.20259
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    set-scores:
+    - 6-4
+    point-progression:
+    - BBRBBRRRRR
+    winner: RED
+  '142':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T13:58:14.863352302Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 7
+        points: 5
+        self-errors: 1
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3030.59467
+        rating-after: 3033.19695
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 8
+        points: 1
+        self-errors: 4
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2991.2014
+        rating-after: 2988.89837
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRBRRR
+    winner: RED
+  '143':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T13:58:25.463118231Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 4
+        points: 5
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 7
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3008.57577
+        rating-after: 3011.02353
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2987.67835
+        rating-after: 2985.41467
+    red:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBRRBR
+    winner: RED
+  '137':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T13:58:40.664207367Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 11
+        points: 4
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 19
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 2
+          DROP: 2
+        rating-before: 3043.20038
+        rating-after: 3045.72034
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 11
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 19
+        rally-count: 5
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 2
+          DROP: 4
+        rating-before: 2981.85641
+        rating-after: 2979.66313
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-1
+    point-progression:
+    - RRRRBR
+    winner: RED
+  '138':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T13:58:44.164978193Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 11
+        points: 4
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 26
+        rally-count: 6
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 8
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 3003.12289
+        rating-after: 3005.57922
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 15
+        points: 2
+        self-errors: 4
+        serves: 5
+        faults: 3
+        double-faults: 1
+        aces: 0
+        rally-sum: 26
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 14
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2985.6555
+        rating-after: 2983.38039
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 1
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRRBBRR
+    winner: RED
+  '139':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T13:58:45.316949979Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 15
+        points: 4
+        self-errors: 3
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 8
+        rating-before: 3014.28579
+        rating-after: 3016.48767
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2975.78592
+        rating-after: 2973.68342
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-3
+    point-progression:
+    - BRRBBRRR
+    winner: RED
+  '141':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:58:57.767376123Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 15
+        points: 5
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 29
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 5
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3065.51261
+        rating-after: 3067.9207
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 15
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 1
+          LOB: 3
+          WEAK_LOB: 5
+          DROP: 1
+        rating-before: 3028.74897
+        rating-after: 3026.53818
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RBRRBRR
+    winner: RED
+  '140':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T13:59:27.551366828Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 22
+        points: 6
+        self-errors: 1
+        serves: 6
+        faults: 1
+        double-faults: 0
+        aces: 2
+        rally-sum: 44
+        rally-count: 10
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 14
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2986.70417
+        rating-after: 2989.47658
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2996.20259
+        rating-after: 2993.52934
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    set-scores:
+    - 6-4
+    point-progression:
+    - RRBBRRBBRR
+    winner: RED
+  '145':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T14:02:28.278615290Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 3
+        points: 3
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 7
+        rally-count: 5
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 2979.66313
+        rating-after: 2982.14818
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2973.68342
+        rating-after: 2971.37002
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBBRRR
+    winner: RED
+  '150':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T14:02:29.220372525Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 7
+        points: 5
+        self-errors: 1
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 15
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3033.19695
+        rating-after: 3035.64152
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 9
+        points: 2
+        self-errors: 3
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3011.02353
+        rating-after: 3008.76411
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBRBRR
+    winner: RED
+  '147':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T14:02:31.263193663Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 12
+        points: 2
+        self-errors: 3
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 2
+          net: 0
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 5
+        rating-before: 3016.48767
+        rating-after: 3014.18784
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 11
+        points: 5
+        self-errors: 1
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 2
+          WEAK_LOB: 3
+          DROP: 1
+        rating-before: 3026.53818
+        rating-after: 3029.01305
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 0
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - BBBRRBB
+    winner: BLUE
+  '146':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T14:02:42.919097109Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 15
+        points: 5
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 30
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 10
+          WEAK_LOB: 2
+          DROP: 0
+        rating-before: 3005.57922
+        rating-after: 3008.0491
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2993.52934
+        rating-after: 2991.23617
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 1
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBRBRR
+    winner: RED
+  '149':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T14:02:46.066929556Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 15
+        points: 5
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 30
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 1
+          DROP: 1
+        rating-before: 3067.9207
+        rating-after: 3070.21443
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        rating-before: 2985.41467
+        rating-after: 2983.35636
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - RRBRBRR
+    winner: RED
+  '144':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T14:03:23.322000270Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 17
+        points: 4
+        self-errors: 4
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 32
+        rally-count: 10
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 13
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3045.72034
+        rating-after: 3040.22888
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 15
+        points: 6
+        self-errors: 1
+        serves: 8
+        faults: 3
+        double-faults: 0
+        aces: 1
+        rally-sum: 32
+        rally-count: 10
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2983.38039
+        rating-after: 2989.05909
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 0
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 1
+    set-scores:
+    - 4-6
+    point-progression:
+    - RBRRRBBBBB
+    winner: BLUE
+  '148':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T14:04:35.208221298Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 24
+        points: 8
+        self-errors: 1
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 49
+        rally-count: 14
+        fails:
+          whiff: 5
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 18
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2989.47658
+        rating-after: 2991.72586
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 25
+        points: 6
+        self-errors: 5
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 49
+        rally-count: 14
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 1
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 17
+          SMASH: 8
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2988.89837
+        rating-after: 2986.73267
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 8-6
+    point-progression:
+    - RRRBBRBBRBRBRR
+    winner: RED
+  '155':
+    court-id: 17
+    court-surface: HARD
+    timestamp: '2026-09-21T14:07:44.467913936Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 7
+        points: 5
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3014.18784
+        rating-after: 3016.61076
+      900c20b8-451f-4e36-9392-5e4538f0021e:
+        name: azisaba3
+        shots: 10
+        points: 2
+        self-errors: 4
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 0
+        rating-before: 2983.35636
+        rating-after: 2981.1258
+    red:
+      uuid: 196d5305-414b-4841-9730-05a15b586666
+      name: Jtype916
+      sets-won: 1
+    blue:
+      uuid: 900c20b8-451f-4e36-9392-5e4538f0021e
+      name: azisaba3
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BRBRRRR
+    winner: RED
+  '151':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T14:08:04.919401784Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 8
+        points: 4
+        self-errors: 0
+        serves: 5
+        faults: 2
+        double-faults: 0
+        aces: 2
+        rally-sum: 16
+        rally-count: 4
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3040.22888
+        rating-after: 3042.88459
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2971.37002
+        rating-after: 2969.16241
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 5-0
+    point-progression:
+    - RRRRR
+    winner: RED
+  '152':
+    court-id: 20
+    court-surface: HARD
+    timestamp: '2026-09-21T14:08:33.170081497Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        shots: 16
+        points: 6
+        self-errors: 2
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 30
+        rally-count: 10
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 14
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2989.05909
+        rating-after: 2991.42883
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2991.23617
+        rating-after: 2988.95339
+    red:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 1
+    blue:
+      uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      name: AndroidB
+      sets-won: 0
+    set-scores:
+    - 6-4
+    point-progression:
+    - RBRBBBRRRR
+    winner: RED
+  '153':
+    court-id: 14
+    court-surface: HARD
+    timestamp: '2026-09-21T14:08:34.421377936Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 11
+        points: 4
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 4
+        rating-before: 2982.14818
+        rating-after: 2987.46007
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 11
+        points: 2
+        self-errors: 3
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 2
+          WEAK_LOB: 3
+          DROP: 1
+        rating-before: 3029.01305
+        rating-after: 3024.02404
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    blue:
+      uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      name: Pen4
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BRBRRRR
+    winner: RED
+  '154':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-09-21T14:08:35.222312018Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 10
+        points: 4
+        self-errors: 1
+        serves: 6
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 10
+        fails:
+          whiff: 3
+          unreachable: 2
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 7
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3008.0491
+        rating-after: 3004.74556
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 13
+        points: 6
+        self-errors: 2
+        serves: 6
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 22
+        rally-count: 10
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2986.73267
+        rating-after: 2990.15507
+    red:
+      uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      name: omarupin
+      sets-won: 0
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 1
+    set-scores:
+    - 4-6
+    point-progression:
+    - BRRBRBBRBB
+    winner: BLUE
+  '156':
+    court-id: 23
+    court-surface: HARD
+    timestamp: '2026-09-21T14:09:27.920179471Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 24
+        points: 3
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 49
+        rally-count: 8
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 18
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2991.72586
+        rating-after: 2989.58759
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 25
+        points: 5
+        self-errors: 0
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 49
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 13
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3008.76411
+        rating-after: 3010.99281
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    blue:
+      uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      name: Opanku
+      sets-won: 1
+    set-scores:
+    - 3-5
+    point-progression:
+    - RRBRBBBB
+    winner: BLUE
+  '157':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-21T14:11:37.319152158Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    league-id: '20260921'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sota2486
+        shots: 11
+        points: 3
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 17
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3070.21443
+        rating-after: 3072.628
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 12
+        points: 2
+        self-errors: 3
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 6
+        rating-before: 3035.64152
+        rating-after: 3033.42343
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sota2486
+      sets-won: 1
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    set-scores:
+    - 5-2
+    point-progression:
+    - BRRBRRR
+    winner: RED
 match-doubles:
   '2':
     court-id: 3
@@ -2086,3 +8281,1745 @@ match-doubles:
     - 5-1
     - 5-1
     winner: RED
+  '10':
+    court-id: 8
+    court-surface: HARD
+    timestamp: '2026-09-04T15:55:05.375361903Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      c17c7abf-b429-426b-a812-fa587a86b9d7:
+        name: Pen4
+        shots: 7
+        points: 1
+        self-errors: 2
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 2
+          DROP: 2
+        rating-before: 3013.82272
+        rating-after: 3011.4598
+      c18ae830-96ab-477e-a81a-450c87b8eabc:
+        name: EmeraldREX91
+        shots: 5
+        points: 0
+        self-errors: 3
+        serves: 1
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 2
+        rally-count: 1
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2999.16667
+        rating-after: 2996.80375
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 4
+        points: 2
+        self-errors: 0
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 7
+        rally-count: 2
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3007.875
+        rating-after: 3010.24396
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 7
+        points: 3
+        self-errors: 1
+        serves: 1
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 15
+        rally-count: 4
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 3
+        rating-before: 3011.5576
+        rating-after: 3013.92656
+    red:
+      a-uuid: c17c7abf-b429-426b-a812-fa587a86b9d7
+      a-name: Pen4
+      b-uuid: c18ae830-96ab-477e-a81a-450c87b8eabc
+      b-name: EmeraldREX91
+      name: Pen4 & EmeraldREX91
+      sets-won: 0
+    blue:
+      a-uuid: 196d5305-414b-4841-9730-05a15b586666
+      a-name: Jtype916
+      b-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      b-name: LagnaKt
+      name: Jtype916 & LagnaKt
+      sets-won: 1
+    set-scores:
+    - 1-5
+    point-progression:
+    - BRBBBB
+    winner: BLUE
+  '13':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T12:34:31.690166307Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 16
+        points: 8
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 35
+        rally-count: 9
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 12
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3013.92656
+        rating-after: 3017.67656
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 3
+        points: 2
+        self-errors: 0
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 0
+        rally-count: 2
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2988.20151
+        rating-after: 2991.95151
+      e9624935-4364-4ade-8575-685028d45736:
+        rating-before: 3020.6531
+        rating-after: 3017.48643
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2996.08333
+        rating-after: 2992.91666
+    red:
+      a-uuid: e9624935-4364-4ade-8575-685028d45736
+      a-name: AndroidA
+      b-uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      b-name: AndroidB
+      name: AndroidA & AndroidB
+      sets-won: 0
+    blue:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 0-5
+    point-progression:
+    - RBBBBB
+    - BBBBB
+    winner: BLUE
+  '11':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T12:35:34.406031977Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 7
+        points: 6
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 22
+        rally-count: 9
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3035.59576
+        rating-after: 3038.97076
+      f9da9725-57c1-4a33-9408-b50daccea35d:
+        name: nextbardo
+        shots: 6
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 9
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3002.375
+        rating-after: 2999.45833
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2996.33333
+        rating-after: 2999.70833
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 3000.0
+        rating-after: 2997.08333
+    red:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      b-name: hachi_18
+      name: rlaiy & hachi_18
+      sets-won: 2
+    blue:
+      a-uuid: f9da9725-57c1-4a33-9408-b50daccea35d
+      a-name: nextbardo
+      b-uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      b-name: TYPE_NOOB
+      name: nextbardo & TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-4
+    - 5-0
+    point-progression:
+    - BRRRBBBRR
+    - RRRRR
+    winner: RED
+  '12':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-21T12:36:10.176082131Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 10
+        points: 1
+        self-errors: 3
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 22
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3023.91667
+        rating-after: 3021.03157
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 14
+        points: 1
+        self-errors: 1
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 26
+        rally-count: 5
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 2
+          DROP: 2
+        rating-before: 2962.5311
+        rating-after: 2959.646
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 5
+        points: 4
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 15
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 3
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3010.24396
+        rating-after: 3013.65778
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 20
+        points: 6
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 34
+        rally-count: 8
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 7
+          DROP: 13
+        rating-before: 2999.18443
+        rating-after: 3002.59825
+    red:
+      a-uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      a-name: omarupin
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: omarupin & pipis_57
+      sets-won: 0
+    blue:
+      a-uuid: 196d5305-414b-4841-9730-05a15b586666
+      a-name: Jtype916
+      b-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      b-name: Alpha6000
+      name: Jtype916 & Alpha6000
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 2-5
+    point-progression:
+    - BBBBRB
+    - BRBRBBB
+    winner: BLUE
+  '15':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-21T12:41:12.251286951Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      f9da9725-57c1-4a33-9408-b50daccea35d:
+        name: nextbardo
+        shots: 10
+        points: 2
+        self-errors: 1
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 12
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2999.45833
+        rating-after: 2996.70833
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 13
+        points: 6
+        self-errors: 2
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 26
+        rally-count: 9
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 2
+          DROP: 1
+        rating-before: 3017.67656
+        rating-after: 3020.80156
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 6
+        points: 4
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 13
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 3
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2991.95151
+        rating-after: 2995.07651
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2997.08333
+        rating-after: 2994.33333
+    red:
+      a-uuid: f9da9725-57c1-4a33-9408-b50daccea35d
+      a-name: nextbardo
+      b-uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      b-name: TYPE_NOOB
+      name: nextbardo & TYPE_NOOB
+      sets-won: 0
+    blue:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 2
+    set-scores:
+    - 4-5
+    - 2-5
+    point-progression:
+    - BBRBRRRBB
+    - BRBRBBB
+    winner: BLUE
+  '14':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-09-21T12:42:17.199220382Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 19
+        points: 8
+        self-errors: 2
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 41
+        rally-count: 13
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 9
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3038.97076
+        rating-after: 3036.97076
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 4
+        points: 2
+        self-errors: 0
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 20
+        rally-count: 9
+        fails:
+          whiff: 5
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3013.65778
+        rating-after: 3015.65778
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 25
+        points: 10
+        self-errors: 2
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 38
+        rally-count: 14
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 9
+          DROP: 13
+        rating-before: 3002.59825
+        rating-after: 3004.59825
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2999.70833
+        rating-after: 2997.70833
+    red:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      b-name: hachi_18
+      name: rlaiy & hachi_18
+      sets-won: 1
+    blue:
+      a-uuid: 196d5305-414b-4841-9730-05a15b586666
+      a-name: Jtype916
+      b-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      b-name: Alpha6000
+      name: Jtype916 & Alpha6000
+      sets-won: 2
+    set-scores:
+    - 5-2
+    - 3-5
+    - 3-5
+    point-progression:
+    - RBRRRBR
+    - RBBRBRBB
+    - BBRRBBRB
+    winner: BLUE
+  '16':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T12:43:16.018701992Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 16
+        points: 1
+        self-errors: 1
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 38
+        rally-count: 8
+        fails:
+          whiff: 4
+          unreachable: 3
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 16
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3021.03157
+        rating-after: 3023.03157
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 37
+        points: 10
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 65
+        rally-count: 13
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 7
+          LOB: 1
+          WEAK_LOB: 8
+          DROP: 14
+        rating-before: 2959.646
+        rating-after: 2961.646
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        shots: 0
+        points: 0
+        self-errors: 0
+        serves: 0
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 0
+        rally-count: 0
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2992.91666
+        rating-after: 2990.91666
+      e9624935-4364-4ade-8575-685028d45736:
+        rating-before: 3017.48643
+        rating-after: 3015.48643
+    red:
+      a-uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      a-name: omarupin
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: omarupin & pipis_57
+      sets-won: 2
+    blue:
+      a-uuid: e9624935-4364-4ade-8575-685028d45736
+      a-name: AndroidA
+      b-uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      b-name: AndroidB
+      name: AndroidA & AndroidB
+      sets-won: 1
+    set-scores:
+    - 1-5
+    - 5-4
+    - 5-1
+    point-progression:
+    - BBBBRB
+    - RRBBBBRRR
+    - RRRBRR
+    winner: RED
+  '17':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-09-21T12:46:49.943816691Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 15
+        points: 1
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 17
+        rally-count: 4
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 2
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3036.97076
+        rating-after: 3034.13743
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 16
+        points: 9
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 36
+        rally-count: 11
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 2
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 5
+        rating-before: 3020.80156
+        rating-after: 3024.05156
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 6
+        points: 1
+        self-errors: 1
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 8
+        rally-count: 4
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2995.07651
+        rating-after: 2998.32651
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2997.70833
+        rating-after: 2994.875
+    red:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      b-name: hachi_18
+      name: rlaiy & hachi_18
+      sets-won: 0
+    blue:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 3-5
+    point-progression:
+    - RBRBBBB
+    - BRRBBBRB
+    winner: BLUE
+  '19':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T12:48:52.341382459Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      f9da9725-57c1-4a33-9408-b50daccea35d:
+        name: nextbardo
+        shots: 10
+        points: 3
+        self-errors: 2
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 20
+        rally-count: 10
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2996.70833
+        rating-after: 2998.70833
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 8
+        points: 2
+        self-errors: 3
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 8
+        rally-count: 6
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 0
+          LOB: 6
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3023.03157
+        rating-after: 3021.03157
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 19
+        points: 8
+        self-errors: 3
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 43
+        rally-count: 15
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 4
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 4
+          DROP: 8
+        rating-before: 2961.646
+        rating-after: 2959.646
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2994.33333
+        rating-after: 2996.33333
+    red:
+      a-uuid: f9da9725-57c1-4a33-9408-b50daccea35d
+      a-name: nextbardo
+      b-uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      b-name: TYPE_NOOB
+      name: nextbardo & TYPE_NOOB
+      sets-won: 2
+    blue:
+      a-uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      a-name: omarupin
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: omarupin & pipis_57
+      sets-won: 1
+    set-scores:
+    - 5-3
+    - 1-5
+    - 5-4
+    point-progression:
+    - BRBRRBRR
+    - BBRBBB
+    - RBBBRRRBR
+    winner: RED
+  '18':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-21T12:50:36.764987121Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 12
+        points: 3
+        self-errors: 1
+        serves: 8
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 75
+        rally-count: 9
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 2
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3015.65778
+        rating-after: 3017.65778
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 78
+        points: 11
+        self-errors: 4
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 103
+        rally-count: 18
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 2
+          SMASH: 2
+          LOB: 0
+          WEAK_LOB: 12
+          DROP: 62
+        rating-before: 3004.59825
+        rating-after: 3006.59825
+      e9624935-4364-4ade-8575-685028d45736:
+        rating-before: 3015.48643
+        rating-after: 3013.48643
+      25df4260-9a17-44a4-b7ab-9cfe98db7822:
+        rating-before: 2990.91666
+        rating-after: 2988.91666
+    red:
+      a-uuid: 196d5305-414b-4841-9730-05a15b586666
+      a-name: Jtype916
+      b-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      b-name: Alpha6000
+      name: Jtype916 & Alpha6000
+      sets-won: 2
+    blue:
+      a-uuid: e9624935-4364-4ade-8575-685028d45736
+      a-name: AndroidA
+      b-uuid: 25df4260-9a17-44a4-b7ab-9cfe98db7822
+      b-name: AndroidB
+      name: AndroidA & AndroidB
+      sets-won: 1
+    set-scores:
+    - 5-4
+    - 4-5
+    - 5-4
+    point-progression:
+    - RBRRBBRBR
+    - BBRRBRBRB
+    - RBRBRRBBR
+    winner: RED
+  '22':
+    court-id: 2
+    court-surface: HARD
+    timestamp: '2026-09-21T12:56:39.045728877Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 4
+        points: 3
+        self-errors: 0
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 19
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 1
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3017.65778
+        rating-after: 3021.28278
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 14
+        points: 6
+        self-errors: 0
+        serves: 4
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 17
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 4
+          DROP: 10
+        rating-before: 3006.59825
+        rating-after: 3010.22325
+      f9da9725-57c1-4a33-9408-b50daccea35d:
+        name: nextbardo
+        shots: 11
+        points: 2
+        self-errors: 2
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 15
+        rally-count: 5
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 4
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2998.70833
+        rating-after: 2995.625
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2996.33333
+        rating-after: 2993.25
+    red:
+      a-uuid: 196d5305-414b-4841-9730-05a15b586666
+      a-name: Jtype916
+      b-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      b-name: Alpha6000
+      name: Jtype916 & Alpha6000
+      sets-won: 2
+    blue:
+      a-uuid: f9da9725-57c1-4a33-9408-b50daccea35d
+      a-name: nextbardo
+      b-uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      b-name: TYPE_NOOB
+      name: nextbardo & TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-2
+    - 5-0
+    point-progression:
+    - RRRBRBR
+    - RRRRR
+    winner: RED
+  '20':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T12:57:38.291759060Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 8
+        points: 2
+        self-errors: 2
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 9
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3034.13743
+        rating-after: 3031.38743
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 6
+        points: 3
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 6
+        rally-count: 4
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3000.0
+        rating-after: 3003.125
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        rating-before: 3000.0
+        rating-after: 3003.125
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2994.875
+        rating-after: 2992.125
+    red:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      b-name: hachi_18
+      name: rlaiy & hachi_18
+      sets-won: 0
+    blue:
+      a-uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      a-name: Opanku
+      b-uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      b-name: Dra_goons
+      name: Opanku & Dra_goons
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 3-5
+    point-progression:
+    - BRBRBBRB
+    - BBBBRRRB
+    winner: BLUE
+  '21':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T12:58:39.523638749Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 25
+        points: 7
+        self-errors: 2
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 34
+        rally-count: 10
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 7
+          LOB: 3
+          WEAK_LOB: 2
+          DROP: 5
+        rating-before: 3024.05156
+        rating-after: 3021.5303
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 9
+        points: 1
+        self-errors: 1
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 29
+        rally-count: 8
+        fails:
+          whiff: 3
+          unreachable: 4
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2998.32651
+        rating-after: 2995.80525
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 9
+        points: 1
+        self-errors: 4
+        serves: 9
+        faults: 2
+        double-faults: 0
+        aces: 1
+        rally-sum: 9
+        rally-count: 5
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 9
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3021.03157
+        rating-after: 3023.55283
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 29
+        points: 8
+        self-errors: 1
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 55
+        rally-count: 14
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 4
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 4
+          LOB: 1
+          WEAK_LOB: 6
+          DROP: 12
+        rating-before: 2959.646
+        rating-after: 2962.16726
+    red:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 1
+    blue:
+      a-uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      a-name: omarupin
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: omarupin & pipis_57
+      sets-won: 2
+    set-scores:
+    - 5-1
+    - 3-5
+    - 2-5
+    point-progression:
+    - RRRBRR
+    - RRBRBBBB
+    - RBBBRBB
+    winner: BLUE
+  '23':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-09-21T13:02:44.296050649Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      0ba13e8a-c769-4fc5-986d-f4a949c1f25f:
+        name: rlaiy
+        shots: 10
+        points: 2
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 8
+        rally-count: 5
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3031.38743
+        rating-after: 3027.76676
+      634e1202-bfeb-4b78-a56b-d6599020f171:
+        name: omarupin
+        shots: 4
+        points: 1
+        self-errors: 1
+        serves: 5
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 9
+        rally-count: 4
+        fails:
+          whiff: 1
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3023.55283
+        rating-after: 3027.74764
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 13
+        points: 7
+        self-errors: 1
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 23
+        rally-count: 9
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 2
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 6
+          DROP: 3
+        rating-before: 2962.16726
+        rating-after: 2966.36207
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        rating-before: 2992.125
+        rating-after: 2988.50433
+    red:
+      a-uuid: 0ba13e8a-c769-4fc5-986d-f4a949c1f25f
+      a-name: rlaiy
+      b-uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      b-name: hachi_18
+      name: rlaiy & hachi_18
+      sets-won: 0
+    blue:
+      a-uuid: 634e1202-bfeb-4b78-a56b-d6599020f171
+      a-name: omarupin
+      b-uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      b-name: pipis_57
+      name: omarupin & pipis_57
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 2-5
+    point-progression:
+    - BBBRRBRB
+    - BRBRBBB
+    winner: BLUE
+  '24':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-21T13:04:53.886360161Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      75350b8d-1eab-458f-ac87-145322dfa917:
+        name: Opanku
+        shots: 16
+        points: 2
+        self-errors: 0
+        serves: 6
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 5
+        fails:
+          whiff: 2
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 14
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3003.125
+        rating-after: 3006.25
+      f9da9725-57c1-4a33-9408-b50daccea35d:
+        name: nextbardo
+        shots: 11
+        points: 2
+        self-errors: 0
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 16
+        rally-count: 6
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 3
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2995.625
+        rating-after: 2992.875
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        rating-before: 3003.125
+        rating-after: 3006.25
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2993.25
+        rating-after: 2990.5
+    red:
+      a-uuid: 75350b8d-1eab-458f-ac87-145322dfa917
+      a-name: Opanku
+      b-uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      b-name: Dra_goons
+      name: Opanku & Dra_goons
+      sets-won: 2
+    blue:
+      a-uuid: f9da9725-57c1-4a33-9408-b50daccea35d
+      a-name: nextbardo
+      b-uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      b-name: TYPE_NOOB
+      name: nextbardo & TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-4
+    - 5-2
+    point-progression:
+    - BBRBRRBRR
+    - BRBRRRR
+    winner: RED
+  '25':
+    court-id: 1
+    court-surface: HARD
+    timestamp: '2026-09-21T13:06:08.360998380Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: false
+    league-id: '2026092101'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 57
+        points: 6
+        self-errors: 4
+        serves: 7
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 117
+        rally-count: 15
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 31
+          SMASH: 9
+          LOB: 4
+          WEAK_LOB: 8
+          DROP: 5
+        rating-before: 3021.5303
+        rating-after: 3019.45287
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 12
+        points: 3
+        self-errors: 0
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 15
+        rally-count: 7
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2995.80525
+        rating-after: 2993.72782
+      196d5305-414b-4841-9730-05a15b586666:
+        name: Jtype916
+        shots: 10
+        points: 1
+        self-errors: 1
+        serves: 7
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 20
+        rally-count: 6
+        fails:
+          whiff: 4
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 1
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3021.28278
+        rating-after: 3023.40335
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 58
+        points: 12
+        self-errors: 3
+        serves: 7
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 114
+        rally-count: 18
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 8
+          DROP: 48
+        rating-before: 3010.22325
+        rating-after: 3012.34382
+    red:
+      a-uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      a-name: LagnaKt
+      b-uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      b-name: M0nJ
+      name: LagnaKt & M0nJ
+      sets-won: 1
+    blue:
+      a-uuid: 196d5305-414b-4841-9730-05a15b586666
+      a-name: Jtype916
+      b-uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      b-name: Alpha6000
+      name: Jtype916 & Alpha6000
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 5-3
+    - 3-5
+    point-progression:
+    - BBRBBRRB
+    - BBRRRRBR
+    - BBRBRBRB
+    winner: BLUE
