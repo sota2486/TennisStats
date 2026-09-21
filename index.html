@@ -1901,6 +1901,7 @@
       tabWrap.appendChild(tab);
     });
     renderBoard();
+    pushNav();
   }
 
   /* ---------- SVGアイコン(汎用シルエット) ---------- */
@@ -1956,7 +1957,73 @@
     if (pageState.page === "ranking") renderRankingPage();
     else if (pageState.page === "results") renderResultsPage();
     else if (pageState.page === "matchup") renderMatchupPage();
+    pushNav();
   }
+  /* ============================================================
+   * ブラウザの戻る/進む
+   *
+   * 表示中の場所(ページ・選手・サブタブ・並び替え・大会シート・試合詳細・比較する2人)を
+   * ひとまとめにして履歴に積んでおき、戻るが押されたらその状態に戻して描き直す。
+   * アドレスは変えていないので、同じURLのまま履歴だけが増える
+   * ============================================================ */
+  var navGuard = false;   // 戻る/進むで復元している最中は、新しい履歴を積まない
+  var lastNav = null;     // 直前に積んだ状態(同じ場所を二重に積まないための控え)
+
+  function navSnapshot(){
+    return {
+      page: pageState.page,
+      player: state.activeId,
+      rankSub: rankState.subTab,
+      rankMetric: rankState.matchMetric,
+      sortKey: rankState.sortKey,
+      sortDir: rankState.sortDir,
+      resultsSub: resultsState.subTab,
+      detail: resultsState.detailKey,
+      tourneySheet: tournamentState.sheet,
+      leagueSheet: leagueState.sheet,
+      matchupA: matchupState.a,
+      matchupB: matchupState.b
+    };
+  }
+
+  /** 今いる場所を履歴に積む(直前と同じ場所なら何もしない) */
+  function pushNav(){
+    if (navGuard || typeof history === "undefined" || !history.pushState) return;
+    var snap = navSnapshot();
+    var key = JSON.stringify(snap);
+    if (lastNav === key) return;
+    if (lastNav === null) history.replaceState(snap, "");  // 最初の1回は今の履歴を置き換える
+    else history.pushState(snap, "");
+    lastNav = key;
+  }
+
+  /** 戻る/進むで渡された場所に戻す */
+  function applyNav(snap){
+    if (!snap) return;
+    navGuard = true;
+    try {
+      pageState.page = snap.page || "player";
+      if (snap.player && players[snap.player]) state.activeId = snap.player;
+      rankState.subTab = snap.rankSub || "matches";
+      rankState.matchMetric = snap.rankMetric || "rating";
+      rankState.sortKey = snap.sortKey || null;
+      rankState.sortDir = snap.sortDir || "desc";
+      resultsState.subTab = snap.resultsSub || "all";
+      resultsState.detailKey = snap.detail || null;
+      tournamentState.sheet = snap.tourneySheet || null;
+      leagueState.sheet = snap.leagueSheet || null;
+      matchupState.a = snap.matchupA || "";
+      matchupState.b = snap.matchupB || "";
+      renderTabs();
+      renderPageTabs();
+    } finally {
+      navGuard = false;
+    }
+    lastNav = JSON.stringify(navSnapshot());
+  }
+
+  window.addEventListener("popstate", function(e){ applyNav(e.state); });
+
   /** 選手名をクリックしたときに選手ページへ移動する共通処理(ランキング等から使う) */
   function goToPlayer(id){
     if (!players[id]) return;
@@ -2142,6 +2209,7 @@
   var rankState = { subTab: "matches", sortKey: null, sortDir: "desc", matchMetric: "rating" };
 
   function renderRankingPage(){
+    pushNav();
     var container = document.getElementById("pageRanking");
     container.innerHTML = "";
     if (Object.keys(players).length === 0){
@@ -2865,6 +2933,7 @@
   }
 
   function renderResultsPage(){
+    pushNav();
     var container = document.getElementById("pageResults");
     container.innerHTML = "";
     var subTabs = el("div","sub-tabs");
@@ -2992,7 +3061,10 @@
       panel.appendChild(el("div","rank-empty","大会のシートが見つかりません。"));
       return;
     }
-    if (!tournamentState.sheet || sheetNames.indexOf(tournamentState.sheet) < 0) tournamentState.sheet = sheetNames[0];
+    // 既定は一番新しい大会。シートは更新のたびに作り直されて末尾に付くので、最後が最新になる
+    if (!tournamentState.sheet || sheetNames.indexOf(tournamentState.sheet) < 0) {
+      tournamentState.sheet = sheetNames[sheetNames.length - 1];
+    }
 
     var picker = el("div","matchup-picker");
     var sel = document.createElement("select");
@@ -3286,7 +3358,10 @@
       panel.appendChild(el("div","rank-empty","リーグのシートが見つかりません。"));
       return;
     }
-    if (!leagueState.sheet || sheetNames.indexOf(leagueState.sheet) < 0) leagueState.sheet = sheetNames[0];
+    // 既定は一番新しいリーグ(トーナメントと同じ理由で末尾が最新)
+    if (!leagueState.sheet || sheetNames.indexOf(leagueState.sheet) < 0) {
+      leagueState.sheet = sheetNames[sheetNames.length - 1];
+    }
 
     var picker = el("div","matchup-picker");
     var sel = document.createElement("select");
@@ -3964,6 +4039,7 @@
   }
 
   function renderMatchupPage(){
+    pushNav();
     var container = document.getElementById("pageMatchup");
     container.innerHTML = "";
     var layout = el("div","matchup-layout");
