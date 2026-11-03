@@ -8777,6 +8777,1524 @@ match-singles:
     - BBBBRB
     - BBRBBB
     winner: BLUE
+  '172':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-09-22T03:22:04.720262893Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      b25f46a0-d3f0-4a7e-bae4-d8bd631546cb:
+        rating-before: 3009.25
+        rating-after: 3012.25
+      a05039e7-6d63-4a0f-aa3d-883bce8100b7:
+        name: TYPE_NOOB
+        rating-before: 2985.58655
+        rating-after: 2982.91988
+    red:
+      uuid: b25f46a0-d3f0-4a7e-bae4-d8bd631546cb
+      name: Saitama
+      sets-won: 1
+    blue:
+      uuid: a05039e7-6d63-4a0f-aa3d-883bce8100b7
+      name: TYPE_NOOB
+      sets-won: 0
+    set-scores:
+    - 5-0
+    point-progression:
+    - RRRRR
+    winner: RED
+  '173':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T08:15:29.628645064Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      60faba9e-62ac-4f3e-af7f-677519c9741d:
+        name: GeForce_RTX_5090
+        rating-before: 3000.0
+        rating-after: 3001.0
+      5bc4de86-f5fc-4849-84c0-856e327b4680:
+        name: TILLKURO
+        rating-before: 3000.0
+        rating-after: 2998.66667
+    red:
+      uuid: 5bc4de86-f5fc-4849-84c0-856e327b4680
+      name: TILLKURO
+      sets-won: 0
+    blue:
+      uuid: 60faba9e-62ac-4f3e-af7f-677519c9741d
+      name: GeForce_RTX_5090
+      sets-won: 0
+    set-scores: []
+    point-progression: []
+    winner: BLUE
+  '174':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T08:17:07.823069068Z'
+    status: CANCELLED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: false
+    red:
+      uuid: 5bc4de86-f5fc-4849-84c0-856e327b4680
+      name: TILLKURO
+      sets-won: 0
+    blue:
+      uuid: 60faba9e-62ac-4f3e-af7f-677519c9741d
+      name: GeForce_RTX_5090
+      sets-won: 0
+    set-scores: []
+    point-progression: []
+  '175':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T08:43:45.151903832Z'
+    status: CANCELLED
+    points-to-win-set: 10
+    sets-to-win-match: 1
+    deuce: false
+    per-player:
+      60faba9e-62ac-4f3e-af7f-677519c9741d:
+        name: GeForce_RTX_5090
+        shots: 1
+        points: 1
+        self-errors: 0
+        serves: 2
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 1
+        rally-count: 2
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 1
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+    red:
+      uuid: 60faba9e-62ac-4f3e-af7f-677519c9741d
+      name: GeForce_RTX_5090
+      sets-won: 0
+    blue:
+      uuid: 5bc4de86-f5fc-4849-84c0-856e327b4680
+      name: TILLKURO
+      sets-won: 0
+    set-scores: []
+    point-progression:
+    - RRRB
+  '176':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T08:44:47.437341049Z'
+    status: COMPLETED
+    points-to-win-set: 1
+    sets-to-win-match: 2
+    deuce: false
+    per-player:
+      60faba9e-62ac-4f3e-af7f-677519c9741d:
+        name: GeForce_RTX_5090
+        shots: 0
+        points: 1
+        self-errors: 0
+        serves: 1
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 0
+        rally-count: 1
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 0
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3001.0
+        rating-after: 3004.75
+      5bc4de86-f5fc-4849-84c0-856e327b4680:
+        name: TILLKURO
+        rating-before: 2998.66667
+        rating-after: 2995.5
+    red:
+      uuid: 60faba9e-62ac-4f3e-af7f-677519c9741d
+      name: GeForce_RTX_5090
+      sets-won: 2
+    blue:
+      uuid: 5bc4de86-f5fc-4849-84c0-856e327b4680
+      name: TILLKURO
+      sets-won: 0
+    set-scores:
+    - 1-0
+    - 1-0
+    point-progression:
+    - R
+    - R
+    winner: RED
+  '177':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T10:47:19.420774349Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 1
+    deuce: true
+    per-player:
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        shots: 14
+        points: 2
+        self-errors: 4
+        serves: 4
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 7
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 2
+          LOB: 2
+          WEAK_LOB: 2
+          DROP: 1
+        rating-before: 2959.07443
+        rating-after: 2956.84312
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 14
+        points: 5
+        self-errors: 2
+        serves: 3
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 28
+        rally-count: 7
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 1
+          LOB: 2
+          WEAK_LOB: 1
+          DROP: 3
+        rating-before: 2989.68103
+        rating-after: 2992.10451
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 1
+    set-scores:
+    - 2-5
+    point-progression:
+    - RRBBBBB
+    winner: BLUE
+  '178':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T11:08:04.369542820Z'
+    status: COMPLETED
+    points-to-win-set: 11
+    sets-to-win-match: 1
+    deuce: true
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 11
+        points: 10
+        self-errors: 0
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 4
+        rally-sum: 18
+        rally-count: 10
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 1
+        rating-before: 3070.07331
+        rating-after: 3073.15793
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        shots: 9
+        points: 0
+        self-errors: 1
+        serves: 6
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 19
+        rally-count: 11
+        fails:
+          whiff: 8
+          unreachable: 2
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 6
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 3
+          DROP: 0
+        rating-before: 2956.84312
+        rating-after: 2954.84312
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 1
+    blue:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    set-scores:
+    - 11-0
+    point-progression:
+    - RRRRRRRRRRR
+    winner: RED
+  '179':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-09-22T11:18:18.269507610Z'
+    status: COMPLETED
+    points-to-win-set: 11
+    sets-to-win-match: 1
+    deuce: true
+    per-player:
+      37c11aa3-1e54-4c66-92de-8f105bdd6cd4:
+        name: hachi_18
+        shots: 39
+        points: 9
+        self-errors: 7
+        serves: 10
+        faults: 0
+        double-faults: 0
+        aces: 3
+        rally-sum: 74
+        rally-count: 20
+        fails:
+          whiff: 4
+          unreachable: 0
+          net: 3
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 21
+          SMASH: 7
+          LOB: 9
+          WEAK_LOB: 2
+          DROP: 0
+        rating-before: 2954.84312
+        rating-after: 2952.73669
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 37
+        points: 11
+        self-errors: 4
+        serves: 11
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 74
+        rally-count: 20
+        fails:
+          whiff: 5
+          unreachable: 0
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 22
+          SMASH: 0
+          LOB: 12
+          WEAK_LOB: 3
+          DROP: 0
+        rating-before: 2990.98475
+        rating-after: 2993.18957
+    red:
+      uuid: 37c11aa3-1e54-4c66-92de-8f105bdd6cd4
+      name: hachi_18
+      sets-won: 0
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 1
+    set-scores:
+    - 9-11
+    point-progression:
+    - BBRBBRBBBRRRRBRRBBRB
+    winner: BLUE
+  '182':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-11-03T13:27:40.265112092Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 14
+        points: 3
+        self-errors: 5
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 29
+        rally-count: 13
+        fails:
+          whiff: 5
+          unreachable: 0
+          net: 2
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 5
+          SMASH: 2
+          LOB: 2
+          WEAK_LOB: 1
+          DROP: 4
+        rating-before: 3032.17702
+        rating-after: 3024.57049
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 16
+        points: 7
+        self-errors: 2
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 23
+        rally-count: 10
+        fails:
+          whiff: 0
+          unreachable: 1
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 4
+          DROP: 2
+        rating-before: 2992.10451
+        rating-after: 3001.51249
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 1-5
+    point-progression:
+    - BBRBRBB
+    - BBBBRB
+    winner: BLUE
+  '180':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-11-03T13:27:42.187173353Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sooo2486
+        shots: 12
+        points: 10
+        self-errors: 1
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 23
+        rally-count: 13
+        fails:
+          whiff: 1
+          unreachable: 1
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 0
+          DROP: 1
+        rating-before: 3075.15762
+        rating-after: 3078.8205
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 11
+        points: 3
+        self-errors: 3
+        serves: 7
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 23
+        rally-count: 13
+        fails:
+          whiff: 5
+          unreachable: 2
+          net: 0
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 11
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2986.016
+        rating-after: 2983.79883
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sooo2486
+      sets-won: 2
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 5-2
+    - 5-1
+    point-progression:
+    - RRRBBRR
+    - RBRRRR
+    winner: RED
+  '181':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-11-03T13:27:58.946573828Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 28
+        points: 10
+        self-errors: 2
+        serves: 8
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 52
+        rally-count: 16
+        fails:
+          whiff: 4
+          unreachable: 0
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 15
+          SMASH: 4
+          LOB: 2
+          WEAK_LOB: 1
+          DROP: 6
+        rating-before: 3073.15793
+        rating-after: 3076.50829
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 24
+        points: 6
+        self-errors: 0
+        serves: 8
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 52
+        rally-count: 16
+        fails:
+          whiff: 5
+          unreachable: 5
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 18
+          SMASH: 1
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2993.18957
+        rating-after: 2990.8891
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 0
+    set-scores:
+    - 5-3
+    - 5-3
+    point-progression:
+    - BBRRRBRR
+    - RBRBRRBR
+    winner: RED
+  '184':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-11-03T13:30:17.780312477Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 12
+        points: 1
+        self-errors: 5
+        serves: 8
+        faults: 3
+        double-faults: 1
+        aces: 0
+        rally-sum: 21
+        rally-count: 10
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 0
+          out: 5
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 0
+          LOB: 2
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2983.79883
+        rating-after: 2979.87882
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 11
+        points: 9
+        self-errors: 0
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 3
+        rally-sum: 21
+        rally-count: 10
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 3001.51249
+        rating-after: 3006.7025
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 2
+    set-scores:
+    - 0-5
+    - 1-5
+    point-progression:
+    - BBBBB
+    - RBBBBB
+    winner: BLUE
+  '185':
+    court-id: 6
+    court-surface: HARD
+    timestamp: '2026-11-03T13:30:31.926815241Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 14
+        points: 9
+        self-errors: 3
+        serves: 9
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 25
+        rally-count: 14
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 4
+          LOB: 1
+          WEAK_LOB: 1
+          DROP: 1
+        rating-before: 3076.50829
+        rating-after: 3080.35907
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 12
+        points: 4
+        self-errors: 3
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 1
+        rally-sum: 25
+        rally-count: 14
+        fails:
+          whiff: 3
+          unreachable: 4
+          net: 0
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 4
+          SMASH: 0
+          LOB: 5
+          WEAK_LOB: 1
+          DROP: 2
+        rating-before: 3024.57049
+        rating-after: 3021.76945
+    red:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    set-scores:
+    - 5-2
+    - 5-3
+    point-progression:
+    - BRBRRRR
+    - BRRRBRBR
+    winner: RED
+  '183':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-11-03T13:33:04.976906430Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sooo2486
+        shots: 43
+        points: 10
+        self-errors: 6
+        serves: 16
+        faults: 4
+        double-faults: 0
+        aces: 0
+        rally-sum: 84
+        rally-count: 23
+        fails:
+          whiff: 6
+          unreachable: 1
+          net: 2
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 22
+          SMASH: 4
+          LOB: 17
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3078.8205
+        rating-after: 3071.50439
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 42
+        points: 12
+        self-errors: 4
+        serves: 11
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 83
+        rally-count: 22
+        fails:
+          whiff: 4
+          unreachable: 2
+          net: 3
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 24
+          SMASH: 13
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2990.8891
+        rating-after: 2998.66498
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sooo2486
+      sets-won: 1
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 2
+    set-scores:
+    - 2-5
+    - 5-3
+    - 3-5
+    point-progression:
+    - BRBRBBB
+    - RBRRRBBR
+    - BBBRBRRB
+    winner: BLUE
+  '188':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-11-03T13:35:10.226469544Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 12
+        points: 1
+        self-errors: 4
+        serves: 5
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 25
+        rally-count: 11
+        fails:
+          whiff: 5
+          unreachable: 1
+          net: 0
+          out: 4
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 0
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2979.87882
+        rating-after: 2977.87882
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 13
+        points: 10
+        self-errors: 1
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 2
+        rally-sum: 25
+        rally-count: 11
+        fails:
+          whiff: 0
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 2
+        rating-before: 3080.35907
+        rating-after: 3084.10067
+    red:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 0-5
+    point-progression:
+    - BBBRBB
+    - BBBBB
+    winner: BLUE
+  '187':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-11-03T13:35:33.625214861Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 24
+        points: 10
+        self-errors: 2
+        serves: 6
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 45
+        rally-count: 13
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 20
+          SMASH: 3
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2998.66498
+        rating-after: 3006.20647
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 21
+        points: 3
+        self-errors: 3
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 45
+        rally-count: 13
+        fails:
+          whiff: 6
+          unreachable: 1
+          net: 2
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 16
+          SMASH: 0
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 4
+        rating-before: 3021.76945
+        rating-after: 3015.69005
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 2
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 0
+    set-scores:
+    - 5-1
+    - 5-2
+    point-progression:
+    - RRRRBR
+    - RBBRRRR
+    winner: RED
+  '186':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-11-03T13:37:57.433882637Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sooo2486
+        shots: 35
+        points: 14
+        self-errors: 4
+        serves: 14
+        faults: 2
+        double-faults: 0
+        aces: 1
+        rally-sum: 68
+        rally-count: 22
+        fails:
+          whiff: 3
+          unreachable: 1
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 20
+          SMASH: 4
+          LOB: 11
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3071.50439
+        rating-after: 3075.53236
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 35
+        points: 8
+        self-errors: 8
+        serves: 13
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 69
+        rally-count: 23
+        fails:
+          whiff: 6
+          unreachable: 1
+          net: 1
+          out: 7
+          double_fault: 0
+        kinds:
+          STRAIGHT: 18
+          SMASH: 6
+          LOB: 2
+          WEAK_LOB: 5
+          DROP: 4
+        rating-before: 3006.7025
+        rating-after: 3003.99854
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sooo2486
+      sets-won: 2
+    blue:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    set-scores:
+    - 5-0
+    - 10-8
+    point-progression:
+    - RRRRR
+    - RBBBRRBRRBRBRBBRRR
+    winner: RED
+  '190':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-11-03T13:40:51.632950603Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 28
+        points: 3
+        self-errors: 7
+        serves: 7
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 52
+        rally-count: 13
+        fails:
+          whiff: 1
+          unreachable: 2
+          net: 4
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 3
+          LOB: 3
+          WEAK_LOB: 5
+          DROP: 5
+        rating-before: 3003.99854
+        rating-after: 3001.60058
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 24
+        points: 8
+        self-errors: 0
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 0
+        rally-sum: 45
+        rally-count: 11
+        fails:
+          whiff: 3
+          unreachable: 0
+          net: 0
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 7
+          SMASH: 4
+          LOB: 4
+          WEAK_LOB: 2
+          DROP: 7
+        rating-before: 3084.10067
+        rating-after: 3087.89914
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 2-5
+    point-progression:
+    - BRBBBB
+    - RBBRBBB
+    winner: BLUE
+  '191':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-11-03T13:41:20.124148636Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 22
+        points: 11
+        self-errors: 1
+        serves: 9
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 45
+        rally-count: 16
+        fails:
+          whiff: 2
+          unreachable: 2
+          net: 0
+          out: 1
+          double_fault: 0
+        kinds:
+          STRAIGHT: 19
+          SMASH: 0
+          LOB: 3
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3006.20647
+        rating-after: 3009.27942
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 23
+        points: 5
+        self-errors: 4
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 45
+        rally-count: 16
+        fails:
+          whiff: 5
+          unreachable: 2
+          net: 2
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 20
+          SMASH: 3
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2977.87882
+        rating-after: 2975.28155
+    red:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 2
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 1
+    set-scores:
+    - 5-0
+    - 1-5
+    - 5-0
+    point-progression:
+    - RRRRR
+    - BBRBBB
+    - RRRRR
+    winner: RED
+  '189':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-11-03T13:42:22.027398857Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sooo2486
+        shots: 33
+        points: 11
+        self-errors: 3
+        serves: 15
+        faults: 5
+        double-faults: 1
+        aces: 3
+        rally-sum: 58
+        rally-count: 20
+        fails:
+          whiff: 2
+          unreachable: 4
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 22
+          SMASH: 2
+          LOB: 4
+          WEAK_LOB: 5
+          DROP: 0
+        rating-before: 3075.53236
+        rating-after: 3077.53236
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 30
+        points: 9
+        self-errors: 2
+        serves: 12
+        faults: 2
+        double-faults: 0
+        aces: 0
+        rally-sum: 58
+        rally-count: 20
+        fails:
+          whiff: 6
+          unreachable: 3
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 10
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 18
+        rating-before: 3015.69005
+        rating-after: 3013.69005
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sooo2486
+      sets-won: 2
+    blue:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 1
+    set-scores:
+    - 1-5
+    - 5-3
+    - 5-2
+    point-progression:
+    - RBBBBB
+    - RBBRRBRR
+    - RRRBRBR
+    winner: RED
+  '193':
+    court-id: 3
+    court-surface: HARD
+    timestamp: '2026-11-03T13:45:00.632188104Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d:
+        name: Alpha6000
+        shots: 13
+        points: 9
+        self-errors: 1
+        serves: 9
+        faults: 3
+        double-faults: 1
+        aces: 1
+        rally-sum: 25
+        rally-count: 12
+        fails:
+          whiff: 2
+          unreachable: 0
+          net: 1
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 1
+          LOB: 0
+          WEAK_LOB: 0
+          DROP: 4
+        rating-before: 3013.69005
+        rating-after: 3017.91193
+      5204f9ee-0f9f-43d0-9635-09b0083a61b2:
+        name: Dra_goons
+        shots: 14
+        points: 3
+        self-errors: 5
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 26
+        rally-count: 13
+        fails:
+          whiff: 2
+          unreachable: 3
+          net: 3
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 2975.28155
+        rating-after: 2972.15237
+    red:
+      uuid: 6b5f025b-2ae6-4f6b-85c2-8feefb86ce0d
+      name: Alpha6000
+      sets-won: 2
+    blue:
+      uuid: 5204f9ee-0f9f-43d0-9635-09b0083a61b2
+      name: Dra_goons
+      sets-won: 0
+    set-scores:
+    - 5-1
+    - 5-3
+    point-progression:
+    - RRRRBR
+    - RBBRRBRR
+    winner: RED
+  '194':
+    court-id: 5
+    court-surface: HARD
+    timestamp: '2026-11-03T13:45:25.122186522Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2:
+        name: pipis_57
+        shots: 17
+        points: 3
+        self-errors: 2
+        serves: 8
+        faults: 2
+        double-faults: 1
+        aces: 0
+        rally-sum: 36
+        rally-count: 12
+        fails:
+          whiff: 5
+          unreachable: 2
+          net: 0
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 8
+          SMASH: 1
+          LOB: 2
+          WEAK_LOB: 4
+          DROP: 2
+        rating-before: 3001.60058
+        rating-after: 2997.90803
+      14ea66bf-bb82-4a0c-9bd2-bcf89b876049:
+        name: M0nJ
+        shots: 20
+        points: 9
+        self-errors: 3
+        serves: 7
+        faults: 0
+        double-faults: 0
+        aces: 1
+        rally-sum: 37
+        rally-count: 13
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 1
+          out: 2
+          double_fault: 0
+        kinds:
+          STRAIGHT: 9
+          SMASH: 6
+          LOB: 5
+          WEAK_LOB: 0
+          DROP: 0
+        rating-before: 3009.27942
+        rating-after: 3013.92384
+    red:
+      uuid: e390b7c8-e4a1-4a67-8c0d-b48e025c9ea2
+      name: pipis_57
+      sets-won: 0
+    blue:
+      uuid: 14ea66bf-bb82-4a0c-9bd2-bcf89b876049
+      name: M0nJ
+      sets-won: 2
+    set-scores:
+    - 1-5
+    - 3-5
+    point-progression:
+    - BRBBBB
+    - BBRBBRRB
+    winner: BLUE
+  '192':
+    court-id: 4
+    court-surface: HARD
+    timestamp: '2026-11-03T13:45:31.680674717Z'
+    status: COMPLETED
+    points-to-win-set: 5
+    sets-to-win-match: 2
+    deuce: true
+    league-id: '2026110301'
+    per-player:
+      c755d081-1374-4cf4-9801-b7e1ab19d947:
+        name: sooo2486
+        shots: 22
+        points: 4
+        self-errors: 4
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 40
+        rally-count: 14
+        fails:
+          whiff: 4
+          unreachable: 2
+          net: 1
+          out: 3
+          double_fault: 0
+        kinds:
+          STRAIGHT: 16
+          SMASH: 0
+          LOB: 4
+          WEAK_LOB: 1
+          DROP: 1
+        rating-before: 3077.53236
+        rating-after: 3073.88908
+      97bf4ab1-2263-4b42-84f9-08e33133faf2:
+        name: LagnaKt
+        shots: 22
+        points: 8
+        self-errors: 3
+        serves: 8
+        faults: 1
+        double-faults: 0
+        aces: 0
+        rally-sum: 38
+        rally-count: 12
+        fails:
+          whiff: 1
+          unreachable: 0
+          net: 3
+          out: 0
+          double_fault: 0
+        kinds:
+          STRAIGHT: 12
+          SMASH: 1
+          LOB: 1
+          WEAK_LOB: 2
+          DROP: 6
+        rating-before: 3087.89914
+        rating-after: 3092.5066
+    red:
+      uuid: c755d081-1374-4cf4-9801-b7e1ab19d947
+      name: sooo2486
+      sets-won: 0
+    blue:
+      uuid: 97bf4ab1-2263-4b42-84f9-08e33133faf2
+      name: LagnaKt
+      sets-won: 2
+    set-scores:
+    - 3-5
+    - 1-5
+    point-progression:
+    - BRBRBBRB
+    - BRBBBB
+    winner: BLUE
 match-doubles:
   '2':
     court-id: 3
