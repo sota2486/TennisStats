@@ -1716,7 +1716,8 @@
           var matched = files.filter(function(ff){
             var b = ff.name.replace(/\.[a-zA-Z0-9]+$/, "").trim().toLowerCase();
             return b && players && Object.keys(players).some(function(id){
-              return id.toLowerCase() === b || (players[id].name || "").toLowerCase() === b;
+              return id.toLowerCase() === b || (players[id].name || "").toLowerCase() === b
+                  || !!(nameIds.aliasesById[id] && nameIds.aliasesById[id][b]);
             });
           }).length;
           setStatus("avatarStatus", true, files.length + "枚読み込み(" + matched + "人と一致)");
@@ -1791,6 +1792,98 @@
   var players = {}; // id -> { id, name, learn, stats }
   var matchRecords = []; // record.ymlから組み立てた試合一覧(新しい順)
 
+  /*
+   * 選手はUUIDで管理し、表示する名前(MCID)はいつも最新のものにする。
+   * record.ymlやtournament/league.xlsxに残っている名前は「その試合のときの名前」なので、
+   * 名前を変えた選手の過去の試合も、UUIDから引いた最新の名前に置き換えて表示・集計する。
+   * 最新の名前は players.yml(無ければ learning.yml)のもの(プラグインがログイン時に更新する)
+   */
+  var nameIds = {
+    latestById: {},   // uuid -> 最新の名前
+    aliasesById: {},  // uuid -> { 小文字の名前: 1 }(過去の名前も含む。写真の照合用)
+    idByLatest: {},   // 小文字の最新の名前 -> uuid
+    renameGlobal: {}, // 小文字の昔の名前 -> 最新の名前(その名前を今使っている人がいない場合だけ)
+    renameByEvent: {} // "tournament:ID" / "league:ID" -> { 小文字の昔の名前: 最新の名前 }
+  };
+
+  function resetNameIds(pp, lp){
+    nameIds = { latestById:{}, aliasesById:{}, idByLatest:{}, renameGlobal:{}, renameByEvent:{} };
+    [lp, pp].forEach(function(src){ // 後から入れる players.yml を優先する
+      Object.keys(src).forEach(function(id){
+        var n = src[id] && src[id].name;
+        if (n) nameIds.latestById[id] = String(n);
+      });
+    });
+    Object.keys(nameIds.latestById).forEach(function(id){
+      var n = nameIds.latestById[id];
+      nameIds.idByLatest[n.toLowerCase()] = id;
+      addAlias(id, n);
+    });
+  }
+  function addAlias(id, n){
+    if (!id || !n) return;
+    (nameIds.aliasesById[id] || (nameIds.aliasesById[id] = {}))[String(n).toLowerCase()] = 1;
+  }
+  /** UUIDから最新の名前を返す。わからなければ記録に残っている名前のまま */
+  function latestNameOf(uuid, snapshot){
+    if (uuid && nameIds.latestById[uuid]) return nameIds.latestById[uuid];
+    return snapshot;
+  }
+  /** 試合当時の名前 → 最新の名前の対応を覚える(xlsxの表の名前を置き換えるため) */
+  function noteRename(uuid, snapshot, eventKey){
+    if (!uuid || !snapshot) return;
+    addAlias(uuid, snapshot);
+    var latest = nameIds.latestById[uuid];
+    if (!latest || latest === snapshot) return;
+    var key = String(snapshot).toLowerCase();
+    if (eventKey){
+      (nameIds.renameByEvent[eventKey] || (nameIds.renameByEvent[eventKey] = {}))[key] = latest;
+    }
+    // 昔の名前を、今は別の人が使っている場合は全体の置き換えには使わない
+    var owner = nameIds.idByLatest[key];
+    if (!owner || owner === uuid) nameIds.renameGlobal[key] = latest;
+  }
+  /** 名前(1人分)から、その人のUUIDを探す(最新の名前、無ければ過去の名前) */
+  function idOfName(n){
+    if (!n) return null;
+    var key = String(n).toLowerCase();
+    if (nameIds.idByLatest[key]) return nameIds.idByLatest[key];
+    var ids = Object.keys(nameIds.aliasesById);
+    for (var i = 0; i < ids.length; i++){ if (nameIds.aliasesById[ids[i]][key]) return ids[i]; }
+    return null;
+  }
+  /**
+   * xlsxの文字列に出てくる昔の名前を、最新の名前に置き換える。そのイベントの試合で
+   * 使われていた名前を優先し、無ければ全体の対応表を使う(MCIDは英数字と_だけなので単語単位で置き換える)
+   */
+  function renameText(text, eventKey){
+    if (text == null || typeof text !== "string") return text;
+    var ev = (eventKey && nameIds.renameByEvent[eventKey]) || {};
+    return text.replace(/[A-Za-z0-9_]{3,16}/g, function(word){
+      var key = word.toLowerCase();
+      if (ev[key]) return ev[key];
+      if (nameIds.renameGlobal[key]) return nameIds.renameGlobal[key];
+      return word;
+    });
+  }
+  /** 解析したシートの中身(文字列・配列・オブジェクト)を丸ごと最新の名前に置き換える */
+  function renameDeep(v, eventKey){
+    if (typeof v === "string") return renameText(v, eventKey);
+    if (Array.isArray(v)) return v.map(function(x){ return renameDeep(x, eventKey); });
+    if (v && typeof v === "object"){
+      var out = {};
+      Object.keys(v).forEach(function(k){ out[k] = renameDeep(v[k], eventKey); });
+      return out;
+    }
+    return v;
+  }
+  /** シートの表の名前を最新にする(大会名・説明の行はそのまま) */
+  function renameSheet(data, eventKey){
+    var out = renameDeep(data, eventKey);
+    out.title = data.title; out.info = data.info;
+    return out;
+  }
+
   /**
    * record.yml(match-singles / match-doubles)を、シングルス・ダブルスをまとめた
    * 1つの試合一覧に組み立てる。practice(個人練習)はそもそもrecord.ymlに書かれないため
@@ -1807,16 +1900,25 @@
         var e = section[id];
         if (!e) return;
         var red, blue;
+        var eventKey = e["tournament-id"] != null ? "tournament:" + e["tournament-id"]
+            : (e["league-id"] != null ? "league:" + e["league-id"] : null);
+        // 記録の名前は試合当時のもの。UUIDから最新の名前に置き換える(当時の名前は snap* に残す)
+        function person(sideObj, uuidKey, nameKey){
+          var uuid = sideObj && sideObj[uuidKey], snap = sideObj && sideObj[nameKey];
+          noteRename(uuid, snap, eventKey);
+          return { uuid: uuid, snap: snap, name: latestNameOf(uuid, snap) };
+        }
         if (format === "singles"){
-          red = { name: e.red && e.red.name, uuid: e.red && e.red.uuid };
-          blue = { name: e.blue && e.blue.name, uuid: e.blue && e.blue.uuid };
+          var r1 = person(e.red, "uuid", "name"), b1 = person(e.blue, "uuid", "name");
+          red = { name: r1.name, uuid: r1.uuid, snapName: r1.snap };
+          blue = { name: b1.name, uuid: b1.uuid, snapName: b1.snap };
         } else {
-          red = { name: e.red && e.red.name,
-                   aName: e.red && e.red["a-name"], aUuid: e.red && e.red["a-uuid"],
-                   bName: e.red && e.red["b-name"], bUuid: e.red && e.red["b-uuid"] };
-          blue = { name: e.blue && e.blue.name,
-                    aName: e.blue && e.blue["a-name"], aUuid: e.blue && e.blue["a-uuid"],
-                    bName: e.blue && e.blue["b-name"], bUuid: e.blue && e.blue["b-uuid"] };
+          var ra = person(e.red, "a-uuid", "a-name"), rb = person(e.red, "b-uuid", "b-name");
+          var ba = person(e.blue, "a-uuid", "a-name"), bb = person(e.blue, "b-uuid", "b-name");
+          red = { name: (ra.name && rb.name) ? ra.name + " & " + rb.name : (e.red && e.red.name),
+                   aName: ra.name, aUuid: ra.uuid, bName: rb.name, bUuid: rb.uuid };
+          blue = { name: (ba.name && bb.name) ? ba.name + " & " + bb.name : (e.blue && e.blue.name),
+                    aName: ba.name, aUuid: ba.uuid, bName: bb.name, bUuid: bb.uuid };
         }
         var setScores = (e["set-scores"] || []).map(function(s){
           var parts = String(s).split("-");
@@ -1849,6 +1951,7 @@
     players = {};
     var lp = (state.learning && state.learning.players) || {};
     var pp = (state.players && state.players.players) || {};
+    resetNameIds(pp, lp);
     var ids = {};
     Object.keys(lp).forEach(function(id){ ids[id]=1; });
     Object.keys(pp).forEach(function(id){ ids[id]=1; });
@@ -1910,7 +2013,15 @@
   /** state.avatarsから、このプレイヤーのUUIDか名前(大文字小文字を区別しない)に一致する写真を探す */
   function avatarFor(p){
     if (!p) return null;
-    return state.avatars[String(p.id).toLowerCase()] || state.avatars[String(p.name).toLowerCase()] || null;
+    var id = p.id || idOfName(p.name);
+    var hit = (id && state.avatars[String(id).toLowerCase()]) || state.avatars[String(p.name).toLowerCase()];
+    if (hit) return hit;
+    var aliases = id ? nameIds.aliasesById[id] : null;
+    if (aliases){
+      var keys = Object.keys(aliases);
+      for (var i = 0; i < keys.length; i++){ if (state.avatars[keys[i]]) return state.avatars[keys[i]]; }
+    }
+    return null;
   }
   /** アバター表示用のHTML(写真が見つかればimg、無ければ汎用シルエット) */
   function avatarIconHtml(p){
@@ -3079,7 +3190,8 @@
     picker.appendChild(sel);
     panel.appendChild(picker);
 
-    var data = parseTournamentSheet(wb.Sheets[tournamentState.sheet]);
+    var data = renameSheet(parseTournamentSheet(wb.Sheets[tournamentState.sheet]),
+        "tournament:" + eventIdOfSheet(tournamentState.sheet));
     panel.appendChild(el("div","panel-title", data.title || tournamentState.sheet));
     if (data.info) panel.appendChild(el("div","rank-note", data.info));
 
@@ -3377,7 +3489,7 @@
     panel.appendChild(picker);
 
     var leagueId = eventIdOfSheet(leagueState.sheet);
-    var data = parseLeagueSheet(wb.Sheets[leagueState.sheet]);
+    var data = renameSheet(parseLeagueSheet(wb.Sheets[leagueState.sheet]), "league:" + leagueId);
     panel.appendChild(el("div","panel-title", data.title || leagueState.sheet));
     if (data.info) panel.appendChild(el("div","rank-note", data.info));
 
@@ -3585,7 +3697,7 @@
       var fails = e.fails || {};
       var kinds = e.kinds || {};
       var st = {
-        name: e.name || (players[uuid] && players[uuid].name) || uuid.slice(0, 8),
+        name: (players[uuid] && players[uuid].name) || latestNameOf(uuid, e.name) || uuid.slice(0, 8),
         id: uuid,
         shots: e.shots || 0, points: e.points || 0, selfErr: e["self-errors"] || 0,
         serves: e.serves || 0, faults: e.faults || 0, doubleFaults: e["double-faults"] || 0,
